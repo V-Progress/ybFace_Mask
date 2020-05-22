@@ -1,0 +1,344 @@
+apply plugin: 'com.android.application'
+apply plugin: 'org.greenrobot.greendao' // GreenDao配置
+apply plugin: 'com.jakewharton.butterknife'
+
+android {
+    compileSdkVersion 28
+    defaultConfig {
+        applicationId "com.yunbiao.ybsmartcheckin_live_id"
+        minSdkVersion 22
+        targetSdkVersion 22
+        versionCode 46
+        versionName "1.4.8"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        flavorDimensions "default"
+        multiDexEnabled true
+        ndk {
+            //设置支持的SO库架构
+            abiFilters 'armeabi-v7a'//,'armeabi','arm64-v8a','x86','x86_64'
+        }
+    }
+    //签名配置
+    signingConfigs {
+        release {
+            keyAlias 'yunbiao'
+            keyPassword '123456'
+            storeFile file('yb_face.jks')
+            storePassword '123456'
+            v1SigningEnabled true
+            v2SigningEnabled true
+        }
+    }
+    //编译类型
+    buildTypes {
+        release {
+            debuggable false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            aaptOptions.cruncherEnabled = false
+            aaptOptions.useNewCruncher = false
+            minifyEnabled false
+            shrinkResources false//开启此配置必须打开混淆
+            signingConfig signingConfigs.release
+            applicationIdSuffix ".release"
+        }
+        debug {
+            debuggable false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            aaptOptions.cruncherEnabled = false
+            aaptOptions.useNewCruncher = false
+            minifyEnabled false
+            shrinkResources false
+            signingConfig signingConfigs.release
+            applicationIdSuffix ".debug"
+        }
+    }
+    lintOptions {
+        checkReleaseBuilds false
+        abortOnError false
+    }
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['src/main/jniLibs']
+        }
+    }
+    //多渠道
+    productFlavors {
+        ext.flavor = {
+            _flavor,
+            _flavorType,
+            _appType,
+            _appName, _appIcon,
+            _umKey, _umChannel,
+            _faceAppId, _faceSdkKey,
+            _maxDetectNum, _detectFaceScaleVal
+                ->
+                _flavor.buildConfigField("int", "FLAVOR_TYPE", _flavorType)
+                _flavor.buildConfigField("int", "APP_TYPE", _appType)
+                _flavor.buildConfigField("String", "FACE_APP_ID", _faceAppId)
+                _flavor.buildConfigField("String", "FACE_SDK_KEY", _faceSdkKey)
+                _flavor.buildConfigField("Integer", "MAX_DETECT_FACE_NUM", _maxDetectNum)
+                _flavor.buildConfigField("Integer", "DETECT_FACE_SCALE_VAL", _detectFaceScaleVal)
+                _flavor.manifestPlaceholders.put("app_name", _appName)
+                _flavor.manifestPlaceholders.put("app_icon", _appIcon)
+                _flavor.manifestPlaceholders.put("UMENG_APPKEY", _umKey)
+                _flavor.manifestPlaceholders.put("UMENG_CHANNEL", _umChannel)
+        }
+
+        /*普通考勤============================================================================================*/
+        flavor(YB, "0",
+                "com.yunbiao.ybsmartcheckin_live_id.afinel.Constants.DeviceType.CHECK_IN",
+                "@string/yb_check_in", "@mipmap/ic_launcher", "5cbe87a60cafb210460006b3", "YB",
+                getYBFace_APP_ID(), getYBFace_SDK_KEY(), "10", "16")
+
+        /*==云标版本============================================================================================*/
+        //云标10寸
+        flavor(YB_10, "0",
+                "com.yunbiao.ybsmartcheckin_live_id.afinel.Constants.DeviceType.TEMPERATURE_CHECK_IN",
+                "@string/yb_temper_check_in", "@mipmap/ic_launcher", "5cbe87a60cafb210460006b3", "YB_10",
+                getYBFace_APP_ID(), getYBFace_SDK_KEY(), "10", "7")
+        /*==亨通版本============================================================================================*/
+        //亨通10寸
+        flavor(HT_10, "1",
+                "com.yunbiao.ybsmartcheckin_live_id.afinel.Constants.DeviceType.HT_TEMPERATURE_CHECK_IN",
+                "@string/ht_temper_check_in", "@mipmap/logo_icon2", "5cbe87a60cafb210460006b3", "HT_10",
+                getHTFace_APP_ID(), getHTFace_SDK_KEY(), "10", "7")
+    }
+    compileOptions {
+        sourceCompatibility = 1.8
+        targetCompatibility = 1.8
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    //APK输出配置
+    android.applicationVariants.all { variant ->
+        variant.outputs.all {
+            if (variant.buildType.name == "debug") {
+                outputFileName = buildApkName("${variant.productFlavors[0].name}") + "_" + defaultConfig.versionName + "_" + buildTime() + "_debug" + ".apk"
+            } else {
+                outputFileName = buildApkName("${variant.productFlavors[0].name}") + "_" + defaultConfig.versionName + "_" + buildTime() + ".apk"
+            }
+        }
+    }
+    //greenDao配置信息
+    greendao {
+        schemaVersion 35//<--数据库的版本，用于升级时候进行更改
+        daoPackage 'com.yunbiao.ybsmartcheckin_live_id.db2'
+    }
+    dataBinding {
+        enabled = true
+    }
+}
+
+String buildApkName(String param) {
+    //确定前缀名
+    String name
+    if (param.contains("SK"))
+        name = "SK"
+    else if (param.contains("HT"))
+        name = "HT"
+    else if (param.contains("OSIMLE"))
+        name = "Osimle AI"
+    else if (param.contains("SOFT_WORK"))
+        name = "SoftWorkz AI"
+    else
+        name = "YB"
+
+    if (!param.contains("OSIMLE") && !param.contains("SOFT_WORK")) {
+        //确定后缀名
+        if (param.contains("10")) {
+            name += "Face"
+        } else if (param.contains("8")) {
+            if (name.contains("SK")) {//判断思库版本
+                name += "TemperatureCheckingAttendance"
+            } else {
+                name += "测温通行"
+            }
+        } else if (param.contains("RZ")) {
+            name += "人证测温"
+        } else if (param.contains("DR")) {
+            if (param.contains("SK")) {//判断思库版本
+                name += "考勤"
+            } else {
+                name += "大通量测温"
+            }
+        } else if (param.contains("SC_DL")) {
+            name += "双光安检"
+        } else if (param.contains("SC")) {
+            name += "测温安检"
+        } else {
+            name += "智能考勤"
+        }
+    }
+    return name
+}
+
+//用于生成时间
+def buildTime() {
+    def date = new Date()
+    //yy年 MM月 dd日 HH小时 mm分钟 ss秒
+    def formattedDate = date.format('yyyyMMddHHmm')
+    return formattedDate
+//    return new Date().format("yyyy-MM-dd_HH-mm-ss", TimeZone.getTimeZone("GMT+8"))
+}
+
+def getYBFace_APP_ID() {
+    return "\"HaViJoN9enHzZjfE9nb6G672dQxgRuJe8mVJS3nuNX7Q\""
+}
+
+def getYBFace_SDK_KEY() {
+    return "\"212ZpN5Yu7H3NKNhsM8mYqzJn6bpwcHPiSvf8AmnMRLs\""
+}
+
+def getHTFace_APP_ID() {
+    return "\"HaViJoN9enHzZjfE9nb6G672dQxgRuJe8mVJS3nuNX7Q\""
+}
+
+def getHTFace_SDK_KEY() {
+    return "\"212ZpN5Yu7H3NKNhsM8mYqzJn6bpwcHPiSvf8AmnMRLs\""
+}
+
+/*
+多渠道范文
+YB {
+    buildConfigField "boolean", "IS_SK", "false"
+    buildConfigField "boolean", "IS_HT", "false"
+    buildConfigField 'int', 'APP_TYPE', "com.yunbiao.ybsmartcheckin_live_id.afinel.Constants.DeviceType.CHECK_IN"
+    manifestPlaceholders = [
+            app_name     : "@string/yb_check_in",
+            app_icon     : "@mipmap/ic_launcher",
+            UMENG_APPKEY : "5cbe87a60cafb210460006b3",
+            UMENG_CHANNEL: "YB"
+    ]
+}*/
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+
+    /*测温模块*/
+    implementation fileTree(includes: ['temperature-release.aar'], dir: 'libs')
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    androidTestImplementation('androidx.test.espresso:espresso-core:3.1.0', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.1'
+
+    //    compileOnly files('lib/classes4.2.jar')
+    implementation files('libs/BaiduLBS_Android.jar')
+    implementation 'com.jakewharton:butterknife:10.2.1'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:10.2.1'
+
+    /*百度定位*/
+    implementation files('libs/gson-2.8.5.jar')
+
+    /*GSON*/
+    implementation files('libs/core-3.0.0.jar')
+    implementation files('libs/XHApi.jar')
+
+    //友盟
+    implementation 'com.roger.match.library:library:1.0.1'
+
+    /*文字动画*/
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+
+    /*自适应布局*/
+    implementation 'org.greenrobot:eventbus:3.0.0'
+
+    /*EventBus*/
+    implementation 'com.contrarywind:Android-PickerView:4.1.6'
+    implementation 'org.xutils:xutils:3.3.36'
+
+    /*XUtils*/
+    implementation 'com.alibaba:fastjson:1.2.49'
+
+    /*FastJson*/
+    implementation 'com.github.bumptech.glide:glide:3.7.0'
+
+    /*Glide*/
+    implementation 'jp.wasabeef:glide-transformations:2.0.1'
+
+    /*Glide TransFormations*/
+    implementation 'com.wang.avi:library:1.0.0'
+    implementation 'com.nineoldandroids:library:2.4.0'
+    implementation 'com.github.PhilJay:MPAndroidChart:v3.0.3'
+
+    //umeng
+    implementation 'com.umeng.umsdk:analytics:7.5.4'
+
+    /*友盟*/
+    implementation 'com.umeng.umsdk:common:1.5.4'
+
+    /*友盟*/
+    implementation 'androidx.palette:palette:1.0.0'
+
+    /*图片处理*/
+    testImplementation 'junit:junit:4.12'
+    implementation 'com.daimajia.numberprogressbar:library:1.2@aar'
+
+    /*数字进度条*/
+    implementation 'de.hdodenhof:circleimageview:2.1.0'
+
+    /*圆形图片*/
+    implementation 'com.github.rjsvieira:circularView:1.3.0'
+
+    /*圆形图片*/
+    implementation 'com.zhy:okhttputils:2.6.2'
+
+    /*OkHttpUtils鸿洋*/
+    implementation 'com.squareup.okhttp3:okhttp:3.10.0'
+
+    /*OkHttp*/
+    implementation 'androidx.recyclerview:recyclerview:1.1.0'
+
+    /*RecyclerView*/
+
+    //普通版本依赖
+    implementation 'com.github.xiaohaibin:XBanner:1.7.0'
+
+    /*XBanner*/
+
+    // GreenDao(√)
+    implementation 'org.greenrobot:greendao:3.2.2'
+    implementation 'com.github.yuweiguocn:GreenDaoUpgradeHelper:v1.4.0'
+
+    //RXJAVA
+    implementation 'io.reactivex.rxjava2:rxjava:2.0.1'
+    implementation 'io.reactivex.rxjava2:rxandroid:2.0.1'
+
+    //TIMBER
+    implementation 'com.jakewharton.timber:timber:4.7.1'
+    implementation 'androidx.viewpager2:viewpager2:1.0.0'
+    implementation files('libs/tbs_sdk_thirdapp_v4.3.0.1148_43697_sharewithdownloadwithfile_withoutGame_obfs_20190805_175505.jar')
+
+    // skin-support
+    implementation 'skin.support:skin-support:4.0.4'
+    implementation 'skin.support:skin-support-appcompat:4.0.4'
+
+    // skin-support 基础控件支持
+    implementation 'skin.support:skin-support-design:4.0.4'
+
+    // skin-support-cardview CardView 控件支持[可选]
+    implementation 'skin.support:skin-support-constraint-layout:4.0.4'
+    implementation project(path: ':vertical_scroll_player')
+
+    /*虹软*/
+    implementation files('libs/arcsoft_image_util.jar')
+
+    /*虹软*/
+    implementation files('libs/commons-io-2.6.jar')
+
+    /*IO优化*/
+    implementation files('libs/SmdtAccessControl_1_2.jar')
+
+    /*视美泰控制*/
+    implementation files('libs/jxl-2.6.12.jar')
+
+    /*Excel处理*/
+    implementation files('libs/yface.jar')
+    implementation files('libs/printsdk1015-v2.2.jar')
+    implementation files('libs/PrintUtils1114.jar')
+    implementation files('libs/arcsoft_face.jar')
+    implementation files('libs/poweronoff.jar')
+
+    implementation 'com.lcw.library:imagepicker:2.1.2'
+}

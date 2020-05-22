@@ -1,0 +1,1588 @@
+--------- beginning of main
+03-27 16:32:07.959  2682  2693 I art     : Background partial concurrent mark sweep GC freed 372771(11MB) AllocSpace objects, 44(14MB) LOS objects, 32% free, 33MB/49MB, paused 744us total 158.970ms
+03-27 16:32:07.977   245  2894 D CameraHal: debugShowFPS(622): Camera 8224 Frames, 29.833 FPS
+03-27 16:32:08.309  2682  2693 I art     : Background sticky concurrent mark sweep GC freed 451744(14MB) AllocSpace objects, 39(9MB) LOS objects, 26% free, 36MB/49MB, paused 2.911ms total 141.099ms
+03-27 16:32:08.359  1623  1685 I USBService: send udp to check mobileagent state.
+03-27 16:32:08.360  1623  1688 I ===Mrcp===: sending cmd:276
+03-27 16:32:08.361  1623  1713 I USBService: command is : [277] 
+03-27 16:32:08.361  1623  1713 I USBService: res:-131070 res2:2 opt:-2
+03-27 16:32:08.361  1623  1713 I USBService: 	 mobileagent state:-2. 
+03-27 16:32:08.362  1623  1685 I USBService: get mobileagent state 1 and current mobileagent state 1 and usb state of connection false
+03-27 16:32:08.650  2682  2693 I art     : Background partial concurrent mark sweep GC freed 373685(12MB) AllocSpace objects, 45(14MB) LOS objects, 34% free, 31MB/47MB, paused 2.221ms total 146.329ms
+03-27 16:32:08.992  2682  2693 I art     : Background sticky concurrent mark sweep GC freed 389205(12MB) AllocSpace objects, 34(10MB) LOS objects, 32% free, 31MB/47MB, paused 2.436ms total 120.138ms
+03-27 16:32:09.048   245  2894 D CameraHal: debugShowFPS(622): Camera 8256 Frames, 29.865 FPS
+03-27 16:32:09.362  2682  2693 I art     : Background partial concurrent mark sweep GC freed 428394(13MB) AllocSpace objects, 45(10MB) LOS objects, 31% free, 34MB/50MB, paused 2.424ms total 167.899ms
+03-27 16:32:09.687  2682  2693 I art     : Background sticky concurrent mark sweep GC freed 430419(13MB) AllocSpace objects, 38(10MB) LOS objects, 32% free, 33MB/49MB, paused 1.471ms total 115.319ms
+03-27 16:32:10.018  2682  2693 I art     : Background partial concurrent mark sweep GC freed 374085(12MB) AllocSpace objects, 47(13MB) LOS objects, 33% free, 32MB/48MB, paused 2.730ms total 139.430ms
+03-27 16:32:10.120   245  2894 D CameraHal: debugShowFPS(622): Camera 8288 Frames, 29.857 FPS
+03-27 16:32:10.334  2682  2693 I art     : Background sticky concurrent mark sweep GC freed 354663(11MB) AllocSpace objects, 33(10MB) LOS objects, 30% free, 33MB/48MB, paused 3.640ms total 109.024ms
+03-27 16:32:10.531  1623  1682 I ===DaemonService===: ############## Rotation : 0
+03-27 16:32:10.532  1623  1682 I ===DaemonService===: ScreenOrientationThread:0 screentOrientation:0
+03-27 16:32:10.533  1623  1683 I ===APKProtocolTransmit===: Ready send su-cmd:275
+03-27 16:32:10.533  1623  1683 I ===APKProtocolTransmit===: Start send su-cmd:275 length[14]
+03-27 16:32:10.534  1623  1683 I ===APKProtocolTransmit===: Will write content:the C socket has not been connected,so dicard the send command:[275]
+03-27 16:32:10.539  1623  1683 I ===APKProtocolTransmit===: End send sb-cmd:275
+03-27 16:32:10.703  2682  2693 I art     : Background partial concurrent mark sweep GC freed 380480(12MB) AllocSpace objects, 43(13MB) LOS objects, 32% free, 32MB/48MB, paused 1.948ms total 181.892ms
+03-27 16:32:11.015  2682  2693 I art     : Background sticky concurrent mark sweep GC freed 368975(11MB) AllocSpace objects, 33(8MB) LOS objects, 30% free, 33MB/48MB, paused 6.616ms total 99.950ms
+03-27 16:32:11.192   245  2894 D CameraHal: debugShowFPS(622): Camera 8320 Frames, 29.843 FPS
+03-27 16:32:11.340  2682  2693 I art     : Background partial concurrent mark sweep GC freed 340710(10MB) AllocSpace objects, 43(14MB) LOS objects, 33% free, 31MB/47MB, paused 3.872ms total 151.651ms
+03-27 16:32:11.362  1623  1685 I USBService: send udp to check mobileagent state.
+03-27 16:32:11.363  1623  1686 I ===Mrcp===: sending cmd:276
+03-27 16:32:11.365  1623  1872 I USBService: command is : [277] 
+03-27 16:32:11.365  1623  1872 I USBService: res:-131070 res2:2 opt:-2
+03-27 16:32:11.365  1623  1872 I USBService: 	 mobileagent state:-2. 
+03-27 16:32:11.365  1623  1685 I USBService: get mobileagent state 1 and current mobileagent state 1 and usb state of connection false
+03-27 16:32:11.654  2682  2693 I art     : Background sticky concurrent mark sweep GC freed 337212(10MB) AllocSpace objects, 31(9MB) LOS objects, 30% free, 33MB/47MB, paused 2.409ms total 104.436ms
+03-27 16:32:11.978  2682  2693 I art     : Background partial concurrent mark sweep GC freed 384580(12MB) AllocSpace objects, 45(13MB) LOS objects, 35% free, 28MB/44MB, paused 2.538ms total 121.606ms
+03-27 16:32:12.268   245  2894 D CameraHal: debugShowFPS(622): Camera 8352 Frames, 29.748 FPS
+03-27 16:32:12.539  2682  2693 I art     : Background partial concurrent mark sweep GC freed 327731(10MB) AllocSpace objects, 39(10MB) LOS objects, 33% free, 31MB/47MB, paused 5.361ms total 119.036ms
+03-27 16:32:13.197  2682  2693 I art     : Background partial concurrent mark sweep GC freed 375022(11MB) AllocSpace objects, 44(13MB) LOS objects, 32% free, 33MB/49MB, paused 2.140ms total 164.288ms
+03-27 16:32:13.340   245  2894 D CameraHal: debugShowFPS(622): Camera 8384 Frames, 29.857 FPS
+03-27 16:32:13.508  2682  2693 I art     : Background sticky concurrent mark sweep GC freed 371483(11MB) AllocSpace objects, 34(10MB) LOS objects, 31% free, 33MB/49MB, paused 3.863ms total 105.877ms
+03-27 16:32:13.548  1623  1682 I ===DaemonService===: ############## Rotation : 0
+03-27 16:32:13.552  1623  1682 I ===DaemonService===: ScreenOrientationThread:0 screentOrientation:0
+03-27 16:32:13.565  1623  1676 I ===APKProtocolTransmit===: Ready send su-cmd:275
+03-27 16:32:13.565  1623  1676 I ===APKProtocolTransmit===: Start send su-cmd:275 length[14]
+03-27 16:32:13.565  1623  1676 I ===APKProtocolTransmit===: Will write content:the C socket has not been connected,so dicard the send command:[275]
+03-27 16:32:13.567  1623  1676 I ===APKProtocolTransmit===: End send sb-cmd:275
+03-27 16:32:13.850  2682  2693 I art     : Background partial concurrent mark sweep GC freed 367367(11MB) AllocSpace objects, 44(14MB) LOS objects, 33% free, 31MB/47MB, paused 2.871ms total 137.561ms
+03-27 16:32:14.158  2682  2693 I art     : Background sticky concurrent mark sweep GC freed 343107(11MB) AllocSpace objects, 31(10MB) LOS objects, 29% free, 33MB/47MB, paused 3.947ms total 115.429ms
+03-27 16:32:14.366  1623  1685 I USBService: send udp to check mobileagent state.
+03-27 16:32:14.369  1623  1687 I ===Mrcp===: sending cmd:276
+03-27 16:32:14.369  1623  1873 I USBService: command is : [277] 
+03-27 16:32:14.369  1623  1873 I USBService: res:-131070 res2:2 opt:-2
+03-27 16:32:14.369  1623  1873 I USBService: 	 mobileagent state:-2. 
+03-27 16:32:14.371  1623  1685 I USBService: get mobileagent state 1 and current mobileagent state 1 and usb state of connection false
+03-27 16:32:14.413   245  2894 D CameraHal: debugShowFPS(622): Camera 8416 Frames, 29.822 FPS
+03-27 16:32:14.507  2682  2693 I art     : Background partial concurrent mark sweep GC freed 403983(12MB) AllocSpace objects, 46(12MB) LOS objects, 31% free, 34MB/50MB, paused 5.511ms total 173.401ms
+03-27 16:32:15.188  2682  2693 I art     : Background partial concurrent mark sweep GC freed 407221(13MB) AllocSpace objects, 47(11MB) LOS objects, 33% free, 32MB/48MB, paused 1.717ms total 151.310ms
+03-27 16:32:15.479  2682  2693 I art     : Background sticky concurrent mark sweep GC freed 374681(11MB) AllocSpace objects, 34(7MB) LOS objects, 30% free, 33MB/48MB, paused 3.358ms total 102.715ms
+03-27 16:32:15.484   245  2894 D CameraHal: debugShowFPS(622): Camera 8448 Frames, 29.869 FPS
+03-27 16:32:15.817  2682  2693 I art     : Background partial concurrent mark sweep GC freed 372806(11MB) AllocSpace objects, 42(14MB) LOS objects, 34% free, 30MB/46MB, paused 1.574ms total 143.564ms
+03-27 16:32:16.139  2682  2693 I art     : Background sticky concurrent mark sweep GC freed 378425(11MB) AllocSpace objects, 34(7MB) LOS objects, 29% free, 32MB/46MB, paused 4.845ms total 102.950ms
+03-27 16:32:16.467  2682  2693 I art     : Background partial concurrent mark sweep GC freed 397636(12MB) AllocSpace objects, 42(12MB) LOS objects, 33% free, 31MB/47MB, paused 3.688ms total 147.378ms
+03-27 16:32:16.556   245  2894 D CameraHal: debugShowFPS(622): Camera 8480 Frames, 29.852 FPS
+03-27 16:32:16.575  1623  1682 I ===DaemonService===: ############## Rotation : 0
+03-27 16:32:16.577  1623  1682 I ===DaemonService===: ScreenOrientationThread:0 screentOrientation:0
+03-27 16:32:16.579  1623  1688 I ===APKProtocolTransmit===: Ready send su-cmd:275
+03-27 16:32:16.580  1623  1688 I ===APKProtocolTransmit===: Start send su-cmd:275 length[14]
+03-27 16:32:16.581  1623  1688 I ===APKProtocolTransmit===: Will write content:the C socket has not been connected,so dicard the send command:[275]
+03-27 16:32:16.590  1623  1688 I ===APKProtocolTransmit===: End send sb-cmd:275
+03-27 16:32:17.103  2682  2693 I art     : Background partial concurrent mark sweep GC freed 323967(10MB) AllocSpace objects, 43(13MB) LOS objects, 33% free, 31MB/47MB, paused 3.121ms total 125.299ms
+03-27 16:32:17.372  1623  1685 I USBService: send udp to check mobileagent state.
+03-27 16:32:17.379  1623  1683 I ===Mrcp===: sending cmd:276
+03-27 16:32:17.381  1623  1713 I USBService: command is : [277] 
+03-27 16:32:17.381  1623  1713 I USBService: res:-131070 res2:2 opt:-2
+03-27 16:32:17.381  1623  1713 I USBService: 	 mobileagent state:-2. 
+03-27 16:32:17.382  1623  1685 I USBService: get mobileagent state 1 and current mobileagent state 1 and usb state of connection false
+03-27 16:32:17.630   245  2894 D CameraHal: debugShowFPS(622): Camera 8512 Frames, 29.806 FPS
+03-27 16:32:17.724  2682  2693 I art     : Background partial concurrent mark sweep GC freed 333445(10MB) AllocSpace objects, 41(13MB) LOS objects, 34% free, 30MB/46MB, paused 1.903ms total 129.828ms
+03-27 16:32:18.063  2682  2693 I art     : Background sticky concurrent mark sweep GC freed 382922(12MB) AllocSpace objects, 32(7MB) LOS objects, 28% free, 33MB/46MB, paused 2.275ms total 108.007ms
+03-27 16:32:18.350  2682  2693 I art     : Background partial concurrent mark sweep GC freed 303684(9MB) AllocSpace objects, 40(13MB) LOS objects, 35% free, 28MB/44MB, paused 2.321ms total 118.877ms
+03-27 16:32:18.700   245  2894 D CameraHal: debugShowFPS(622): Camera 8544 Frames, 29.891 FPS
+03-27 16:32:18.982  2682  2693 I art     : Background partial concurrent mark sweep GC freed 375785(11MB) AllocSpace objects, 42(11MB) LOS objects, 33% free, 31MB/47MB, paused 2.358ms total 153.385ms
+03-27 16:32:19.336  2682  2693 I art     : Background sticky concurrent mark sweep GC freed 340366(10MB) AllocSpace objects, 31(10MB) LOS objects, 27% free, 34MB/47MB, paused 1.707ms total 110.889ms
+03-27 16:32:19.593  1623  1682 I ===DaemonService===: ############## Rotation : 0
+03-27 16:32:19.594  1623  1682 I ===DaemonService===: ScreenOrientationThread:0 screentOrientation:0
+03-27 16:32:19.596  1623  1686 I ===APKProtocolTransmit===: Ready send su-cmd:275
+03-27 16:32:19.597  1623  1686 I ===APKProtocolTransmit===: Start send su-cmd:275 length[14]
+03-27 16:32:19.597  1623  1686 I ===APKProtocolTransmit===: Will write content:the C socket has not been connected,so dicard the send command:[275]
+03-27 16:32:19.606  1623  1686 I ===APKProtocolTransmit===: End send sb-cmd:275
+03-27 16:32:19.679  2682  2693 I art     : Background partial concurrent mark sweep GC freed 346142(11MB) AllocSpace objects, 42(14MB) LOS objects, 33% free, 31MB/47MB, paused 2.326ms total 153.968ms
+03-27 16:32:19.776   245  2894 D CameraHal: debugShowFPS(622): Camera 8576 Frames, 29.755 FPS
+03-27 16:32:19.969  2682  2682 D SyncManager: 获取公司信息
+03-27 16:32:19.969  2682  2682 D SyncManager: 地址：http://47.105.80.245:8080/api/company/getcompany.html
+03-27 16:32:19.970  2682  2682 D SyncManager: 参数：00000000-385c-5a58-0000-000000dd4a18
+03-27 16:32:20.007  2682  2693 I art     : Background sticky concurrent mark sweep GC freed 384594(12MB) AllocSpace objects, 38(10MB) LOS objects, 29% free, 33MB/47MB, paused 4.169ms total 127.281ms
+03-27 16:32:20.154  2682  2682 D SyncManager: {"message":"该设备未绑定公司","status":4,"company":{}}
+03-27 16:32:20.157  2682  2682 D SyncManager: 重新获取公司信息
+03-27 16:32:20.384  1623  1685 I USBService: send udp to check mobileagent state.
+03-27 16:32:20.387  1623  1676 I ===Mrcp===: sending cmd:276
+03-27 16:32:20.395  2682  2693 I art     : Background partial concurrent mark sweep GC freed 412511(13MB) AllocSpace objects, 46(12MB) LOS objects, 31% free, 34MB/50MB, paused 3.088ms total 196.974ms
+03-27 16:32:20.396  1623  1872 I USBService: command is : [277] 
+03-27 16:32:20.397  1623  1872 I USBService: res:-131070 res2:2 opt:-2
+03-27 16:32:20.397  1623  1872 I USBService: 	 mobileagent state:-2. 
+03-27 16:32:20.397  1623  1685 I USBService: get mobileagent state 1 and current mobileagent state 1 and usb state of connection false
+03-27 16:32:20.700  2682  2693 I art     : Background sticky concurrent mark sweep GC freed 396063(12MB) AllocSpace objects, 38(11MB) LOS objects, 33% free, 31MB/47MB, paused 2.838ms total 100.976ms
+03-27 16:32:20.848   245  2894 D CameraHal: debugShowFPS(622): Camera 8608 Frames, 29.849 FPS
+03-27 16:32:21.019  2682  2693 I art     : Background partial concurrent mark sweep GC freed 326846(10MB) AllocSpace objects, 38(13MB) LOS objects, 34% free, 30MB/46MB, paused 2.704ms total 118.550ms
+03-27 16:32:21.652  2682  2693 I art     : Background partial concurrent mark sweep GC freed 366370(11MB) AllocSpace objects, 42(10MB) LOS objects, 33% free, 31MB/47MB, paused 1.791ms total 139.889ms
+03-27 16:32:21.920   245  2894 D CameraHal: debugShowFPS(622): Camera 8640 Frames, 29.844 FPS
+03-27 16:32:21.985  2682  2693 I art     : Background sticky concurrent mark sweep GC freed 362414(11MB) AllocSpace objects, 32(7MB) LOS objects, 28% free, 33MB/47MB, paused 1.678ms total 108.946ms
+03-27 16:32:22.295  2682  2693 I art     : Background partial concurrent mark sweep GC freed 367896(11MB) AllocSpace objects, 42(13MB) LOS objects, 34% free, 30MB/46MB, paused 3.702ms total 134.221ms
+03-27 16:32:22.596  2682  2693 I art     : Background sticky concurrent mark sweep GC freed 374664(12MB) AllocSpace objects, 34(9MB) LOS objects, 27% free, 33MB/46MB, paused 2.740ms total 114.850ms
+03-27 16:32:22.607  1623  1682 I ===DaemonService===: ############## Rotation : 0
+03-27 16:32:22.607  1623  1682 I ===DaemonService===: ScreenOrientationThread:0 screentOrientation:0
+03-27 16:32:22.608  1623  1687 I ===APKProtocolTransmit===: Ready send su-cmd:275
+03-27 16:32:22.608  1623  1687 I ===APKProtocolTransmit===: Start send su-cmd:275 length[14]
+03-27 16:32:22.608  1623  1687 I ===APKProtocolTransmit===: Will write content:the C socket has not been connected,so dicard the send command:[275]
+03-27 16:32:22.611  1623  1687 I ===APKProtocolTransmit===: End send sb-cmd:275
+03-27 16:32:22.900  2682  2693 I art     : Background partial concurrent mark sweep GC freed 367479(11MB) AllocSpace objects, 41(12MB) LOS objects, 33% free, 32MB/48MB, paused 2.554ms total 148.370ms
+03-27 16:32:22.992   245  2894 D CameraHal: debugShowFPS(622): Camera 8672 Frames, 29.849 FPS
+03-27 16:32:23.207  2682  2693 I art     : Background sticky concurrent mark sweep GC freed 353796(11MB) AllocSpace objects, 32(10MB) LOS objects, 31% free, 32MB/48MB, paused 1.597ms total 103.704ms
+03-27 16:32:23.398  1623  1685 I USBService: send udp to check mobileagent state.
+03-27 16:32:23.399  1623  1688 I ===Mrcp===: sending cmd:276
+03-27 16:32:23.402  1623  1873 I USBService: command is : [277] 
+03-27 16:32:23.402  1623  1873 I USBService: res:-131070 res2:2 opt:-2
+03-27 16:32:23.402  1623  1873 I USBService: 	 mobileagent state:-2. 
+03-27 16:32:23.403  1623  1685 I USBService: get mobileagent state 1 and current mobileagent state 1 and usb state of connection false
+03-27 16:32:23.565  2682  2693 I art     : Background partial concurrent mark sweep GC freed 362223(11MB) AllocSpace objects, 45(14MB) LOS objects, 33% free, 32MB/48MB, paused 2.400ms total 156.967ms
+03-27 16:32:23.898  2682  2693 I art     : Background sticky concurrent mark sweep GC freed 387289(12MB) AllocSpace objects, 37(10MB) LOS objects, 33% free, 31MB/47MB, paused 2.774ms total 112.746ms
+03-27 16:32:24.064   245  2894 D CameraHal: debugShowFPS(622): Camera 8704 Frames, 29.852 FPS
+03-27 16:32:24.252  2682  2693 I art     : Background partial concurrent mark sweep GC freed 369059(11MB) AllocSpace objects, 41(12MB) LOS objects, 33% free, 31MB/47MB, paused 3.528ms total 144.703ms
+03-27 16:32:24.875  2682  2693 I art     : Background partial concurrent mark sweep GC freed 383670(12MB) AllocSpace objects, 41(10MB) LOS objects, 34% free, 30MB/46MB, paused 2.187ms total 143.013ms
+03-27 16:32:25.136   245  2894 D CameraHal: debugShowFPS(622): Camera 8736 Frames, 29.849 FPS
+03-27 16:32:25.174  2682  2693 I art     : Background sticky concurrent mark sweep GC freed 351856(11MB) AllocSpace objects, 31(7MB) LOS objects, 26% free, 34MB/46MB, paused 658us total 108.717ms
+03-27 16:32:25.457  2682  2693 I art     : Background partial concurrent mark sweep GC freed 314806(10MB) AllocSpace objects, 39(12MB) LOS objects, 34% free, 30MB/46MB, paused 2.083ms total 130.199ms
+03-27 16:32:25.610  1623  1682 I ===DaemonService===: ############## Rotation : 0
+03-27 16:32:25.611  1623  1682 I ===DaemonService===: ScreenOrientationThread:0 screentOrientation:0
+03-27 16:32:25.612  1623  1683 I ===APKProtocolTransmit===: Ready send su-cmd:275
+03-27 16:32:25.612  1623  1683 I ===APKProtocolTransmit===: Start send su-cmd:275 length[14]
+03-27 16:32:25.612  1623  1683 I ===APKProtocolTransmit===: Will write content:the C socket has not been connected,so dicard the send command:[275]
+03-27 16:32:25.618  1623  1683 I ===APKProtocolTransmit===: End send sb-cmd:275
+03-27 16:32:25.745  2682  2693 I art     : Background sticky concurrent mark sweep GC freed 324942(10MB) AllocSpace objects, 30(9MB) LOS objects, 30% free, 32MB/46MB, paused 2.264ms total 105.481ms
+03-27 16:32:26.039  2682  2693 I art     : Background partial concurrent mark sweep GC freed 326775(10MB) AllocSpace objects, 41(12MB) LOS objects, 34% free, 30MB/46MB, paused 2.520ms total 107.369ms
+03-27 16:32:26.208   245  2894 D CameraHal: debugShowFPS(622): Camera 8768 Frames, 29.852 FPS
+03-27 16:32:26.404  1623  1685 I USBService: send udp to check mobileagent state.
+03-27 16:32:26.409  1623  1713 I USBService: command is : [277] 
+03-27 16:32:26.409  1623  1713 I USBService: res:-131070 res2:2 opt:-2
+03-27 16:32:26.409  1623  1713 I USBService: 	 mobileagent state:-2. 
+03-27 16:32:26.411  1623  1685 I USBService: get mobileagent state 1 and current mobileagent state 1 and usb state of connection false
+03-27 16:32:26.412  1623  1686 I ===Mrcp===: sending cmd:276
+03-27 16:32:26.679  2682  2693 I art     : Background partial concurrent mark sweep GC freed 343968(11MB) AllocSpace objects, 38(12MB) LOS objects, 33% free, 32MB/48MB, paused 2.279ms total 143.957ms
+03-27 16:32:27.015  2682  2693 I art     : Background sticky concurrent mark sweep GC freed 379347(11MB) AllocSpace objects, 34(10MB) LOS objects, 30% free, 33MB/48MB, paused 3.250ms total 110.878ms
+03-27 16:32:27.284   245  2894 D CameraHal: debugShowFPS(622): Camera 8800 Frames, 29.748 FPS
+03-27 16:32:27.325  2682  2693 I art     : Background partial concurrent mark sweep GC freed 392014(12MB) AllocSpace objects, 46(12MB) LOS objects, 34% free, 30MB/46MB, paused 2.820ms total 133.982ms
+03-27 16:32:27.953  2682  2693 I art     : Background partial concurrent mark sweep GC freed 370091(11MB) AllocSpace objects, 41(11MB) LOS objects, 32% free, 32MB/48MB, paused 1.643ms total 138.928ms
+03-27 16:32:28.254  2682  2693 I art     : Background sticky concurrent mark sweep GC freed 362570(11MB) AllocSpace objects, 33(8MB) LOS objects, 28% free, 34MB/48MB, paused 1.015ms total 102.444ms
+03-27 16:32:28.356   245  2894 D CameraHal: debugShowFPS(622): Camera 8832 Frames, 29.837 FPS
+03-27 16:32:28.588  2682  2693 I art     : Background partial concurrent mark sweep GC freed 379215(12MB) AllocSpace objects, 44(13MB) LOS objects, 32% free, 33MB/49MB, paused 1.092ms total 157.331ms
+03-27 16:32:28.615  1623  1682 I ===DaemonService===: ############## Rotation : 0
+03-27 16:32:28.615  1623  1682 I ===DaemonService===: ScreenOrientationThread:0 screentOrientation:0
+03-27 16:32:28.617  1623  1676 I ===APKProtocolTransmit===: Ready send su-cmd:275
+03-27 16:32:28.617  1623  1676 I ===APKProtocolTransmit===: Start send su-cmd:275 length[14]
+03-27 16:32:28.618  1623  1676 I ===APKProtocolTransmit===: Will write content:the C socket has not been connected,so dicard the send command:[275]
+03-27 16:32:28.623  1623  1676 I ===APKProtocolTransmit===: End send sb-cmd:275
+03-27 16:32:28.917  2682  2693 I art     : Background sticky concurrent mark sweep GC freed 352445(11MB) AllocSpace objects, 32(10MB) LOS objects, 28% free, 35MB/49MB, paused 749us total 100.450ms
+03-27 16:32:29.279  2682  2693 I art     : Background partial concurrent mark sweep GC freed 354337(11MB) AllocSpace objects, 46(16MB) LOS objects, 33% free, 31MB/47MB, paused 2.748ms total 156.477ms
+03-27 16:32:29.405  2682  2925 I PacketWriter: 心跳 
+03-27 16:32:29.412  1623  1685 I USBService: send udp to check mobileagent state.
+03-27 16:32:29.414  1623  1687 I ===Mrcp===: sending cmd:276
+03-27 16:32:29.416  1623  1872 I USBService: command is : [277] 
+03-27 16:32:29.416  1623  1872 I USBService: res:-131070 res2:2 opt:-2
+03-27 16:32:29.416  1623  1872 I USBService: 	 mobileagent state:-2. 
+03-27 16:32:29.417  1623  1685 I USBService: get mobileagent state 1 and current mobileagent state 1 and usb state of connection false
+03-27 16:32:29.428   245  2894 D CameraHal: debugShowFPS(622): Camera 8864 Frames, 29.864 FPS
+03-27 16:32:29.601  2682  2693 I art     : Background sticky concurrent mark sweep GC freed 368283(11MB) AllocSpace objects, 32(10MB) LOS objects, 28% free, 34MB/47MB, paused 1.290ms total 131.005ms
+03-27 16:32:29.912  2682  2693 I art     : Background partial concurrent mark sweep GC freed 322924(10MB) AllocSpace objects, 42(14MB) LOS objects, 35% free, 29MB/45MB, paused 1.656ms total 123.233ms
+03-27 16:32:30.223  2682  2693 I art     : Background sticky concurrent mark sweep GC freed 344863(10MB) AllocSpace objects, 32(8MB) LOS objects, 31% free, 31MB/45MB, paused 2.131ms total 101.704ms
+03-27 16:32:30.501   245  2894 D CameraHal: debugShowFPS(622): Camera 8896 Frames, 29.830 FPS
+03-27 16:32:30.558  2682  2693 I art     : Background partial concurrent mark sweep GC freed 349247(11MB) AllocSpace objects, 40(11MB) LOS objects, 32% free, 33MB/49MB, paused 4.804ms total 151.075ms
+03-27 16:32:30.897  2682  2693 I art     : Background sticky concurrent mark sweep GC freed 420634(13MB) AllocSpace objects, 38(9MB) LOS objects, 30% free, 34MB/49MB, paused 1.375ms total 118.621ms
+03-27 16:32:31.289  2682  2693 I art     : Background partial concurrent mark sweep GC freed 431161(13MB) AllocSpace objects, 47(12MB) LOS objects, 31% free, 35MB/51MB, paused 5.290ms total 192.718ms
+03-27 16:32:31.572   245  2894 D CameraHal: debugShowFPS(622): Camera 8928 Frames, 29.865 FPS
+03-27 16:32:31.606  2682  2693 I art     : Background sticky concurrent mark sweep GC freed 423158(13MB) AllocSpace objects, 40(10MB) LOS objects, 31% free, 35MB/51MB, paused 2.258ms total 115.879ms
+03-27 16:32:31.619  1623  1682 I ===DaemonService===: ############## Rotation : 0
+03-27 16:32:31.619  1623  1682 I ===DaemonService===: ScreenOrientationThread:0 screentOrientation:0
+03-27 16:32:31.621  1623  1688 I ===APKProtocolTransmit===: Ready send su-cmd:275
+03-27 16:32:31.621  1623  1688 I ===APKProtocolTransmit===: Start send su-cmd:275 length[14]
+03-27 16:32:31.621  1623  1688 I ===APKProtocolTransmit===: Will write content:the C socket has not been connected,so dicard the send command:[275]
+03-27 16:32:31.624  1623  1688 I ===APKProtocolTransmit===: End send sb-cmd:275
+03-27 16:32:32.003  2682  2693 I art     : Background partial concurrent mark sweep GC freed 405158(12MB) AllocSpace objects, 46(16MB) LOS objects, 33% free, 32MB/48MB, paused 6.392ms total 167.001ms
+03-27 16:32:32.352  2682  2693 I art     : Background sticky concurrent mark sweep GC freed 388174(12MB) AllocSpace objects, 34(10MB) LOS objects, 28% free, 34MB/48MB, paused 1.696ms total 132.694ms
+03-27 16:32:32.417  1623  1685 I USBService: send udp to check mobileagent state.
+03-27 16:32:32.418  1623  1683 I ===Mrcp===: sending cmd:276
+03-27 16:32:32.421  1623  1873 I USBService: command is : [277] 
+03-27 16:32:32.422  1623  1873 I USBService: res:-131070 res2:2 opt:-2
+03-27 16:32:32.422  1623  1873 I USBService: 	 mobileagent state:-2. 
+03-27 16:32:32.422  1623  1685 I USBService: get mobileagent state 1 and current mobileagent state 1 and usb state of connection false
+03-27 16:32:32.644   245  2894 D CameraHal: debugShowFPS(622): Camera 8960 Frames, 29.842 FPS
+03-27 16:32:32.671  2682  2693 I art     : Background partial concurrent mark sweep GC freed 372998(11MB) AllocSpace objects, 45(13MB) LOS objects, 33% free, 31MB/47MB, paused 4.386ms total 140.379ms
+03-27 16:32:33.006  2682  2693 I art     : Background sticky concurrent mark sweep GC freed 365538(11MB) AllocSpace objects, 35(9MB) LOS objects, 27% free, 34MB/47MB, paused 1.833ms total 118.943ms
+03-27 16:32:33.341  2682  2693 I art     : Background partial concurrent mark sweep GC freed 335444(10MB) AllocSpace objects, 40(14MB) LOS objects, 33% free, 31MB/47MB, paused 3.844ms total 136.890ms
+03-27 16:32:33.657  2682  2693 I art     : Background sticky concurrent mark sweep GC freed 356251(11MB) AllocSpace objects, 30(8MB) LOS objects, 30% free, 33MB/47MB, paused 5.198ms total 116.089ms
+03-27 16:32:33.717   245  2894 D CameraHal: debugShowFPS(622): Camera 8992 Frames, 29.848 FPS
+03-27 16:32:34.048  2682  2693 I art     : Background partial concurrent mark sweep GC freed 387645(12MB) AllocSpace objects, 48(14MB) LOS objects, 31% free, 34MB/50MB, paused 4.109ms total 182.485ms
+03-27 16:32:34.367  2682  2693 I art     : Background sticky concurrent mark sweep GC freed 428874(13MB) AllocSpace objects, 38(9MB) LOS objects, 31% free, 34MB/50MB, paused 2.074ms total 127.453ms
+03-27 16:32:34.623  1623  1682 I ===DaemonService===: ############## Rotation : 0
+03-27 16:32:34.623  1623  1682 I ===DaemonService===: ScreenOrientationThread:0 screentOrientation:0
+03-27 16:32:34.631  1623  1686 I ===APKProtocolTransmit===: Ready send su-cmd:275
+03-27 16:32:34.633  1623  1686 I ===APKProtocolTransmit===: Start send su-cmd:275 length[14]
+03-27 16:32:34.633  1623  1686 I ===APKProtocolTransmit===: Will write content:the C socket has not been connected,so dicard the send command:[275]
+03-27 16:32:34.649  1623  1686 I ===APKProtocolTransmit===: End send sb-cmd:275
+03-27 16:32:34.723  2682  2693 I art     : Background partial concurrent mark sweep GC freed 373439(11MB) AllocSpace objects, 45(14MB) LOS objects, 32% free, 32MB/48MB, paused 840us total 139.491ms
+03-27 16:32:34.789   245  2894 D CameraHal: debugShowFPS(622): Camera 9024 Frames, 29.828 FPS
+03-27 16:32:35.056  2682  2693 I art     : Background sticky concurrent mark sweep GC freed 375570(11MB) AllocSpace objects, 33(8MB) LOS objects, 28% free, 34MB/48MB, paused 4.635ms total 105.533ms
+03-27 16:32:35.369  2682  2693 I art     : Background partial concurrent mark sweep GC freed 367090(11MB) AllocSpace objects, 44(13MB) LOS objects, 33% free, 31MB/47MB, paused 2.692ms total 130.399ms
+03-27 16:32:35.423  1623  1685 I USBService: send udp to check mobileagent state.
+03-27 16:32:35.427  1623  1676 I ===Mrcp===: sending cmd:276
+03-27 16:32:35.429  1623  1713 I USBService: command is : [277] 
+03-27 16:32:35.430  1623  1713 I USBService: res:-131070 res2:2 opt:-2
+03-27 16:32:35.430  1623  1713 I USBService: 	 mobileagent state:-2. 
+03-27 16:32:35.430  1623  1685 I USBService: get mobileagent state 1 and current mobileagent state 1 and usb state of connection false
+03-27 16:32:35.864   245  2894 D CameraHal: debugShowFPS(622): Camera 9056 Frames, 29.779 FPS
+03-27 16:32:36.005  2682  2693 I art     : Background partial concurrent mark sweep GC freed 340580(11MB) AllocSpace objects, 43(13MB) LOS objects, 34% free, 30MB/46MB, paused 3.300ms total 138.458ms
+03-27 16:32:36.305  2682  2693 I art     : Background sticky concurrent mark sweep GC freed 352605(11MB) AllocSpace objects, 30(7MB) LOS objects, 26% free, 33MB/46MB, paused 3.379ms total 113.071ms
+03-27 16:32:36.603  2682  2693 I art     : Background partial concurrent mark sweep GC freed 328897(10MB) AllocSpace objects, 38(12MB) LOS objects, 33% free, 32MB/48MB, paused 2.041ms total 147.168ms
+03-27 16:32:36.935  2682  2693 I art     : Background sticky concurrent mark sweep GC freed 354610(11MB) AllocSpace objects, 34(9MB) LOS objects, 27% free, 35MB/48MB, paused 2.697ms total 113.137ms
+03-27 16:32:36.936   245  2894 D CameraHal: debugShowFPS(622): Camera 9088 Frames, 29.851 FPS
+03-27 16:32:37.256  2682  2693 I art     : Background partial concurrent mark sweep GC freed 341795(10MB) AllocSpace objects, 42(15MB) LOS objects, 33% free, 31MB/47MB, paused 2.895ms total 138.386ms
+03-27 16:32:37.575  2682  2693 I art     : Background sticky concurrent mark sweep GC freed 389573(12MB) AllocSpace objects, 35(10MB) LOS objects, 31% free, 32MB/47MB, paused 2.969ms total 118.298ms
+03-27 16:32:37.649  1623  1682 I ===DaemonService===: ############## Rotation : 0
+03-27 16:32:37.650  1623  1682 I ===DaemonService===: ScreenOrientationThread:0 screentOrientation:0
+03-27 16:32:37.651  1623  1687 I ===APKProtocolTransmit===: Ready send su-cmd:275
+03-27 16:32:37.651  1623  1687 I ===APKProtocolTransmit===: Start send su-cmd:275 length[14]
+03-27 16:32:37.651  1623  1687 I ===APKProtocolTransmit===: Will write content:the C socket has not been connected,so dicard the send command:[275]
+03-27 16:32:37.655  1623  1687 I ===APKProtocolTransmit===: End send sb-cmd:275
+03-27 16:32:37.936  2682  2693 I art     : Background partial concurrent mark sweep GC freed 390501(12MB) AllocSpace objects, 45(12MB) LOS objects, 33% free, 31MB/47MB, paused 4.052ms total 140.245ms
+03-27 16:32:38.008   245  2894 D CameraHal: debugShowFPS(622): Camera 9120 Frames, 29.841 FPS
+03-27 16:32:38.262  2682  2693 I art     : Background sticky concurrent mark sweep GC freed 393472(12MB) AllocSpace objects, 36(9MB) LOS objects, 30% free, 33MB/47MB, paused 4.083ms total 118.577ms
+03-27 16:32:38.431  1623  1685 I USBService: send udp to check mobileagent state.
+03-27 16:32:38.433  1623  1688 I ===Mrcp===: sending cmd:276
+03-27 16:32:38.435  1623  1872 I USBService: command is : [277] 
+03-27 16:32:38.435  1623  1872 I USBService: res:-131070 res2:2 opt:-2
+03-27 16:32:38.435  1623  1872 I USBService: 	 mobileagent state:-2. 
+03-27 16:32:38.436  1623  1685 I USBService: get mobileagent state 1 and current mobileagent state 1 and usb state of connection false
+03-27 16:32:38.571  2682  2693 I art     : Background partial concurrent mark sweep GC freed 374491(11MB) AllocSpace objects, 42(11MB) LOS objects, 33% free, 32MB/48MB, paused 2.531ms total 139.801ms
+03-27 16:32:38.888  2682  2693 I art     : Background sticky concurrent mark sweep GC freed 346153(11MB) AllocSpace objects, 31(11MB) LOS objects, 33% free, 31MB/47MB, paused 1.112ms total 102.787ms
+03-27 16:32:39.080   245  2894 D CameraHal: debugShowFPS(622): Camera 9152 Frames, 29.854 FPS
+03-27 16:32:39.229  2682  2693 I art     : Background partial concurrent mark sweep GC freed 380112(12MB) AllocSpace objects, 43(11MB) LOS objects, 31% free, 34MB/50MB, paused 1.827ms total 156.385ms
+03-27 16:32:39.557  2682  2693 I art     : Background sticky concurrent mark sweep GC freed 413731(13MB) AllocSpace objects, 35(10MB) LOS objects, 32% free, 33MB/49MB, paused 8.521ms total 118.879ms
+03-27 16:32:39.914  2682  2693 I art     : Background partial concurrent mark sweep GC freed 379479(12MB) AllocSpace objects, 47(15MB) LOS objects, 32% free, 32MB/48MB, paused 4.721ms total 149.047ms
+03-27 16:32:40.152   245  2894 D CameraHal: debugShowFPS(622): Camera 9184 Frames, 29.851 FPS
+03-27 16:32:40.244  2682  2693 I art     : Background sticky concurrent mark sweep GC freed 367393(11MB) AllocSpace objects, 33(8MB) LOS objects, 30% free, 33MB/48MB, paused 2.116ms total 104.601ms
+03-27 16:32:40.518  2682  2693 I art     : Background partial concurrent mark sweep GC freed 338395(10MB) AllocSpace objects, 43(14MB) LOS objects, 36% free, 28MB/44MB, paused 1.530ms total 106.221ms
+03-27 16:32:40.653  1623  1682 I ===DaemonService===: ############## Rotation : 0
+03-27 16:32:40.653  1623  1682 I ===DaemonService===: ScreenOrientationThread:0 screentOrientation:0
+03-27 16:32:40.656  1623  1683 I ===APKProtocolTransmit===: Ready send su-cmd:275
+03-27 16:32:40.656  1623  1683 I ===APKProtocolTransmit===: Start send su-cmd:275 length[14]
+03-27 16:32:40.656  1623  1683 I ===APKProtocolTransmit===: Will write content:the C socket has not been connected,so dicard the send command:[275]
+03-27 16:32:40.665  1623  1683 I ===APKProtocolTransmit===: End send sb-cmd:275
+03-27 16:32:41.085  2682  2693 I art     : Background partial concurrent mark sweep GC freed 312843(9MB) AllocSpace objects, 35(12MB) LOS objects, 33% free, 31MB/47MB, paused 2.571ms total 133.458ms
+03-27 16:32:41.224   245  2894 D CameraHal: debugShowFPS(622): Camera 9216 Frames, 29.849 FPS
+03-27 16:32:41.404  2682  2693 I art     : Background sticky concurrent mark sweep GC freed 343939(10MB) AllocSpace objects, 31(10MB) LOS objects, 29% free, 33MB/47MB, paused 2.705ms total 112.272ms
+03-27 16:32:41.437  1623  1685 I USBService: send udp to check mobileagent state.
+03-27 16:32:41.438  1623  1686 I ===Mrcp===: sending cmd:276
+03-27 16:32:41.439  1623  1873 I USBService: command is : [277] 
+03-27 16:32:41.439  1623  1873 I USBService: res:-131070 res2:2 opt:-2
+03-27 16:32:41.439  1623  1873 I USBService: 	 mobileagent state:-2. 
+03-27 16:32:41.439  1623  1685 I USBService: get mobileagent state 1 and current mobileagent state 1 and usb state of connection false
+03-27 16:32:41.711  2682  2693 I art     : Background partial concurrent mark sweep GC freed 350747(11MB) AllocSpace objects, 43(12MB) LOS objects, 34% free, 30MB/46MB, paused 2.076ms total 129.092ms
+03-27 16:32:42.297   245  2894 D CameraHal: debugShowFPS(622): Camera 9248 Frames, 29.833 FPS
+03-27 16:32:42.322  2682  2693 I art     : Background partial concurrent mark sweep GC freed 341226(10MB) AllocSpace objects, 42(12MB) LOS objects, 33% free, 31MB/47MB, paused 2.319ms total 134.253ms
+03-27 16:32:42.954  2682  2693 I art     : Background partial concurrent mark sweep GC freed 398865(12MB) AllocSpace objects, 44(12MB) LOS objects, 33% free, 31MB/47MB, paused 3.573ms total 127.943ms
+03-27 16:32:43.372   245  2894 D CameraHal: debugShowFPS(622): Camera 9280 Frames, 29.764 FPS
+03-27 16:32:43.561  2682  2693 I art     : Background partial concurrent mark sweep GC freed 357083(11MB) AllocSpace objects, 45(12MB) LOS objects, 34% free, 30MB/46MB, paused 1.943ms total 133.812ms
+03-27 16:32:43.659  1623  1682 I ===DaemonService===: ############## Rotation : 0
+03-27 16:32:43.660  1623  1682 I ===DaemonService===: ScreenOrientationThread:0 screentOrientation:0
+03-27 16:32:43.660  1623  1676 I ===APKProtocolTransmit===: Ready send su-cmd:275
+03-27 16:32:43.660  1623  1676 I ===APKProtocolTransmit===: Start send su-cmd:275 length[14]
+03-27 16:32:43.660  1623  1676 I ===APKProtocolTransmit===: Will write content:the C socket has not been connected,so dicard the send command:[275]
+03-27 16:32:43.662  1623  1676 I ===APKProtocolTransmit===: End send sb-cmd:275
+03-27 16:32:43.870  2682  2693 I art     : Background sticky concurrent mark sweep GC freed 392349(12MB) AllocSpace objects, 34(7MB) LOS objects, 26% free, 34MB/46MB, paused 3.319ms total 120.503ms
+03-27 16:32:44.176  2682  2693 I art     : Background partial concurrent mark sweep GC freed 353837(11MB) AllocSpace objects, 41(12MB) LOS objects, 32% free, 33MB/49MB, paused 2.350ms total 153.549ms
+03-27 16:32:44.440  1623  1685 I USBService: send udp to check mobileagent state.
+03-27 16:32:44.441  1623  1687 I ===Mrcp===: sending cmd:276
+03-27 16:32:44.442  1623  1713 I USBService: command is : [277] 
+03-27 16:32:44.442  1623  1713 I USBService: res:-131070 res2:2 opt:-2
+03-27 16:32:44.442  1623  1713 I USBService: 	 mobileagent state:-2. 
+03-27 16:32:44.443  1623  1685 I USBService: get mobileagent state 1 and current mobileagent state 1 and usb state of connection false
+03-27 16:32:44.444   245  2894 D CameraHal: debugShowFPS(622): Camera 9312 Frames, 29.838 FPS
+03-27 16:32:44.847  2682  2693 I art     : Background partial concurrent mark sweep GC freed 374395(11MB) AllocSpace objects, 43(11MB) LOS objects, 32% free, 32MB/48MB, paused 939us total 146.683ms
+03-27 16:32:45.161  2682  2693 I art     : Background sticky concurrent mark sweep GC freed 384009(12MB) AllocSpace objects, 35(9MB) LOS objects, 31% free, 33MB/48MB, paused 1.721ms total 109.981ms
+03-27 16:32:45.516   245  2894 D CameraHal: debugShowFPS(622): Camera 9344 Frames, 29.862 FPS
+03-27 16:32:45.522  2682  2693 I art     : Background partial concurrent mark sweep GC freed 375272(11MB) AllocSpace objects, 45(14MB) LOS objects, 32% free, 32MB/48MB, paused 1.713ms total 152.417ms
+03-27 16:32:45.850  2682  2693 I art     : Background sticky concurrent mark sweep GC freed 419095(13MB) AllocSpace objects, 36(9MB) LOS objects, 33% free, 31MB/47MB, paused 1.796ms total 110.737ms
+03-27 16:32:46.195  2682  2693 I art     : Background partial concurrent mark sweep GC freed 391493(12MB) AllocSpace objects, 44(12MB) LOS objects, 33% free, 32MB/48MB, paused 1.974ms total 140.119ms
+03-27 16:32:46.588   245  2894 D CameraHal: debugShowFPS(622): Camera 9376 Frames, 29.850 FPS
+03-27 16:32:46.668  1623  1682 I ===DaemonService===: ############## Rotation : 0
+03-27 16:32:46.669  1623  1682 I ===DaemonService===: ScreenOrientationThread:0 screentOrientation:0
+03-27 16:32:46.670  1623  1688 I ===APKProtocolTransmit===: Ready send su-cmd:275
+03-27 16:32:46.670  1623  1688 I ===APKProtocolTransmit===: Start send su-cmd:275 length[14]
+03-27 16:32:46.671  1623  1688 I ===APKProtocolTransmit===: Will write content:the C socket has not been connected,so dicard the send command:[275]
+03-27 16:32:46.681  1623  1688 I ===APKProtocolTransmit===: End send sb-cmd:275
+03-27 16:32:46.838  2682  2693 I art     : Background partial concurrent mark sweep GC freed 336270(10MB) AllocSpace objects, 40(12MB) LOS objects, 33% free, 31MB/47MB, paused 2.342ms total 131.343ms
+03-27 16:32:47.163  2682  2693 I art     : Background sticky concurrent mark sweep GC freed 376517(11MB) AllocSpace objects, 33(8MB) LOS objects, 27% free, 34MB/47MB, paused 4.867ms total 118.192ms
+03-27 16:32:47.444  1623  1685 I USBService: send udp to check mobileagent state.
+03-27 16:32:47.445  1623  1683 I ===Mrcp===: sending cmd:276
+03-27 16:32:47.447  1623  1872 I USBService: command is : [277] 
+03-27 16:32:47.448  1623  1872 I USBService: res:-131070 res2:2 opt:-2
+03-27 16:32:47.448  1623  1872 I USBService: 	 mobileagent state:-2. 
+03-27 16:32:47.450  1623  1685 I USBService: get mobileagent state 1 and current mobileagent state 1 and usb state of connection false
+03-27 16:32:47.493  2682  2693 I art     : Background partial concurrent mark sweep GC freed 357961(11MB) AllocSpace objects, 46(13MB) LOS objects, 33% free, 31MB/47MB, paused 1.930ms total 147.511ms
+03-27 16:32:47.660   245  2894 D CameraHal: debugShowFPS(622): Camera 9408 Frames, 29.842 FPS
+03-27 16:32:47.805  2682  2693 I art     : Background sticky concurrent mark sweep GC freed 378629(12MB) AllocSpace objects, 33(8MB) LOS objects, 31% free, 32MB/47MB, paused 2.380ms total 113.089ms
+03-27 16:32:48.135  2682  2693 I art     : Background partial concurrent mark sweep GC freed 354107(11MB) AllocSpace objects, 41(13MB) LOS objects, 34% free, 30MB/46MB, paused 2.777ms total 141.390ms
+03-27 16:32:48.732   245  2894 D CameraHal: debugShowFPS(622): Camera 9440 Frames, 29.852 FPS
+03-27 16:32:48.744  2682  2693 I art     : Background partial concurrent mark sweep GC freed 332039(10MB) AllocSpace objects, 42(12MB) LOS objects, 33% free, 31MB/47MB, paused 2.153ms total 135.461ms
+03-27 16:32:49.372  2682  2693 I art     : Background partial concurrent mark sweep GC freed 375778(11MB) AllocSpace objects, 43(12MB) LOS objects, 33% free, 31MB/47MB, paused 2.004ms total 128.534ms
+03-27 16:32:49.690  1623  1682 I ===DaemonService===: ############## Rotation : 0
+03-27 16:32:49.691  2682  2693 I art     : Background sticky concurrent mark sweep GC freed 375564(11MB) AllocSpace objects, 34(9MB) LOS objects, 29% free, 33MB/47MB, paused 2.961ms total 108.430ms
+03-27 16:32:49.694  1623  1682 I ===DaemonService===: ScreenOrientationThread:0 screentOrientation:0
+03-27 16:32:49.695  1623  1686 I ===APKProtocolTransmit===: Ready send su-cmd:275
+03-27 16:32:49.695  1623  1686 I ===APKProtocolTransmit===: Start send su-cmd:275 length[14]
+03-27 16:32:49.695  1623  1686 I ===APKProtocolTransmit===: Will write content:the C socket has not been connected,so dicard the send command:[275]
+03-27 16:32:49.702  1623  1686 I ===APKProtocolTransmit===: End send sb-cmd:275
+03-27 16:32:49.804   245  2894 D CameraHal: debugShowFPS(622): Camera 9472 Frames, 29.854 FPS
+03-27 16:32:50.030  2682  2693 I art     : Background partial concurrent mark sweep GC freed 357007(11MB) AllocSpace objects, 44(13MB) LOS objects, 33% free, 31MB/47MB, paused 2.014ms total 162.572ms
+03-27 16:32:50.163  2682  2682 D SyncManager: 获取公司信息
+03-27 16:32:50.163  2682  2682 D SyncManager: 地址：http://47.105.80.245:8080/api/company/getcompany.html
+03-27 16:32:50.163  2682  2682 D SyncManager: 参数：00000000-385c-5a58-0000-000000dd4a18
+03-27 16:32:50.334  2682  2693 I art     : Background sticky concurrent mark sweep GC freed 362840(11MB) AllocSpace objects, 33(10MB) LOS objects, 31% free, 32MB/47MB, paused 2.488ms total 104.466ms
+03-27 16:32:50.451  1623  1685 I USBService: send udp to check mobileagent state.
+03-27 16:32:50.454  1623  1676 I ===Mrcp===: sending cmd:276
+03-27 16:32:50.455  1623  1873 I USBService: command is : [277] 
+03-27 16:32:50.455  1623  1873 I USBService: res:-131070 res2:2 opt:-2
+03-27 16:32:50.455  1623  1873 I USBService: 	 mobileagent state:-2. 
+03-27 16:32:50.456  1623  1685 I USBService: get mobileagent state 1 and current mobileagent state 1 and usb state of connection false
+03-27 16:32:50.681  2682  2693 I art     : Background partial concurrent mark sweep GC freed 367085(11MB) AllocSpace objects, 39(13MB) LOS objects, 32% free, 33MB/49MB, paused 1.890ms total 158.957ms
+03-27 16:32:50.880   245  2894 D CameraHal: debugShowFPS(622): Camera 9504 Frames, 29.736 FPS
+03-27 16:32:51.019  2682  2693 I art     : Background sticky concurrent mark sweep GC freed 373045(11MB) AllocSpace objects, 34(10MB) LOS objects, 28% free, 35MB/49MB, paused 2.841ms total 118.492ms
+03-27 16:32:51.300  2682  2682 D SyncManager: {"message":"该设备未绑定公司","status":4,"company":{}}
+03-27 16:32:51.305  2682  2682 D SyncManager: 重新获取公司信息
+03-27 16:32:51.374  2682  2693 I art     : Background partial concurrent mark sweep GC freed 357484(11MB) AllocSpace objects, 48(15MB) LOS objects, 32% free, 32MB/48MB, paused 2.174ms total 152.166ms
+03-27 16:32:51.692  2682  2693 I art     : Background sticky concurrent mark sweep GC freed 403171(12MB) AllocSpace objects, 36(10MB) LOS objects, 33% free, 32MB/48MB, paused 2.750ms total 112.036ms
+03-27 16:32:51.952   245  2894 D CameraHal: debugShowFPS(622): Camera 9536 Frames, 29.863 FPS
+03-27 16:32:52.060  2682  2693 I art     : Background partial concurrent mark sweep GC freed 433842(13MB) AllocSpace objects, 47(11MB) LOS objects, 33% free, 31MB/47MB, paused 2.620ms total 140.049ms
+03-27 16:32:52.374  2682  2693 I art     : Background sticky concurrent mark sweep GC freed 389831(12MB) AllocSpace objects, 33(8MB) LOS objects, 31% free, 32MB/47MB, paused 2.578ms total 109.930ms
+03-27 16:32:52.709  1623  1682 I ===DaemonService===: ############## Rotation : 0
+03-27 16:32:52.710  1623  1682 I ===DaemonService===: ScreenOrientationThread:0 screentOrientation:0
+03-27 16:32:52.712  1623  1687 I ===APKProtocolTransmit===: Ready send su-cmd:275
+03-27 16:32:52.712  1623  1687 I ===APKProtocolTransmit===: Start send su-cmd:275 length[14]
+03-27 16:32:52.712  1623  1687 I ===APKProtocolTransmit===: Will write content:the C socket has not been connected,so dicard the send command:[275]
+03-27 16:32:52.717  1623  1687 I ===APKProtocolTransmit===: End send sb-cmd:275
+03-27 16:32:52.746  2682  2693 I art     : Background partial concurrent mark sweep GC freed 395138(12MB) AllocSpace objects, 46(11MB) LOS objects, 32% free, 33MB/49MB, paused 1.368ms total 169.787ms
+03-27 16:32:53.025   245  2894 D CameraHal: debugShowFPS(622): Camera 9568 Frames, 29.829 FPS
+03-27 16:32:53.084  2682  2693 I art     : Background sticky concurrent mark sweep GC freed 386645(12MB) AllocSpace objects, 35(10MB) LOS objects, 26% free, 36MB/49MB, paused 3.620ms total 134.136ms
+03-27 16:32:53.378  2682  2693 I art     : Background partial concurrent mark sweep GC freed 340474(10MB) AllocSpace objects, 45(16MB) LOS objects, 35% free, 29MB/45MB, paused 4.193ms total 119.606ms
+03-27 16:32:53.456  1623  1685 I USBService: send udp to check mobileagent state.
+03-27 16:32:53.458  1623  1688 I ===Mrcp===: sending cmd:276
+03-27 16:32:53.459  1623  1713 I USBService: command is : [277] 
+03-27 16:32:53.459  1623  1713 I USBService: res:-131070 res2:2 opt:-2
+03-27 16:32:53.459  1623  1713 I USBService: 	 mobileagent state:-2. 
+03-27 16:32:53.460  1623  1685 I USBService: get mobileagent state 1 and current mobileagent state 1 and usb state of connection false
+03-27 16:32:53.702  2682  2693 I art     : Background sticky concurrent mark sweep GC freed 356105(11MB) AllocSpace objects, 31(8MB) LOS objects, 26% free, 33MB/45MB, paused 2.687ms total 116.111ms
+03-27 16:32:53.985  2682  2693 I art     : Background partial concurrent mark sweep GC freed 327532(10MB) AllocSpace objects, 38(11MB) LOS objects, 33% free, 31MB/47MB, paused 2.164ms total 134.404ms
+03-27 16:32:54.096   245  2894 D CameraHal: debugShowFPS(622): Camera 9600 Frames, 29.862 FPS
+03-27 16:32:54.586  2682  2693 I art     : Background partial concurrent mark sweep GC freed 398625(12MB) AllocSpace objects, 43(12MB) LOS objects, 34% free, 30MB/46MB, paused 2.809ms total 128.531ms
+03-27 16:32:54.890  2682  2693 I art     : Background sticky concurrent mark sweep GC freed 352521(11MB) AllocSpace objects, 32(8MB) LOS objects, 34% free, 30MB/46MB, paused 2.506ms total 102.904ms
+03-27 16:32:55.168   245  2894 D CameraHal: debugShowFPS(622): Camera 9632 Frames, 29.854 FPS
+03-27 16:32:55.236  2682  2693 I art     : Background partial concurrent mark sweep GC freed 368375(11MB) AllocSpace objects, 42(12MB) LOS objects, 33% free, 31MB/47MB, paused 1.882ms total 146.764ms
+03-27 16:32:55.567  2682  2693 I art     : Background sticky concurrent mark sweep GC freed 375224(11MB) AllocSpace objects, 34(10MB) LOS objects, 29% free, 33MB/47MB, paused 2.163ms total 111.566ms
+03-27 16:32:55.728  1623  1682 I ===DaemonService===: ############## Rotation : 0
+03-27 16:32:55.729  1623  1682 I ===DaemonService===: ScreenOrientationThread:0 screentOrientation:0
+03-27 16:32:55.731  1623  1683 I ===APKProtocolTransmit===: Ready send su-cmd:275
+03-27 16:32:55.732  1623  1683 I ===APKProtocolTransmit===: Start send su-cmd:275 length[14]
+03-27 16:32:55.732  1623  1683 I ===APKProtocolTransmit===: Will write content:the C socket has not been connected,so dicard the send command:[275]
+03-27 16:32:55.737  1623  1683 I ===APKProtocolTransmit===: End send sb-cmd:275
+03-27 16:32:55.868  2682  2693 I art     : Background partial concurrent mark sweep GC freed 353794(11MB) AllocSpace objects, 43(13MB) LOS objects, 34% free, 31MB/47MB, paused 2.311ms total 135.906ms
+03-27 16:32:56.196  2682  2693 I art     : Background sticky concurrent mark sweep GC freed 318300(10MB) AllocSpace objects, 30(9MB) LOS objects, 31% free, 32MB/47MB, paused 2.048ms total 100.265ms
+03-27 16:32:56.241   245  2894 D CameraHal: debugShowFPS(622): Camera 9664 Frames, 29.844 FPS
+03-27 16:32:56.462  1623  1685 I USBService: send udp to check mobileagent state.
+03-27 16:32:56.463  1623  1686 I ===Mrcp===: sending cmd:276
+03-27 16:32:56.465  1623  1872 I USBService: command is : [277] 
+03-27 16:32:56.465  1623  1872 I USBService: res:-131070 res2:2 opt:-2
+03-27 16:32:56.465  1623  1872 I USBService: 	 mobileagent state:-2. 
+03-27 16:32:56.466  1623  1685 I USBService: get mobileagent state 1 and current mobileagent state 1 and usb state of connection false
+03-27 16:32:56.474  2682  2693 I art     : Background partial concurrent mark sweep GC freed 305896(9MB) AllocSpace objects, 40(13MB) LOS objects, 35% free, 29MB/45MB, paused 2.163ms total 105.136ms
+03-27 16:32:57.137  2682  2693 I art     : Background partial concurrent mark sweep GC freed 341152(10MB) AllocSpace objects, 39(12MB) LOS objects, 33% free, 32MB/48MB, paused 3.190ms total 163.307ms
+03-27 16:32:57.312   245  2894 D CameraHal: debugShowFPS(622): Camera 9696 Frames, 29.857 FPS
+03-27 16:32:57.759  2682  2693 I art     : Background partial concurrent mark sweep GC freed 371752(11MB) AllocSpace objects, 43(12MB) LOS objects, 32% free, 32MB/48MB, paused 4.974ms total 151.895ms
+03-27 16:32:58.384   245  2894 D CameraHal: debugShowFPS(622): Camera 9728 Frames, 29.847 FPS
+03-27 16:32:58.389  2682  2693 I art     : Background partial concurrent mark sweep GC freed 392661(12MB) AllocSpace objects, 43(11MB) LOS objects, 33% free, 32MB/48MB, paused 1.878ms total 141.432ms
+03-27 16:32:58.713  2682  2693 I art     : Background sticky concurrent mark sweep GC freed 394165(12MB) AllocSpace objects, 35(10MB) LOS objects, 34% free, 30MB/46MB, paused 2.263ms total 104.360ms
+03-27 16:32:58.741  1623  1682 I ===DaemonService===: ############## Rotation : 0
+03-27 16:32:58.742  1623  1682 I ===DaemonService===: ScreenOrientationThread:0 screentOrientation:0
+03-27 16:32:58.747  1623  1676 I ===APKProtocolTransmit===: Ready send su-cmd:275
+03-27 16:32:58.747  1623  1676 I ===APKProtocolTransmit===: Start send su-cmd:275 length[14]
+03-27 16:32:58.747  1623  1676 I ===APKProtocolTransmit===: Will write content:the C socket has not been connected,so dicard the send command:[275]
+03-27 16:32:58.750  1623  1676 I ===APKProtocolTransmit===: End send sb-cmd:275
+03-27 16:32:59.318  2682  2693 I art     : Background sticky concurrent mark sweep GC freed 317995(9MB) AllocSpace objects, 29(8MB) LOS objects, 28% free, 32MB/45MB, paused 2.174ms total 104.178ms
+03-27 16:32:59.408  2682  2925 I PacketWriter: 心跳 
+03-27 16:32:59.463   245  2894 D CameraHal: debugShowFPS(622): Camera 9760 Frames, 29.679 FPS
+03-27 16:32:59.467  1623  1685 I USBService: send udp to check mobileagent state.
+03-27 16:32:59.469  1623  1687 I ===Mrcp===: sending cmd:276
+03-27 16:32:59.469  1623  1873 I USBService: command is : [277] 
+03-27 16:32:59.470  1623  1873 I USBService: res:-131070 res2:2 opt:-2
+03-27 16:32:59.470  1623  1873 I USBService: 	 mobileagent state:-2. 
+03-27 16:32:59.470  1623  1685 I USBService: get mobileagent state 1 and current mobileagent state 1 and usb state of connection false
+03-27 16:32:59.607  2682  2693 I art     : Background partial concurrent mark sweep GC freed 315516(10MB) AllocSpace objects, 36(12MB) LOS objects, 34% free, 29MB/45MB, paused 3.918ms total 122.793ms
+03-27 16:32:59.933  2682  2693 I art     : Background sticky concurrent mark sweep GC freed 362594(11MB) AllocSpace objects, 32(8MB) LOS objects, 29% free, 32MB/45MB, paused 2.367ms total 116.809ms
+03-27 16:33:00.290  2682  2693 I art     : Background partial concurrent mark sweep GC freed 347953(11MB) AllocSpace objects, 39(12MB) LOS objects, 32% free, 32MB/48MB, paused 2.689ms total 161.911ms
+03-27 16:33:00.533   245  2894 D CameraHal: debugShowFPS(622): Camera 9792 Frames, 29.906 FPS
+03-27 16:33:00.604  2682  2693 I art     : Background sticky concurrent mark sweep GC freed 403828(12MB) AllocSpace objects, 36(10MB) LOS objects, 33% free, 31MB/47MB, paused 2.350ms total 116.220ms
+03-27 16:33:01.514  2682  2693 I art     : Background partial concurrent mark sweep GC freed 299033(9MB) AllocSpace objects, 35(12MB) LOS objects, 35% free, 29MB/45MB, paused 3.527ms total 121.800ms
+03-27 16:33:01.604   245  2894 D CameraHal: debugShowFPS(622): Camera 9824 Frames, 29.865 FPS
+03-27 16:33:01.758  1623  1682 I ===DaemonService===: ############## Rotation : 0
+03-27 16:33:01.758  1623  1682 I ===DaemonService===: ScreenOrientationThread:0 screentOrientation:0
+03-27 16:33:01.759  1623  1688 I ===APKProtocolTransmit===: Ready send su-cmd:275
+03-27 16:33:01.759  1623  1688 I ===APKProtocolTransmit===: Start send su-cmd:275 length[14]
+03-27 16:33:01.759  1623  1688 I ===APKProtocolTransmit===: Will write content:the C socket has not been connected,so dicard the send command:[275]
+03-27 16:33:01.763  1623  1688 I ===APKProtocolTransmit===: End send sb-cmd:275
+03-27 16:33:01.834  2682  2693 I art     : Background sticky concurrent mark sweep GC freed 366458(11MB) AllocSpace objects, 29(7MB) LOS objects, 25% free, 33MB/45MB, paused 1.716ms total 116.638ms
+03-27 16:33:02.103  2682  2693 I art     : Background partial concurrent mark sweep GC freed 302103(9MB) AllocSpace objects, 42(12MB) LOS objects, 34% free, 29MB/45MB, paused 4.044ms total 117.099ms
+03-27 16:33:02.471  1623  1685 I USBService: send udp to check mobileagent state.
+03-27 16:33:02.472  1623  1683 I ===Mrcp===: sending cmd:276
+03-27 16:33:02.472  1623  1713 I USBService: command is : [277] 
+03-27 16:33:02.472  1623  1713 I USBService: res:-131070 res2:2 opt:-2
+03-27 16:33:02.472  1623  1713 I USBService: 	 mobileagent state:-2. 
+03-27 16:33:02.473  1623  1685 I USBService: get mobileagent state 1 and current mobileagent state 1 and usb state of connection false
+03-27 16:33:02.678   245  2894 D CameraHal: debugShowFPS(622): Camera 9856 Frames, 29.799 FPS
+03-27 16:33:02.711  2682  2693 I art     : Background partial concurrent mark sweep GC freed 305261(9MB) AllocSpace objects, 38(13MB) LOS objects, 32% free, 32MB/48MB, paused 1.723ms total 150.938ms
+--------- beginning of system
+03-27 16:33:03.217   449   524 I UsageStatsService: User[0] Flushing usage stats to disk
+03-27 16:33:03.359  2682  2693 I art     : Background partial concurrent mark sweep GC freed 342728(10MB) AllocSpace objects, 42(14MB) LOS objects, 33% free, 31MB/47MB, paused 5.543ms total 141.306ms
+03-27 16:33:03.478   449   546 D WallpaperManagerService: exit value = 0
+03-27 16:33:03.602   449   546 D WallpaperManagerService: exit value = 0
+03-27 16:33:03.679   449   546 D WallpaperManagerService: exit value = 0
+03-27 16:33:03.698  2682  2693 I art     : Background sticky concurrent mark sweep GC freed 342337(10MB) AllocSpace objects, 32(9MB) LOS objects, 33% free, 31MB/47MB, paused 4.904ms total 125.143ms
+03-27 16:33:03.748   245  2894 D CameraHal: debugShowFPS(622): Camera 9888 Frames, 29.898 FPS
+03-27 16:33:04.083  2682  2693 I art     : Background partial concurrent mark sweep GC freed 379072(12MB) AllocSpace objects, 43(13MB) LOS objects, 31% free, 34MB/50MB, paused 2.618ms total 178.199ms
+03-27 16:33:04.402  2682  2693 I art     : Background sticky concurrent mark sweep GC freed 404865(12MB) AllocSpace objects, 37(11MB) LOS objects, 32% free, 33MB/49MB, paused 2.097ms total 119.422ms
+03-27 16:33:04.774  1623  1682 I ===DaemonService===: ############## Rotation : 0
+03-27 16:33:04.774  1623  1682 I ===DaemonService===: ScreenOrientationThread:0 screentOrientation:0
+03-27 16:33:04.776  1623  1686 I ===APKProtocolTransmit===: Ready send su-cmd:275
+03-27 16:33:04.777  1623  1686 I ===APKProtocolTransmit===: Start send su-cmd:275 length[14]
+03-27 16:33:04.777  1623  1686 I ===APKProtocolTransmit===: Will write content:the C socket has not been connected,so dicard the send command:[275]
+03-27 16:33:04.784  1623  1686 I ===APKProtocolTransmit===: End send sb-cmd:275
+03-27 16:33:04.785  2682  2693 I art     : Background partial concurrent mark sweep GC freed 427631(13MB) AllocSpace objects, 48(12MB) LOS objects, 31% free, 34MB/50MB, paused 3.640ms total 173.321ms
+03-27 16:33:04.820   245  2894 D CameraHal: debugShowFPS(622): Camera 9920 Frames, 29.848 FPS
+03-27 16:33:05.452  2682  2693 I art     : Background partial concurrent mark sweep GC freed 406038(12MB) AllocSpace objects, 48(15MB) LOS objects, 34% free, 30MB/46MB, paused 2.571ms total 138.601ms
+03-27 16:33:05.473  1623  1685 I USBService: send udp to check mobileagent state.
+03-27 16:33:05.475  1623  1676 I ===Mrcp===: sending cmd:276
+03-27 16:33:05.476  1623  1872 I USBService: command is : [277] 
+03-27 16:33:05.476  1623  1872 I USBService: res:-131070 res2:2 opt:-2
+03-27 16:33:05.477  1623  1872 I USBService: 	 mobileagent state:-2. 
+03-27 16:33:05.477  1623  1685 I USBService: get mobileagent state 1 and current mobileagent state 1 and usb state of connection false
+03-27 16:33:05.773  2682  2693 I art     : Background sticky concurrent mark sweep GC freed 346124(10MB) AllocSpace objects, 32(8MB) LOS objects, 28% free, 33MB/46MB, paused 1.526ms total 120.604ms
+03-27 16:33:05.892   245  2894 D CameraHal: debugShowFPS(622): Camera 9952 Frames, 29.850 FPS
+03-27 16:33:06.054  2682  2693 I art     : Background partial concurrent mark sweep GC freed 362919(11MB) AllocSpace objects, 41(12MB) LOS objects, 36% free, 28MB/44MB, paused 927us total 105.872ms
+03-27 16:33:06.626  2682  2693 I art     : Background partial concurrent mark sweep GC freed 331362(10MB) AllocSpace objects, 36(11MB) LOS objects, 33% free, 32MB/48MB, paused 1.976ms total 138.184ms
+03-27 16:33:06.951  2682  2693 I art     : Background sticky concurrent mark sweep GC freed 359378(11MB) AllocSpace objects, 32(10MB) LOS objects, 32% free, 32MB/48MB, paused 4.898ms total 106.496ms
+03-27 16:33:06.968   245  2894 D CameraHal: debugShowFPS(622): Camera 9984 Frames, 29.744 FPS
+03-27 16:33:07.300  2682  2693 I art     : Background partial concurrent mark sweep GC freed 403423(12MB) AllocSpace objects, 46(13MB) LOS objects, 33% free, 32MB/48MB, paused 2.260ms total 151.764ms
+03-27 16:33:07.608  2682  2693 I art     : Background sticky concurrent mark sweep GC freed 377315(12MB) AllocSpace objects, 35(10MB) LOS objects, 30% free, 33MB/48MB, paused 2.443ms total 112.648ms
+03-27 16:33:07.783  1623  1682 I ===DaemonService===: ############## Rotation : 0
+03-27 16:33:07.784  1623  1682 I ===DaemonService===: ScreenOrientationThread:0 screentOrientation:0
+03-27 16:33:07.787  1623  1687 I ===APKProtocolTransmit===: Ready send su-cmd:275
+03-27 16:33:07.787  1623  1687 I ===APKProtocolTransmit===: Start send su-cmd:275 length[14]
+03-27 16:33:07.787  1623  1687 I ===APKProtocolTransmit===: Will write content:the C socket has not been connected,so dicard the send command:[275]
+03-27 16:33:07.794  1623  1687 I ===APKProtocolTransmit===: End send sb-cmd:275
+03-27 16:33:07.983  2682  2693 I art     : Background partial concurrent mark sweep GC freed 425607(13MB) AllocSpace objects, 47(12MB) LOS objects, 32% free, 33MB/49MB, paused 3.616ms total 185.156ms
+03-27 16:33:08.040   245  2894 D CameraHal: debugShowFPS(622): Camera 10016 Frames, 29.857 FPS
+03-27 16:33:08.327  2682  2693 I art     : Background sticky concurrent mark sweep GC freed 397200(12MB) AllocSpace objects, 35(10MB) LOS objects, 32% free, 33MB/49MB, paused 6.748ms total 125.869ms
+03-27 16:33:08.478  1623  1685 I USBService: send udp to check mobileagent state.
+03-27 16:33:08.480  1623  1688 I ===Mrcp===: sending cmd:276
+03-27 16:33:08.483  1623  1873 I USBService: command is : [277] 
+03-27 16:33:08.483  1623  1873 I USBService: res:-131070 res2:2 opt:-2
+03-27 16:33:08.483  1623  1873 I USBService: 	 mobileagent state:-2. 
+03-27 16:33:08.485  1623  1685 I USBService: get mobileagent state 1 and current mobileagent state 1 and usb state of connection false
+03-27 16:33:08.673  2682  2693 I art     : Background partial concurrent mark sweep GC freed 405213(13MB) AllocSpace objects, 48(14MB) LOS objects, 33% free, 31MB/47MB, paused 1.746ms total 147.753ms
+03-27 16:33:08.982  2682  2693 I art     : Background sticky concurrent mark sweep GC freed 349923(11MB) AllocSpace objects, 31(7MB) LOS objects, 27% free, 34MB/47MB, paused 3.185ms total 111.842ms
+03-27 16:33:09.112   245  2894 D CameraHal: debugShowFPS(622): Camera 10048 Frames, 29.849 FPS
+03-27 16:33:09.235  2682  2693 I art     : Background partial concurrent mark sweep GC freed 349413(11MB) AllocSpace objects, 40(12MB) LOS objects, 35% free, 29MB/45MB, paused 1.479ms total 107.828ms
+03-27 16:33:09.807  2682  2693 I art     : Background partial concurrent mark sweep GC freed 326241(10MB) AllocSpace objects, 37(12MB) LOS objects, 34% free, 29MB/45MB, paused 3.479ms total 121.161ms
+03-27 16:33:10.122  2682  2693 I art     : Background sticky concurrent mark sweep GC freed 344403(10MB) AllocSpace objects, 29(8MB) LOS objects, 28% free, 32MB/45MB, paused 5.427ms total 109.081ms
+03-27 16:33:10.185   245  2894 D CameraHal: debugShowFPS(622): Camera 10080 Frames, 29.836 FPS
+03-27 16:33:10.451  2682  2693 I art     : Background partial concurrent mark sweep GC freed 365274(11MB) AllocSpace objects, 45(12MB) LOS objects, 34% free, 30MB/46MB, paused 2.779ms total 129.410ms
+03-27 16:33:10.789  2682  2693 I art     : Background sticky concurrent mark sweep GC freed 409755(13MB) AllocSpace objects, 33(6MB) LOS objects, 28% free, 32MB/46MB, paused 1.723ms total 112.371ms
+03-27 16:33:10.797  1623  1682 I ===DaemonService===: ############## Rotation : 0
+03-27 16:33:10.798  1623  1682 I ===DaemonService===: ScreenOrientationThread:0 screentOrientation:0
+03-27 16:33:10.799  1623  1683 I ===APKProtocolTransmit===: Ready send su-cmd:275
+03-27 16:33:10.799  1623  1683 I ===APKProtocolTransmit===: Start send su-cmd:275 length[14]
+03-27 16:33:10.799  1623  1683 I ===APKProtocolTransmit===: Will write content:the C socket has not been connected,so dicard the send command:[275]
+03-27 16:33:10.811  1623  1683 I ===APKProtocolTransmit===: End send sb-cmd:275
+03-27 16:33:11.122  2682  2693 I art     : Background partial concurrent mark sweep GC freed 343974(10MB) AllocSpace objects, 41(12MB) LOS objects, 33% free, 32MB/48MB, paused 2.566ms total 145.615ms
+03-27 16:33:11.256   245  2894 D CameraHal: debugShowFPS(622): Camera 10112 Frames, 29.854 FPS
+03-27 16:33:11.423  2682  2693 I art     : Background sticky concurrent mark sweep GC freed 350936(11MB) AllocSpace objects, 29(8MB) LOS objects, 28% free, 34MB/48MB, paused 2.918ms total 104.707ms
+03-27 16:33:11.486  1623  1685 I USBService: send udp to check mobileagent state.
+03-27 16:33:11.487  1623  1686 I ===Mrcp===: sending cmd:276
+03-27 16:33:11.492  1623  1713 I USBService: command is : [277] 
+03-27 16:33:11.492  1623  1713 I USBService: res:-131070 res2:2 opt:-2
+03-27 16:33:11.492  1623  1713 I USBService: 	 mobileagent state:-2. 
+03-27 16:33:11.493  1623  1685 I USBService: get mobileagent state 1 and current mobileagent state 1 and usb state of connection false
+03-27 16:33:11.762  2682  2693 I art     : Background partial concurrent mark sweep GC freed 369342(11MB) AllocSpace objects, 46(13MB) LOS objects, 32% free, 33MB/49MB, paused 1.634ms total 156.635ms
+03-27 16:33:12.103  2682  2693 I art     : Background sticky concurrent mark sweep GC freed 427032(13MB) AllocSpace objects, 36(8MB) LOS objects, 28% free, 35MB/49MB, paused 1.288ms total 119.183ms
+03-27 16:33:12.328   245  2894 D CameraHal: debugShowFPS(622): Camera 10144 Frames, 29.857 FPS
+03-27 16:33:12.428  2682  2693 I art     : Background partial concurrent mark sweep GC freed 376023(11MB) AllocSpace objects, 46(15MB) LOS objects, 34% free, 30MB/46MB, paused 2.493ms total 144.180ms
+03-27 16:33:12.740  2682  2693 I art     : Background sticky concurrent mark sweep GC freed 360342(11MB) AllocSpace objects, 31(8MB) LOS objects, 29% free, 32MB/46MB, paused 2.154ms total 101.916ms
+03-27 16:33:13.056  2682  2693 I art     : Background partial concurrent mark sweep GC freed 355474(11MB) AllocSpace objects, 41(12MB) LOS objects, 33% free, 31MB/47MB, paused 2.891ms total 133.501ms
+03-27 16:33:13.400   245  2894 D CameraHal: debugShowFPS(622): Camera 10176 Frames, 29.846 FPS
+03-27 16:33:13.404  2682  2693 I art     : Background sticky concurrent mark sweep GC freed 398846(12MB) AllocSpace objects, 33(7MB) LOS objects, 26% free, 34MB/47MB, paused 2.635ms total 115.474ms
+03-27 16:33:13.689  2682  2693 I art     : Background partial concurrent mark sweep GC freed 332558(10MB) AllocSpace objects, 43(12MB) LOS objects, 33% free, 31MB/47MB, paused 2.181ms total 126.617ms
+03-27 16:33:13.802  1623  1682 I ===DaemonService===: ############## Rotation : 0
+03-27 16:33:13.802  1623  1682 I ===DaemonService===: ScreenOrientationThread:0 screentOrientation:0
+03-27 16:33:13.804  1623  1676 I ===APKProtocolTransmit===: Ready send su-cmd:275
+03-27 16:33:13.804  1623  1676 I ===APKProtocolTransmit===: Start send su-cmd:275 length[14]
+03-27 16:33:13.804  1623  1676 I ===APKProtocolTransmit===: Will write content:the C socket has not been connected,so dicard the send command:[275]
+03-27 16:33:13.812  1623  1676 I ===APKProtocolTransmit===: End send sb-cmd:275
+03-27 16:33:14.325  2682  2693 I art     : Background partial concurrent mark sweep GC freed 336721(10MB) AllocSpace objects, 42(13MB) LOS objects, 33% free, 31MB/47MB, paused 4.810ms total 142.515ms
+03-27 16:33:14.476   245  2894 D CameraHal: debugShowFPS(622): Camera 10208 Frames, 29.754 FPS
+03-27 16:33:14.495  1623  1685 I USBService: send udp to check mobileagent state.
+03-27 16:33:14.496  1689  1689 I mobileagent: type=1400 audit(0.0:446): avc: denied { read append } for name="log.txt" dev="mmcblk1p15" ino=15728 scontext=u:r:resize2fs:s0 tcontext=u:object_r:app_data_file:s0 tclass=file permissive=1
+03-27 16:33:14.496  1689  1689 I mobileagent: type=1400 audit(0.0:447): avc: denied { open } for path="/data/data/com.sigma_rt.totalcontrol/log.txt" dev="mmcblk1p15" ino=15728 scontext=u:r:resize2fs:s0 tcontext=u:object_r:app_data_file:s0 tclass=file permissive=1
+03-27 16:33:14.496  1689  1689 I mobileagent: type=1400 audit(0.0:448): avc: denied { getattr } for path="/data/data/com.sigma_rt.totalcontrol/log.txt" dev="mmcblk1p15" ino=15728 scontext=u:r:resize2fs:s0 tcontext=u:object_r:app_data_file:s0 tclass=file permissive=1
+03-27 16:33:14.500  1623  1872 I USBService: command is : [277] 
+03-27 16:33:14.501  1623  1872 I USBService: res:-131070 res2:2 opt:-2
+03-27 16:33:14.501  1623  1872 I USBService: 	 mobileagent state:-2. 
+03-27 16:33:14.501  1623  1687 I ===Mrcp===: sending cmd:276
+03-27 16:33:14.503  1623  1685 I USBService: get mobileagent state 1 and current mobileagent state 1 and usb state of connection false
+03-27 16:33:14.641  2682  2693 I art     : Background sticky concurrent mark sweep GC freed 362573(11MB) AllocSpace objects, 32(10MB) LOS objects, 27% free, 34MB/47MB, paused 2.682ms total 119.956ms
+03-27 16:33:14.982  2682  2693 I art     : Background partial concurrent mark sweep GC freed 384192(12MB) AllocSpace objects, 47(12MB) LOS objects, 31% free, 34MB/50MB, paused 2.224ms total 172.559ms
+03-27 16:33:15.312  2682  2693 I art     : Background sticky concurrent mark sweep GC freed 417141(13MB) AllocSpace objects, 38(10MB) LOS objects, 32% free, 33MB/49MB, paused 2.638ms total 112.725ms
+03-27 16:33:15.549   245  2894 D CameraHal: debugShowFPS(622): Camera 10240 Frames, 29.826 FPS
+03-27 16:33:15.705  2682  2693 I art     : Background partial concurrent mark sweep GC freed 424043(13MB) AllocSpace objects, 48(15MB) LOS objects, 32% free, 32MB/48MB, paused 2.275ms total 167.695ms
+03-27 16:33:16.025  2682  2693 I art     : Background sticky concurrent mark sweep GC freed 371051(11MB) AllocSpace objects, 35(11MB) LOS objects, 33% free, 32MB/48MB, paused 3.782ms total 109.289ms
+03-27 16:33:16.337  2682  2693 I art     : Background partial concurrent mark sweep GC freed 363206(11MB) AllocSpace objects, 43(12MB) LOS objects, 33% free, 31MB/47MB, paused 1.694ms total 129.457ms
+03-27 16:33:16.620   245  2894 D CameraHal: debugShowFPS(622): Camera 10272 Frames, 29.866 FPS
+03-27 16:33:16.808  1623  1682 I ===DaemonService===: ############## Rotation : 0
+03-27 16:33:16.808  1623  1682 I ===DaemonService===: ScreenOrientationThread:0 screentOrientation:0
+03-27 16:33:16.809  1623  1688 I ===APKProtocolTransmit===: Ready send su-cmd:275
+03-27 16:33:16.809  1623  1688 I ===APKProtocolTransmit===: Start send su-cmd:275 length[14]
+03-27 16:33:16.809  1623  1688 I ===APKProtocolTransmit===: Will write content:the C socket has not been connected,so dicard the send command:[275]
+03-27 16:33:16.818  1623  1688 I ===APKProtocolTransmit===: End send sb-cmd:275
+03-27 16:33:17.028  2682  2693 I art     : Background partial concurrent mark sweep GC freed 385087(12MB) AllocSpace objects, 42(12MB) LOS objects, 32% free, 33MB/49MB, paused 2.377ms total 158.660ms
+03-27 16:33:17.366  2682  2693 I art     : Background sticky concurrent mark sweep GC freed 367339(11MB) AllocSpace objects, 33(10MB) LOS objects, 31% free, 33MB/49MB, paused 2.254ms total 119.087ms
+03-27 16:33:17.505  1623  1685 I USBService: send udp to check mobileagent state.
+03-27 16:33:17.507  1623  1683 I ===Mrcp===: sending cmd:276
+03-27 16:33:17.508  1623  1873 I USBService: command is : [277] 
+03-27 16:33:17.508  1623  1873 I USBService: res:-131070 res2:2 opt:-2
+03-27 16:33:17.508  1623  1873 I USBService: 	 mobileagent state:-2. 
+03-27 16:33:17.511  1623  1685 I USBService: get mobileagent state 1 and current mobileagent state 1 and usb state of connection false
+03-27 16:33:17.693   245  2894 D CameraHal: debugShowFPS(622): Camera 10304 Frames, 29.838 FPS
+03-27 16:33:17.724  2682  2693 I art     : Background partial concurrent mark sweep GC freed 358204(11MB) AllocSpace objects, 46(14MB) LOS objects, 33% free, 32MB/48MB, paused 4.984ms total 155.916ms
+03-27 16:33:18.044  2682  2693 I art     : Background sticky concurrent mark sweep GC freed 370938(11MB) AllocSpace objects, 35(10MB) LOS objects, 32% free, 32MB/48MB, paused 824us total 106.363ms
+03-27 16:33:18.393  2682  2693 I art     : Background partial concurrent mark sweep GC freed 368707(11MB) AllocSpace objects, 41(13MB) LOS objects, 32% free, 32MB/48MB, paused 2.173ms total 155.173ms
+03-27 16:33:18.731  2682  2693 I art     : Background sticky concurrent mark sweep GC freed 411935(12MB) AllocSpace objects, 39(9MB) LOS objects, 33% free, 32MB/48MB, paused 2.091ms total 113.916ms
+03-27 16:33:18.764   245  2894 D CameraHal: debugShowFPS(622): Camera 10336 Frames, 29.860 FPS
+03-27 16:33:19.091  2682  2693 I art     : Background partial concurrent mark sweep GC freed 355486(11MB) AllocSpace objects, 43(14MB) LOS objects, 33% free, 32MB/48MB, paused 1.069ms total 144.194ms
+03-27 16:33:19.435  2682  2693 I art     : Background sticky concurrent mark sweep GC freed 401899(12MB) AllocSpace objects, 35(10MB) LOS objects, 32% free, 32MB/48MB, paused 1.640ms total 112.954ms
+03-27 16:33:19.778  2682  2693 I art     : Background partial concurrent mark sweep GC freed 359667(11MB) AllocSpace objects, 44(13MB) LOS objects, 33% free, 32MB/48MB, paused 5.100ms total 155.180ms
+03-27 16:33:19.820  1623  1682 I ===DaemonService===: ############## Rotation : 0
+03-27 16:33:19.820  1623  1682 I ===DaemonService===: ScreenOrientationThread:0 screentOrientation:0
+03-27 16:33:19.821  1623  1686 I ===APKProtocolTransmit===: Ready send su-cmd:275
+03-27 16:33:19.822  1623  1686 I ===APKProtocolTransmit===: Start send su-cmd:275 length[14]
+03-27 16:33:19.822  1623  1686 I ===APKProtocolTransmit===: Will write content:the C socket has not been connected,so dicard the send command:[275]
+03-27 16:33:19.829  1623  1686 I ===APKProtocolTransmit===: End send sb-cmd:275
+03-27 16:33:19.836   245  2894 D CameraHal: debugShowFPS(622): Camera 10368 Frames, 29.857 FPS
+03-27 16:33:20.099  2682  2693 I art     : Background sticky concurrent mark sweep GC freed 378656(11MB) AllocSpace objects, 36(10MB) LOS objects, 33% free, 31MB/47MB, paused 2.098ms total 104.505ms
+03-27 16:33:20.454  2682  2693 I art     : Background partial concurrent mark sweep GC freed 385987(12MB) AllocSpace objects, 43(13MB) LOS objects, 33% free, 32MB/48MB, paused 2.237ms total 156.524ms
+03-27 16:33:20.514  1623  1685 I USBService: send udp to check mobileagent state.
+03-27 16:33:20.517  1623  1676 I ===Mrcp===: sending cmd:276
+03-27 16:33:20.521  1623  1713 I USBService: command is : [277] 
+03-27 16:33:20.522  1623  1713 I USBService: res:-131070 res2:2 opt:-2
+03-27 16:33:20.522  1623  1713 I USBService: 	 mobileagent state:-2. 
+03-27 16:33:20.522  1623  1685 I USBService: get mobileagent state 1 and current mobileagent state 1 and usb state of connection false
+03-27 16:33:20.768  2682  2693 I art     : Background sticky concurrent mark sweep GC freed 381012(11MB) AllocSpace objects, 34(9MB) LOS objects, 33% free, 32MB/48MB, paused 2.609ms total 107.005ms
+03-27 16:33:20.908   245  2894 D CameraHal: debugShowFPS(622): Camera 10400 Frames, 29.850 FPS
+03-27 16:33:21.139  2682  2693 I art     : Background partial concurrent mark sweep GC freed 404366(12MB) AllocSpace objects, 48(13MB) LOS objects, 32% free, 33MB/49MB, paused 2.658ms total 171.904ms
+03-27 16:33:21.310  2682  2682 D SyncManager: 获取公司信息
+03-27 16:33:21.310  2682  2682 D SyncManager: 地址：http://47.105.80.245:8080/api/company/getcompany.html
+03-27 16:33:21.310  2682  2682 D SyncManager: 参数：00000000-385c-5a58-0000-000000dd4a18
+03-27 16:33:21.402  2682  2682 D SyncManager: {"message":"该设备未绑定公司","status":4,"company":{}}
+03-27 16:33:21.410  2682  2682 D SyncManager: 重新获取公司信息
+03-27 16:33:21.461  2682  2693 I art     : Background sticky concurrent mark sweep GC freed 374206(11MB) AllocSpace objects, 35(11MB) LOS objects, 32% free, 32MB/48MB, paused 1.893ms total 114.971ms
+03-27 16:33:21.831  2682  2693 I art     : Background partial concurrent mark sweep GC freed 389263(12MB) AllocSpace objects, 47(13MB) LOS objects, 31% free, 34MB/50MB, paused 2.830ms total 166.019ms
+03-27 16:33:21.980   245  2894 D CameraHal: debugShowFPS(622): Camera 10432 Frames, 29.845 FPS
+03-27 16:33:22.138  2682  2693 I art     : Background sticky concurrent mark sweep GC freed 390815(12MB) AllocSpace objects, 35(10MB) LOS objects, 29% free, 35MB/50MB, paused 1.199ms total 106.214ms
+03-27 16:33:22.483  2682  2693 I art     : Background partial concurrent mark sweep GC freed 404737(12MB) AllocSpace objects, 47(15MB) LOS objects, 33% free, 31MB/47MB, paused 2.595ms total 140.918ms
+03-27 16:33:22.825  1623  1682 I ===DaemonService===: ############## Rotation : 0
+03-27 16:33:22.826  1623  1682 I ===DaemonService===: ScreenOrientationThread:0 screentOrientation:0
+03-27 16:33:22.827  1623  1687 I ===APKProtocolTransmit===: Ready send su-cmd:275
+03-27 16:33:22.827  1623  1687 I ===APKProtocolTransmit===: Start send su-cmd:275 length[14]
+03-27 16:33:22.827  1623  1687 I ===APKProtocolTransmit===: Will write content:the C socket has not been connected,so dicard the send command:[275]
+03-27 16:33:22.848  1623  1687 I ===APKProtocolTransmit===: End send sb-cmd:275
+03-27 16:33:23.056   245  2894 D CameraHal: debugShowFPS(622): Camera 10464 Frames, 29.752 FPS
+03-27 16:33:23.167  2682  2693 I art     : Background partial concurrent mark sweep GC freed 374599(12MB) AllocSpace objects, 45(13MB) LOS objects, 33% free, 32MB/48MB, paused 1.627ms total 167.195ms
+03-27 16:33:23.469  2682  2693 I art     : Background sticky concurrent mark sweep GC freed 363569(11MB) AllocSpace objects, 35(10MB) LOS objects, 33% free, 32MB/48MB, paused 967us total 102.598ms
+03-27 16:33:23.523  1623  1685 I USBService: send udp to check mobileagent state.
+03-27 16:33:23.524  1623  1688 I ===Mrcp===: sending cmd:276
+03-27 16:33:23.525  1623  1872 I USBService: command is : [277] 
+03-27 16:33:23.526  1623  1872 I USBService: res:-131070 res2:2 opt:-2
+03-27 16:33:23.526  1623  1872 I USBService: 	 mobileagent state:-2. 
+03-27 16:33:23.526  1623  1685 I USBService: get mobileagent state 1 and current mobileagent state 1 and usb state of connection false
+03-27 16:33:23.825  2682  2693 I art     : Background partial concurrent mark sweep GC freed 404872(12MB) AllocSpace objects, 45(12MB) LOS objects, 34% free, 30MB/46MB, paused 2.162ms total 143.579ms
+03-27 16:33:24.128   245  2894 D CameraHal: debugShowFPS(622): Camera 10496 Frames, 29.847 FPS
+03-27 16:33:24.130  2682  2693 I art     : Background sticky concurrent mark sweep GC freed 370239(11MB) AllocSpace objects, 33(8MB) LOS objects, 31% free, 32MB/46MB, paused 4.556ms total 100.207ms
+03-27 16:33:24.469  2682  2693 I art     : Background partial concurrent mark sweep GC freed 317667(10MB) AllocSpace objects, 41(13MB) LOS objects, 34% free, 31MB/47MB, paused 2.978ms total 142.133ms
+03-27 16:33:25.148  2682  2693 I art     : Background partial concurrent mark sweep GC freed 356950(11MB) AllocSpace objects, 45(13MB) LOS objects, 33% free, 31MB/47MB, paused 2.297ms total 157.315ms
+03-27 16:33:25.200   245  2894 D CameraHal: debugShowFPS(622): Camera 10528 Frames, 29.848 FPS
+03-27 16:33:25.466  2682  2693 I art     : Background sticky concurrent mark sweep GC freed 339213(10MB) AllocSpace objects, 32(10MB) LOS objects, 31% free, 32MB/47MB, paused 2.552ms total 100.958ms
+03-27 16:33:25.824  2682  2693 I art     : Background partial concurrent mark sweep GC freed 416609(13MB) AllocSpace objects, 46(11MB) LOS objects, 33% free, 31MB/47MB, paused 2.233ms total 144.585ms
+03-27 16:33:25.832  1623  1682 I ===DaemonService===: ############## Rotation : 0
+03-27 16:33:25.832  1623  1682 I ===DaemonService===: ScreenOrientationThread:0 screentOrientation:0
+03-27 16:33:25.833  1623  1683 I ===APKProtocolTransmit===: Ready send su-cmd:275
+03-27 16:33:25.833  1623  1683 I ===APKProtocolTransmit===: Start send su-cmd:275 length[14]
+03-27 16:33:25.833  1623  1683 I ===APKProtocolTransmit===: Will write content:the C socket has not been connected,so dicard the send command:[275]
+03-27 16:33:25.840  1623  1683 I ===APKProtocolTransmit===: End send sb-cmd:275
+03-27 16:33:26.272   245  2894 D CameraHal: debugShowFPS(622): Camera 10560 Frames, 29.842 FPS
+03-27 16:33:26.465  2682  2693 I art     : Background partial concurrent mark sweep GC freed 323231(10MB) AllocSpace objects, 37(13MB) LOS objects, 33% free, 32MB/48MB, paused 3.953ms total 137.558ms
+03-27 16:33:26.527  1623  1685 I USBService: send udp to check mobileagent state.
+03-27 16:33:26.529  1623  1686 I ===Mrcp===: sending cmd:276
+03-27 16:33:26.531  1623  1873 I USBService: command is : [277] 
+03-27 16:33:26.531  1623  1873 I USBService: res:-131070 res2:2 opt:-2
+03-27 16:33:26.531  1623  1873 I USBService: 	 mobileagent state:-2. 
+03-27 16:33:26.531  1623  1685 I USBService: get mobileagent state 1 and current mobileagent state 1 and usb state of connection false
+03-27 16:33:27.128  2682  2693 I art     : Background partial concurrent mark sweep GC freed 366246(11MB) AllocSpace objects, 46(14MB) LOS objects, 33% free, 32MB/48MB, paused 2.145ms total 161.137ms
+03-27 16:33:27.344   245  2894 D CameraHal: debugShowFPS(622): Camera 10592 Frames, 29.852 FPS
+03-27 16:33:27.771  2682  2693 I art     : Background partial concurrent mark sweep GC freed 355926(11MB) AllocSpace objects, 46(14MB) LOS objects, 34% free, 30MB/46MB, paused 4.133ms total 132.616ms
+03-27 16:33:28.110  2682  2693 I art     : Background sticky concurrent mark sweep GC freed 378679(11MB) AllocSpace objects, 35(9MB) LOS objects, 33% free, 31MB/46MB, paused 2.132ms total 106.134ms
+03-27 16:33:28.417   245  2894 D CameraHal: debugShowFPS(622): Camera 10624 Frames, 29.846 FPS
+03-27 16:33:28.425  2682  2693 I art     : Background partial concurrent mark sweep GC freed 363193(11MB) AllocSpace objects, 41(11MB) LOS objects, 35% free, 28MB/44MB, paused 790us total 111.816ms
+03-27 16:33:28.753  2682  2693 I art     : Background sticky concurrent mark sweep GC freed 350478(11MB) AllocSpace objects, 30(7MB) LOS objects, 23% free, 34MB/44MB, paused 2.117ms total 117.578ms
+03-27 16:33:28.840  1623  1682 I ===DaemonService===: ############## Rotation : 0
+03-27 16:33:28.840  1623  1682 I ===DaemonService===: ScreenOrientationThread:0 screentOrientation:0
+03-27 16:33:28.841  1623  1676 I ===APKProtocolTransmit===: Ready send su-cmd:275
+03-27 16:33:28.841  1623  1676 I ===APKProtocolTransmit===: Start send su-cmd:275 length[14]
+03-27 16:33:28.841  1623  1676 I ===APKProtocolTransmit===: Will write content:the C socket has not been connected,so dicard the send command:[275]
+03-27 16:33:28.843  1623  1676 I ===APKProtocolTransmit===: End send sb-cmd:275
+03-27 16:33:29.035  2682  2693 I art     : Background partial concurrent mark sweep GC freed 328088(10MB) AllocSpace objects, 41(12MB) LOS objects, 34% free, 29MB/45MB, paused 3.043ms total 126.433ms
+03-27 16:33:29.410  2682  2925 I PacketWriter: 心跳 
+03-27 16:33:29.489   245  2894 D CameraHal: debugShowFPS(622): Camera 10656 Frames, 29.840 FPS
+03-27 16:33:29.532  1623  1685 I USBService: send udp to check mobileagent state.
+03-27 16:33:29.533  1623  1687 I ===Mrcp===: sending cmd:276
+03-27 16:33:29.535  1623  1713 I USBService: command is : [277] 
+03-27 16:33:29.535  1623  1713 I USBService: res:-131070 res2:2 opt:-2
+03-27 16:33:29.535  1623  1713 I USBService: 	 mobileagent state:-2. 
+03-27 16:33:29.536  1623  1685 I USBService: get mobileagent state 1 and current mobileagent state 1 and usb state of connection false
+03-27 16:33:29.655  2682  2693 I art     : Background partial concurrent mark sweep GC freed 318884(10MB) AllocSpace objects, 39(12MB) LOS objects, 33% free, 31MB/47MB, paused 655us total 138.568ms
+03-27 16:33:30.259  2682  2693 I art     : Background partial concurrent mark sweep GC freed 369331(11MB) AllocSpace objects, 42(12MB) LOS objects, 35% free, 29MB/45MB, paused 1.093ms total 108.722ms
+03-27 16:33:30.564   245  2894 D CameraHal: debugShowFPS(622): Camera 10688 Frames, 29.766 FPS
+03-27 16:33:30.890  2682  2693 I art     : Background partial concurrent mark sweep GC freed 336541(10MB) AllocSpace objects, 39(10MB) LOS objects, 33% free, 31MB/47MB, paused 4.736ms total 137.051ms
+03-27 16:33:31.204  2682  2693 I art     : Background sticky concurrent mark sweep GC freed 362042(11MB) AllocSpace objects, 33(8MB) LOS objects, 29% free, 33MB/47MB, paused 3.339ms total 106.424ms
+03-27 16:33:31.535  2682  2693 I art     : Background partial concurrent mark sweep GC freed 331122(10MB) AllocSpace objects, 43(13MB) LOS objects, 33% free, 31MB/47MB, paused 2.807ms total 140.612ms
+03-27 16:33:31.636   245  2894 D CameraHal: debugShowFPS(622): Camera 10720 Frames, 29.852 FPS
+03-27 16:33:31.851  1623  1682 I ===DaemonService===: ############## Rotation : 0
+03-27 16:33:31.851  1623  1682 I ===DaemonService===: ScreenOrientationThread:0 screentOrientation:0
+03-27 16:33:31.852  1623  1688 I ===APKProtocolTransmit===: Ready send su-cmd:275
+03-27 16:33:31.852  1623  1688 I ===APKProtocolTransmit===: Start send su-cmd:275 length[14]
+03-27 16:33:31.852  1623  1688 I ===APKProtocolTransmit===: Will write content:the C socket has not been connected,so dicard the send command:[275]
+03-27 16:33:31.854  1623  1688 I ===APKProtocolTransmit===: End send sb-cmd:275
+03-27 16:33:31.868  2682  2693 I art     : Background sticky concurrent mark sweep GC freed 367904(11MB) AllocSpace objects, 34(9MB) LOS objects, 28% free, 33MB/47MB, paused 2.991ms total 112.082ms
+03-27 16:33:32.214  2682  2693 I art     : Background partial concurrent mark sweep GC freed 388209(12MB) AllocSpace objects, 41(12MB) LOS objects, 32% free, 32MB/48MB, paused 1.988ms total 155.160ms
+03-27 16:33:32.536  1623  1685 I USBService: send udp to check mobileagent state.
+03-27 16:33:32.538  1623  1683 I ===Mrcp===: sending cmd:276
+03-27 16:33:32.539  1623  1872 I USBService: command is : [277] 
+03-27 16:33:32.539  1623  1872 I USBService: res:-131070 res2:2 opt:-2
+03-27 16:33:32.539  1623  1872 I USBService: 	 mobileagent state:-2. 
+03-27 16:33:32.540  1623  1685 I USBService: get mobileagent state 1 and current mobileagent state 1 and usb state of connection false
+03-27 16:33:32.708   245  2894 D CameraHal: debugShowFPS(622): Camera 10752 Frames, 29.847 FPS
+03-27 16:33:32.871  2682  2693 I art     : Background partial concurrent mark sweep GC freed 345834(11MB) AllocSpace objects, 47(16MB) LOS objects, 33% free, 31MB/47MB, paused 3.040ms total 152.689ms
+03-27 16:33:33.210  2682  2693 I art     : Background sticky concurrent mark sweep GC freed 357451(11MB) AllocSpace objects, 34(10MB) LOS objects, 28% free, 33MB/47MB, paused 4.727ms total 121.457ms
+03-27 16:33:33.532  2682  2693 I art     : Background partial concurrent mark sweep GC freed 333108(10MB) AllocSpace objects, 40(14MB) LOS objects, 35% free, 29MB/45MB, paused 1.939ms total 131.842ms
+03-27 16:33:33.780   245  2894 D CameraHal: debugShowFPS(622): Camera 10784 Frames, 29.845 FPS
+03-27 16:33:33.831  2682  2693 I art     : Background sticky concurrent mark sweep GC freed 333463(10MB) AllocSpace objects, 30(7MB) LOS objects, 29% free, 32MB/45MB, paused 5.083ms total 95.792ms
+03-27 16:33:34.127  2682  2693 I art     : Background partial concurrent mark sweep GC freed 321874(10MB) AllocSpace objects, 41(12MB) LOS objects, 34% free, 30MB/46MB, paused 3.446ms total 127.470ms
+03-27 16:33:34.759  2682  2693 I art     : Background partial concurrent mark sweep GC freed 337957(10MB) AllocSpace objects, 42(11MB) LOS objects, 32% free, 32MB/48MB, paused 1.717ms total 144.311ms
+03-27 16:33:34.852   245  2894 D CameraHal: debugShowFPS(622): Camera 10816 Frames, 29.858 FPS
+03-27 16:33:34.853  1623  1682 I ===DaemonService===: ############## Rotation : 0
+03-27 16:33:34.853  1623  1682 I ===DaemonService===: ScreenOrientationThread:0 screentOrientation:0
+03-27 16:33:34.854  1623  1686 I ===APKProtocolTransmit===: Ready send su-cmd:275
+03-27 16:33:34.854  1623  1686 I ===APKProtocolTransmit===: Start send su-cmd:275 length[14]
+03-27 16:33:34.855  1623  1686 I ===APKProtocolTransmit===: Will write content:the C socket has not been connected,so dicard the send command:[275]
+03-27 16:33:34.860  1623  1686 I ===APKProtocolTransmit===: End send sb-cmd:275
+03-27 16:33:35.097  2682  2693 I art     : Background sticky concurrent mark sweep GC freed 369550(11MB) AllocSpace objects, 35(9MB) LOS objects, 28% free, 35MB/48MB, paused 2.934ms total 118.008ms
+03-27 16:33:35.423  2682  2693 I art     : Background partial concurrent mark sweep GC freed 362166(11MB) AllocSpace objects, 44(14MB) LOS objects, 34% free, 30MB/46MB, paused 5.204ms total 143.352ms
+03-27 16:33:35.540  1623  1685 I USBService: send udp to check mobileagent state.
+03-27 16:33:35.548  1623  1676 I ===Mrcp===: sending cmd:276
+03-27 16:33:35.550  1623  1873 I USBService: command is : [277] 
+03-27 16:33:35.550  1623  1873 I USBService: res:-131070 res2:2 opt:-2
+03-27 16:33:35.550  1623  1873 I USBService: 	 mobileagent state:-2. 
+03-27 16:33:35.551  1623  1685 I USBService: get mobileagent state 1 and current mobileagent state 1 and usb state of connection false
+03-27 16:33:35.768  2682  2693 I art     : Background sticky concurrent mark sweep GC freed 356023(11MB) AllocSpace objects, 34(10MB) LOS objects, 28% free, 33MB/46MB, paused 2.660ms total 115.140ms
+03-27 16:33:35.924   245  2894 D CameraHal: debugShowFPS(622): Camera 10848 Frames, 29.846 FPS
+03-27 16:33:36.099  2682  2693 I art     : Background partial concurrent mark sweep GC freed 366841(11MB) AllocSpace objects, 43(11MB) LOS objects, 32% free, 33MB/49MB, paused 7.222ms total 150.950ms
+03-27 16:33:36.433  2682  2693 I art     : Background sticky concurrent mark sweep GC freed 366334(11MB) AllocSpace objects, 33(8MB) LOS objects, 30% free, 34MB/49MB, paused 3.523ms total 106.342ms
+03-27 16:33:36.998   245  2894 D CameraHal: debugShowFPS(622): Camera 10880 Frames, 29.813 FPS
+03-27 16:33:37.364  2682  2693 I art     : Background partial concurrent mark sweep GC freed 367211(11MB) AllocSpace objects, 43(11MB) LOS objects, 34% free, 30MB/46MB, paused 2.154ms total 144.724ms
+03-27 16:33:37.693  2682  2693 I art     : Background sticky concurrent mark sweep GC freed 365868(11MB) AllocSpace objects, 33(8MB) LOS objects, 29% free, 32MB/46MB, paused 2.961ms total 105.609ms
+03-27 16:33:37.860  1623  1682 I ===DaemonService===: ############## Rotation : 0
+03-27 16:33:37.860  1623  1682 I ===DaemonService===: ScreenOrientationThread:0 screentOrientation:0
+03-27 16:33:37.861  1623  1687 I ===APKProtocolTransmit===: Ready send su-cmd:275
+03-27 16:33:37.861  1623  1687 I ===APKProtocolTransmit===: Start send su-cmd:275 length[14]
+03-27 16:33:37.861  1623  1687 I ===APKProtocolTransmit===: Will write content:the C socket has not been connected,so dicard the send command:[275]
+03-27 16:33:37.864  1623  1687 I ===APKProtocolTransmit===: End send sb-cmd:275
+03-27 16:33:38.072   245  2894 D CameraHal: debugShowFPS(622): Camera 10912 Frames, 29.782 FPS
+03-27 16:33:38.552  1623  1685 I USBService: send udp to check mobileagent state.
+03-27 16:33:38.555  1623  1688 I ===Mrcp===: sending cmd:276
+03-27 16:33:38.558  1623  1713 I USBService: command is : [277] 
+03-27 16:33:38.558  1623  1713 I USBService: res:-131070 res2:2 opt:-2
+03-27 16:33:38.558  1623  1713 I USBService: 	 mobileagent state:-2. 
+03-27 16:33:38.559  1623  1685 I USBService: get mobileagent state 1 and current mobileagent state 1 and usb state of connection false
+03-27 16:33:38.612  2682  2693 I art     : Background partial concurrent mark sweep GC freed 328549(10MB) AllocSpace objects, 37(11MB) LOS objects, 33% free, 32MB/48MB, paused 3.244ms total 150.282ms
+03-27 16:33:39.147   245  2894 D CameraHal: debugShowFPS(622): Camera 10944 Frames, 29.781 FPS
+03-27 16:33:39.246  2682  2693 I art     : Background partial concurrent mark sweep GC freed 335643(10MB) AllocSpace objects, 44(14MB) LOS objects, 34% free, 30MB/46MB, paused 2.193ms total 124.866ms
+03-27 16:33:39.559  2682  2693 I art     : Background sticky concurrent mark sweep GC freed 357418(11MB) AllocSpace objects, 32(8MB) LOS objects, 29% free, 32MB/46MB, paused 1.911ms total 109.030ms
+03-27 16:33:39.863  2682  2693 I art     : Background partial concurrent mark sweep GC freed 332667(10MB) AllocSpace objects, 41(12MB) LOS objects, 34% free, 30MB/46MB, paused 1.777ms total 128.944ms
+03-27 16:33:40.217   245  2894 D CameraHal: debugShowFPS(622): Camera 10976 Frames, 29.881 FPS
+03-27 16:33:40.484  2682  2693 I art     : Background partial concurrent mark sweep GC freed 323203(10MB) AllocSpace objects, 42(13MB) LOS objects, 34% free, 30MB/46MB, paused 2.450ms total 126.010ms
+03-27 16:33:40.812  2682  2693 I art     : Background sticky concurrent mark sweep GC freed 406959(12MB) AllocSpace objects, 36(7MB) LOS objects, 27% free, 33MB/46MB, paused 2.892ms total 116.258ms
+03-27 16:33:40.863  1623  1682 I ===DaemonService===: ############## Rotation : 0
+03-27 16:33:40.864  1623  1682 I ===DaemonService===: ScreenOrientationThread:0 screentOrientation:0
+03-27 16:33:40.865  1623  1683 I ===APKProtocolTransmit===: Ready send su-cmd:275
+03-27 16:33:40.866  1623  1683 I ===APKProtocolTransmit===: Start send su-cmd:275 length[14]
+03-27 16:33:40.866  1623  1683 I ===APKProtocolTransmit===: Will write content:the C socket has not been connected,so dicard the send command:[275]
+03-27 16:33:40.869  1623  1683 I ===APKProtocolTransmit===: End send sb-cmd:275
+03-27 16:33:41.121  2682  2693 I art     : Background partial concurrent mark sweep GC freed 322128(10MB) AllocSpace objects, 40(12MB) LOS objects, 33% free, 32MB/48MB, paused 2.936ms total 138.096ms
+03-27 16:33:41.288   245  2894 D CameraHal: debugShowFPS(622): Camera 11008 Frames, 29.893 FPS
+03-27 16:33:41.559  1623  1685 I USBService: send udp to check mobileagent state.
+03-27 16:33:41.560  1623  1686 I ===Mrcp===: sending cmd:276
+03-27 16:33:41.561  1623  1872 I USBService: command is : [277] 
+03-27 16:33:41.562  1623  1872 I USBService: res:-131070 res2:2 opt:-2
+03-27 16:33:41.562  1623  1872 I USBService: 	 mobileagent state:-2. 
+03-27 16:33:41.562  1623  1685 I USBService: get mobileagent state 1 and current mobileagent state 1 and usb state of connection false
+03-27 16:33:41.803  2682  2693 I art     : Background partial concurrent mark sweep GC freed 341085(10MB) AllocSpace objects, 44(14MB) LOS objects, 33% free, 32MB/48MB, paused 2.509ms total 159.585ms
+03-27 16:33:42.126  2682  2693 I art     : Background sticky concurrent mark sweep GC freed 346295(10MB) AllocSpace objects, 34(10MB) LOS objects, 30% free, 33MB/48MB, paused 3.088ms total 112.583ms
+03-27 16:33:42.360   245  2894 D CameraHal: debugShowFPS(622): Camera 11040 Frames, 29.848 FPS
+03-27 16:33:42.470  2682  2693 I art     : Background partial concurrent mark sweep GC freed 365076(11MB) AllocSpace objects, 44(14MB) LOS objects, 35% free, 28MB/44MB, paused 3.631ms total 126.005ms
+03-27 16:33:43.072  2682  2693 I art     : Background partial concurrent mark sweep GC freed 300867(9MB) AllocSpace objects, 40(12MB) LOS objects, 35% free, 28MB/44MB, paused 2.360ms total 119.517ms
+03-27 16:33:43.389  2682  2693 I art     : Background sticky concurrent mark sweep GC freed 346845(10MB) AllocSpace objects, 28(6MB) LOS objects, 27% free, 32MB/44MB, paused 2.251ms total 100.016ms
+03-27 16:33:43.433   245  2894 D CameraHal: debugShowFPS(622): Camera 11072 Frames, 29.826 FPS
+03-27 16:33:43.619  2682  2898 E FaceView: onFail: fr failed errorCode is 81925
+03-27 16:33:43.668  2682  2693 I art     : Background partial concurrent mark sweep GC freed 304367(9MB) AllocSpace objects, 38(11MB) LOS objects, 35% free, 29MB/45MB, paused 2.131ms total 107.205ms
+03-27 16:33:43.866  1623  1682 I ===DaemonService===: ############## Rotation : 0
+03-27 16:33:43.866  1623  1682 I ===DaemonService===: ScreenOrientationThread:0 screentOrientation:0
+03-27 16:33:43.867  1623  1676 I ===APKProtocolTransmit===: Ready send su-cmd:275
+03-27 16:33:43.867  1623  1676 I ===APKProtocolTransmit===: Start send su-cmd:275 length[14]
+03-27 16:33:43.867  1623  1676 I ===APKProtocolTransmit===: Will write content:the C socket has not been connected,so dicard the send command:[275]
+03-27 16:33:43.870  1623  1676 I ===APKProtocolTransmit===: End send sb-cmd:275
+03-27 16:33:44.342  2682  2693 I art     : Background partial concurrent mark sweep GC freed 372022(11MB) AllocSpace objects, 44(11MB) LOS objects, 33% free, 32MB/48MB, paused 2.710ms total 149.097ms
+03-27 16:33:44.504   245  2894 D CameraHal: debugShowFPS(622): Camera 11104 Frames, 29.867 FPS
+03-27 16:33:44.563  1623  1685 I USBService: send udp to check mobileagent state.
+03-27 16:33:44.567  1623  1687 I ===Mrcp===: sending cmd:276
+03-27 16:33:44.569  1623  1873 I USBService: command is : [277] 
+03-27 16:33:44.569  1623  1873 I USBService: res:-131070 res2:2 opt:-2
+03-27 16:33:44.569  1623  1873 I USBService: 	 mobileagent state:-2. 
+03-27 16:33:44.570  1623  1685 I USBService: get mobileagent state 1 and current mobileagent state 1 and usb state of connection false
+03-27 16:33:44.681  2682  2693 I art     : Background sticky concurrent mark sweep GC freed 391828(12MB) AllocSpace objects, 35(9MB) LOS objects, 33% free, 32MB/48MB, paused 4.532ms total 113.483ms
+03-27 16:33:45.043  2682  2693 I art     : Background partial concurrent mark sweep GC freed 360244(11MB) AllocSpace objects, 42(13MB) LOS objects, 34% free, 30MB/46MB, paused 3.629ms total 138.065ms
+03-27 16:33:45.368  2682  2693 I art     : Background sticky concurrent mark sweep GC freed 316828(9MB) AllocSpace objects, 33(11MB) LOS objects, 34% free, 30MB/46MB, paused 2.710ms total 101.210ms
+03-27 16:33:45.576   245  2894 D CameraHal: debugShowFPS(622): Camera 11136 Frames, 29.847 FPS
+03-27 16:33:45.710  2682  2693 I art     : Background partial concurrent mark sweep GC freed 340412(10MB) AllocSpace objects, 41(12MB) LOS objects, 33% free, 31MB/47MB, paused 2.202ms total 146.190ms
+03-27 16:33:46.054  2682  2693 I art     : Background sticky concurrent mark sweep GC freed 371439(11MB) AllocSpace objects, 34(10MB) LOS objects, 32% free, 32MB/47MB, paused 1.402ms total 117.393ms
+03-27 16:33:46.399  2682  2693 I art     : Background partial concurrent mark sweep GC freed 360992(11MB) AllocSpace objects, 45(13MB) LOS objects, 33% free, 31MB/47MB, paused 8.340ms total 159.907ms
+03-27 16:33:46.652   245  2894 D CameraHal: debugShowFPS(622): Camera 11168 Frames, 29.745 FPS
+03-27 16:33:46.717  2682  2693 I art     : Background sticky concurrent mark sweep GC freed 364683(11MB) AllocSpace objects, 34(11MB) LOS objects, 32% free, 31MB/47MB, paused 2.818ms total 111.261ms
+03-27 16:33:46.873  1623  1682 I ===DaemonService===: ############## Rotation : 0
+03-27 16:33:46.873  1623  1682 I ===DaemonService===: ScreenOrientationThread:0 screentOrientation:0
+03-27 16:33:46.877  1623  1688 I ===APKProtocolTransmit===: Ready send su-cmd:275
+03-27 16:33:46.877  1623  1688 I ===APKProtocolTransmit===: Start send su-cmd:275 length[14]
+03-27 16:33:46.877  1623  1688 I ===APKProtocolTransmit===: Will write content:the C socket has not been connected,so dicard the send command:[275]
+03-27 16:33:46.882  1623  1688 I ===APKProtocolTransmit===: End send sb-cmd:275
+03-27 16:33:47.072  2682  2693 I art     : Background partial concurrent mark sweep GC freed 394449(12MB) AllocSpace objects, 46(11MB) LOS objects, 32% free, 32MB/48MB, paused 988us total 156.091ms
+03-27 16:33:47.376  2682  2693 I art     : Background sticky concurrent mark sweep GC freed 332360(10MB) AllocSpace objects, 32(10MB) LOS objects, 33% free, 32MB/48MB, paused 4.634ms total 100.625ms
+03-27 16:33:47.570  1623  1685 I USBService: send udp to check mobileagent state.
+03-27 16:33:47.571  1623  1683 I ===Mrcp===: sending cmd:276
+03-27 16:33:47.572  1623  1713 I USBService: command is : [277] 
+03-27 16:33:47.572  1623  1713 I USBService: res:-131070 res2:2 opt:-2
+03-27 16:33:47.572  1623  1713 I USBService: 	 mobileagent state:-2. 
+03-27 16:33:47.572  1623  1685 I USBService: get mobileagent state 1 and current mobileagent state 1 and usb state of connection false
+03-27 16:33:47.720  2682  2693 I art     : Background partial concurrent mark sweep GC freed 371337(11MB) AllocSpace objects, 45(13MB) LOS objects, 32% free, 32MB/48MB, paused 3.122ms total 149.381ms
+03-27 16:33:47.725   245  2894 D CameraHal: debugShowFPS(622): Camera 11200 Frames, 29.837 FPS
+03-27 16:33:48.385  2682  2693 I art     : Background partial concurrent mark sweep GC freed 365981(11MB) AllocSpace objects, 44(13MB) LOS objects, 33% free, 31MB/47MB, paused 1.554ms total 137.915ms
+03-27 16:33:48.796   245  2894 D CameraHal: debugShowFPS(622): Camera 11232 Frames, 29.866 FPS
+03-27 16:33:49.028  2682  2693 I art     : Background partial concurrent mark sweep GC freed 347190(11MB) AllocSpace objects, 44(14MB) LOS objects, 33% free, 31MB/47MB, paused 5.363ms total 143.007ms
+03-27 16:33:49.343  2682  2693 I art     : Background sticky concurrent mark sweep GC freed 363186(11MB) AllocSpace objects, 36(10MB) LOS objects, 32% free, 32MB/47MB, paused 3.257ms total 107.042ms
+03-27 16:33:49.705  2682  2693 I art     : Background partial concurrent mark sweep GC freed 350254(11MB) AllocSpace objects, 43(14MB) LOS objects, 34% free, 30MB/46MB, paused 1.747ms total 145.571ms
+03-27 16:33:49.868   245  2894 D CameraHal: debugShowFPS(622): Camera 11264 Frames, 29.849 FPS
+03-27 16:33:49.879  1623  1682 I ===DaemonService===: ############## Rotation : 0
+03-27 16:33:49.879  1623  1682 I ===DaemonService===: ScreenOrientationThread:0 screentOrientation:0
+03-27 16:33:49.880  1623  1686 I ===APKProtocolTransmit===: Ready send su-cmd:275
+03-27 16:33:49.880  1623  1686 I ===APKProtocolTransmit===: Start send su-cmd:275 length[14]
+03-27 16:33:49.880  1623  1686 I ===APKProtocolTransmit===: Will write content:the C socket has not been connected,so dicard the send command:[275]
+03-27 16:33:49.885  1623  1686 I ===APKProtocolTransmit===: End send sb-cmd:275
+03-27 16:33:50.320  2682  2693 I art     : Background partial concurrent mark sweep GC freed 380815(12MB) AllocSpace objects, 41(11MB) LOS objects, 33% free, 31MB/47MB, paused 3.411ms total 148.315ms
+03-27 16:33:50.573  1623  1685 I USBService: send udp to check mobileagent state.
+03-27 16:33:50.574  1623  1676 I ===Mrcp===: sending cmd:276
+03-27 16:33:50.578  1623  1872 I USBService: command is : [277] 
+03-27 16:33:50.578  1623  1872 I USBService: res:-131070 res2:2 opt:-2
+03-27 16:33:50.578  1623  1872 I USBService: 	 mobileagent state:-2. 
+03-27 16:33:50.579  1623  1685 I USBService: get mobileagent state 1 and current mobileagent state 1 and usb state of connection false
+03-27 16:33:50.626  2682  2693 I art     : Background sticky concurrent mark sweep GC freed 380390(12MB) AllocSpace objects, 35(9MB) LOS objects, 31% free, 32MB/47MB, paused 1.371ms total 112.205ms
+03-27 16:33:50.940   245  2894 D CameraHal: debugShowFPS(622): Camera 11296 Frames, 29.852 FPS
+03-27 16:33:50.978  2682  2693 I art     : Background partial concurrent mark sweep GC freed 373903(11MB) AllocSpace objects, 47(13MB) LOS objects, 33% free, 31MB/47MB, paused 2.083ms total 144.491ms
+03-27 16:33:51.306  2682  2693 I art     : Background sticky concurrent mark sweep GC freed 342880(10MB) AllocSpace objects, 33(11MB) LOS objects, 31% free, 32MB/47MB, paused 3.742ms total 104.252ms
+03-27 16:33:51.431  2682  2682 D SyncManager: 获取公司信息
+03-27 16:33:51.432  2682  2682 D SyncManager: 地址：http://47.105.80.245:8080/api/company/getcompany.html
+03-27 16:33:51.432  2682  2682 D SyncManager: 参数：00000000-385c-5a58-0000-000000dd4a18
+03-27 16:33:51.511  2682  2682 D SyncManager: {"message":"该设备未绑定公司","status":4,"company":{}}
+03-27 16:33:51.520  2682  2682 D SyncManager: 重新获取公司信息
+03-27 16:33:51.655  2682  2693 I art     : Background partial concurrent mark sweep GC freed 358550(11MB) AllocSpace objects, 46(13MB) LOS objects, 33% free, 31MB/47MB, paused 2.517ms total 149.251ms
+03-27 16:33:51.987  2682  2693 I art     : Background sticky concurrent mark sweep GC freed 357235(11MB) AllocSpace objects, 34(9MB) LOS objects, 28% free, 33MB/47MB, paused 2.345ms total 120.033ms
+03-27 16:33:52.012   245  2894 D CameraHal: debugShowFPS(622): Camera 11328 Frames, 29.851 FPS
+03-27 16:33:52.310  2682  2693 I art     : Background partial concurrent mark sweep GC freed 329276(10MB) AllocSpace objects, 41(14MB) LOS objects, 33% free, 31MB/47MB, paused 2.721ms total 137.359ms
+03-27 16:33:52.899  1623  1682 I ===DaemonService===: ############## Rotation : 0
+03-27 16:33:52.901  1623  1682 I ===DaemonService===: ScreenOrientationThread:0 screentOrientation:0
+03-27 16:33:52.902  1623  1687 I ===APKProtocolTransmit===: Ready send su-cmd:275
+03-27 16:33:52.902  1623  1687 I ===APKProtocolTransmit===: Start send su-cmd:275 length[14]
+03-27 16:33:52.902  1623  1687 I ===APKProtocolTransmit===: Will write content:the C socket has not been connected,so dicard the send command:[275]
+03-27 16:33:52.905  1623  1687 I ===APKProtocolTransmit===: End send sb-cmd:275
+03-27 16:33:52.966  2682  2693 I art     : Background partial concurrent mark sweep GC freed 377173(11MB) AllocSpace objects, 44(12MB) LOS objects, 35% free, 29MB/45MB, paused 2.573ms total 128.375ms
+03-27 16:33:53.085   245  2894 D CameraHal: debugShowFPS(622): Camera 11360 Frames, 29.840 FPS
+03-27 16:33:53.579  1623  1685 I USBService: send udp to check mobileagent state.
+03-27 16:33:53.581  1623  1688 I ===Mrcp===: sending cmd:276
+03-27 16:33:53.582  1623  1873 I USBService: command is : [277] 
+03-27 16:33:53.582  1623  1873 I USBService: res:-131070 res2:2 opt:-2
+03-27 16:33:53.582  1623  1873 I USBService: 	 mobileagent state:-2. 
+03-27 16:33:53.582  1623  1685 I USBService: get mobileagent state 1 and current mobileagent state 1 and usb state of connection false
+03-27 16:33:53.586  2682  2693 I art     : Background partial concurrent mark sweep GC freed 292969(9MB) AllocSpace objects, 37(12MB) LOS objects, 34% free, 30MB/46MB, paused 709us total 108.426ms
+03-27 16:33:53.920  2682  2693 I art     : Background sticky concurrent mark sweep GC freed 359066(11MB) AllocSpace objects, 35(9MB) LOS objects, 30% free, 32MB/46MB, paused 1.825ms total 105.421ms
+03-27 16:33:54.160   245  2894 D CameraHal: debugShowFPS(622): Camera 11392 Frames, 29.742 FPS
+03-27 16:33:54.280  2682  2693 I art     : Background partial concurrent mark sweep GC freed 361521(11MB) AllocSpace objects, 40(12MB) LOS objects, 32% free, 32MB/48MB, paused 1.851ms total 175.572ms
+03-27 16:33:54.914  2682  2693 I art     : Background partial concurrent mark sweep GC freed 327642(10MB) AllocSpace objects, 44(14MB) LOS objects, 35% free, 29MB/45MB, paused 4.251ms total 131.040ms
+03-27 16:33:55.232   245  2894 D CameraHal: debugShowFPS(622): Camera 11424 Frames, 29.867 FPS
+03-27 16:33:55.534  2682  2693 I art     : Background partial concurrent mark sweep GC freed 342178(10MB) AllocSpace objects, 42(12MB) LOS objects, 33% free, 31MB/47MB, paused 2.157ms total 148.382ms
+03-27 16:33:55.857  2682  2693 I art     : Background sticky concurrent mark sweep GC freed 362937(11MB) AllocSpace objects, 34(10MB) LOS objects, 32% free, 32MB/47MB, paused 3.174ms total 100.304ms
+03-27 16:33:55.908  1623  1682 I ===DaemonService===: ############## Rotation : 0
+03-27 16:33:55.908  1623  1682 I ===DaemonService===: ScreenOrientationThread:0 screentOrientation:0
+03-27 16:33:55.910  1623  1683 I ===APKProtocolTransmit===: Ready send su-cmd:275
+03-27 16:33:55.910  1623  1683 I ===APKProtocolTransmit===: Start send su-cmd:275 length[14]
+03-27 16:33:55.910  1623  1683 I ===APKProtocolTransmit===: Will write content:the C socket has not been connected,so dicard the send command:[275]
+03-27 16:33:55.914  1623  1683 I ===APKProtocolTransmit===: End send sb-cmd:275
+03-27 16:33:56.242  2682  2693 I art     : Background partial concurrent mark sweep GC freed 380392(12MB) AllocSpace objects, 47(13MB) LOS objects, 33% free, 31MB/47MB, paused 1.695ms total 151.927ms
+03-27 16:33:56.304   245  2894 D CameraHal: debugShowFPS(622): Camera 11456 Frames, 29.851 FPS
+03-27 16:33:56.583  1623  1685 I USBService: send udp to check mobileagent state.
+03-27 16:33:56.584  1623  1686 I ===Mrcp===: sending cmd:276
+03-27 16:33:56.585  1623  1713 I USBService: command is : [277] 
+03-27 16:33:56.585  1623  1713 I USBService: res:-131070 res2:2 opt:-2
+03-27 16:33:56.585  1623  1713 I USBService: 	 mobileagent state:-2. 
+03-27 16:33:56.585  1623  1685 I USBService: get mobileagent state 1 and current mobileagent state 1 and usb state of connection false
+03-27 16:33:56.929  2682  2693 I art     : Background partial concurrent mark sweep GC freed 334854(10MB) AllocSpace objects, 45(14MB) LOS objects, 33% free, 32MB/48MB, paused 3.178ms total 163.744ms
+03-27 16:33:57.239  2682  2693 I art     : Background sticky concurrent mark sweep GC freed 348557(11MB) AllocSpace objects, 34(10MB) LOS objects, 31% free, 33MB/48MB, paused 3.087ms total 102.115ms
+03-27 16:33:57.376   245  2894 D CameraHal: debugShowFPS(622): Camera 11488 Frames, 29.842 FPS
+03-27 16:33:57.608  2682  2693 I art     : Background partial concurrent mark sweep GC freed 362080(11MB) AllocSpace objects, 43(13MB) LOS objects, 32% free, 33MB/49MB, paused 2.324ms total 151.286ms
+03-27 16:33:57.940  2682  2693 I art     : Background sticky concurrent mark sweep GC freed 373410(11MB) AllocSpace objects, 36(10MB) LOS objects, 31% free, 33MB/49MB, paused 2.698ms total 107.326ms
+03-27 16:33:58.321  2682  2693 I art     : Background partial concurrent mark sweep GC freed 413980(13MB) AllocSpace objects, 49(15MB) LOS objects, 34% free, 29MB/45MB, paused 2.228ms total 152.899ms
+03-27 16:33:58.449   245  2894 D CameraHal: debugShowFPS(622): Camera 11520 Frames, 29.835 FPS
+03-27 16:33:58.641  2682  2693 I art     : Background sticky concurrent mark sweep GC freed 358785(11MB) AllocSpace objects, 34(9MB) LOS objects, 30% free, 31MB/45MB, paused 2.090ms total 103.597ms
+03-27 16:33:58.918  1623  1682 I ===DaemonService===: ############## Rotation : 0
+03-27 16:33:58.918  1623  1682 I ===DaemonService===: ScreenOrientationThread:0 screentOrientation:0
+03-27 16:33:58.920  1623  1676 I ===APKProtocolTransmit===: Ready send su-cmd:275
+03-27 16:33:58.920  1623  1676 I ===APKProtocolTransmit===: Start send su-cmd:275 length[14]
+03-27 16:33:58.920  1623  1676 I ===APKProtocolTransmit===: Will write content:the C socket has not been connected,so dicard the send command:[275]
+03-27 16:33:58.925  1623  1676 I ===APKProtocolTransmit===: End send sb-cmd:275
+03-27 16:33:58.983  2682  2693 I art     : Background partial concurrent mark sweep GC freed 353592(11MB) AllocSpace objects, 42(11MB) LOS objects, 32% free, 32MB/48MB, paused 2.030ms total 153.512ms
+03-27 16:33:59.321  2682  2693 I art     : Background sticky concurrent mark sweep GC freed 379601(12MB) AllocSpace objects, 35(10MB) LOS objects, 32% free, 32MB/48MB, paused 3.247ms total 114.280ms
+03-27 16:33:59.412  2682  2925 I PacketWriter: 心跳 
+03-27 16:33:59.520   245  2894 D CameraHal: debugShowFPS(622): Camera 11552 Frames, 29.866 FPS
+03-27 16:33:59.586  1623  1685 I USBService: send udp to check mobileagent state.
+03-27 16:33:59.587  1623  1687 I ===Mrcp===: sending cmd:276
+03-27 16:33:59.588  1623  1872 I USBService: command is : [277] 
+03-27 16:33:59.588  1623  1872 I USBService: res:-131070 res2:2 opt:-2
+03-27 16:33:59.588  1623  1872 I USBService: 	 mobileagent state:-2. 
+03-27 16:33:59.589  1623  1685 I USBService: get mobileagent state 1 and current mobileagent state 1 and usb state of connection false
+03-27 16:33:59.649  2682  2693 I art     : Background partial concurrent mark sweep GC freed 313654(10MB) AllocSpace objects, 43(14MB) LOS objects, 34% free, 30MB/46MB, paused 711us total 106.838ms
+03-27 16:34:00.315  2682  2693 I art     : Background partial concurrent mark sweep GC freed 293377(9MB) AllocSpace objects, 37(13MB) LOS objects, 32% free, 32MB/48MB, paused 5.963ms total 147.959ms
+03-27 16:34:00.592   245  2894 D CameraHal: debugShowFPS(622): Camera 11584 Frames, 29.851 FPS
+03-27 16:34:00.665  2682  2693 I art     : Background sticky concurrent mark sweep GC freed 338346(10MB) AllocSpace objects, 33(11MB) LOS objects, 30% free, 33MB/48MB, paused 1.392ms total 111.977ms
+03-27 16:34:00.994  2682  2693 I art     : Background partial concurrent mark sweep GC freed 343510(11MB) AllocSpace objects, 44(14MB) LOS objects, 33% free, 31MB/47MB, paused 2.060ms total 142.495ms
+03-27 16:34:01.315  2682  2693 I art     : Background sticky concurrent mark sweep GC freed 381422(12MB) AllocSpace objects, 35(9MB) LOS objects, 32% free, 32MB/47MB, paused 3.341ms total 104.536ms
+03-27 16:34:01.668   245  2894 D CameraHal: debugShowFPS(622): Camera 11616 Frames, 29.745 FPS
+03-27 16:34:01.682  2682  2693 I art     : Background partial concurrent mark sweep GC freed 338519(10MB) AllocSpace objects, 44(14MB) LOS objects, 33% free, 31MB/47MB, paused 2.042ms total 157.591ms
+03-27 16:34:01.928  1623  1682 I ===DaemonService===: ############## Rotation : 0
+03-27 16:34:01.928  1623  1682 I ===DaemonService===: ScreenOrientationThread:0 screentOrientation:0
+03-27 16:34:01.930  1623  1688 I ===APKProtocolTransmit===: Ready send su-cmd:275
+03-27 16:34:01.930  1623  1688 I ===APKProtocolTransmit===: Start send su-cmd:275 length[14]
+03-27 16:34:01.930  1623  1688 I ===APKProtocolTransmit===: Will write content:the C socket has not been connected,so dicard the send command:[275]
+03-27 16:34:01.936  1623  1688 I ===APKProtocolTransmit===: End send sb-cmd:275
+03-27 16:34:02.310  2682  2693 I art     : Background partial concurrent mark sweep GC freed 365940(11MB) AllocSpace objects, 45(12MB) LOS objects, 34% free, 30MB/46MB, paused 865us total 121.322ms
+03-27 16:34:02.589  1623  1685 I USBService: send udp to check mobileagent state.
+03-27 16:34:02.590  1623  1683 I ===Mrcp===: sending cmd:276
+03-27 16:34:02.590  1623  1873 I USBService: command is : [277] 
+03-27 16:34:02.591  1623  1873 I USBService: res:-131070 res2:2 opt:-2
+03-27 16:34:02.591  1623  1873 I USBService: 	 mobileagent state:-2. 
+03-27 16:34:02.591  1623  1685 I USBService: get mobileagent state 1 and current mobileagent state 1 and usb state of connection false
+03-27 16:34:02.740   245  2894 D CameraHal: debugShowFPS(622): Camera 11648 Frames, 29.856 FPS
+03-27 16:34:02.971  2682  2693 I art     : Background partial concurrent mark sweep GC freed 350210(11MB) AllocSpace objects, 44(12MB) LOS objects, 34% free, 30MB/46MB, paused 5.198ms total 142.691ms
+03-27 16:34:03.305  2682  2693 I art     : Background sticky concurrent mark sweep GC freed 326487(10MB) AllocSpace objects, 33(10MB) LOS objects, 29% free, 33MB/46MB, paused 2.794ms total 107.633ms
+03-27 16:34:03.651  2682  2693 I art     : Background partial concurrent mark sweep GC freed 323593(10MB) AllocSpace objects, 38(13MB) LOS objects, 33% free, 31MB/47MB, paused 2.145ms total 150.732ms
+03-27 16:34:03.812   245  2894 D CameraHal: debugShowFPS(622): Camera 11680 Frames, 29.839 FPS
+03-27 16:34:04.487  2682  2693 I art     : Background partial concurrent mark sweep GC freed 277958(8MB) AllocSpace objects, 39(13MB) LOS objects, 35% free, 28MB/44MB, paused 2.240ms total 117.437ms
+03-27 16:34:04.727  2682  2693 W art     : Suspending all threads took: 5.137ms
+03-27 16:34:04.818  2682  2693 I art     : Background sticky concurrent mark sweep GC freed 348247(11MB) AllocSpace objects, 33(8MB) LOS objects, 28% free, 32MB/44MB, paused 7.764ms total 113.655ms
+03-27 16:34:04.884   245  2894 D CameraHal: debugShowFPS(622): Camera 11712 Frames, 29.857 FPS
+03-27 16:34:04.940  1623  1682 I ===DaemonService===: ############## Rotation : 0
+03-27 16:34:04.941  1623  1682 I ===DaemonService===: ScreenOrientationThread:0 screentOrientation:0
+03-27 16:34:04.948  1623  1686 I ===APKProtocolTransmit===: Ready send su-cmd:275
+03-27 16:34:04.948  1623  1686 I ===APKProtocolTransmit===: Start send su-cmd:275 length[14]
+03-27 16:34:04.948  1623  1686 I ===APKProtocolTransmit===: Will write content:the C socket has not been connected,so dicard the send command:[275]
+03-27 16:34:04.953  1623  1686 I ===APKProtocolTransmit===: End send sb-cmd:275
+03-27 16:34:05.142  2682  2693 I art     : Background partial concurrent mark sweep GC freed 330416(10MB) AllocSpace objects, 39(11MB) LOS objects, 32% free, 33MB/49MB, paused 3.120ms total 156.202ms
+03-27 16:34:05.485  2682  2693 I art     : Background sticky concurrent mark sweep GC freed 354514(11MB) AllocSpace objects, 36(11MB) LOS objects, 30% free, 34MB/49MB, paused 2.062ms total 106.310ms
+03-27 16:34:05.591  1623  1685 I USBService: send udp to check mobileagent state.
+03-27 16:34:05.592  1623  1676 I ===Mrcp===: sending cmd:276
+03-27 16:34:05.593  1623  1713 I USBService: command is : [277] 
+03-27 16:34:05.594  1623  1713 I USBService: res:-131070 res2:2 opt:-2
+03-27 16:34:05.594  1623  1713 I USBService: 	 mobileagent state:-2. 
+03-27 16:34:05.594  1623  1685 I USBService: get mobileagent state 1 and current mobileagent state 1 and usb state of connection false
+03-27 16:34:05.832  2682  2693 I art     : Background partial concurrent mark sweep GC freed 379605(12MB) AllocSpace objects, 46(13MB) LOS objects, 33% free, 31MB/47MB, paused 5.369ms total 149.062ms
+03-27 16:34:05.956   245  2894 D CameraHal: debugShowFPS(622): Camera 11744 Frames, 29.852 FPS
+03-27 16:34:06.149  2682  2693 I art     : Background sticky concurrent mark sweep GC freed 358554(11MB) AllocSpace objects, 32(8MB) LOS objects, 33% free, 31MB/47MB, paused 2.563ms total 102.894ms
+03-27 16:34:06.508  2682  2693 I art     : Background partial concurrent mark sweep GC freed 315082(10MB) AllocSpace objects, 43(13MB) LOS objects, 32% free, 32MB/48MB, paused 5.412ms total 159.760ms
+03-27 16:34:07.028   245  2894 D CameraHal: debugShowFPS(622): Camera 11776 Frames, 29.846 FPS
+03-27 16:34:07.131  2682  2693 I art     : Background partial concurrent mark sweep GC freed 328725(10MB) AllocSpace objects, 43(14MB) LOS objects, 33% free, 31MB/47MB, paused 2.609ms total 134.125ms
+03-27 16:34:07.478  2682  2693 I art     : Background sticky concurrent mark sweep GC freed 366406(11MB) AllocSpace objects, 34(9MB) LOS objects, 31% free, 32MB/47MB, paused 8.110ms total 121.217ms
+03-27 16:34:07.838  2682  2693 I art     : Background partial concurrent mark sweep GC freed 357671(11MB) AllocSpace objects, 42(13MB) LOS objects, 33% free, 31MB/47MB, paused 3.527ms total 150.606ms
+03-27 16:34:07.954  1623  1682 I ===DaemonService===: ############## Rotation : 0
+03-27 16:34:07.954  1623  1682 I ===DaemonService===: ScreenOrientationThread:0 screentOrientation:0
+03-27 16:34:07.956  1623  1687 I ===APKProtocolTransmit===: Ready send su-cmd:275
+03-27 16:34:07.956  1623  1687 I ===APKProtocolTransmit===: Start send su-cmd:275 length[14]
+03-27 16:34:07.956  1623  1687 I ===APKProtocolTransmit===: Will write content:the C socket has not been connected,so dicard the send command:[275]
+03-27 16:34:07.968  1623  1687 I ===APKProtocolTransmit===: End send sb-cmd:275
+03-27 16:34:08.101   245  2894 D CameraHal: debugShowFPS(622): Camera 11808 Frames, 29.826 FPS
+03-27 16:34:08.166  2682  2693 I art     : Background sticky concurrent mark sweep GC freed 388744(12MB) AllocSpace objects, 36(10MB) LOS objects, 31% free, 32MB/47MB, paused 4.008ms total 110.484ms
+03-27 16:34:08.554  2682  2693 I art     : Background partial concurrent mark sweep GC freed 367654(11MB) AllocSpace objects, 47(13MB) LOS objects, 33% free, 31MB/47MB, paused 1.971ms total 160.401ms
+03-27 16:34:08.595  1623  1685 I USBService: send udp to check mobileagent state.
+03-27 16:34:08.596  1623  1688 I ===Mrcp===: sending cmd:276
+03-27 16:34:08.598  1623  1872 I USBService: command is : [277] 
+03-27 16:34:08.599  1623  1872 I USBService: res:-131070 res2:2 opt:-2
+03-27 16:34:08.599  1623  1872 I USBService: 	 mobileagent state:-2. 
+03-27 16:34:08.599  1623  1685 I USBService: get mobileagent state 1 and current mobileagent state 1 and usb state of connection false
+03-27 16:34:08.870  2682  2693 I art     : Background sticky concurrent mark sweep GC freed 364559(11MB) AllocSpace objects, 37(10MB) LOS objects, 32% free, 32MB/47MB, paused 2.143ms total 100.896ms
+03-27 16:34:09.172   245  2894 D CameraHal: debugShowFPS(622): Camera 11840 Frames, 29.869 FPS
+03-27 16:34:09.209  2682  2693 I art     : Background partial concurrent mark sweep GC freed 352069(11MB) AllocSpace objects, 42(13MB) LOS objects, 35% free, 29MB/45MB, paused 2.971ms total 115.623ms
+03-27 16:34:09.539  2682  2693 I art     : Background sticky concurrent mark sweep GC freed 307278(9MB) AllocSpace objects, 30(8MB) LOS objects, 26% free, 33MB/45MB, paused 2.223ms total 110.722ms
+03-27 16:34:09.843  2682  2693 I art     : Background partial concurrent mark sweep GC freed 290319(9MB) AllocSpace objects, 39(13MB) LOS objects, 33% free, 31MB/47MB, paused 1.676ms total 143.540ms
+03-27 16:34:10.146  2682  2693 I art     : Background sticky concurrent mark sweep GC freed 336663(10MB) AllocSpace objects, 31(8MB) LOS objects, 29% free, 33MB/47MB, paused 1.975ms total 101.327ms
+03-27 16:34:10.248   245  2894 D CameraHal: debugShowFPS(622): Camera 11872 Frames, 29.748 FPS
+03-27 16:34:10.470  2682  2693 I art     : Background partial concurrent mark sweep GC freed 342132(11MB) AllocSpace objects, 41(11MB) LOS objects, 32% free, 32MB/48MB, paused 2.901ms total 131.676ms
+03-27 16:34:10.960  1623  1682 I ===DaemonService===: ############## Rotation : 0
+03-27 16:34:10.960  1623  1682 I ===DaemonService===: ScreenOrientationThread:0 screentOrientation:0
+03-27 16:34:10.962  1623  1683 I ===APKProtocolTransmit===: Ready send su-cmd:275
+03-27 16:34:10.962  1623  1683 I ===APKProtocolTransmit===: Start send su-cmd:275 length[14]
+03-27 16:34:10.962  1623  1683 I ===APKProtocolTransmit===: Will write content:the C socket has not been connected,so dicard the send command:[275]
+03-27 16:34:10.968  1623  1683 I ===APKProtocolTransmit===: End send sb-cmd:275
+03-27 16:34:11.192  2682  2693 I art     : Background partial concurrent mark sweep GC freed 379522(12MB) AllocSpace objects, 49(13MB) LOS objects, 32% free, 33MB/49MB, paused 2.915ms total 178.023ms
+03-27 16:34:11.320   245  2894 D CameraHal: debugShowFPS(622): Camera 11904 Frames, 29.855 FPS
+03-27 16:34:11.600  1623  1685 I USBService: send udp to check mobileagent state.
+03-27 16:34:11.601  1623  1686 I ===Mrcp===: sending cmd:276
+03-27 16:34:11.602  1623  1873 I USBService: command is : [277] 
+03-27 16:34:11.602  1623  1873 I USBService: res:-131070 res2:2 opt:-2
+03-27 16:34:11.602  1623  1873 I USBService: 	 mobileagent state:-2. 
+03-27 16:34:11.602  1623  1685 I USBService: get mobileagent state 1 and current mobileagent state 1 and usb state of connection false
+03-27 16:34:11.797  2682  2693 I art     : Background partial concurrent mark sweep GC freed 339157(11MB) AllocSpace objects, 43(12MB) LOS objects, 35% free, 29MB/45MB, paused 543us total 103.613ms
+03-27 16:34:12.392   245  2894 D CameraHal: debugShowFPS(622): Camera 11936 Frames, 29.839 FPS
+03-27 16:34:12.456  2682  2693 I art     : Background partial concurrent mark sweep GC freed 342642(11MB) AllocSpace objects, 39(12MB) LOS objects, 32% free, 32MB/48MB, paused 4.618ms total 153.518ms
+03-27 16:34:12.791  2682  2693 I art     : Background sticky concurrent mark sweep GC freed 336847(10MB) AllocSpace objects, 31(9MB) LOS objects, 27% free, 34MB/48MB, paused 1.832ms total 119.384ms
+03-27 16:34:13.137  2682  2693 I art     : Background partial concurrent mark sweep GC freed 323119(10MB) AllocSpace objects, 46(16MB) LOS objects, 33% free, 31MB/47MB, paused 1.150ms total 155.729ms
+03-27 16:34:13.450  2682  2693 I art     : Background sticky concurrent mark sweep GC freed 333730(10MB) AllocSpace objects, 33(11MB) LOS objects, 34% free, 30MB/46MB, paused 1.748ms total 100.342ms
+03-27 16:34:13.465   245  2894 D CameraHal: debugShowFPS(622): Camera 11968 Frames, 29.825 FPS
+03-27 16:34:13.809  2682  2693 I art     : Background partial concurrent mark sweep GC freed 363014(11MB) AllocSpace objects, 44(11MB) LOS objects, 33% free, 32MB/48MB, paused 2.028ms total 157.926ms
+03-27 16:34:13.974  1623  1682 I ===DaemonService===: ############## Rotation : 0
+03-27 16:34:13.975  1623  1682 I ===DaemonService===: ScreenOrientationThread:0 screentOrientation:0
+03-27 16:34:13.976  1623  1676 I ===APKProtocolTransmit===: Ready send su-cmd:275
+03-27 16:34:13.976  1623  1676 I ===APKProtocolTransmit===: Start send su-cmd:275 length[14]
+03-27 16:34:13.977  1623  1676 I ===APKProtocolTransmit===: Will write content:the C socket has not been connected,so dicard the send command:[275]
+03-27 16:34:13.984  1623  1676 I ===APKProtocolTransmit===: End send sb-cmd:275
+03-27 16:34:14.134  2682  2693 I art     : Background sticky concurrent mark sweep GC freed 406967(12MB) AllocSpace objects, 37(9MB) LOS objects, 31% free, 32MB/48MB, paused 2.922ms total 112.217ms
+03-27 16:34:14.505  2682  2693 I art     : Background partial concurrent mark sweep GC freed 363400(11MB) AllocSpace objects, 44(13MB) LOS objects, 32% free, 33MB/49MB, paused 2.229ms total 153.195ms
+03-27 16:34:14.536   245  2894 D CameraHal: debugShowFPS(622): Camera 12000 Frames, 29.881 FPS
+03-27 16:34:14.603  1623  1685 I USBService: send udp to check mobileagent state.
+03-27 16:34:14.604  1623  1687 I ===Mrcp===: sending cmd:276
+03-27 16:34:14.606  1623  1713 I USBService: command is : [277] 
+03-27 16:34:14.607  1623  1713 I USBService: res:-131070 res2:2 opt:-2
+03-27 16:34:14.607  1623  1713 I USBService: 	 mobileagent state:-2. 
+03-27 16:34:14.608  1623  1685 I USBService: get mobileagent state 1 and current mobileagent state 1 and usb state of connection false
+03-27 16:34:14.834  2682  2693 I art     : Background sticky concurrent mark sweep GC freed 337273(10MB) AllocSpace objects, 33(10MB) LOS objects, 31% free, 33MB/49MB, paused 2.354ms total 104.362ms
+03-27 16:34:15.207  2682  2693 I art     : Background partial concurrent mark sweep GC freed 349799(11MB) AllocSpace objects, 44(14MB) LOS objects, 32% free, 32MB/48MB, paused 1.593ms total 150.059ms
+03-27 16:34:15.608   245  2894 D CameraHal: debugShowFPS(622): Camera 12032 Frames, 29.851 FPS
+03-27 16:34:15.871  2682  2693 I art     : Background partial concurrent mark sweep GC freed 350903(11MB) AllocSpace objects, 48(15MB) LOS objects, 34% free, 31MB/47MB, paused 1.817ms total 145.632ms
+03-27 16:34:16.487  2682  2693 I art     : Background partial concurrent mark sweep GC freed 330350(10MB) AllocSpace objects, 40(13MB) LOS objects, 34% free, 30MB/46MB, paused 1.273ms total 134.912ms
+03-27 16:34:16.681   245  2894 D CameraHal: debugShowFPS(622): Camera 12064 Frames, 29.839 FPS
+03-27 16:34:16.986  1623  1682 I ===DaemonService===: ############## Rotation : 0
+03-27 16:34:16.986  1623  1682 I ===DaemonService===: ScreenOrientationThread:0 screentOrientation:0
+03-27 16:34:16.987  1623  1688 I ===APKProtocolTransmit===: Ready send su-cmd:275
+03-27 16:34:16.987  1623  1688 I ===APKProtocolTransmit===: Start send su-cmd:275 length[14]
+03-27 16:34:16.987  1623  1688 I ===APKProtocolTransmit===: Will write content:the C socket has not been connected,so dicard the send command:[275]
+03-27 16:34:16.991  1623  1688 I ===APKProtocolTransmit===: End send sb-cmd:275
+03-27 16:34:17.151  2682  2693 I art     : Background partial concurrent mark sweep GC freed 354556(11MB) AllocSpace objects, 43(12MB) LOS objects, 33% free, 31MB/47MB, paused 1.126ms total 139.095ms
+03-27 16:34:17.475  2682  2693 I art     : Background sticky concurrent mark sweep GC freed 281441(8MB) AllocSpace objects, 27(8MB) LOS objects, 27% free, 34MB/47MB, paused 2.339ms total 100.828ms
+03-27 16:34:17.609  1623  1685 I USBService: send udp to check mobileagent state.
+03-27 16:34:17.610  1623  1683 I ===Mrcp===: sending cmd:276
+03-27 16:34:17.612  1623  1872 I USBService: command is : [277] 
+03-27 16:34:17.613  1623  1872 I USBService: res:-131070 res2:2 opt:-2
+03-27 16:34:17.613  1623  1872 I USBService: 	 mobileagent state:-2. 
+03-27 16:34:17.614  1623  1685 I USBService: get mobileagent state 1 and current mobileagent state 1 and usb state of connection false
+03-27 16:34:17.756   245  2894 D CameraHal: debugShowFPS(622): Camera 12096 Frames, 29.758 FPS
+03-27 16:34:17.781  2682  2693 I art     : Background partial concurrent mark sweep GC freed 290069(9MB) AllocSpace objects, 40(14MB) LOS objects, 33% free, 31MB/47MB, paused 1.984ms total 136.534ms
+03-27 16:34:18.452  2682  2693 I art     : Background partial concurrent mark sweep GC freed 317791(10MB) AllocSpace objects, 39(13MB) LOS objects, 32% free, 32MB/48MB, paused 2.439ms total 138.947ms
+03-27 16:34:18.828   245  2894 D CameraHal: debugShowFPS(622): Camera 12128 Frames, 29.838 FPS
+03-27 16:34:19.127  2682  2693 I art     : Background partial concurrent mark sweep GC freed 376439(12MB) AllocSpace objects, 47(13MB) LOS objects, 33% free, 32MB/48MB, paused 1.774ms total 145.655ms
+03-27 16:34:19.458  2682  2693 I art     : Background sticky concurrent mark sweep GC freed 342099(10MB) AllocSpace objects, 33(8MB) LOS objects, 30% free, 33MB/48MB, paused 2.213ms total 108.837ms
+03-27 16:34:19.800  2682  2693 I art     : Background partial concurrent mark sweep GC freed 305911(9MB) AllocSpace objects, 43(14MB) LOS objects, 34% free, 30MB/46MB, paused 2.489ms total 141.257ms
+03-27 16:34:19.900   245  2894 D CameraHal: debugShowFPS(622): Camera 12160 Frames, 29.847 FPS
+03-27 16:34:19.989  1623  1682 I ===DaemonService===: ############## Rotation : 0
+03-27 16:34:19.990  1623  1682 I ===DaemonService===: ScreenOrientationThread:0 screentOrientation:0
+03-27 16:34:20.000  1623  1686 I ===APKProtocolTransmit===: Ready send su-cmd:275
+03-27 16:34:20.000  1623  1686 I ===APKProtocolTransmit===: Start send su-cmd:275 length[14]
+03-27 16:34:20.001  1623  1686 I ===APKProtocolTransmit===: Will write content:the C socket has not been connected,so dicard the send command:[275]
+03-27 16:34:20.009  1623  1686 I ===APKProtocolTransmit===: End send sb-cmd:275
+03-27 16:34:20.474  2682  2693 I art     : Background partial concurrent mark sweep GC freed 378765(12MB) AllocSpace objects, 43(11MB) LOS objects, 33% free, 31MB/47MB, paused 2.714ms total 144.834ms
+03-27 16:34:20.615  1623  1685 I USBService: send udp to check mobileagent state.
+03-27 16:34:20.616  1623  1676 I ===Mrcp===: sending cmd:276
+03-27 16:34:20.618  1623  1873 I USBService: command is : [277] 
+03-27 16:34:20.618  1623  1873 I USBService: res:-131070 res2:2 opt:-2
+03-27 16:34:20.618  1623  1873 I USBService: 	 mobileagent state:-2. 
+03-27 16:34:20.618  1623  1685 I USBService: get mobileagent state 1 and current mobileagent state 1 and usb state of connection false
+03-27 16:34:20.800  2682  2693 I art     : Background sticky concurrent mark sweep GC freed 351088(11MB) AllocSpace objects, 34(10MB) LOS objects, 32% free, 32MB/47MB, paused 6.400ms total 100.272ms
+03-27 16:34:20.972   245  2894 D CameraHal: debugShowFPS(622): Camera 12192 Frames, 29.866 FPS
+03-27 16:34:21.162  2682  2693 I art     : Background partial concurrent mark sweep GC freed 332184(10MB) AllocSpace objects, 44(13MB) LOS objects, 33% free, 31MB/47MB, paused 2.931ms total 144.706ms
+03-27 16:34:21.523  2682  2682 D SyncManager: 获取公司信息
+03-27 16:34:21.524  2682  2682 D SyncManager: 地址：http://47.105.80.245:8080/api/company/getcompany.html
+03-27 16:34:21.524  2682  2682 D SyncManager: 参数：00000000-385c-5a58-0000-000000dd4a18
+03-27 16:34:21.614  2682  2682 D SyncManager: {"message":"该设备未绑定公司","status":4,"company":{}}
+03-27 16:34:21.622  2682  2682 D SyncManager: 重新获取公司信息
+03-27 16:34:21.825  2682  2693 I art     : Background partial concurrent mark sweep GC freed 338771(10MB) AllocSpace objects, 43(13MB) LOS objects, 33% free, 31MB/47MB, paused 2.180ms total 156.516ms
+03-27 16:34:22.044   245  2894 D CameraHal: debugShowFPS(622): Camera 12224 Frames, 29.844 FPS
+03-27 16:34:22.130  2682  2693 I art     : Background sticky concurrent mark sweep GC freed 331067(10MB) AllocSpace objects, 33(10MB) LOS objects, 31% free, 32MB/47MB, paused 1.812ms total 107.149ms
+03-27 16:34:22.443  2682  2693 I art     : Background partial concurrent mark sweep GC freed 355751(11MB) AllocSpace objects, 43(13MB) LOS objects, 36% free, 27MB/43MB, paused 1.148ms total 108.056ms
+03-27 16:34:23.009  1623  1682 I ===DaemonService===: ############## Rotation : 0
+03-27 16:34:23.009  1623  1682 I ===DaemonService===: ScreenOrientationThread:0 screentOrientation:0
+03-27 16:34:23.010  1623  1687 I ===APKProtocolTransmit===: Ready send su-cmd:275
+03-27 16:34:23.010  1623  1687 I ===APKProtocolTransmit===: Start send su-cmd:275 length[14]
+03-27 16:34:23.010  1623  1687 I ===APKProtocolTransmit===: Will write content:the C socket has not been connected,so dicard the send command:[275]
+03-27 16:34:23.014  1623  1687 I ===APKProtocolTransmit===: End send sb-cmd:275
+03-27 16:34:23.034  2682  2693 I art     : Background partial concurrent mark sweep GC freed 258530(8MB) AllocSpace objects, 35(12MB) LOS objects, 35% free, 29MB/45MB, paused 1.742ms total 118.602ms
+03-27 16:34:23.116   245  2894 D CameraHal: debugShowFPS(622): Camera 12256 Frames, 29.848 FPS
+03-27 16:34:23.620  1623  1685 I USBService: send udp to check mobileagent state.
+03-27 16:34:23.623  1623  1688 I ===Mrcp===: sending cmd:276
+03-27 16:34:23.629  1623  1713 I USBService: command is : [277] 
+03-27 16:34:23.629  1623  1713 I USBService: res:-131070 res2:2 opt:-2
+03-27 16:34:23.629  1623  1713 I USBService: 	 mobileagent state:-2. 
+03-27 16:34:23.629  1623  1685 I USBService: get mobileagent state 1 and current mobileagent state 1 and usb state of connection false
+03-27 16:34:23.648  2682  2693 I art     : Background partial concurrent mark sweep GC freed 319180(10MB) AllocSpace objects, 41(12MB) LOS objects, 34% free, 30MB/46MB, paused 1.601ms total 129.932ms
+03-27 16:34:24.188   245  2894 D CameraHal: debugShowFPS(622): Camera 12288 Frames, 29.854 FPS
+03-27 16:34:24.309  2682  2693 I art     : Background partial concurrent mark sweep GC freed 332502(10MB) AllocSpace objects, 42(13MB) LOS objects, 34% free, 29MB/45MB, paused 797us total 132.402ms
+03-27 16:34:24.971  2682  2693 I art     : Background partial concurrent mark sweep GC freed 312358(10MB) AllocSpace objects, 41(13MB) LOS objects, 33% free, 31MB/47MB, paused 4.727ms total 155.198ms
+03-27 16:34:25.261   245  2894 D CameraHal: debugShowFPS(622): Camera 12320 Frames, 29.841 FPS
+03-27 16:34:25.298  2682  2693 I art     : Background sticky concurrent mark sweep GC freed 358115(11MB) AllocSpace objects, 36(11MB) LOS objects, 33% free, 31MB/47MB, paused 2.596ms total 116.606ms
+03-27 16:34:25.624  2682  2693 I art     : Background partial concurrent mark sweep GC freed 327288(10MB) AllocSpace objects, 42(14MB) LOS objects, 36% free, 27MB/43MB, paused 1.481ms total 102.789ms
+03-27 16:34:26.014  1623  1682 I ===DaemonService===: ############## Rotation : 0
+03-27 16:34:26.014  1623  1682 I ===DaemonService===: ScreenOrientationThread:0 screentOrientation:0
+03-27 16:34:26.015  1623  1683 I ===APKProtocolTransmit===: Ready send su-cmd:275
+03-27 16:34:26.015  1623  1683 I ===APKProtocolTransmit===: Start send su-cmd:275 length[14]
+03-27 16:34:26.015  1623  1683 I ===APKProtocolTransmit===: Will write content:the C socket has not been connected,so dicard the send command:[275]
+03-27 16:34:26.021  1623  1683 I ===APKProtocolTransmit===: End send sb-cmd:275
+03-27 16:34:26.257  2682  2693 I art     : Background partial concurrent mark sweep GC freed 332875(10MB) AllocSpace objects, 42(11MB) LOS objects, 34% free, 30MB/46MB, paused 2.061ms total 143.236ms
+03-27 16:34:26.336   245  2894 D CameraHal: debugShowFPS(622): Camera 12352 Frames, 29.759 FPS
+03-27 16:34:26.630  1623  1685 I USBService: send udp to check mobileagent state.
+03-27 16:34:26.631  1623  1686 I ===Mrcp===: sending cmd:276
+03-27 16:34:26.632  1623  1872 I USBService: command is : [277] 
+03-27 16:34:26.632  1623  1872 I USBService: res:-131070 res2:2 opt:-2
+03-27 16:34:26.632  1623  1872 I USBService: 	 mobileagent state:-2. 
+03-27 16:34:26.632  1623  1685 I USBService: get mobileagent state 1 and current mobileagent state 1 and usb state of connection false
+03-27 16:34:26.920  2682  2693 I art     : Background partial concurrent mark sweep GC freed 339536(10MB) AllocSpace objects, 41(12MB) LOS objects, 34% free, 30MB/46MB, paused 5.037ms total 139.780ms
+03-27 16:34:27.408   245  2894 D CameraHal: debugShowFPS(622): Camera 12384 Frames, 29.846 FPS
+03-27 16:34:27.531  2682  2693 I art     : Background partial concurrent mark sweep GC freed 330993(10MB) AllocSpace objects, 42(14MB) LOS objects, 35% free, 29MB/45MB, paused 1.932ms total 139.462ms
+03-27 16:34:28.157  2682  2693 I art     : Background partial concurrent mark sweep GC freed 312669(9MB) AllocSpace objects, 41(12MB) LOS objects, 34% free, 30MB/46MB, paused 4.140ms total 119.933ms
+03-27 16:34:28.480   245  2894 D CameraHal: debugShowFPS(622): Camera 12416 Frames, 29.844 FPS
+03-27 16:34:28.782  2682  2693 I art     : Background partial concurrent mark sweep GC freed 293022(9MB) AllocSpace objects, 38(14MB) LOS objects, 33% free, 31MB/47MB, paused 2.154ms total 142.703ms
+03-27 16:34:29.036  1623  1682 I ===DaemonService===: ############## Rotation : 0
+03-27 16:34:29.037  1623  1682 I ===DaemonService===: ScreenOrientationThread:0 screentOrientation:0
+03-27 16:34:29.041  1623  1676 I ===APKProtocolTransmit===: Ready send su-cmd:275
+03-27 16:34:29.041  1623  1676 I ===APKProtocolTransmit===: Start send su-cmd:275 length[14]
+03-27 16:34:29.041  1623  1676 I ===APKProtocolTransmit===: Will write content:the C socket has not been connected,so dicard the send command:[275]
+03-27 16:34:29.043  1623  1676 I ===APKProtocolTransmit===: End send sb-cmd:275
+03-27 16:34:29.104  2682  2693 I art     : Background sticky concurrent mark sweep GC freed 369187(11MB) AllocSpace objects, 35(9MB) LOS objects, 31% free, 32MB/47MB, paused 2.826ms total 114.767ms
+03-27 16:34:29.413  2682  2925 I PacketWriter: 心跳 
+03-27 16:34:29.435  2682  2693 I art     : Background partial concurrent mark sweep GC freed 317042(10MB) AllocSpace objects, 43(14MB) LOS objects, 34% free, 30MB/46MB, paused 1.202ms total 131.763ms
+03-27 16:34:29.552   245  2894 D CameraHal: debugShowFPS(622): Camera 12448 Frames, 29.847 FPS
+03-27 16:34:29.633  1623  1685 I USBService: send udp to check mobileagent state.
+03-27 16:34:29.635  1623  1687 I ===Mrcp===: sending cmd:276
+03-27 16:34:29.636  1623  1873 I USBService: command is : [277] 
+03-27 16:34:29.636  1623  1873 I USBService: res:-131070 res2:2 opt:-2
+03-27 16:34:29.637  1623  1873 I USBService: 	 mobileagent state:-2. 
+03-27 16:34:29.637  1623  1685 I USBService: get mobileagent state 1 and current mobileagent state 1 and usb state of connection false
+03-27 16:34:30.073  2682  2693 I art     : Background partial concurrent mark sweep GC freed 332509(10MB) AllocSpace objects, 41(13MB) LOS objects, 34% free, 29MB/45MB, paused 2.020ms total 132.368ms
+03-27 16:34:30.624   245  2894 D CameraHal: debugShowFPS(622): Camera 12480 Frames, 29.857 FPS
+03-27 16:34:30.722  2682  2693 I art     : Background partial concurrent mark sweep GC freed 352859(11MB) AllocSpace objects, 42(11MB) LOS objects, 32% free, 33MB/49MB, paused 3.960ms total 150.788ms
+03-27 16:34:31.059  2682  2693 I art     : Background sticky concurrent mark sweep GC freed 383690(12MB) AllocSpace objects, 36(10MB) LOS objects, 31% free, 33MB/49MB, paused 4.635ms total 108.065ms
+03-27 16:34:31.399  2682  2693 I art     : Background partial concurrent mark sweep GC freed 346372(11MB) AllocSpace objects, 46(15MB) LOS objects, 33% free, 31MB/47MB, paused 2.394ms total 126.814ms
+03-27 16:34:31.696   245  2894 D CameraHal: debugShowFPS(622): Camera 12512 Frames, 29.845 FPS
+03-27 16:34:32.047  1623  1682 I ===DaemonService===: ############## Rotation : 0
+03-27 16:34:32.048  1623  1682 I ===DaemonService===: ScreenOrientationThread:0 screentOrientation:0
+03-27 16:34:32.050  1623  1688 I ===APKProtocolTransmit===: Ready send su-cmd:275
+03-27 16:34:32.050  1623  1688 I ===APKProtocolTransmit===: Start send su-cmd:275 length[14]
+03-27 16:34:32.051  1623  1688 I ===APKProtocolTransmit===: Will write content:the C socket has not been connected,so dicard the send command:[275]
+03-27 16:34:32.068  1623  1688 I ===APKProtocolTransmit===: End send sb-cmd:275
+03-27 16:34:32.079  2682  2693 I art     : Background partial concurrent mark sweep GC freed 357214(11MB) AllocSpace objects, 43(12MB) LOS objects, 33% free, 31MB/47MB, paused 4.217ms total 149.260ms
+03-27 16:34:32.393  2682  2693 I art     : Background sticky concurrent mark sweep GC freed 323146(10MB) AllocSpace objects, 32(10MB) LOS objects, 31% free, 32MB/47MB, paused 6.312ms total 103.694ms
+03-27 16:34:32.637  1623  1685 I USBService: send udp to check mobileagent state.
+03-27 16:34:32.638  1623  1683 I ===Mrcp===: sending cmd:276
+03-27 16:34:32.639  1623  1713 I USBService: command is : [277] 
+03-27 16:34:32.640  1623  1713 I USBService: res:-131070 res2:2 opt:-2
+03-27 16:34:32.640  1623  1713 I USBService: 	 mobileagent state:-2. 
+03-27 16:34:32.640  1623  1685 I USBService: get mobileagent state 1 and current mobileagent state 1 and usb state of connection false
+03-27 16:34:32.694  2682  2693 I art     : Background partial concurrent mark sweep GC freed 336008(10MB) AllocSpace objects, 43(13MB) LOS objects, 34% free, 29MB/45MB, paused 1.906ms total 126.540ms
+03-27 16:34:32.768   245  2894 D CameraHal: debugShowFPS(622): Camera 12544 Frames, 29.852 FPS
+03-27 16:34:33.008  2682  2693 I art     : Background sticky concurrent mark sweep GC freed 339111(10MB) AllocSpace objects, 32(8MB) LOS objects, 30% free, 32MB/45MB, paused 9.050ms total 99.539ms
+03-27 16:34:33.316  2682  2693 I art     : Background partial concurrent mark sweep GC freed 289826(9MB) AllocSpace objects, 40(13MB) LOS objects, 35% free, 29MB/45MB, paused 543us total 114.258ms
+03-27 16:34:33.844   245  2894 D CameraHal: debugShowFPS(622): Camera 12576 Frames, 29.745 FPS
+03-27 16:34:33.947  2682  2693 I art     : Background partial concurrent mark sweep GC freed 339657(10MB) AllocSpace objects, 42(12MB) LOS objects, 33% free, 31MB/47MB, paused 2.765ms total 144.571ms
+03-27 16:34:34.274  2682  2693 I art     : Background sticky concurrent mark sweep GC freed 316142(9MB) AllocSpace objects, 33(10MB) LOS objects, 28% free, 33MB/47MB, paused 2.664ms total 108.518ms
+03-27 16:34:34.616  2682  2693 I art     : Background partial concurrent mark sweep GC freed 353623(11MB) AllocSpace objects, 43(13MB) LOS objects, 33% free, 31MB/47MB, paused 1.285ms total 148.372ms
+03-27 16:34:34.917   245  2894 D CameraHal: debugShowFPS(622): Camera 12608 Frames, 29.838 FPS
+03-27 16:34:34.943  2682  2693 I art     : Background sticky concurrent mark sweep GC freed 360047(11MB) AllocSpace objects, 35(10MB) LOS objects, 34% free, 30MB/46MB, paused 2.227ms total 102.467ms
+03-27 16:34:35.059  1623  1682 I ===DaemonService===: ############## Rotation : 0
+03-27 16:34:35.061  1623  1682 I ===DaemonService===: ScreenOrientationThread:0 screentOrientation:0
+03-27 16:34:35.062  1623  1686 I ===APKProtocolTransmit===: Ready send su-cmd:275
+03-27 16:34:35.062  1623  1686 I ===APKProtocolTransmit===: Start send su-cmd:275 length[14]
+03-27 16:34:35.062  1623  1686 I ===APKProtocolTransmit===: Will write content:the C socket has not been connected,so dicard the send command:[275]
+03-27 16:34:35.072  1623  1686 I ===APKProtocolTransmit===: End send sb-cmd:275
+03-27 16:34:35.312  2682  2693 I art     : Background partial concurrent mark sweep GC freed 371427(11MB) AllocSpace objects, 45(11MB) LOS objects, 33% free, 31MB/47MB, paused 2.992ms total 156.814ms
+03-27 16:34:35.638  2682  2693 I art     : Background sticky concurrent mark sweep GC freed 374827(11MB) AllocSpace objects, 36(9MB) LOS objects, 32% free, 31MB/47MB, paused 3.267ms total 111.134ms
+03-27 16:34:35.641  1623  1685 I USBService: send udp to check mobileagent state.
+03-27 16:34:35.644  1623  1872 I USBService: command is : [277] 
+03-27 16:34:35.644  1623  1872 I USBService: res:-131070 res2:2 opt:-2
+03-27 16:34:35.645  1623  1872 I USBService: 	 mobileagent state:-2. 
+03-27 16:34:35.645  1623  1685 I USBService: get mobileagent state 1 and current mobileagent state 1 and usb state of connection false
+03-27 16:34:35.645  1623  1676 I ===Mrcp===: sending cmd:276
+03-27 16:34:35.985  2682  2693 I art     : Background partial concurrent mark sweep GC freed 350828(11MB) AllocSpace objects, 41(12MB) LOS objects, 32% free, 32MB/48MB, paused 1.829ms total 142.752ms
+03-27 16:34:35.988   245  2894 D CameraHal: debugShowFPS(622): Camera 12640 Frames, 29.865 FPS
+03-27 16:34:36.655  2682  2693 I art     : Background partial concurrent mark sweep GC freed 319227(10MB) AllocSpace objects, 44(14MB) LOS objects, 33% free, 31MB/47MB, paused 567us total 138.388ms
+03-27 16:34:36.984  2682  2693 I art     : Background sticky concurrent mark sweep GC freed 342565(10MB) AllocSpace objects, 33(8MB) LOS objects, 33% free, 31MB/47MB, paused 2.867ms total 102.013ms
+03-27 16:34:37.061   245  2894 D CameraHal: debugShowFPS(622): Camera 12672 Frames, 29.824 FPS
+03-27 16:34:37.350  2682  2693 I art     : Background partial concurrent mark sweep GC freed 319804(10MB) AllocSpace objects, 43(14MB) LOS objects, 34% free, 29MB/45MB, paused 4.546ms total 145.247ms
+03-27 16:34:38.025  2682  2693 I art     : Background partial concurrent mark sweep GC freed 366141(11MB) AllocSpace objects, 45(12MB) LOS objects, 33% free, 32MB/48MB, paused 6.754ms total 172.300ms
+03-27 16:34:38.067  1623  1682 I ===DaemonService===: ############## Rotation : 0
+03-27 16:34:38.068  1623  1682 I ===DaemonService===: ScreenOrientationThread:0 screentOrientation:0
+03-27 16:34:38.069  1623  1687 I ===APKProtocolTransmit===: Ready send su-cmd:275
+03-27 16:34:38.069  1623  1687 I ===APKProtocolTransmit===: Start send su-cmd:275 length[14]
+03-27 16:34:38.069  1623  1687 I ===APKProtocolTransmit===: Will write content:the C socket has not been connected,so dicard the send command:[275]
+03-27 16:34:38.074  1623  1687 I ===APKProtocolTransmit===: End send sb-cmd:275
+03-27 16:34:38.132   245  2894 D CameraHal: debugShowFPS(622): Camera 12704 Frames, 29.871 FPS
+03-27 16:34:38.332  2682  2693 I art     : Background sticky concurrent mark sweep GC freed 353370(11MB) AllocSpace objects, 34(10MB) LOS objects, 30% free, 33MB/48MB, paused 3.857ms total 102.416ms
+03-27 16:34:38.646  1623  1685 I USBService: send udp to check mobileagent state.
+03-27 16:34:38.647  1623  1688 I ===Mrcp===: sending cmd:276
+03-27 16:34:38.650  1623  1873 I USBService: command is : [277] 
+03-27 16:34:38.650  1623  1873 I USBService: res:-131070 res2:2 opt:-2
+03-27 16:34:38.650  1623  1873 I USBService: 	 mobileagent state:-2. 
+03-27 16:34:38.651  1623  1685 I USBService: get mobileagent state 1 and current mobileagent state 1 and usb state of connection false
+03-27 16:34:38.968  2682  2693 I art     : Background sticky concurrent mark sweep GC freed 320331(10MB) AllocSpace objects, 28(6MB) LOS objects, 23% free, 32MB/42MB, paused 3.921ms total 110.999ms
+03-27 16:34:39.205   245  2894 D CameraHal: debugShowFPS(622): Camera 12736 Frames, 29.845 FPS
+03-27 16:34:39.240  2682  2693 I art     : Background partial concurrent mark sweep GC freed 292710(9MB) AllocSpace objects, 41(11MB) LOS objects, 33% free, 31MB/47MB, paused 2.602ms total 143.101ms
+03-27 16:34:39.885  2682  2693 I art     : Background partial concurrent mark sweep GC freed 316003(10MB) AllocSpace objects, 38(12MB) LOS objects, 34% free, 29MB/45MB, paused 1.424ms total 112.278ms
+03-27 16:34:40.277   245  2894 D CameraHal: debugShowFPS(622): Camera 12768 Frames, 29.852 FPS
+03-27 16:34:40.546  2682  2693 I art     : Background partial concurrent mark sweep GC freed 346232(11MB) AllocSpace objects, 41(12MB) LOS objects, 34% free, 30MB/46MB, paused 1.803ms total 139.985ms
+03-27 16:34:41.071  1623  1682 I ===DaemonService===: ############## Rotation : 0
+03-27 16:34:41.071  1623  1682 I ===DaemonService===: ScreenOrientationThread:0 screentOrientation:0
+03-27 16:34:41.073  1623  1683 I ===APKProtocolTransmit===: Ready send su-cmd:275
+03-27 16:34:41.073  1623  1683 I ===APKProtocolTransmit===: Start send su-cmd:275 length[14]
+03-27 16:34:41.073  1623  1683 I ===APKProtocolTransmit===: Will write content:the C socket has not been connected,so dicard the send command:[275]
+03-27 16:34:41.078  1623  1683 I ===APKProtocolTransmit===: End send sb-cmd:275
+03-27 16:34:41.192  2682  2693 I art     : Background partial concurrent mark sweep GC freed 341316(10MB) AllocSpace objects, 40(12MB) LOS objects, 34% free, 29MB/45MB, paused 3.416ms total 125.783ms
+03-27 16:34:41.352   245  2894 D CameraHal: debugShowFPS(622): Camera 12800 Frames, 29.757 FPS
+03-27 16:34:41.651  1623  1685 I USBService: send udp to check mobileagent state.
+03-27 16:34:41.653  1623  1686 I ===Mrcp===: sending cmd:276
+03-27 16:34:41.654  1623  1713 I USBService: command is : [277] 
+03-27 16:34:41.654  1623  1713 I USBService: res:-131070 res2:2 opt:-2
+03-27 16:34:41.654  1623  1713 I USBService: 	 mobileagent state:-2. 
+03-27 16:34:41.654  1623  1685 I USBService: get mobileagent state 1 and current mobileagent state 1 and usb state of connection false
+03-27 16:34:41.816  2682  2693 I art     : Background partial concurrent mark sweep GC freed 323590(10MB) AllocSpace objects, 41(13MB) LOS objects, 36% free, 27MB/43MB, paused 2.841ms total 108.204ms
+03-27 16:34:42.399  2682  2693 I art     : Background partial concurrent mark sweep GC freed 256376(8MB) AllocSpace objects, 35(12MB) LOS objects, 35% free, 29MB/45MB, paused 857us total 116.137ms
+03-27 16:34:42.424   245  2894 D CameraHal: debugShowFPS(622): Camera 12832 Frames, 29.840 FPS
+03-27 16:34:43.030  2682  2693 I art     : Background partial concurrent mark sweep GC freed 325724(10MB) AllocSpace objects, 41(11MB) LOS objects, 33% free, 31MB/47MB, paused 2.775ms total 150.577ms
+03-27 16:34:43.363  2682  2693 I art     : Background sticky concurrent mark sweep GC freed 336001(10MB) AllocSpace objects, 33(10MB) LOS objects, 29% free, 33MB/47MB, paused 3.012ms total 112.457ms
+03-27 16:34:43.496   245  2894 D CameraHal: debugShowFPS(622): Camera 12864 Frames, 29.859 FPS
+03-27 16:34:43.676  2682  2693 I art     : Background partial concurrent mark sweep GC freed 315087(10MB) AllocSpace objects, 44(13MB) LOS objects, 34% free, 30MB/46MB, paused 2.450ms total 121.226ms
+03-27 16:34:44.080  1623  1682 I ===DaemonService===: ############## Rotation : 0
+03-27 16:34:44.081  1623  1682 I ===DaemonService===: ScreenOrientationThread:0 screentOrientation:0
+03-27 16:34:44.085  1623  1676 I ===APKProtocolTransmit===: Ready send su-cmd:275
+03-27 16:34:44.085  1623  1676 I ===APKProtocolTransmit===: Start send su-cmd:275 length[14]
+03-27 16:34:44.085  1623  1676 I ===APKProtocolTransmit===: Will write content:the C socket has not been connected,so dicard the send command:[275]
+03-27 16:34:44.089  1623  1676 I ===APKProtocolTransmit===: End send sb-cmd:275
+03-27 16:34:44.336  2682  2693 I art     : Background partial concurrent mark sweep GC freed 314350(10MB) AllocSpace objects, 42(14MB) LOS objects, 34% free, 30MB/46MB, paused 1.964ms total 148.313ms
+03-27 16:34:44.568   245  2894 D CameraHal: debugShowFPS(622): Camera 12896 Frames, 29.848 FPS
+03-27 16:34:44.655  1623  1685 I USBService: send udp to check mobileagent state.
+03-27 16:34:44.656  1623  1687 I ===Mrcp===: sending cmd:276
+03-27 16:34:44.658  1623  1872 I USBService: command is : [277] 
+03-27 16:34:44.658  1623  1872 I USBService: res:-131070 res2:2 opt:-2
+03-27 16:34:44.658  1623  1872 I USBService: 	 mobileagent state:-2. 
+03-27 16:34:44.659  1623  1685 I USBService: get mobileagent state 1 and current mobileagent state 1 and usb state of connection false
+03-27 16:34:45.012  2682  2693 I art     : Background partial concurrent mark sweep GC freed 348631(11MB) AllocSpace objects, 44(13MB) LOS objects, 33% free, 31MB/47MB, paused 1.424ms total 151.582ms
+03-27 16:34:45.640   245  2894 D CameraHal: debugShowFPS(622): Camera 12928 Frames, 29.850 FPS
+03-27 16:34:45.706  2682  2693 I art     : Background partial concurrent mark sweep GC freed 363207(11MB) AllocSpace objects, 45(13MB) LOS objects, 33% free, 31MB/47MB, paused 6.692ms total 174.507ms
+03-27 16:34:46.395  2682  2693 I art     : Background partial concurrent mark sweep GC freed 378246(12MB) AllocSpace objects, 44(12MB) LOS objects, 32% free, 32MB/48MB, paused 4.428ms total 165.628ms
+03-27 16:34:46.713   245  2894 D CameraHal: debugShowFPS(622): Camera 12960 Frames, 29.829 FPS
+03-27 16:34:47.069  2682  2693 I art     : Background partial concurrent mark sweep GC freed 362984(11MB) AllocSpace objects, 46(15MB) LOS objects, 35% free, 29MB/45MB, paused 4.846ms total 137.487ms
+03-27 16:34:47.087  1623  1682 I ===DaemonService===: ############## Rotation : 0
+03-27 16:34:47.088  1623  1682 I ===DaemonService===: ScreenOrientationThread:0 screentOrientation:0
+03-27 16:34:47.088  1623  1688 I ===APKProtocolTransmit===: Ready send su-cmd:275
+03-27 16:34:47.088  1623  1688 I ===APKProtocolTransmit===: Start send su-cmd:275 length[14]
+03-27 16:34:47.089  1623  1688 I ===APKProtocolTransmit===: Will write content:the C socket has not been connected,so dicard the send command:[275]
+03-27 16:34:47.098  1623  1688 I ===APKProtocolTransmit===: End send sb-cmd:275
+03-27 16:34:47.404  2682  2693 I art     : Background sticky concurrent mark sweep GC freed 323047(10MB) AllocSpace objects, 31(8MB) LOS objects, 29% free, 32MB/45MB, paused 3.245ms total 111.467ms
+03-27 16:34:47.659  1623  1685 I USBService: send udp to check mobileagent state.
+03-27 16:34:47.661  1623  1683 I ===Mrcp===: sending cmd:276
+03-27 16:34:47.662  1623  1873 I USBService: command is : [277] 
+03-27 16:34:47.663  1623  1873 I USBService: res:-131070 res2:2 opt:-2
+03-27 16:34:47.663  1623  1873 I USBService: 	 mobileagent state:-2. 
+03-27 16:34:47.665  1623  1685 I USBService: get mobileagent state 1 and current mobileagent state 1 and usb state of connection false
+03-27 16:34:47.722  2682  2693 I art     : Background partial concurrent mark sweep GC freed 353977(11MB) AllocSpace objects, 43(11MB) LOS objects, 33% free, 31MB/47MB, paused 1.640ms total 146.726ms
+03-27 16:34:47.784   245  2894 D CameraHal: debugShowFPS(622): Camera 12992 Frames, 29.873 FPS
+03-27 16:34:48.072  2682  2693 I art     : Background sticky concurrent mark sweep GC freed 368179(11MB) AllocSpace objects, 35(9MB) LOS objects, 29% free, 33MB/47MB, paused 2.262ms total 115.221ms
+03-27 16:34:48.394  2682  2693 I art     : Background partial concurrent mark sweep GC freed 361258(11MB) AllocSpace objects, 43(11MB) LOS objects, 33% free, 32MB/48MB, paused 2.297ms total 148.937ms
+03-27 16:34:48.856   245  2894 D CameraHal: debugShowFPS(622): Camera 13024 Frames, 29.844 FPS
+03-27 16:34:49.009  2682  2693 I art     : Background partial concurrent mark sweep GC freed 308185(9MB) AllocSpace objects, 42(14MB) LOS objects, 35% free, 29MB/45MB, paused 1.996ms total 107.137ms
+03-27 16:34:49.620  2682  2693 I art     : Background partial concurrent mark sweep GC freed 316387(10MB) AllocSpace objects, 41(12MB) LOS objects, 34% free, 30MB/46MB, paused 3.597ms total 135.886ms
+03-27 16:34:49.932   245  2894 D CameraHal: debugShowFPS(622): Camera 13056 Frames, 29.752 FPS
+03-27 16:34:49.954  2682  2693 I art     : Background sticky concurrent mark sweep GC freed 370083(11MB) AllocSpace objects, 33(8MB) LOS objects, 32% free, 31MB/46MB, paused 3.094ms total 102.784ms
+03-27 16:34:50.098  1623  1682 I ===DaemonService===: ############## Rotation : 0
+03-27 16:34:50.099  1623  1682 I ===DaemonService===: ScreenOrientationThread:0 screentOrientation:0
+03-27 16:34:50.101  1623  1686 I ===APKProtocolTransmit===: Ready send su-cmd:275
+03-27 16:34:50.101  1623  1686 I ===APKProtocolTransmit===: Start send su-cmd:275 length[14]
+03-27 16:34:50.102  1623  1686 I ===APKProtocolTransmit===: Will write content:the C socket has not been connected,so dicard the send command:[275]
+03-27 16:34:50.110  1623  1686 I ===APKProtocolTransmit===: End send sb-cmd:275
+03-27 16:34:50.296  2682  2693 I art     : Background partial concurrent mark sweep GC freed 356136(11MB) AllocSpace objects, 47(13MB) LOS objects, 34% free, 30MB/46MB, paused 1.285ms total 139.567ms
+03-27 16:34:50.612  2682  2693 I art     : Background sticky concurrent mark sweep GC freed 346779(11MB) AllocSpace objects, 31(7MB) LOS objects, 26% free, 34MB/46MB, paused 6.691ms total 111.380ms
+03-27 16:34:50.665  1623  1685 I USBService: send udp to check mobileagent state.
+03-27 16:34:50.668  1623  1676 I ===Mrcp===: sending cmd:276
+03-27 16:34:50.669  1623  1713 I USBService: command is : [277] 
+03-27 16:34:50.669  1623  1713 I USBService: res:-131070 res2:2 opt:-2
+03-27 16:34:50.669  1623  1713 I USBService: 	 mobileagent state:-2. 
+03-27 16:34:50.669  1623  1685 I USBService: get mobileagent state 1 and current mobileagent state 1 and usb state of connection false
+03-27 16:34:50.871  2682  2693 I art     : Background partial concurrent mark sweep GC freed 316895(10MB) AllocSpace objects, 41(11MB) LOS objects, 34% free, 30MB/46MB, paused 4.370ms total 111.960ms
+03-27 16:34:51.004   245  2894 D CameraHal: debugShowFPS(622): Camera 13088 Frames, 29.852 FPS
+03-27 16:34:51.204  2682  2693 I art     : Background sticky concurrent mark sweep GC freed 369974(11MB) AllocSpace objects, 34(7MB) LOS objects, 29% free, 32MB/46MB, paused 1.909ms total 111.541ms
+03-27 16:34:51.516  2682  2693 I art     : Background partial concurrent mark sweep GC freed 320282(10MB) AllocSpace objects, 40(13MB) LOS objects, 35% free, 29MB/45MB, paused 1.641ms total 121.719ms
+03-27 16:34:51.639  2682  2682 D SyncManager: 获取公司信息
+03-27 16:34:51.640  2682  2682 D SyncManager: 地址：http://47.105.80.245:8080/api/company/getcompany.html
+03-27 16:34:51.640  2682  2682 D SyncManager: 参数：00000000-385c-5a58-0000-000000dd4a18
+03-27 16:34:52.076   245  2894 D CameraHal: debugShowFPS(622): Camera 13120 Frames, 29.840 FPS
+03-27 16:34:52.145  2682  2693 I art     : Background partial concurrent mark sweep GC freed 304301(9MB) AllocSpace objects, 44(13MB) LOS objects, 34% free, 29MB/45MB, paused 2.461ms total 143.836ms
+03-27 16:34:52.469  2682  2693 I art     : Background sticky concurrent mark sweep GC freed 330849(10MB) AllocSpace objects, 31(7MB) LOS objects, 27% free, 33MB/45MB, paused 1.462ms total 102.139ms
+03-27 16:34:52.790  2682  2693 I art     : Background partial concurrent mark sweep GC freed 300439(9MB) AllocSpace objects, 38(13MB) LOS objects, 33% free, 31MB/47MB, paused 2.964ms total 129.245ms
+03-27 16:34:53.103  2682  2693 I art     : Background sticky concurrent mark sweep GC freed 319096(10MB) AllocSpace objects, 33(10MB) LOS objects, 30% free, 32MB/47MB, paused 1.839ms total 100.194ms
+03-27 16:34:53.112  1623  1682 I ===DaemonService===: ############## Rotation : 0
+03-27 16:34:53.112  1623  1682 I ===DaemonService===: ScreenOrientationThread:0 screentOrientation:0
+03-27 16:34:53.113  1623  1687 I ===APKProtocolTransmit===: Ready send su-cmd:275
+03-27 16:34:53.114  1623  1687 I ===APKProtocolTransmit===: Start send su-cmd:275 length[14]
+03-27 16:34:53.114  1623  1687 I ===APKProtocolTransmit===: Will write content:the C socket has not been connected,so dicard the send command:[275]
+03-27 16:34:53.117  1623  1687 I ===APKProtocolTransmit===: End send sb-cmd:275
+03-27 16:34:53.149   245  2894 D CameraHal: debugShowFPS(622): Camera 13152 Frames, 29.832 FPS
+03-27 16:34:53.454  2682  2693 I art     : Background partial concurrent mark sweep GC freed 353169(11MB) AllocSpace objects, 43(13MB) LOS objects, 33% free, 31MB/47MB, paused 3.484ms total 151.729ms
+03-27 16:34:53.670  1623  1685 I USBService: send udp to check mobileagent state.
+03-27 16:34:53.671  1623  1688 I ===Mrcp===: sending cmd:276
+03-27 16:34:53.673  1623  1872 I USBService: command is : [277] 
+03-27 16:34:53.673  1623  1872 I USBService: res:-131070 res2:2 opt:-2
+03-27 16:34:53.673  1623  1872 I USBService: 	 mobileagent state:-2. 
+03-27 16:34:53.674  1623  1685 I USBService: get mobileagent state 1 and current mobileagent state 1 and usb state of connection false
+03-27 16:34:53.783  2682  2693 I art     : Background sticky concurrent mark sweep GC freed 409559(13MB) AllocSpace objects, 36(8MB) LOS objects, 32% free, 32MB/47MB, paused 1.958ms total 105.454ms
+03-27 16:34:54.152  2682  2693 I art     : Background partial concurrent mark sweep GC freed 375762(11MB) AllocSpace objects, 47(12MB) LOS objects, 33% free, 32MB/48MB, paused 2.069ms total 139.775ms
+03-27 16:34:54.220   245  2894 D CameraHal: debugShowFPS(622): Camera 13184 Frames, 29.870 FPS
+03-27 16:34:54.824  2682  2693 I art     : Background partial concurrent mark sweep GC freed 352705(11MB) AllocSpace objects, 45(13MB) LOS objects, 32% free, 32MB/48MB, paused 2.352ms total 151.570ms
+03-27 16:34:55.153  2682  2693 I art     : Background sticky concurrent mark sweep GC freed 328645(10MB) AllocSpace objects, 32(10MB) LOS objects, 28% free, 34MB/48MB, paused 2.356ms total 105.536ms
+03-27 16:34:55.292   245  2894 D CameraHal: debugShowFPS(622): Camera 13216 Frames, 29.852 FPS
+03-27 16:34:55.500  2682  2693 I art     : Background partial concurrent mark sweep GC freed 343709(11MB) AllocSpace objects, 46(14MB) LOS objects, 32% free, 32MB/48MB, paused 1.598ms total 156.131ms
+03-27 16:34:55.826  2682  2693 I art     : Background sticky concurrent mark sweep GC freed 331023(10MB) AllocSpace objects, 34(10MB) LOS objects, 30% free, 33MB/48MB, paused 6.091ms total 106.093ms
+03-27 16:34:56.117  1623  1682 I ===DaemonService===: ############## Rotation : 0
+03-27 16:34:56.118  1623  1682 I ===DaemonService===: ScreenOrientationThread:0 screentOrientation:0
+03-27 16:34:56.119  1623  1683 I ===APKProtocolTransmit===: Ready send su-cmd:275
+03-27 16:34:56.119  1623  1683 I ===APKProtocolTransmit===: Start send su-cmd:275 length[14]
+03-27 16:34:56.119  1623  1683 I ===APKProtocolTransmit===: Will write content:the C socket has not been connected,so dicard the send command:[275]
+03-27 16:34:56.120  1623  1683 I ===APKProtocolTransmit===: End send sb-cmd:275
+03-27 16:34:56.208  2682  2693 I art     : Background partial concurrent mark sweep GC freed 337898(10MB) AllocSpace objects, 41(14MB) LOS objects, 32% free, 32MB/48MB, paused 3.653ms total 153.441ms
+03-27 16:34:56.365   245  2894 D CameraHal: debugShowFPS(622): Camera 13248 Frames, 29.824 FPS
+03-27 16:34:56.674  1623  1685 I USBService: send udp to check mobileagent state.
+03-27 16:34:56.678  1623  1873 I USBService: command is : [277] 
+03-27 16:34:56.683  1623  1686 I ===Mrcp===: sending cmd:276
+03-27 16:34:56.683  1623  1873 I USBService: res:-131070 res2:2 opt:-2
+03-27 16:34:56.683  1623  1873 I USBService: 	 mobileagent state:-2. 
+03-27 16:34:56.684  1623  1685 I USBService: get mobileagent state 1 and current mobileagent state 1 and usb state of connection false
+03-27 16:34:56.935  2682  2693 I art     : Background partial concurrent mark sweep GC freed 403302(12MB) AllocSpace objects, 49(14MB) LOS objects, 32% free, 33MB/49MB, paused 1.706ms total 171.946ms
+03-27 16:34:57.274  2682  2693 I art     : Background sticky concurrent mark sweep GC freed 343807(10MB) AllocSpace objects, 36(11MB) LOS objects, 31% free, 33MB/49MB, paused 2.956ms total 116.390ms
+03-27 16:34:57.440   245  2894 D CameraHal: debugShowFPS(622): Camera 13280 Frames, 29.766 FPS
+03-27 16:34:57.646  2682  2693 I art     : Background partial concurrent mark sweep GC freed 371674(11MB) AllocSpace objects, 44(14MB) LOS objects, 33% free, 31MB/47MB, paused 1.053ms total 149.415ms
+03-27 16:34:57.970  2682  2693 I art     : Background sticky concurrent mark sweep GC freed 357530(11MB) AllocSpace objects, 35(10MB) LOS objects, 31% free, 32MB/47MB, paused 2.612ms total 101.422ms
+03-27 16:34:58.314  2682  2693 I art     : Background partial concurrent mark sweep GC freed 327864(10MB) AllocSpace objects, 45(13MB) LOS objects, 34% free, 30MB/46MB, paused 3.996ms total 139.150ms
+03-27 16:34:58.513   245  2894 D CameraHal: debugShowFPS(622): Camera 13312 Frames, 29.833 FPS
+03-27 16:34:58.637  2682  2693 I art     : Background sticky concurrent mark sweep GC freed 322120(10MB) AllocSpace objects, 31(11MB) LOS objects, 30% free, 32MB/46MB, paused 3.013ms total 101.778ms
+03-27 16:34:58.843  2682  2682 D SyncManager: {"message":"该设备未绑定公司","status":4,"company":{}}
+03-27 16:34:58.851  2682  2682 D SyncManager: 重新获取公司信息
+03-27 16:34:58.990  2682  2693 I art     : Background partial concurrent mark sweep GC freed 372808(11MB) AllocSpace objects, 47(12MB) LOS objects, 33% free, 31MB/47MB, paused 2.349ms total 152.734ms
+03-27 16:34:59.131  1623  1682 I ===DaemonService===: ############## Rotation : 0
+03-27 16:34:59.132  1623  1682 I ===DaemonService===: ScreenOrientationThread:0 screentOrientation:0
+03-27 16:34:59.133  1623  1676 I ===APKProtocolTransmit===: Ready send su-cmd:275
+03-27 16:34:59.133  1623  1676 I ===APKProtocolTransmit===: Start send su-cmd:275 length[14]
+03-27 16:34:59.133  1623  1676 I ===APKProtocolTransmit===: Will write content:the C socket has not been connected,so dicard the send command:[275]
+03-27 16:34:59.136  1623  1676 I ===APKProtocolTransmit===: End send sb-cmd:275
+03-27 16:34:59.309  2682  2693 I art     : Background sticky concurrent mark sweep GC freed 371807(12MB) AllocSpace objects, 35(9MB) LOS objects, 30% free, 33MB/47MB, paused 3.845ms total 107.126ms
+03-27 16:34:59.415  2682  2925 I PacketWriter: 心跳 
+03-27 16:34:59.584   245  2894 D CameraHal: debugShowFPS(622): Camera 13344 Frames, 29.861 FPS
+03-27 16:34:59.661  2682  2693 I art     : Background partial concurrent mark sweep GC freed 392234(12MB) AllocSpace objects, 47(12MB) LOS objects, 33% free, 31MB/47MB, paused 2.177ms total 157.349ms
+03-27 16:34:59.685  1623  1685 I USBService: send udp to check mobileagent state.
+03-27 16:34:59.686  1623  1687 I ===Mrcp===: sending cmd:276
+03-27 16:34:59.687  1623  1713 I USBService: command is : [277] 
+03-27 16:34:59.687  1623  1713 I USBService: res:-131070 res2:2 opt:-2
+03-27 16:34:59.687  1623  1713 I USBService: 	 mobileagent state:-2. 
+03-27 16:34:59.688  1623  1685 I USBService: get mobileagent state 1 and current mobileagent state 1 and usb state of connection false
+03-27 16:34:59.988  2682  2693 I art     : Background sticky concurrent mark sweep GC freed 318182(10MB) AllocSpace objects, 33(10MB) LOS objects, 29% free, 33MB/47MB, paused 3.274ms total 113.488ms
+03-27 16:35:00.354  2682  2693 I art     : Background partial concurrent mark sweep GC freed 337837(10MB) AllocSpace objects, 41(13MB) LOS objects, 33% free, 32MB/48MB, paused 4.240ms total 143.340ms
+03-27 16:35:00.656   245  2894 D CameraHal: debugShowFPS(622): Camera 13376 Frames, 29.860 FPS
+03-27 16:35:01.003  2682  2693 I art     : Background partial concurrent mark sweep GC freed 323468(10MB) AllocSpace objects, 40(14MB) LOS objects, 33% free, 31MB/47MB, paused 3.072ms total 135.520ms
+03-27 16:35:01.658  2682  2693 I art     : Background partial concurrent mark sweep GC freed 319309(10MB) AllocSpace objects, 42(12MB) LOS objects, 34% free, 31MB/47MB, paused 4.286ms total 137.104ms
+03-27 16:35:01.728   245  2894 D CameraHal: debugShowFPS(622): Camera 13408 Frames, 29.852 FPS
+03-27 16:35:02.142  1623  1682 I ===DaemonService===: ############## Rotation : 0
+03-27 16:35:02.143  1623  1682 I ===DaemonService===: ScreenOrientationThread:0 screentOrientation:0
+03-27 16:35:02.144  1623  1688 I ===APKProtocolTransmit===: Ready send su-cmd:275
+03-27 16:35:02.144  1623  1688 I ===APKProtocolTransmit===: Start send su-cmd:275 length[14]
+03-27 16:35:02.144  1623  1688 I ===APKProtocolTransmit===: Will write content:the C socket has not been connected,so dicard the send command:[275]
+03-27 16:35:02.165  1623  1688 I ===APKProtocolTransmit===: End send sb-cmd:275
+03-27 16:35:02.313  2682  2693 I art     : Background partial concurrent mark sweep GC freed 333716(10MB) AllocSpace objects, 44(14MB) LOS objects, 34% free, 30MB/46MB, paused 2.468ms total 153.084ms
+03-27 16:35:02.631  2682  2693 I art     : Background sticky concurrent mark sweep GC freed 346319(10MB) AllocSpace objects, 34(10MB) LOS objects, 32% free, 31MB/46MB, paused 3.964ms total 106.770ms
+03-27 16:35:02.688  1623  1685 I USBService: send udp to check mobileagent state.
+03-27 16:35:02.689  1623  1683 I ===Mrcp===: sending cmd:276
+03-27 16:35:02.691  1623  1872 I USBService: command is : [277] 
+03-27 16:35:02.691  1623  1872 I USBService: res:-131070 res2:2 opt:-2
+03-27 16:35:02.691  1623  1872 I USBService: 	 mobileagent state:-2. 
+03-27 16:35:02.692  1623  1685 I USBService: get mobileagent state 1 and current mobileagent state 1 and usb state of connection false
+03-27 16:35:02.800   245  2894 D CameraHal: debugShowFPS(622): Camera 13440 Frames, 29.845 FPS
+03-27 16:35:02.999  2682  2693 I art     : Background partial concurrent mark sweep GC freed 373967(12MB) AllocSpace objects, 45(11MB) LOS objects, 32% free, 33MB/49MB, paused 3.492ms total 152.060ms
+03-27 16:35:03.700  2682  2693 I art     : Background partial concurrent mark sweep GC freed 342013(11MB) AllocSpace objects, 44(13MB) LOS objects, 33% free, 32MB/48MB, paused 2.277ms total 168.961ms
+03-27 16:35:03.872   245  2894 D CameraHal: debugShowFPS(622): Camera 13472 Frames, 29.853 FPS
+03-27 16:35:04.038  2682  2693 I art     : Background sticky concurrent mark sweep GC freed 322893(10MB) AllocSpace objects, 31(11MB) LOS objects, 28% free, 34MB/48MB, paused 4.570ms total 123.332ms
+03-27 16:35:04.359  2682  2693 I art     : Background partial concurrent mark sweep GC freed 325876(10MB) AllocSpace objects, 44(16MB) LOS objects, 36% free, 28MB/44MB, paused 2.257ms total 127.709ms
+03-27 16:35:04.673  2682  2693 I art     : Background sticky concurrent mark sweep GC freed 281294(8MB) AllocSpace objects, 27(7MB) LOS objects, 23% free, 33MB/44MB, paused 4.240ms total 107.639ms
+03-27 16:35:04.948   245  2894 D CameraHal: debugShowFPS(622): Camera 13504 Frames, 29.736 FPS
+03-27 16:35:04.957  2682  2693 I art     : Background partial concurrent mark sweep GC freed 285010(9MB) AllocSpace objects, 39(12MB) LOS objects, 34% free, 30MB/46MB, paused 4.776ms total 131.664ms
+03-27 16:35:05.173  1623  1682 I ===DaemonService===: ############## Rotation : 0
+03-27 16:35:05.174  1623  1682 I ===DaemonService===: ScreenOrientationThread:0 screentOrientation:0
+03-27 16:35:05.174  1623  1686 I ===APKProtocolTransmit===: Ready send su-cmd:275
+03-27 16:35:05.175  1623  1686 I ===APKProtocolTransmit===: Start send su-cmd:275 length[14]
+03-27 16:35:05.175  1623  1686 I ===APKProtocolTransmit===: Will write content:the C socket has not been connected,so dicard the send command:[275]
+03-27 16:35:05.179  1623  1686 I ===APKProtocolTransmit===: End send sb-cmd:275
+03-27 16:35:05.556  2682  2693 I art     : Background partial concurrent mark sweep GC freed 354553(11MB) AllocSpace objects, 43(12MB) LOS objects, 34% free, 29MB/45MB, paused 4.766ms total 112.220ms
+03-27 16:35:05.693  1623  1685 I USBService: send udp to check mobileagent state.
+03-27 16:35:05.695  1623  1676 I ===Mrcp===: sending cmd:276
+03-27 16:35:05.697  1623  1873 I USBService: command is : [277] 
+03-27 16:35:05.697  1623  1873 I USBService: res:-131070 res2:2 opt:-2
+03-27 16:35:05.697  1623  1873 I USBService: 	 mobileagent state:-2. 
+03-27 16:35:05.697  1623  1685 I USBService: get mobileagent state 1 and current mobileagent state 1 and usb state of connection false
+03-27 16:35:06.020   245  2894 D CameraHal: debugShowFPS(622): Camera 13536 Frames, 29.864 FPS
+03-27 16:35:06.238  2682  2693 I art     : Background partial concurrent mark sweep GC freed 330814(10MB) AllocSpace objects, 40(11MB) LOS objects, 34% free, 30MB/46MB, paused 602us total 126.114ms
+03-27 16:35:06.558  2682  2693 I art     : Background sticky concurrent mark sweep GC freed 337080(10MB) AllocSpace objects, 32(7MB) LOS objects, 27% free, 33MB/46MB, paused 1.858ms total 112.041ms
+03-27 16:35:06.843  2682  2693 I art     : Background partial concurrent mark sweep GC freed 338525(11MB) AllocSpace objects, 41(12MB) LOS objects, 34% free, 30MB/46MB, paused 3.336ms total 133.924ms
+03-27 16:35:07.092   245  2894 D CameraHal: debugShowFPS(622): Camera 13568 Frames, 29.843 FPS
+03-27 16:35:07.154  2682  2693 I art     : Background sticky concurrent mark sweep GC freed 305677(9MB) AllocSpace objects, 32(10MB) LOS objects, 29% free, 32MB/46MB, paused 1.975ms total 107.207ms
+03-27 16:35:07.493  2682  2693 I art     : Background partial concurrent mark sweep GC freed 331519(10MB) AllocSpace objects, 40(12MB) LOS objects, 32% free, 32MB/48MB, paused 909us total 151.423ms
+03-27 16:35:07.816  2682  2693 I art     : Background sticky concurrent mark sweep GC freed 343099(10MB) AllocSpace objects, 34(10MB) LOS objects, 31% free, 33MB/48MB, paused 1.555ms total 104.878ms
+03-27 16:35:08.153  2682  2693 I art     : Background partial concurrent mark sweep GC freed 326306(10MB) AllocSpace objects, 46(16MB) LOS objects, 34% free, 30MB/46MB, paused 696us total 129.663ms
+03-27 16:35:08.164   245  2894 D CameraHal: debugShowFPS(622): Camera 13600 Frames, 29.846 FPS
+03-27 16:35:08.178  1623  1682 I ===DaemonService===: ############## Rotation : 0
+03-27 16:35:08.179  1623  1682 I ===DaemonService===: ScreenOrientationThread:0 screentOrientation:0
+03-27 16:35:08.180  1623  1687 I ===APKProtocolTransmit===: Ready send su-cmd:275
+03-27 16:35:08.180  1623  1687 I ===APKProtocolTransmit===: Start send su-cmd:275 length[14]
+03-27 16:35:08.181  1623  1687 I ===APKProtocolTransmit===: Will write content:the C socket has not been connected,so dicard the send command:[275]
+03-27 16:35:08.183  1623  1687 I ===APKProtocolTransmit===: End send sb-cmd:275
+03-27 16:35:08.698  1623  1685 I USBService: send udp to check mobileagent state.
+03-27 16:35:08.699  1623  1688 I ===Mrcp===: sending cmd:276
+03-27 16:35:08.700  1623  1713 I USBService: command is : [277] 
+03-27 16:35:08.700  1623  1713 I USBService: res:-131070 res2:2 opt:-2
+03-27 16:35:08.700  1623  1713 I USBService: 	 mobileagent state:-2. 
+03-27 16:35:08.701  1623  1685 I USBService: get mobileagent state 1 and current mobileagent state 1 and usb state of connection false
+03-27 16:35:08.790  2682  2693 I art     : Background partial concurrent mark sweep GC freed 342585(10MB) AllocSpace objects, 44(13MB) LOS objects, 35% free, 29MB/45MB, paused 2.042ms total 134.471ms
+03-27 16:35:09.237   245  2894 D CameraHal: debugShowFPS(622): Camera 13632 Frames, 29.844 FPS
+03-27 16:35:09.473  2682  2693 I art     : Background partial concurrent mark sweep GC freed 329736(10MB) AllocSpace objects, 42(12MB) LOS objects, 33% free, 32MB/48MB, paused 1.682ms total 161.114ms
+03-27 16:35:09.808  2682  2693 I art     : Background sticky concurrent mark sweep GC freed 334992(10MB) AllocSpace objects, 31(10MB) LOS objects, 28% free, 34MB/48MB, paused 4.310ms total 112.460ms
+03-27 16:35:10.145  2682  2693 I art     : Background partial concurrent mark sweep GC freed 329748(10MB) AllocSpace objects, 44(14MB) LOS objects, 33% free, 31MB/47MB, paused 1.831ms total 131.616ms
+03-27 16:35:10.308   245  2894 D CameraHal: debugShowFPS(622): Camera 13664 Frames, 29.857 FPS
+03-27 16:35:10.470  2682  2693 I art     : Background sticky concurrent mark sweep GC freed 330752(10MB) AllocSpace objects, 33(10MB) LOS objects, 27% free, 34MB/47MB, paused 3.985ms total 105.793ms
+03-27 16:35:10.759  2682  2693 I art     : Background partial concurrent mark sweep GC freed 315974(10MB) AllocSpace objects, 43(13MB) LOS objects, 35% free, 28MB/44MB, paused 2.763ms total 104.109ms
+03-27 16:35:11.187  1623  1682 I ===DaemonService===: ############## Rotation : 0
+03-27 16:35:11.188  1623  1682 I ===DaemonService===: ScreenOrientationThread:0 screentOrientation:0
+03-27 16:35:11.189  1623  1683 I ===APKProtocolTransmit===: Ready send su-cmd:275
+03-27 16:35:11.189  1623  1683 I ===APKProtocolTransmit===: Start send su-cmd:275 length[14]
+03-27 16:35:11.189  1623  1683 I ===APKProtocolTransmit===: Will write content:the C socket has not been connected,so dicard the send command:[275]
+03-27 16:35:11.196  1623  1683 I ===APKProtocolTransmit===: End send sb-cmd:275
+03-27 16:35:11.363  2682  2693 I art     : Background partial concurrent mark sweep GC freed 314182(10MB) AllocSpace objects, 39(11MB) LOS objects, 36% free, 28MB/44MB, paused 635us total 106.607ms
+03-27 16:35:11.380   245  2894 D CameraHal: debugShowFPS(622): Camera 13696 Frames, 29.855 FPS
+03-27 16:35:11.701  1623  1685 I USBService: send udp to check mobileagent state.
+03-27 16:35:11.702  1623  1686 I ===Mrcp===: sending cmd:276
+03-27 16:35:11.703  1623  1872 I USBService: command is : [277] 
+03-27 16:35:11.704  1623  1872 I USBService: res:-131070 res2:2 opt:-2
+03-27 16:35:11.704  1623  1872 I USBService: 	 mobileagent state:-2. 
+03-27 16:35:11.704  1623  1685 I USBService: get mobileagent state 1 and current mobileagent state 1 and usb state of connection false
+03-27 16:35:11.944  2682  2693 I art     : Background partial concurrent mark sweep GC freed 270151(8MB) AllocSpace objects, 34(11MB) LOS objects, 35% free, 29MB/45MB, paused 5.081ms total 100.570ms
+03-27 16:35:12.289  2682  2693 I art     : Background sticky concurrent mark sweep GC freed 370820(11MB) AllocSpace objects, 35(7MB) LOS objects, 28% free, 32MB/45MB, paused 2.317ms total 115.404ms
+03-27 16:35:12.452   245  2894 D CameraHal: debugShowFPS(622): Camera 13728 Frames, 29.845 FPS
+03-27 16:35:12.594  2682  2693 I art     : Background partial concurrent mark sweep GC freed 292167(9MB) AllocSpace objects, 40(12MB) LOS objects, 34% free, 30MB/46MB, paused 1.313ms total 117.170ms
+03-27 16:35:12.925  2682  2693 I art     : Background sticky concurrent mark sweep GC freed 338560(10MB) AllocSpace objects, 32(8MB) LOS objects, 28% free, 33MB/46MB, paused 1.569ms total 109.081ms
+03-27 16:35:13.229  2682  2693 I art     : Background partial concurrent mark sweep GC freed 285904(9MB) AllocSpace objects, 39(13MB) LOS objects, 34% free, 30MB/46MB, paused 4.388ms total 113.770ms
+03-27 16:35:13.528   245  2894 D CameraHal: debugShowFPS(622): Camera 13760 Frames, 29.752 FPS
+03-27 16:35:13.875  2682  2693 I art     : Background partial concurrent mark sweep GC freed 306462(9MB) AllocSpace objects, 40(13MB) LOS objects, 34% free, 30MB/46MB, paused 637us total 131.978ms
+03-27 16:35:14.195  1623  1682 I ===DaemonService===: ############## Rotation : 0
+03-27 16:35:14.195  1623  1682 I ===DaemonService===: ScreenOrientationThread:0 screentOrientation:0
+03-27 16:35:14.196  1623  1676 I ===APKProtocolTransmit===: Ready send su-cmd:275
+03-27 16:35:14.197  1623  1676 I ===APKProtocolTransmit===: Start send su-cmd:275 length[14]
+03-27 16:35:14.197  1623  1676 I ===APKProtocolTransmit===: Will write content:the C socket has not been connected,so dicard the send command:[275]
+03-27 16:35:14.205  1623  1676 I ===APKProtocolTransmit===: End send sb-cmd:275
+03-27 16:35:14.217  2682  2693 I art     : Background sticky concurrent mark sweep GC freed 323735(10MB) AllocSpace objects, 32(8MB) LOS objects, 27% free, 33MB/46MB, paused 3.120ms total 109.140ms
+03-27 16:35:14.532  2682  2693 I art     : Background partial concurrent mark sweep GC freed 313890(10MB) AllocSpace objects, 42(14MB) LOS objects, 34% free, 30MB/46MB, paused 3.585ms total 143.256ms
+03-27 16:35:14.600   245  2894 D CameraHal: debugShowFPS(622): Camera 13792 Frames, 29.845 FPS
+03-27 16:35:14.704  1623  1685 I USBService: send udp to check mobileagent state.
+03-27 16:35:14.705  1623  1687 I ===Mrcp===: sending cmd:276
+03-27 16:35:14.706  1623  1873 I USBService: command is : [277] 
+03-27 16:35:14.706  1623  1873 I USBService: res:-131070 res2:2 opt:-2
+03-27 16:35:14.706  1623  1873 I USBService: 	 mobileagent state:-2. 
+03-27 16:35:14.712  1623  1685 I USBService: get mobileagent state 1 and current mobileagent state 1 and usb state of connection false
+03-27 16:35:15.238  2682  2693 I art     : Background partial concurrent mark sweep GC freed 360230(11MB) AllocSpace objects, 43(12MB) LOS objects, 32% free, 32MB/48MB, paused 2.761ms total 159.721ms
+03-27 16:35:15.581  2682  2693 I art     : Background sticky concurrent mark sweep GC freed 388099(12MB) AllocSpace objects, 37(10MB) LOS objects, 30% free, 34MB/48MB, paused 2.070ms total 117.459ms
+03-27 16:35:15.672   245  2894 D CameraHal: debugShowFPS(622): Camera 13824 Frames, 29.846 FPS
+03-27 16:35:15.891  2682  2693 I art     : Background partial concurrent mark sweep GC freed 349645(11MB) AllocSpace objects, 44(14MB) LOS objects, 34% free, 30MB/46MB, paused 3.287ms total 137.988ms
+03-27 16:35:16.217  2682  2693 I art     : Background sticky concurrent mark sweep GC freed 314771(9MB) AllocSpace objects, 32(10MB) LOS objects, 30% free, 32MB/46MB, paused 4.502ms total 110.690ms
+03-27 16:35:16.572  2682  2693 I art     : Background partial concurrent mark sweep GC freed 342201(10MB) AllocSpace objects, 45(13MB) LOS objects, 33% free, 31MB/47MB, paused 2.439ms total 139.119ms
+03-27 16:35:16.744   245  2894 D CameraHal: debugShowFPS(622): Camera 13856 Frames, 29.848 FPS
+03-27 16:35:16.909  2682  2693 I art     : Background sticky concurrent mark sweep GC freed 337062(10MB) AllocSpace objects, 35(10MB) LOS objects, 28% free, 33MB/47MB, paused 3.074ms total 107.971ms
+03-27 16:35:17.200  1623  1682 I ===DaemonService===: ############## Rotation : 0
+03-27 16:35:17.200  1623  1682 I ===DaemonService===: ScreenOrientationThread:0 screentOrientation:0
+03-27 16:35:17.201  1623  1688 I ===APKProtocolTransmit===: Ready send su-cmd:275
+03-27 16:35:17.201  1623  1688 I ===APKProtocolTransmit===: Start send su-cmd:275 length[14]
+03-27 16:35:17.202  1623  1688 I ===APKProtocolTransmit===: Will write content:the C socket has not been connected,so dicard the send command:[275]
+03-27 16:35:17.206  1623  1688 I ===APKProtocolTransmit===: End send sb-cmd:275
+03-27 16:35:17.248  2682  2693 I art     : Background partial concurrent mark sweep GC freed 364198(11MB) AllocSpace objects, 42(13MB) LOS objects, 34% free, 30MB/46MB, paused 1.864ms total 139.018ms
+03-27 16:35:17.579  2682  2693 I art     : Background sticky concurrent mark sweep GC freed 351708(11MB) AllocSpace objects, 35(8MB) LOS objects, 27% free, 33MB/46MB, paused 2.004ms total 107.638ms
+03-27 16:35:17.713  1623  1685 I USBService: send udp to check mobileagent state.
+03-27 16:35:17.714  1623  1683 I ===Mrcp===: sending cmd:276
+03-27 16:35:17.719  1623  1713 I USBService: command is : [277] 
+03-27 16:35:17.720  1623  1713 I USBService: res:-131070 res2:2 opt:-2
+03-27 16:35:17.720  1623  1713 I USBService: 	 mobileagent state:-2. 
+03-27 16:35:17.720  1623  1685 I USBService: get mobileagent state 1 and current mobileagent state 1 and usb state of connection false
+03-27 16:35:17.816   245  2894 D CameraHal: debugShowFPS(622): Camera 13888 Frames, 29.857 FPS
+03-27 16:35:17.916  2682  2693 I art     : Background partial concurrent mark sweep GC freed 319584(10MB) AllocSpace objects, 38(12MB) LOS objects, 33% free, 32MB/48MB, paused 2.690ms total 142.085ms
+03-27 16:35:18.258  2682  2693 I art     : Background sticky concurrent mark sweep GC freed 387676(12MB) AllocSpace objects, 37(10MB) LOS objects, 33% free, 31MB/47MB, paused 2.949ms total 112.559ms
+03-27 16:35:18.517  1308  1359 I ExifInterface_JNI: Raw image not detected
+03-27 16:35:18.640  2682  2693 I art     : Background partial concurrent mark sweep GC freed 370831(11MB) AllocSpace objects, 46(12MB) LOS objects, 32% free, 32MB/48MB, paused 2.770ms total 153.821ms
+03-27 16:35:18.888   245  2894 D CameraHal: debugShowFPS(622): Camera 13920 Frames, 29.850 FPS
+03-27 16:35:18.972  2682  2693 I art     : Background sticky concurrent mark sweep GC freed 396726(12MB) AllocSpace objects, 37(8MB) LOS objects, 30% free, 33MB/48MB, paused 1.813ms total 117.339ms
+03-27 16:35:19.317  2682  2693 I art     : Background partial concurrent mark sweep GC freed 322106(10MB) AllocSpace objects, 42(14MB) LOS objects, 33% free, 32MB/48MB, paused 1.747ms total 134.341ms
+03-27 16:35:19.960   245  2894 D CameraHal: debugShowFPS(622): Camera 13952 Frames, 29.850 FPS
+03-27 16:35:19.992  2682  2693 I art     : Background partial concurrent mark sweep GC freed 318693(10MB) AllocSpace objects, 44(14MB) LOS objects, 33% free, 31MB/47MB, paused 1.920ms total 155.672ms
+03-27 16:35:20.209  1623  1682 I ===DaemonService===: ############## Rotation : 0
+03-27 16:35:20.209  1623  1682 I ===DaemonService===: ScreenOrientationThread:0 screentOrientation:0
+03-27 16:35:20.212  1623  1686 I ===APKProtocolTransmit===: Ready send su-cmd:275
+03-27 16:35:20.212  1623  1686 I ===APKProtocolTransmit===: Start send su-cmd:275 length[14]
+03-27 16:35:20.212  1623  1686 I ===APKProtocolTransmit===: Will write content:the C socket has not been connected,so dicard the send command:[275]
+03-27 16:35:20.228  1623  1686 I ===APKProtocolTransmit===: End send sb-cmd:275
+03-27 16:35:20.329  2682  2693 I art     : Background sticky concurrent mark sweep GC freed 376838(11MB) AllocSpace objects, 34(9MB) LOS objects, 27% free, 34MB/47MB, paused 2.497ms total 131.523ms
+03-27 16:35:20.633  2682  2693 I art     : Background partial concurrent mark sweep GC freed 315845(10MB) AllocSpace objects, 43(14MB) LOS objects, 34% free, 29MB/45MB, paused 2.141ms total 138.137ms
+03-27 16:35:20.721  1623  1685 I USBService: send udp to check mobileagent state.
+03-27 16:35:20.722  1623  1676 I ===Mrcp===: sending cmd:276
+03-27 16:35:20.723  1623  1872 I USBService: command is : [277] 
+03-27 16:35:20.723  1623  1872 I USBService: res:-131070 res2:2 opt:-2
+03-27 16:35:20.723  1623  1872 I USBService: 	 mobileagent state:-2. 
+03-27 16:35:20.724  1623  1685 I USBService: get mobileagent state 1 and current mobileagent state 1 and usb state of connection false
+03-27 16:35:21.036   245  2894 D CameraHal: debugShowFPS(622): Camera 13984 Frames, 29.746 FPS
+03-27 16:35:21.270  2682  2693 I art     : Background partial concurrent mark sweep GC freed 340279(10MB) AllocSpace objects, 42(12MB) LOS objects, 33% free, 31MB/47MB, paused 2.757ms total 147.591ms
+03-27 16:35:21.782  1308  1359 I ExifInterface_JNI: Raw image not detected
+03-27 16:35:21.872  1308  1359 I ExifInterface_JNI: Raw image not detected
+03-27 16:35:21.958  2682  2693 I art     : Background partial concurrent mark sweep GC freed 351195(11MB) AllocSpace objects, 45(13MB) LOS objects, 33% free, 31MB/47MB, paused 2.230ms total 158.108ms
+03-27 16:35:22.108   245  2894 D CameraHal: debugShowFPS(622): Camera 14016 Frames, 29.853 FPS
+03-27 16:35:22.274  2682  2693 I art     : Background sticky concurrent mark sweep GC freed 336259(10MB) AllocSpace objects, 34(10MB) LOS objects, 29% free, 33MB/47MB, paused 2.793ms total 108.769ms
+03-27 16:35:22.610  2682  2693 I art     : Background partial concurrent mark sweep GC freed 358272(11MB) AllocSpace objects, 43(12MB) LOS objects, 32% free, 32MB/48MB, paused 6.757ms total 147.147ms
+03-27 16:35:23.180   245  2894 D CameraHal: debugShowFPS(622): Camera 14048 Frames, 29.836 FPS
+03-27 16:35:23.234  1623  1682 I ===DaemonService===: ############## Rotation : 0
+03-27 16:35:23.235  1623  1682 I ===DaemonService===: ScreenOrientationThread:0 screentOrientation:0
+03-27 16:35:23.236  1623  1687 I ===APKProtocolTransmit===: Ready send su-cmd:275
+03-27 16:35:23.236  1623  1687 I ===APKProtocolTransmit===: Start send su-cmd:275 length[14]
+03-27 16:35:23.236  1623  1687 I ===APKProtocolTransmit===: Will write content:the C socket has not been connected,so dicard the send command:[275]
+03-27 16:35:23.238  1623  1687 I ===APKProtocolTransmit===: End send sb-cmd:275
+03-27 16:35:23.266  2682  2693 I art     : Background partial concurrent mark sweep GC freed 324232(10MB) AllocSpace objects, 44(14MB) LOS objects, 35% free, 29MB/45MB, paused 752us total 122.798ms
+03-27 16:35:23.724  1623  1685 I USBService: send udp to check mobileagent state.
+03-27 16:35:23.726  1623  1688 I ===Mrcp===: sending cmd:276
+03-27 16:35:23.729  1623  1873 I USBService: command is : [277] 
+03-27 16:35:23.729  1623  1873 I USBService: res:-131070 res2:2 opt:-2
+03-27 16:35:23.729  1623  1873 I USBService: 	 mobileagent state:-2. 
+03-27 16:35:23.730  1623  1685 I USBService: get mobileagent state 1 and current mobileagent state 1 and usb state of connection false
+03-27 16:35:23.901  2682  2693 I art     : Background partial concurrent mark sweep GC freed 343514(11MB) AllocSpace objects, 42(12MB) LOS objects, 34% free, 30MB/46MB, paused 2.563ms total 130.029ms
+03-27 16:35:24.209  2682  2693 I art     : Background sticky concurrent mark sweep GC freed 363285(11MB) AllocSpace objects, 33(7MB) LOS objects, 29% free, 32MB/46MB, paused 1.719ms total 108.002ms
+03-27 16:35:24.252   245  2894 D CameraHal: debugShowFPS(622): Camera 14080 Frames, 29.862 FPS
+03-27 16:35:24.561  2682  2693 I art     : Background partial concurrent mark sweep GC freed 341093(10MB) AllocSpace objects, 41(12MB) LOS objects, 33% free, 31MB/47MB, paused 2.217ms total 154.488ms
+03-27 16:35:24.884  2682  2693 I art     : Background sticky concurrent mark sweep GC freed 391076(12MB) AllocSpace objects, 37(8MB) LOS objects, 31% free, 32MB/47MB, paused 2.215ms total 100.916ms
+03-27 16:35:25.250  2682  2693 I art     : Background partial concurrent mark sweep GC freed 348866(11MB) AllocSpace objects, 44(13MB) LOS objects, 33% free, 31MB/47MB, paused 2.110ms total 167.519ms
+03-27 16:35:25.328   245  2894 D CameraHal: debugShowFPS(622): Camera 14112 Frames, 29.809 FPS
+03-27 16:35:25.422  1308  1359 I ExifInterface_JNI: Raw image not detected
+03-27 16:35:25.553  2682  2693 I art     : Background sticky concurrent mark sweep GC freed 322635(10MB) AllocSpace objects, 31(10MB) LOS objects, 29% free, 33MB/47MB, paused 2.160ms total 105.177ms
+03-27 16:35:25.936  2682  2693 I art     : Background partial concurrent mark sweep GC freed 323484(10MB) AllocSpace objects, 43(14MB) LOS objects, 32% free, 33MB/49MB, paused 2.104ms total 177.196ms
+03-27 16:35:26.242  1623  1682 I ===DaemonService===: ############## Rotation : 0
+03-27 16:35:26.242  1623  1682 I ===DaemonService===: ScreenOrientationThread:0 screentOrientation:0
+03-27 16:35:26.247  1623  1683 I ===APKProtocolTransmit===: Ready send su-cmd:275
+03-27 16:35:26.247  1623  1683 I ===APKProtocolTransmit===: Start send su-cmd:275 length[14]
+03-27 16:35:26.247  1623  1683 I ===APKProtocolTransmit===: Will write content:the C socket has not been connected,so dicard the send command:[275]
+03-27 16:35:26.251  1623  1683 I ===APKProtocolTransmit===: End send sb-cmd:275
+03-27 16:35:26.266  2682  2693 I art     : Background sticky concurrent mark sweep GC freed 352409(11MB) AllocSpace objects, 34(11MB) LOS objects, 29% free, 34MB/49MB, paused 2.835ms total 114.540ms
+03-27 16:35:26.398   245  2894 D CameraHal: debugShowFPS(622): Camera 14144 Frames, 29.858 FPS
+03-27 16:35:26.610  2682  2693 I art     : Background partial concurrent mark sweep GC freed 348174(11MB) AllocSpace objects, 47(15MB) LOS objects, 33% free, 32MB/48MB, paused 2.594ms total 148.229ms
+03-27 16:35:26.731  1623  1685 I USBService: send udp to check mobileagent state.
+03-27 16:35:26.733  1623  1686 I ===Mrcp===: sending cmd:276
+03-27 16:35:26.734  1623  1713 I USBService: command is : [277] 
+03-27 16:35:26.734  1623  1713 I USBService: res:-131070 res2:2 opt:-2
+03-27 16:35:26.735  1623  1713 I USBService: 	 mobileagent state:-2. 
+03-27 16:35:26.735  1623  1685 I USBService: get mobileagent state 1 and current mobileagent state 1 and usb state of connection false
+03-27 16:35:26.938  2682  2693 I art     : Background sticky concurrent mark sweep GC freed 393201(12MB) AllocSpace objects, 38(9MB) LOS objects, 33% free, 31MB/47MB, paused 2.929ms total 112.392ms
+03-27 16:35:27.324  2682  2693 I art     : Background partial concurrent mark sweep GC freed 411671(13MB) AllocSpace objects, 47(12MB) LOS objects, 32% free, 33MB/49MB, paused 1.657ms total 168.967ms
+03-27 16:35:27.468   245  2894 D CameraHal: debugShowFPS(622): Camera 14176 Frames, 29.875 FPS
+03-27 16:35:27.642  2682  2693 I art     : Background sticky concurrent mark sweep GC freed 400999(12MB) AllocSpace objects, 38(9MB) LOS objects, 32% free, 33MB/49MB, paused 2.124ms total 108.982ms
+03-27 16:35:28.010  2682  2693 I art     : Background partial concurrent mark sweep GC freed 383430(12MB) AllocSpace objects, 48(13MB) LOS objects, 32% free, 32MB/48MB, paused 4.484ms total 167.465ms
+03-27 16:35:28.544   245  2894 D CameraHal: debugShowFPS(622): Camera 14208 Frames, 29.754 FPS
+03-27 16:35:28.684  2682  2693 I art     : Background partial concurrent mark sweep GC freed 344925(11MB) AllocSpace objects, 41(13MB) LOS objects, 33% free, 31MB/47MB, paused 2.340ms total 152.229ms
+03-27 16:35:28.710  1308  1359 I ExifInterface_JNI: Raw image not detected
+03-27 16:35:28.737  1308  1359 I ExifInterface_JNI: Raw image not detected
+03-27 16:35:28.874  2682  2682 D SyncManager: 获取公司信息
+03-27 16:35:28.874  2682  2682 D SyncManager: 地址：http://47.105.80.245:8080/api/company/getcompany.html
+03-27 16:35:28.874  2682  2682 D SyncManager: 参数：00000000-385c-5a58-0000-000000dd4a18
+03-27 16:35:28.983  2682  2693 I art     : Background sticky concurrent mark sweep GC freed 347614(11MB) AllocSpace objects, 32(8MB) LOS objects, 29% free, 33MB/47MB, paused 2.846ms total 116.624ms
+03-27 16:35:29.027  2682  2682 D SyncManager: {"message":"该设备未绑定公司","status":4,"company":{}}
+03-27 16:35:29.034  2682  2682 D SyncManager: 重新获取公司信息
+03-27 16:35:29.258  1623  1682 I ===DaemonService===: ############## Rotation : 0
+03-27 16:35:29.258  1623  1682 I ===DaemonService===: ScreenOrientationThread:0 screentOrientation:0
+03-27 16:35:29.260  1623  1676 I ===APKProtocolTransmit===: Ready send su-cmd:275
+03-27 16:35:29.260  1623  1676 I ===APKProtocolTransmit===: Start send su-cmd:275 length[14]
+03-27 16:35:29.260  1623  1676 I ===APKProtocolTransmit===: Will write content:the C socket has not been connected,so dicard the send command:[275]
+03-27 16:35:29.264  1623  1676 I ===APKProtocolTransmit===: End send sb-cmd:275
+03-27 16:35:29.322  2682  2693 I art     : Background partial concurrent mark sweep GC freed 356691(11MB) AllocSpace objects, 44(12MB) LOS objects, 32% free, 33MB/49MB, paused 1.772ms total 152.142ms
+03-27 16:35:29.417  2682  2925 I PacketWriter: 心跳 
+03-27 16:35:29.617   245  2894 D CameraHal: debugShowFPS(622): Camera 14240 Frames, 29.834 FPS
+03-27 16:35:29.687  2682  2693 I art     : Background sticky concurrent mark sweep GC freed 386228(12MB) AllocSpace objects, 36(9MB) LOS objects, 29% free, 34MB/49MB, paused 4.273ms total 123.850ms
+03-27 16:35:29.735  1623  1685 I USBService: send udp to check mobileagent state.
+03-27 16:35:29.737  1623  1687 I ===Mrcp===: sending cmd:276
+03-27 16:35:29.738  1623  1872 I USBService: command is : [277] 
+03-27 16:35:29.739  1623  1872 I USBService: res:-131070 res2:2 opt:-2
+03-27 16:35:29.739  1623  1872 I USBService: 	 mobileagent state:-2. 
+03-27 16:35:29.740  1623  1685 I USBService: get mobileagent state 1 and current mobileagent state 1 and usb state of connection false
+03-27 16:35:30.010  2682  2693 I art     : Background partial concurrent mark sweep GC freed 325509(10MB) AllocSpace objects, 45(14MB) LOS objects, 34% free, 29MB/45MB, paused 2.145ms total 118.870ms
+03-27 16:35:30.678  2682  2693 I art     : Background partial concurrent mark sweep GC freed 368924(11MB) AllocSpace objects, 41(12MB) LOS objects, 34% free, 30MB/46MB, paused 1.534ms total 136.102ms
+03-27 16:35:30.688   245  2894 D CameraHal: debugShowFPS(622): Camera 14272 Frames, 29.865 FPS
+03-27 16:35:31.347  2682  2693 I art     : Background partial concurrent mark sweep GC freed 292775(9MB) AllocSpace objects, 43(13MB) LOS objects, 34% free, 29MB/45MB, paused 1.826ms total 134.310ms
+03-27 16:35:31.760   245  2894 D CameraHal: debugShowFPS(622): Camera 14304 Frames, 29.849 FPS
+03-27 16:35:32.011  2682  2693 I art     : Background partial concurrent mark sweep GC freed 364246(11MB) AllocSpace objects, 40(11MB) LOS objects, 32% free, 33MB/49MB, paused 2.183ms total 165.443ms
+03-27 16:35:32.016  2682  2920 E SignManager: run: 公司未绑定，不上传数据
+03-27 16:35:32.267  1623  1682 I ===DaemonService===: ############## Rotation : 0
+03-27 16:35:32.269  1623  1682 I ===DaemonService===: ScreenOrientationThread:0 screentOrientation:0
+03-27 16:35:32.271  1623  1688 I ===APKProtocolTransmit===: Ready send su-cmd:275
+03-27 16:35:32.275  1623  1688 I ===APKProtocolTransmit===: Start send su-cmd:275 length[14]
+03-27 16:35:32.275  1623  1688 I ===APKProtocolTransmit===: Will write content:the C socket has not been connected,so dicard the send command:[275]
+03-27 16:35:32.288  1623  1688 I ===APKProtocolTransmit===: End send sb-cmd:275
+03-27 16:35:32.328  2682  2693 I art     : Background sticky concurrent mark sweep GC freed 316994(10MB) AllocSpace objects, 29(9MB) LOS objects, 29% free, 34MB/49MB, paused 3.020ms total 109.372ms
+03-27 16:35:32.667  2682  2693 I art     : Background partial concurrent mark sweep GC freed 339559(10MB) AllocSpace objects, 46(16MB) LOS objects, 33% free, 31MB/47MB, paused 3.313ms total 147.141ms
+03-27 16:35:32.740  1623  1685 I USBService: send udp to check mobileagent state.
+03-27 16:35:32.742  1623  1683 I ===Mrcp===: sending cmd:276
+03-27 16:35:32.744  1623  1873 I USBService: command is : [277] 
+03-27 16:35:32.745  1623  1873 I USBService: res:-131070 res2:2 opt:-2
+03-27 16:35:32.745  1623  1873 I USBService: 	 mobileagent state:-2. 
+03-27 16:35:32.748  1623  1685 I USBService: get mobileagent state 1 and current mobileagent state 1 and usb state of connection false
+03-27 16:35:32.834   245  2894 D CameraHal: debugShowFPS(622): Camera 14336 Frames, 29.804 FPS
+03-27 16:35:33.005  2682  2693 I art     : Background sticky concurrent mark sweep GC freed 377522(11MB) AllocSpace objects, 34(9MB) LOS objects, 31% free, 32MB/47MB, paused 2.126ms total 108.835ms
+03-27 16:35:33.340  2682  2693 I art     : Background partial concurrent mark sweep GC freed 335371(10MB) AllocSpace objects, 43(12MB) LOS objects, 33% free, 32MB/48MB, paused 1.629ms total 141.423ms
+03-27 16:35:33.653  2682  2693 I art     : Background sticky concurrent mark sweep GC freed 366649(11MB) AllocSpace objects, 32(8MB) LOS objects, 28% free, 34MB/48MB, paused 1.985ms total 122.667ms
+03-27 16:35:33.905   245  2894 D CameraHal: debugShowFPS(622): Camera 14368 Frames, 29.880 FPS
+03-27 16:35:33.969  2682  2693 I art     : Background partial concurrent mark sweep GC freed 354042(11MB) AllocSpace objects, 49(14MB) LOS objects, 33% free, 31MB/47MB, paused 1.957ms total 137.868ms
+03-27 16:35:34.297  2682  2693 I art     : Background sticky concurrent mark sweep GC freed 339616(10MB) AllocSpace objects, 33(8MB) LOS objects, 26% free, 34MB/47MB, paused 1.700ms total 106.736ms
+03-27 16:35:34.604  2682  2693 I art     : Background partial concurrent mark sweep GC freed 287434(9MB) AllocSpace objects, 39(14MB) LOS objects, 33% free, 31MB/47MB, paused 3.065ms total 128.855ms
+03-27 16:35:34.976   245  2894 D CameraHal: debugShowFPS(622): Camera 14400 Frames, 29.865 FPS
+03-27 16:35:35.259  2682  2693 I art     : Background partial concurrent mark sweep GC freed 340773(10MB) AllocSpace objects, 42(13MB) LOS objects, 33% free, 31MB/47MB, paused 2.449ms total 136.674ms
+03-27 16:35:35.275  1623  1682 I ===DaemonService===: ############## Rotation : 0
+03-27 16:35:35.275  1623  1682 I ===DaemonService===: ScreenOrientationThread:0 screentOrientation:0
+03-27 16:35:35.278  1623  1686 I ===APKProtocolTransmit===: Ready send su-cmd:275
+03-27 16:35:35.278  1623  1686 I ===APKProtocolTransmit===: Start send su-cmd:275 length[14]
+03-27 16:35:35.278  1623  1686 I ===APKProtocolTransmit===: Will write content:the C socket has not been connected,so dicard the send command:[275]
+03-27 16:35:35.282  1623  1686 I ===APKProtocolTransmit===: End send sb-cmd:275

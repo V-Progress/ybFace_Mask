@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="10dp"
+    android:background="@drawable/shape_employ_button"
+    android:orientation="vertical">
+
+    <TextView
+        android:padding="35dp"
+        android:textColor="@color/white"
+        android:textSize="28dp"
+        android:text="@string/act_set_xtsz"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <View
+        android:background="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"/>
+
+    <LinearLayout
+
+        android:padding="20dp"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/tv_setting_pwd"
+            android:clickable="true"
+            android:textColor="@color/white"
+            android:gravity="left"
+            android:background="@drawable/menu_yellow_btn"
+            android:textSize="26dp"
+            android:padding="28dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/act_set_xtmm" />
+        <View
+            android:background="@color/gray_low"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"/>
+
+        <TextView
+            android:clickable="true"
+            android:id="@+id/tv_setting_clear_cache"
+            android:padding="28dp"
+            android:textColor="@color/white"
+            android:gravity="left"
+            android:background="@drawable/menu_yellow_btn"
+            android:textSize="26dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/act_set_qchc" />
+
+        <View
+            android:background="@color/gray_low"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"/>
+
+        <FrameLayout
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/tv_setting_clear_data"
+                android:clickable="true"
+                android:textColor="@color/white"
+                android:padding="28dp"
+                android:gravity="left"
+                android:background="@drawable/menu_yellow_btn"
+                android:textSize="26dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/act_set_qcsj" />
+
+            <TextView
+                android:textColor="@color/white"
+                android:layout_gravity="right|center_vertical"
+                android:layout_marginRight="30dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:textSize="26dp"
+                android:text="0mb"
+                android:id="@+id/tv_setting_data_size"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </FrameLayout>
+
+        <View
+            android:background="@color/gray_low"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/tv_setting_check_camera"
+                android:clickable="true"
+                android:textColor="@color/white"
+                android:gravity="left"
+                android:background="@drawable/menu_yellow_btn"
+                android:textSize="26dp"
+                android:padding="28dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/act_set_jcsxt"/>
+
+            <Spinner
+                android:visibility="gone"
+                android:dropDownSelector="@color/white"
+                android:background="@drawable/shape_employ_button"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/tv_setting_check_camera"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"></Spinner>
+            <TextView
+                android:textColor="@color/white"
+                android:layout_marginRight="30dp"
+                android:id="@+id/tv_setting_camera_info"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                android:textSize="20dp" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:padding="28dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <CheckBox
+                android:id="@+id/cb_mirror"
+                android:layout_marginLeft="20dp"
+                android:textSize="20dp"
+                android:checked="true"
+                android:layout_centerVertical="true"
+                android:textColor="@color/white"
+                android:text="@string/act_set_sfjx"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            
+            <Button
+                android:id="@+id/btn_setAngle"
+                android:onClick="setAngle"
+                android:layout_marginLeft="50dp"
+                android:layout_toRightOf="@id/cb_mirror"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </RelativeLayout>
+
+        <View
+            android:background="@color/gray_low"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="28dp">
+
+            <TextView
+                android:textColor="@color/white"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                android:text="@string/act_set_wlzt"
+                android:textSize="26dp" />
+
+            <TextView
+                android:textColor="@color/white"
+                android:id="@+id/tv_setting_net_state"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                android:textSize="20dp" />
+
+        </RelativeLayout>
+
+        <View
+            android:background="@color/gray_low"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"/>
+        <Button
+            android:layout_margin="20dp"
+            android:background="@drawable/selector_btn_take_photo"
+            android:textColor="@color/white"
+            android:id="@+id/btn_close_setting"
+            android:layout_gravity="bottom"
+            android:textSize="30dp"
+            android:text="@string/act_set_gb"
+            android:padding="30dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/view_temp_default"
+    android:layout_width="600dp"
+    android:layout_height="139dp"
+    android:gravity="center_vertical"
+    android:background="@mipmap/bg_warn">
+
+    <TextView
+        android:layout_centerVertical="true"
+        android:id="@+id/tv_ssm_t"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:text="@string/act_certificates_health_code"
+        android:textColor="@color/white"
+        android:textSize="30dp" />
+
+    <TextView
+        android:drawablePadding="5dp"
+        android:id="@+id/tv_canPass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="40dp"
+        android:layout_toRightOf="@+id/tv_ssm_t"
+        android:background="@null"
+        android:drawableTop="@mipmap/icon_pass_qrcode"
+        android:gravity="center"
+        android:text="@string/act_certificates_can_go"
+        android:textColor="@color/tv_canpass"
+        android:textSize="20dp" />
+
+    <TextView
+        android:drawablePadding="5dp"
+        android:id="@+id/tv_noPass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="68dp"
+        android:layout_toRightOf="@+id/tv_canPass"
+        android:background="@null"
+        android:drawableTop="@mipmap/icon_nopass_qrcode"
+        android:gravity="center"
+        android:text="@string/act_certificates_not_pass"
+        android:textColor="@color/tv_canpass"
+        android:textSize="20dp" />
+
+    <TextView
+        android:drawablePadding="5dp"
+        android:id="@+id/tv_ensurePass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="68dp"
+        android:layout_toRightOf="@+id/tv_noPass"
+        android:background="@null"
+        android:drawableTop="@mipmap/icon_what_qrcode"
+        android:gravity="center"
+        android:text="@string/act_certificates_ensure_pass"
+        android:textColor="@color/tv_canpass"
+        android:textSize="20dp" />
+</RelativeLayout>
