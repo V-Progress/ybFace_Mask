@@ -16,6 +16,7 @@ import com.intelligence.hardware.temperature.TemperatureModule;
 import com.intelligence.hardware.temperature.callback.HotImageK1604CallBack;
 import com.intelligence.hardware.temperature.callback.HotImageK3232CallBack;
 import com.intelligence.hardware.temperature.callback.InfraredTempCallBack;
+import com.intelligence.hardware.temperature.callback.MLX90621GgTempCallBack;
 import com.intelligence.hardware.temperature.callback.MLX90621YsTempCallBack;
 import com.intelligence.hardware.temperature.callback.Smt3232TempCallBack;
 import com.yunbiao.faceview.CompareResult;
@@ -27,6 +28,7 @@ import com.yunbiao.ybsmartcheckin_live_id.afinel.Constants;
 import com.yunbiao.ybsmartcheckin_live_id.business.KDXFSpeechManager;
 import com.yunbiao.ybsmartcheckin_live_id.business.SignManager;
 import com.yunbiao.ybsmartcheckin_live_id.db2.Sign;
+import com.yunbiao.ybsmartcheckin_live_id.utils.CommonUtils;
 import com.yunbiao.ybsmartcheckin_live_id.utils.SpUtils;
 
 import java.util.ArrayList;
@@ -122,6 +124,7 @@ public abstract class BaseThermal2Activity extends BaseGpioActivity implements F
         viewInterface.onModeChanged(mCurrMode);
 
         String portPath = mCurrentOrientation == Configuration.ORIENTATION_PORTRAIT ? "/dev/ttyS1" : "/dev/ttyS4";
+        String broadType = CommonUtils.getBroadType2();
         switch (mCurrMode) {
             //NO_Temper
             case ThermalConst.ONLY_FACE:
@@ -154,19 +157,18 @@ public abstract class BaseThermal2Activity extends BaseGpioActivity implements F
             case ThermalConst.ONLY_THERMAL_MLX_16_4:
             case ThermalConst.FACE_THERMAL_MLX_16_4:
                 if (!isMLXRunning) {
-                    updateUIHandler.postDelayed(() -> {
-                        TemperatureModule.getIns().startMLX90621YsI2C(lowTempModel, 16 * 30, 4 * 40, mlx90621YsTempCallBack);
+                    //亿莱顿则开启串口
+                    Log.e(TAG, "onResume: 芯片未启动");
+                    if (TextUtils.equals("LXR", broadType)) {
                         isMLXRunning = true;
-                    }, 1 * 1000);
-                } else {
-                    //如果自动模式开启，则默认全关
-                    if (mAutoTemper) {
-                        TemperatureModule.getIns().setHotImageColdMode(false);
-                        TemperatureModule.getIns().setHotImageHotMode(false, 45.0f);
+                        Log.e(TAG, "onResume: 是亿莱顿的板子");
+                        TemperatureModule.getIns().startMLX90621GgPort(lowTempModel, 16 * 32, 4 * 40, mlx90621GgTempCallBack);
+                        TemperatureModule.getIns().initSerialPort(this, portPath, 9600);
                     } else {
-                        //如果自动模式关闭，则关闭高温模式并且以设置为准调整低温模式
-                        TemperatureModule.getIns().setHotImageColdMode(lowTempModel);
-                        TemperatureModule.getIns().setHotImageHotMode(false, 45.0f);
+                        updateUIHandler.postDelayed(() -> {
+                            isMLXRunning = true;
+                            TemperatureModule.getIns().startMLX90621YsI2C(lowTempModel, 16 * 30, 4 * 40, mlx90621YsTempCallBack);
+                        }, 1 * 1000);
                     }
                 }
                 break;
@@ -178,9 +180,33 @@ public abstract class BaseThermal2Activity extends BaseGpioActivity implements F
                 TemperatureModule.getIns().initSerialPort(this, "/dev/ttyS3", 115200);
                 updateUIHandler.postDelayed(() -> TemperatureModule.getIns().startSmt3232Temp(lowTempModel, smt3232TempCallBack), 2000);
                 break;
+        }
 
+        //如果自动模式开启，则默认全关
+        if (mAutoTemper) {
+            TemperatureModule.getIns().setHotImageColdMode(false);
+            TemperatureModule.getIns().setHotImageHotMode(false, 45.0f);
+        } else {
+            //如果自动模式关闭，则关闭高温模式并且以设置为准调整低温模式
+            TemperatureModule.getIns().setHotImageColdMode(lowTempModel);
+            TemperatureModule.getIns().setHotImageHotMode(false, 45.0f);
+        }
+
+        switch (mCurrMode) {
+            case ThermalConst.ONLY_INFRARED:
+            case ThermalConst.FACE_INFRARED:
+            case ThermalConst.ONLY_THERMAL_HM_16_4:
+            case ThermalConst.FACE_THERMAL_HM_16_4:
+            case ThermalConst.ONLY_THERMAL_MLX_16_4:
+            case ThermalConst.FACE_THERMAL_MLX_16_4:
+                mCacheTemperSize = 3;
+                break;
+            default:
+                mCacheTemperSize = 4;
+                break;
         }
     }
+    private int mCacheTemperSize  = 4;
 
     protected abstract void setMaskDetectEnable(boolean enable);
 
@@ -252,8 +278,12 @@ public abstract class BaseThermal2Activity extends BaseGpioActivity implements F
         }
     };
 
-    private int nobodyTemperTag = 0;
-    private int nobodyFaceTag = 0;
+    private MLX90621GgTempCallBack mlx90621GgTempCallBack = new MLX90621GgTempCallBack() {
+        @Override
+        public void newestHotImageData(final Bitmap imageBmp, final float originalMaxT, final float maxT, final float minT) {
+            handleTemperature(imageBmp, originalMaxT, maxT);
+        }
+    };
 
     private void startAutoCheck(float originT) {
         Log.e(TAG, "handleTemperature: 原始温度：" + originT);
@@ -372,6 +402,7 @@ public abstract class BaseThermal2Activity extends BaseGpioActivity implements F
                 if (speechBean.isMaskTipEnabled() && maskTipNumber < 5) {
                     KDXFSpeechManager.instance().playNormalAdd(speechBean.getMaskTip(), () -> maskTipNumber++);
                 }
+                return;// TODO: 2020/5/22
             } else {
                 //通过后清除口罩提示框
                 sendClearMaskTipMessage(0);
@@ -390,14 +421,13 @@ public abstract class BaseThermal2Activity extends BaseGpioActivity implements F
             return;
         }
 
-        final int temperListSize = mCurrMode == ThermalConst.ONLY_INFRARED || mCurrMode == ThermalConst.FACE_INFRARED || mCurrMode == ThermalConst.FACE_THERMAL_HM_16_4 || mCurrMode == ThermalConst.FACE_THERMAL_HM_16_4 ? 2 : 4;
         if (mCurrMode == ThermalConst.ONLY_THERMAL_HM_32_32 || mCurrMode == ThermalConst.ONLY_INFRARED || mCurrMode == ThermalConst.ONLY_THERMAL_HM_16_4 || mCurrMode == ThermalConst.ONLY_THERMAL_MLX_16_4) {
             long currentTimeMillis = System.currentTimeMillis();
             if (mCacheTime != 0 && currentTimeMillis - mCacheTime < mSpeechDelay) {
                 return;
             }
             mCacheTemperList.add(afterT);
-            if (mCacheTemperList.size() < temperListSize) {
+            if (mCacheTemperList.size() < mCacheTemperSize) {
                 return;
             }
             mCacheTime = currentTimeMillis;
@@ -644,7 +674,7 @@ public abstract class BaseThermal2Activity extends BaseGpioActivity implements F
             return false;
         }
         //判断集合中的温度数据
-        if (mCacheTemperList.size() < (mCurrMode == ThermalConst.FACE_INFRARED || mCurrMode == ThermalConst.FACE_THERMAL_HM_16_4 ? 2 : 3)) {
+        if (mCacheTemperList.size() < mCacheTemperSize) {
             return false;
         }
         return true;
@@ -991,16 +1021,19 @@ public abstract class BaseThermal2Activity extends BaseGpioActivity implements F
     @Override
     protected void onStop() {
         super.onStop();
-        TemperatureModule.getIns().closeHotImageK3232();
-        TemperatureModule.getIns().setInfraredTempCallBack(null);
+        TemperatureModule.getIns().closeHotImageK3232();//HM
+        TemperatureModule.getIns().closeSmt3232Temp();//SMT
+        TemperatureModule.getIns().closeHotImageK1604();//HM
+        TemperatureModule.getIns().setInfraredTempCallBack(null);//INF
+        TemperatureModule.getIns().closeHotImageK1604();//HM
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
         TemperatureModule.getIns().closeSerialPort();
-        TemperatureModule.getIns().closeHotImageK3232();
         TemperatureModule.getIns().closeMLX90621YsI2C();
+        TemperatureModule.getIns().closeMLX90621GgPort();
     }
 
     class SpeechBean {

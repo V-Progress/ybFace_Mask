@@ -13,24 +13,62 @@
         android:layout_height="match_parent"/>
 
     <LinearLayout
+        android:visibility="gone"
+        android:padding="3dp"
+        android:layout_centerInParent="true"
+        android:elevation="10dp"
+        android:background="@drawable/shape_bg_face_green"
+        android:id="@+id/ll_code_area"
+        android:gravity="center"
         android:layout_centerVertical="true"
         android:orientation="vertical"
-        android:layout_width="match_parent"
+        android:layout_width="400dp"
         android:layout_height="wrap_content">
+
         <TextView
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:background="#000"
+            android:id="@+id/tv_error_mac"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:textSize="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <ImageView
+            android:visibility="gone"
+            android:scaleType="fitXY"
+            android:id="@+id/iv_code"
+            android:layout_width="match_parent"
+            android:layout_height="400dp"/>
+
+        <TextView
+            android:paddingTop="10dp"
             android:background="#000"
             android:id="@+id/tv_wifi_mac"
             android:gravity="center"
             android:textColor="@color/white"
-            android:textSize="30dp"
+            android:textSize="24dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
         <TextView
+            android:paddingBottom="10dp"
+            android:paddingTop="10dp"
             android:background="#000"
             android:id="@+id/tv_local_mac"
             android:gravity="center"
             android:textColor="@color/white"
-            android:textSize="30dp"
+            android:textSize="24dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:text="Go"
+            android:background="@drawable/shape_bg_btnsync"
+            android:id="@+id/tv_jump"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:textSize="24dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
     </LinearLayout>

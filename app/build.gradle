@@ -131,44 +131,7 @@ android {
 
 String buildApkName(String param) {
     //确定前缀名
-    String name
-    if (param.contains("SK"))
-        name = "SK"
-    else if (param.contains("HT"))
-        name = "HT"
-    else if (param.contains("OSIMLE"))
-        name = "Osimle AI"
-    else if (param.contains("SOFT_WORK"))
-        name = "SoftWorkz AI"
-    else
-        name = "YB"
-
-    if (!param.contains("OSIMLE") && !param.contains("SOFT_WORK")) {
-        //确定后缀名
-        if (param.contains("10")) {
-            name += "Face"
-        } else if (param.contains("8")) {
-            if (name.contains("SK")) {//判断思库版本
-                name += "TemperatureCheckingAttendance"
-            } else {
-                name += "测温通行"
-            }
-        } else if (param.contains("RZ")) {
-            name += "人证测温"
-        } else if (param.contains("DR")) {
-            if (param.contains("SK")) {//判断思库版本
-                name += "考勤"
-            } else {
-                name += "大通量测温"
-            }
-        } else if (param.contains("SC_DL")) {
-            name += "双光安检"
-        } else if (param.contains("SC")) {
-            name += "测温安检"
-        } else {
-            name += "智能考勤"
-        }
-    }
+    String name = "YBFace_Mask"
     return name
 }
 
@@ -339,6 +302,5 @@ dependencies {
     implementation files('libs/PrintUtils1114.jar')
     implementation files('libs/arcsoft_face.jar')
     implementation files('libs/poweronoff.jar')
-
     implementation 'com.lcw.library:imagepicker:2.1.2'
 }

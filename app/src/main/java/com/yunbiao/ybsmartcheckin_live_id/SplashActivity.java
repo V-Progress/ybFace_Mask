@@ -3,9 +3,13 @@ package com.yunbiao.ybsmartcheckin_live_id;
 import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
+import android.graphics.Bitmap;
+import android.graphics.Color;
 import android.os.Build;
 import android.text.TextUtils;
 import android.util.Log;
+import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.google.gson.Gson;
@@ -22,6 +26,7 @@ import com.yunbiao.ybsmartcheckin_live_id.utils.CommonUtils;
 import com.yunbiao.ybsmartcheckin_live_id.utils.SpUtils;
 import com.yunbiao.ybsmartcheckin_live_id.utils.ThreadUitls;
 import com.yunbiao.ybsmartcheckin_live_id.utils.UIUtils;
+import com.yunbiao.ybsmartcheckin_live_id.utils.ZXingUtils;
 import com.zhy.http.okhttp.OkHttpUtils;
 import com.zhy.http.okhttp.callback.StringCallback;
 
@@ -47,6 +52,10 @@ public class SplashActivity extends BaseActivity {
     private YBPermission ybPermission;
     private TextView tvLocalMac;
     private TextView tvWifiMac;
+    private View llCodeArea;
+    private TextView tvError;
+    private ImageView ivCode;
+    private TextView tvJump;
 
     @Override
     protected int getPortraitLayout() {
@@ -61,9 +70,12 @@ public class SplashActivity extends BaseActivity {
     @Override
     protected void initView() {
         super.initView();
+        tvError = findViewById(R.id.tv_error_mac);
+        ivCode = findViewById(R.id.iv_code);
         tvWifiMac = findViewById(R.id.tv_wifi_mac);
         tvLocalMac = findViewById(R.id.tv_local_mac);
-
+        llCodeArea = findViewById(R.id.ll_code_area);
+        tvJump = findViewById(R.id.tv_jump);
         GifImageView gifImageView = findViewById(R.id.giv);
         try {
             GifDrawable gifDrawable = new GifDrawable(getResources(),R.mipmap.splash);
@@ -108,6 +120,20 @@ public class SplashActivity extends BaseActivity {
         }
     };
 
+    class QrCode{
+        String wifiMac;
+        String localMac;
+        String deviceNo;
+        String error;
+        public QrCode(String wifiMac, String localMac,String deviceNo,String error) {
+            this.wifiMac = wifiMac;
+            this.localMac = localMac;
+            this.deviceNo = deviceNo;
+            this.error = error;
+        }
+    }
+
+
     private Runnable nextRunnable = () -> {
         UIUtils.dismissNetLoading();
 
@@ -118,14 +144,26 @@ public class SplashActivity extends BaseActivity {
                 e.printStackTrace();
             }
 
-            FaceSDKActive.active(1, this, "0", new FaceSDKActive.ActiveCallback() {
+            FaceSDKActive.active(1, this, "1", new FaceSDKActive.ActiveCallback() {
                 @Override
                 public void getActiveCodeFailed(String message, String wifiMac, String localMac) {
-                    UIUtils.showLong(SplashActivity.this,message);
-                    tvWifiMac.setText(wifiMac);
-                    tvLocalMac.setText(localMac);
-                    jump();
-                    finish();
+                    String content = new Gson().toJson(new QrCode(wifiMac,localMac,HeartBeatClient.getDeviceNo(),message));
+                    Bitmap qrImage = ZXingUtils.generateLogoQrCode(SplashActivity.this,content,400,400);
+                    if(qrImage != null){
+                        ivCode.setVisibility(View.VISIBLE);
+                        ivCode.setImageBitmap(qrImage);
+                    } else {
+                        ivCode.setVisibility(View.GONE);
+                    }
+
+                    llCodeArea.setVisibility(View.VISIBLE);
+                    tvError.setText("Error: " + message);
+                    tvWifiMac.setText("wifi Mac: " + wifiMac);
+                    tvLocalMac.setText("enterMac: " + localMac);
+                    tvJump.setOnClickListener(v -> {
+                        jump();
+                        finish();
+                    });
                 }
 
                 @Override

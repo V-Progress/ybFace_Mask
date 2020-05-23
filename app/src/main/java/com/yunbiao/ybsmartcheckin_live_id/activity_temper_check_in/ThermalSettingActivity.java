@@ -169,7 +169,10 @@ public class ThermalSettingActivity extends BaseActivity {
                 ivMainLogo.setImageBitmap(BitmapFactory.decodeFile(mainLogoImg));
             }
         }
-
+//        Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
+//        intent.addCategory(Intent.CATEGORY_OPENABLE);
+//        intent.setType("image/*");
+//        startActivityForResult(intent, REQUEST_IMAGE);
         btnSaveMainLogo.setOnClickListener(v -> {
             ImagePicker.getInstance()
                     .setTitle(getResString(R.string.select_img_title))//设置标题
