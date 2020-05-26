@@ -88,6 +88,29 @@ public class ThermalSystemActivity extends BaseActivity implements View.OnClickL
         return R.layout.activity_thermal_system_h;
     }
 
+    private void setLogo(ImageView logoView,TextView tvName) {
+        boolean localPriority = SpUtils.getBoolean(ThermalConst.Key.LOCAL_PRIORITY, ThermalConst.Default.LOCAL_PRIORITY);
+        if (localPriority) {
+            String logoPath = SpUtils.getStr(ThermalConst.Key.MAIN_LOGO_IMG, ThermalConst.Default.MAIN_LOGO_IMG);
+            if (TextUtils.isEmpty(logoPath)) {
+                logoView.setImageResource(R.mipmap.yb_logo);
+            } else {
+                logoView.setImageBitmap(BitmapFactory.decodeFile(logoPath));
+            }
+            tvName.setText(SpUtils.getStr(ThermalConst.Key.MAIN_LOGO_TEXT, ThermalConst.Default.MAIN_LOGO_TEXT));
+        } else {
+            Company company = SpUtils.getCompany();
+            String comlogo = company.getComlogo();
+            String abbname = company.getAbbname();
+            if(company.getComid() == Constants.NOT_BIND_COMPANY_ID || TextUtils.isEmpty(comlogo)){
+                logoView.setVisibility(View.GONE);
+                logoView.setImageBitmap(null);
+            } else {
+                Glide.with(this).load(comlogo).asBitmap().into(logoView);
+            }
+            tvName.setText(TextUtils.isEmpty(abbname) ? "" : abbname);
+        }
+    }
     @Override
     protected void initView() {
         EventBus.getDefault().register(this);
@@ -131,20 +154,7 @@ public class ThermalSystemActivity extends BaseActivity implements View.OnClickL
         }
 
         //onResume中加载该加载的东西
-        Company company = SpUtils.getCompany();
-        if (company.getComid() != Constants.NOT_BIND_COMPANY_ID) {
-            ImageFileLoader.i().loadAndSave(this, company.getComlogo(), Constants.DATA_PATH, ivLogo);
-            tvAbbName.setText(company.getAbbname());
-        } else {
-            //如果是未绑定则显示自己设置的东西
-            String logoPath = SpUtils.getStr(ThermalConst.Key.MAIN_LOGO_IMG, ThermalConst.Default.MAIN_LOGO_IMG);
-            if (TextUtils.isEmpty(logoPath)) {
-                ivLogo.setImageResource(R.mipmap.yb_logo);
-            } else {
-                ivLogo.setImageBitmap(BitmapFactory.decodeFile(logoPath));
-            }
-            tvAbbName.setText(SpUtils.getStr(ThermalConst.Key.MAIN_LOGO_TEXT, ThermalConst.Default.MAIN_LOGO_TEXT));
-        }
+        setLogo(ivLogo,tvAbbName);
     }
 
     private String appName = "";
@@ -222,19 +232,7 @@ public class ThermalSystemActivity extends BaseActivity implements View.OnClickL
     public void setInfo() {
         Company company = SpUtils.getCompany();
         //获取到公司信息时加载该加载的东西
-        if (company.getComid() != Constants.NOT_BIND_COMPANY_ID) {
-            ImageFileLoader.i().loadAndSave(this, company.getComlogo(), Constants.DATA_PATH, ivLogo);
-            tvAbbName.setText(company.getAbbname());
-        } else {
-            //如果是未绑定则显示自己设置的东西
-            String logoPath = SpUtils.getStr(ThermalConst.Key.MAIN_LOGO_IMG, ThermalConst.Default.MAIN_LOGO_IMG);
-            if (TextUtils.isEmpty(logoPath)) {
-                ivLogo.setImageResource(R.mipmap.yb_logo);
-            } else {
-                ivLogo.setImageBitmap(BitmapFactory.decodeFile(logoPath));
-            }
-            tvAbbName.setText(SpUtils.getStr(ThermalConst.Key.MAIN_LOGO_TEXT, ThermalConst.Default.MAIN_LOGO_TEXT));
-        }
+        setLogo(ivLogo,tvAbbName);
 
         tv_company_system.setText(company.getComname());
 

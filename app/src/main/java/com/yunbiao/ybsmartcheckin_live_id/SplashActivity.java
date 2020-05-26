@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
-import android.graphics.Color;
 import android.os.Build;
 import android.text.TextUtils;
 import android.util.Log;
@@ -182,18 +181,18 @@ public class SplashActivity extends BaseActivity {
         switch (broadTypeStr) {
             case "SMT":
                 Constants.DEFAULT_CAMERA_ANGLE = 270;
-                Constants.DEFAULT_FACE_MIRROR = false;
+                Constants.DEFAULT_H_MIRROR = false;
                 ThermalConst.Default.MODE = ThermalConst.ONLY_THERMAL_HM_16_4;
                 break;
             case "LXR":
                 Constants.DEFAULT_CAMERA_ANGLE = 0;//横屏
-                Constants.DEFAULT_FACE_MIRROR = true;
+                Constants.DEFAULT_H_MIRROR = true;
                 ThermalConst.Default.MODE = ThermalConst.ONLY_THERMAL_HM_32_32;
                 break;
             case "HARRIS":
             default:
                 Constants.DEFAULT_CAMERA_ANGLE = 90;
-                Constants.DEFAULT_FACE_MIRROR = false;
+                Constants.DEFAULT_H_MIRROR = false;
                 ThermalConst.Default.MODE = ThermalConst.ONLY_THERMAL_MLX_16_4;
                 break;
         }

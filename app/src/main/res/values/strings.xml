@@ -43,6 +43,10 @@
     <string name="mask_tip_title">Masks prompt</string>
     <string name="mask_tip_example">Masks prompt Example：</string>
     <string name="setting_mask_label">Mask Detect</string>
+    <string name="setting_camera_vertical_mirror">Frame vertical mirror</string>
+    <string name="setting_picture_rotation">With the camera</string>
+    <string name="setting_local_priority">Local Priority</string>
+    <string name="setting_pic_rotation">Direction of photos</string>
 
     <!--logo设置-->
     <string name="setting_privacy_mode">Privacy Mode</string>

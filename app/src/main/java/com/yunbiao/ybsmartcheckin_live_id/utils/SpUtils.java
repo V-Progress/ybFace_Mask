@@ -42,7 +42,9 @@ public class SpUtils {
     public static final String COMPANY_AD_HENG = "ad_heng";//横屏广告
     public static final String COMPANY_AD_SHU = "ad_shu";//竖屏广告
 
-    public static final String IS_MIRROR = "isMirror";//是否镜像
+    public static final String IS_H_MIRROR = "isMirror";//是否镜像
+    public static final String IS_V_MIRROR = "isVerticalMirror";//是否镜像
+    public static final String PICTURE_ROTATION = "pictureRotation";//照片方向
     public static final String BOARD_INFO = "boardInfo";
     public static final String RUN_KEY = "runKey";
     public static final String DEVICE_TYPE = "deviceType";
@@ -108,11 +110,11 @@ public class SpUtils {
     }
 
     public static boolean isMirror() {
-        return getBoolean(IS_MIRROR, Constants.DEFAULT_FACE_MIRROR);
+        return getBoolean(IS_H_MIRROR, Constants.DEFAULT_H_MIRROR);
     }
 
     public static void setMirror(boolean b) {
-        saveBoolean(IS_MIRROR, b);
+        saveBoolean(IS_H_MIRROR, b);
     }
 
     public static boolean remove(String key){
