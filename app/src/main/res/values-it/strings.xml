@@ -20,6 +20,11 @@
     <string name="error_mask_tip">Si prega di indossare la maschera correttamente</string>
     <string name="please_aim_face_frame">Si prega di guardare nella telecamera</string>
 
+    <string name="setting_tab_face">Le facce</string>
+    <string name="setting_tab_page">interfaccia</string>
+    <string name="setting_tab_temper">temperatura</string>
+    <string name="setting_tab_device">attrezzature</string>
+
     <!--语音设置-->
     <string name="setting_welcome_speech">Welcome speech</string><!--Welcome speech--><!--欢迎语  -->
     <string name="setting_normal_speech_content">Normal temperature broadcast:</string><!--普通温度播报-->
@@ -41,7 +46,11 @@
     <string name="speech_setting_audition">In onda</string>
     <string name="mask_tip_title">Maschere indizio</string>
     <string name="mask_tip_example">Esempi di maschere：</string>
-
+    <string name="setting_picture_rotation">With the camera</string>
+    <string name="setting_local_priority">Local Priority</string>
+    <string name="setting_pic_rotation">Direction of photos</string>
+    <string name="setting_mask_label">Mask Detect</string>
+    <string name="setting_camera_vertical_mirror">Frame vertical mirror</string>
     <!--logo设置-->
     <string name="setting_privacy_mode">Privacy Mode</string>
     <string name="setting_periodic_purge_policy">Periodic purge policy</string>
@@ -49,6 +58,7 @@
     <string name="setting_show_main_logo">Display home LOGO</string>
     <string name="setting_show_main_thermal">Display Thermal Imaging</string>
     <string name="setting_show_main_info">Display home page information</string>
+    <string name="setting_default_welcome_tip">Welcome to AI intelligent attendance system</string><!--欢迎语-->
 
     <!--温度单位-->
     <string name="temper_tips_centigrade">Gradi centigradi</string>
@@ -326,7 +336,6 @@
     <string name="setting_current_correct_value">Current correction value:</string><!--当前补正值-->
     <string name="setting_low_temp_model">Low temperature mode</string><!--低温模式-->
     <string name="setting_portrait_outline">Portrait Outline</string><!--人像轮廓-->
-    <string name="setting_default_welcome_tip">Welcome to AI intelligent attendance system</string><!--欢迎语-->
     <string name="setting_correct_temperature">Correct Temperature</string>
     <string name="setting_broadcast_f">Enable Fahrenheit</string>
 

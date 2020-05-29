@@ -3,6 +3,7 @@ package com.yunbiao.ybsmartcheckin_live_id.activity_temper_check_in;
 import android.content.Context;
 import android.content.IntentFilter;
 import android.content.res.Configuration;
+import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.graphics.Rect;
 import android.net.ConnectivityManager;
@@ -24,6 +25,8 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.animation.GlideAnimation;
+import com.bumptech.glide.request.target.SimpleTarget;
 import com.github.mikephil.charting.animation.Easing;
 import com.github.mikephil.charting.charts.PieChart;
 import com.github.mikephil.charting.components.Description;
@@ -279,7 +282,12 @@ public class ThermalSignFragment extends Fragment implements NetWorkChangReceive
         Company company = SpUtils.getCompany();
         String codeUrl = company.getCodeUrl();
         if(!TextUtils.isEmpty(codeUrl)){
-            Glide.with(getActivity()).load(codeUrl).asBitmap().into(gifImageView);
+            Glide.with(getActivity()).load(codeUrl).asBitmap().into(new SimpleTarget<Bitmap>() {
+                @Override
+                public void onResourceReady(Bitmap resource, GlideAnimation<? super Bitmap> glideAnimation) {
+                    gifImageView.setImageBitmap(resource);
+                }
+            });
         }
 
         if (tvCompanyName != null) {

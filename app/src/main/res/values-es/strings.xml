@@ -21,6 +21,11 @@
     <string name="error_mask_tip">Please wear the mask correctly</string>
     <string name="please_aim_face_frame">Please aim at the face box</string>
 
+    <string name="setting_tab_face">Las caras</string>
+    <string name="setting_tab_page">La interfaz</string>
+    <string name="setting_tab_temper">La temperatura</string>
+    <string name="setting_tab_device">El equipo</string>
+
     <!--语音设置-->
     <string name="speech_setting_title">Speech Settings</string>
     <string name="setting_welcome_speech">Palabras de bienvenida</string><!--Welcome speech--><!--欢迎语  -->
@@ -44,6 +49,11 @@
     <string name="mask_tip_title">Consejos sobre la máscara</string>
     <string name="mask_tip_example">Ejemplos de consejos sobre máscaras：</string>
 
+    <string name="setting_mask_label">Mask Detect</string>
+    <string name="setting_camera_vertical_mirror">Frame vertical mirror</string>
+    <string name="setting_picture_rotation">With the camera</string>
+    <string name="setting_local_priority">Local Priority</string>
+    <string name="setting_pic_rotation">Direction of photos</string>
     <!--logo设置-->
     <string name="setting_privacy_mode">Modo Privacidad</string>
     <string name="setting_periodic_purge_policy">Política de depuración periódica</string>

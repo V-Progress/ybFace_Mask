@@ -20,6 +20,12 @@
     <string name="error_mask_tip">请正确佩戴口罩</string>
     <string name="please_aim_face_frame">请对准人脸框</string>
 
+    <string name="setting_tab_face">人臉</string>
+    <string name="setting_tab_page">界面</string>
+    <string name="setting_tab_temper">測溫</string>
+    <string name="setting_tab_device">設備</string>
+    <string name="setting_mask_label">口罩檢測</string>
+
     <!--语音设置-->
     <string name="speech_setting_title">语音播报设置</string>
     <string name="setting_broadcast_speed">语音速度</string><!--語音速度-->

@@ -25,6 +25,14 @@
     <string name="main_temp_tips_please_far">Lütfen uzak durun</string>
     <string name="main_temp_tips_so_close_text">Çok yakınsınız lütfen uzaklaşın </string>
 
+    <string name="setting_tab_face">Yüz</string>
+    <string name="setting_tab_page">Arabirim</string>
+    <string name="setting_tab_temper">Sıcaklık</string>
+    <string name="setting_tab_device">Ekipman</string>
+    <string name="setting_picture_rotation">With the camera</string>
+    <string name="setting_local_priority">Local Priority</string>
+    <string name="setting_pic_rotation">Direction of photos</string>
+
     <!--语音设置-->
     <string name="temper_tips_close">İpuçlarına yakın</string>
     <string name="setting_broadcast_speed">Ses hızı</string>
@@ -46,7 +54,8 @@
     <string name="speech_setting_audition">Seçme</string>
     <string name="mask_tip_title">Maske İpuçları</string>
     <string name="mask_tip_example">Maske ipuçları örneği：</string>
-
+    <string name="setting_mask_label">Mask Detect</string>
+    <string name="setting_camera_vertical_mirror">Frame vertical mirror</string>
     <!--logo设置-->
     <string name="setting_privacy_mode">Privacy Mode</string>
     <string name="setting_periodic_purge_policy">Periodic purge policy</string>
