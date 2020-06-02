@@ -642,4 +642,14 @@
     <string name="safety_correct_temper_completion">Finalización termométrica</string><!--测温结束-->
     <string name="safety_save_completion">Finalización de la calibración</string><!--保存-->
     <string name="safety_save_cancel">Cancelar calibración</string><!--保存-->
+
+
+    <string name="setting_privacy_prompt">Sólo se realiza la medición de la temperatura y no se registran los datos de la imagen</string><!--保存-->
+    <string name="setting_clear_policy_7">7 días</string>
+    <string name="setting_clear_policy_15">15 días</string>
+    <string name="setting_clear_policy_30">30 días</string>
+    <string name="setting_clear_policy_custom">entrada</string>
+    <string name="setting_clear_policy_unit">días</string>
+    <string name="setting_clear_all_data">Limpieza de todos los datos</string>
+    <string name="clear_no_data">Los datos han sido borrados：</string>
 </resources>
