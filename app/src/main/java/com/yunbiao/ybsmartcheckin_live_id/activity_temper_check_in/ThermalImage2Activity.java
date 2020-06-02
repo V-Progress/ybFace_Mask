@@ -21,6 +21,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.animation.GlideAnimation;
+import com.bumptech.glide.request.target.SimpleTarget;
 import com.yunbiao.faceview.FaceManager;
 import com.yunbiao.faceview.FaceView;
 import com.yunbiao.ybsmartcheckin_live_id.APP;
@@ -156,18 +158,35 @@ public class ThermalImage2Activity extends BaseThermal2Activity implements Therm
         super.onResume();
 
         //再onResume中判断
-        Company company = SpUtils.getCompany();
-        if (company.getComid() != Constants.NOT_BIND_COMPANY_ID) {
-            tvMainAbbName.setText(company.getAbbname());
-            ImageFileLoader.i().loadAndSave(this, company.getComlogo(), Constants.DATA_PATH, ivMainLogo);
-        } else {
+        setLogo(ivMainLogo,tvMainAbbName);
+    }
+
+    private void setLogo(ImageView logoView,TextView tvName) {
+        boolean localPriority = SpUtils.getBoolean(ThermalConst.Key.LOCAL_PRIORITY, ThermalConst.Default.LOCAL_PRIORITY);
+        if (localPriority) {
             String logoPath = SpUtils.getStr(ThermalConst.Key.MAIN_LOGO_IMG, ThermalConst.Default.MAIN_LOGO_IMG);
             if (TextUtils.isEmpty(logoPath)) {
-                ivMainLogo.setImageResource(R.mipmap.yb_logo);
+                logoView.setImageResource(ThermalConst.Default.DEFAULT_LOGO_ID);
             } else {
-                ivMainLogo.setImageBitmap(BitmapFactory.decodeFile(logoPath));
+                logoView.setImageBitmap(BitmapFactory.decodeFile(logoPath));
             }
-            tvMainAbbName.setText(SpUtils.getStr(ThermalConst.Key.MAIN_LOGO_TEXT, ThermalConst.Default.MAIN_LOGO_TEXT));
+            tvName.setText(SpUtils.getStr(ThermalConst.Key.MAIN_LOGO_TEXT, ThermalConst.Default.MAIN_LOGO_TEXT));
+        } else {
+            Company company = SpUtils.getCompany();
+            String comlogo = company.getComlogo();
+            String abbname = company.getAbbname();
+            if(company.getComid() == Constants.NOT_BIND_COMPANY_ID || TextUtils.isEmpty(comlogo)){
+                logoView.setVisibility(View.GONE);
+                logoView.setImageBitmap(null);
+            } else {
+                Glide.with(this).load(comlogo).asBitmap().into(new SimpleTarget<Bitmap>() {
+                    @Override
+                    public void onResourceReady(Bitmap resource, GlideAnimation<? super Bitmap> glideAnimation) {
+                        logoView.setImageBitmap(resource);
+                    }
+                });
+            }
+            tvName.setText(TextUtils.isEmpty(abbname) ? "" : abbname);
         }
     }
 
@@ -591,29 +610,5 @@ public class ThermalImage2Activity extends BaseThermal2Activity implements Therm
         KDXFSpeechManager.instance().destroy();
         LocateManager.instance().destory();
         super.onDestroy();
-    }
-
-    private void setLogo(ImageView logoView,TextView tvName) {
-        boolean localPriority = SpUtils.getBoolean(ThermalConst.Key.LOCAL_PRIORITY, ThermalConst.Default.LOCAL_PRIORITY);
-        if (localPriority) {
-            String logoPath = SpUtils.getStr(ThermalConst.Key.MAIN_LOGO_IMG, ThermalConst.Default.MAIN_LOGO_IMG);
-            if (TextUtils.isEmpty(logoPath)) {
-                logoView.setImageResource(R.mipmap.yb_logo);
-            } else {
-                logoView.setImageBitmap(BitmapFactory.decodeFile(logoPath));
-            }
-            tvName.setText(SpUtils.getStr(ThermalConst.Key.MAIN_LOGO_TEXT, ThermalConst.Default.MAIN_LOGO_TEXT));
-        } else {
-            Company company = SpUtils.getCompany();
-            String comlogo = company.getComlogo();
-            String abbname = company.getAbbname();
-            if(company.getComid() == Constants.NOT_BIND_COMPANY_ID || TextUtils.isEmpty(comlogo)){
-                logoView.setVisibility(View.GONE);
-                logoView.setImageBitmap(null);
-            } else {
-                Glide.with(this).load(comlogo).asBitmap().into(logoView);
-            }
-            tvName.setText(TextUtils.isEmpty(abbname) ? "" : abbname);
-        }
     }
 }

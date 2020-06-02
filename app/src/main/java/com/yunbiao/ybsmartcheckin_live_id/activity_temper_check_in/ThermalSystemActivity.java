@@ -5,6 +5,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
+import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.net.Uri;
@@ -22,6 +23,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.animation.GlideAnimation;
+import com.bumptech.glide.request.target.SimpleTarget;
 import com.yunbiao.ybsmartcheckin_live_id.FlavorType;
 import com.yunbiao.ybsmartcheckin_live_id.R;
 import com.yunbiao.ybsmartcheckin_live_id.activity.Event.UpdateInfoEvent;
@@ -93,7 +96,7 @@ public class ThermalSystemActivity extends BaseActivity implements View.OnClickL
         if (localPriority) {
             String logoPath = SpUtils.getStr(ThermalConst.Key.MAIN_LOGO_IMG, ThermalConst.Default.MAIN_LOGO_IMG);
             if (TextUtils.isEmpty(logoPath)) {
-                logoView.setImageResource(R.mipmap.yb_logo);
+                logoView.setImageResource(ThermalConst.Default.DEFAULT_LOGO_ID);
             } else {
                 logoView.setImageBitmap(BitmapFactory.decodeFile(logoPath));
             }
@@ -106,11 +109,17 @@ public class ThermalSystemActivity extends BaseActivity implements View.OnClickL
                 logoView.setVisibility(View.GONE);
                 logoView.setImageBitmap(null);
             } else {
-                Glide.with(this).load(comlogo).asBitmap().into(logoView);
+                Glide.with(this).load(comlogo).asBitmap().into(new SimpleTarget<Bitmap>() {
+                    @Override
+                    public void onResourceReady(Bitmap resource, GlideAnimation<? super Bitmap> glideAnimation) {
+                        logoView.setImageBitmap(resource);
+                    }
+                });
             }
             tvName.setText(TextUtils.isEmpty(abbname) ? "" : abbname);
         }
     }
+
     @Override
     protected void initView() {
         EventBus.getDefault().register(this);

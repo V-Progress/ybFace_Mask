@@ -206,7 +206,8 @@ public abstract class BaseThermal2Activity extends BaseGpioActivity implements F
                 break;
         }
     }
-    private int mCacheTemperSize  = 4;
+
+    private int mCacheTemperSize = 4;
 
     protected abstract void setMaskDetectEnable(boolean enable);
 
@@ -326,6 +327,7 @@ public abstract class BaseThermal2Activity extends BaseGpioActivity implements F
     private int currTemperMode = -1;
     private int maskTag = -1;
     private int maskTipNumber = -1;
+
     //温度处理的主要逻辑
     private void handleTemperature(Bitmap imageBmp, float originT, float afterT) {
         if (isActivityPaused) {
@@ -346,7 +348,7 @@ public abstract class BaseThermal2Activity extends BaseGpioActivity implements F
             if (distanceTipNumber != 0) {
                 distanceTipNumber = 0;
             }
-            if(maskTag != -1){
+            if (maskTag != -1) {
                 maskTag = -1;
             }
             if (maskTipNumber != 0) {
@@ -375,7 +377,10 @@ public abstract class BaseThermal2Activity extends BaseGpioActivity implements F
             if (mCacheTime != 0) mCacheTime = 0;
             if (mCacheTemperList.size() > 0) mCacheTemperList.clear();
             sendTipsMessage(speechBean.getDistanceContent());
-            if (speechBean.isDistanceEnabled() && distanceTipNumber < 5)
+            if (TextUtils.equals("sl", KDXFSpeechManager.instance().getCurrentLanguage())) {
+                if (speechBean.isDistanceEnabled() && distanceTipNumber < 5)
+                    KDXFSpeechManager.instance().playApprochSound(() -> distanceTipNumber++);
+            } else if (speechBean.isDistanceEnabled() && distanceTipNumber < 5)
                 KDXFSpeechManager.instance().playNormalAdd(speechBean.getDistanceContent(), () -> distanceTipNumber++);
             return;
         }
@@ -395,7 +400,7 @@ public abstract class BaseThermal2Activity extends BaseGpioActivity implements F
 
         //判断口罩标签
         if (isMaskDetectEnabled && !isResultShown) {
-            if(maskTag == -1){
+            if (maskTag == -1) {
                 return;
             } else if (maskTag == 0 || maskTag == 1) {
                 sendMaskTipMessage(speechBean.getMaskTip());
@@ -486,7 +491,7 @@ public abstract class BaseThermal2Activity extends BaseGpioActivity implements F
                 if (distanceTipNumber != 0) {
                     distanceTipNumber = 0;
                 }
-                if(maskTag != -1){
+                if (maskTag != -1) {
                     maskTag = -1;
                 }
                 if (maskTipNumber != 0) {
@@ -511,7 +516,7 @@ public abstract class BaseThermal2Activity extends BaseGpioActivity implements F
 
             //判断口罩标签
             if (isMaskDetectEnabled) {
-                if(maskTag == -1){
+                if (maskTag == -1) {
                     return;
                 } else if (maskTag == 0 || maskTag == 1) {
                     sendMaskTipMessage(speechBean.getMaskTip());
@@ -852,41 +857,55 @@ public abstract class BaseThermal2Activity extends BaseGpioActivity implements F
                     viewInterface.showResult(resultText, bgId);
 
 
-                    Runnable resultRunnable = speechCallback(temperature);
-                    String speechText = getSpeechText(mFEnabled, temperature);
-
-                    if(temperature >= HIGHEST_TEMPER){
-                        if(speechBean.isWarningEnabled()){
-                            KDXFSpeechManager.instance().playNormal(speechText, resultRunnable);
-                        } else {
+                    if (TextUtils.equals("sl", KDXFSpeechManager.instance().getCurrentLanguage())) {
+                        if (temperature >= mTempWarningThreshold) {
                             ledRed();
-                            KDXFSpeechManager.instance().playWaningRing();
-                            sendResetResultMessage();
-                        }
-                    } else if (temperature >= mTempWarningThreshold) {
-                        if(speechBean.isWarningEnabled()){
-                            if (!TextUtils.isEmpty(name)) {
-                                speechText += "，" + name;
-                            }
-                            KDXFSpeechManager.instance().playNormal(speechText, resultRunnable);
-                        } else {
-                            ledRed();
-                            KDXFSpeechManager.instance().playWaningRing();
-                            sendResetResultMessage();
-                        }
-                    } else {
-                        if(speechBean.isNormalEnabled()){
-                            if (!TextUtils.isEmpty(name)) {
-                                speechText += "，" + name;
-                            }
-                            KDXFSpeechManager.instance().playNormal(speechText, resultRunnable);
+                            KDXFSpeechManager.instance().playWarningSound();
+                            updateUIHandler.postDelayed(() -> KDXFSpeechManager.instance().playWaningRing(), 2400);
                         } else {
                             ledGreen();
-                            KDXFSpeechManager.instance().playPassRing();
+                            KDXFSpeechManager.instance().playNormalSound();
                             if (mCurrMode == ThermalConst.ONLY_INFRARED || mCurrMode == ThermalConst.ONLY_THERMAL_HM_16_4 || mCurrMode == ThermalConst.ONLY_THERMAL_HM_32_32) {
                                 openDoor();
                             }
-                            sendResetResultMessage();
+                        }
+                        sendResetResultMessage();
+                    } else {
+                        Runnable resultRunnable = speechCallback(temperature);
+                        String speechText = getSpeechText(mFEnabled, temperature);
+                        if (temperature >= HIGHEST_TEMPER) {
+                            if (speechBean.isWarningEnabled()) {
+                                KDXFSpeechManager.instance().playNormal(speechText, resultRunnable);
+                            } else {
+                                ledRed();
+                                KDXFSpeechManager.instance().playWaningRing();
+                                sendResetResultMessage();
+                            }
+                        } else if (temperature >= mTempWarningThreshold) {
+                            if (speechBean.isWarningEnabled()) {
+                                if (!TextUtils.isEmpty(name)) {
+                                    speechText += "，" + name;
+                                }
+                                KDXFSpeechManager.instance().playNormal(speechText, resultRunnable);
+                            } else {
+                                ledRed();
+                                KDXFSpeechManager.instance().playWaningRing();
+                                sendResetResultMessage();
+                            }
+                        } else {
+                            if (speechBean.isNormalEnabled()) {
+                                if (!TextUtils.isEmpty(name)) {
+                                    speechText += "，" + name;
+                                }
+                                KDXFSpeechManager.instance().playNormal(speechText, resultRunnable);
+                            } else {
+                                ledGreen();
+                                KDXFSpeechManager.instance().playPassRing();
+                                if (mCurrMode == ThermalConst.ONLY_INFRARED || mCurrMode == ThermalConst.ONLY_THERMAL_HM_16_4 || mCurrMode == ThermalConst.ONLY_THERMAL_HM_32_32) {
+                                    openDoor();
+                                }
+                                sendResetResultMessage();
+                            }
                         }
                     }
                     break;
@@ -1066,8 +1085,8 @@ public abstract class BaseThermal2Activity extends BaseGpioActivity implements F
         private String fahrenheit;
 
         public void initContent() {
-            maskTip = SpUtils.getStr(ThermalConst.Key.MASK_TIP,getResString(R.string.no_mask_tip));
-            maskTipEnabled = SpUtils.getBoolean(ThermalConst.Key.MASK_TIP_ENABLED,ThermalConst.Default.MASK_TIP_ENABLED);
+            maskTip = SpUtils.getStr(ThermalConst.Key.MASK_TIP, getResString(R.string.no_mask_tip));
+            maskTipEnabled = SpUtils.getBoolean(ThermalConst.Key.MASK_TIP_ENABLED, ThermalConst.Default.MASK_TIP_ENABLED);
             speechSpeed = SpUtils.getFloat(ThermalConst.Key.VOICE_SPEED, ThermalConst.Default.VOICE_SPEED);
             welcomeContent = SpUtils.getStr(ThermalConst.Key.WELCOME_TIP_CONTENT, getResources().getString(R.string.setting_default_welcome_tip));
             welcomeEnabled = SpUtils.getBoolean(ThermalConst.Key.WELCOME_TIP_ENABLED, ThermalConst.Default.WELCOME_TIP_ENABLED);
