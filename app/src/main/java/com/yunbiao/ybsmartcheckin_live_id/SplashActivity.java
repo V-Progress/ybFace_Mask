@@ -109,6 +109,19 @@ public class SplashActivity extends BaseActivity {
 
             SpUtils.init();
             DaoManager.get().initDb();
+
+ /*           int intOrDef = SpUtils.getIntOrDef(SpUtils.SERVER_MODEL, -99);
+            if(intOrDef == -99) SpUtils.saveInt(SpUtils.SERVER_MODEL, Constants.serverModel.JU);
+            String xmppIp = SpUtils.getStr(SpUtils.JU_IP_CACHE,"");
+            if(TextUtils.isEmpty(xmppIp)) SpUtils.saveStr(SpUtils.JU_IP_CACHE,"18.156.95.72");
+            String xmppPort = SpUtils.getStr(SpUtils.JU_XMPP_PORT_CACHE,"");
+            if(TextUtils.isEmpty(xmppPort)) SpUtils.saveStr(SpUtils.JU_XMPP_PORT_CACHE,"5222");
+            String resIp = SpUtils.getStr(SpUtils.JU_IP_CACHE,"");
+            if(TextUtils.isEmpty(resIp)) SpUtils.saveStr(SpUtils.JU_IP_CACHE,"18.156.95.72");
+            String resPort = SpUtils.getStr(SpUtils.JU_RESOURCE_PORT_CACHE,"");
+            if(TextUtils.isEmpty(resPort)) SpUtils.saveStr(SpUtils.JU_RESOURCE_PORT_CACHE,"80");
+            String projectName = SpUtils.getStr(SpUtils.JU_PROJECT_NAME_SUFFIX,"");
+*/
             Constants.checkSetIp();
             Constants.initStorage();
             OutputLog.getInstance().initFile(Constants.LOCAL_ROOT_PATH);
@@ -176,6 +189,38 @@ public class SplashActivity extends BaseActivity {
 
     private void jump() {
         APP.bindProtectService();
+
+        switch (Constants.FLAVOR_TYPE) {
+            case FlavorType.HT:
+                ThermalConst.Default.DEFAULT_LOGO_ID = R.mipmap.logo_icon_horizontal;
+                ThermalConst.Default.MAIN_LOGO_TEXT = "";
+                break;
+            case FlavorType.SK:
+                ThermalConst.Default.DEFAULT_LOGO_ID = R.mipmap.icon_logo3;
+                ThermalConst.Default.MAIN_LOGO_TEXT = "";
+                break;
+            case FlavorType.OSIMLE:
+                ThermalConst.Default.DEFAULT_LOGO_ID = R.mipmap.osimle_logo;
+                ThermalConst.Default.MAIN_LOGO_TEXT = "";
+                break;
+            case FlavorType.SOFT_WORK_Z:
+                ThermalConst.Default.DEFAULT_LOGO_ID = R.mipmap.softworkz_logo;
+                ThermalConst.Default.MAIN_LOGO_TEXT = "";
+                break;
+            case FlavorType.SCAN_TEMP:
+                ThermalConst.Default.DEFAULT_LOGO_ID = R.mipmap.scan_temp;
+                ThermalConst.Default.MAIN_LOGO_TEXT = "";
+                break;
+            case FlavorType.PING_TECH:
+                ThermalConst.Default.DEFAULT_LOGO_ID = R.mipmap.pingtech_logo;
+                ThermalConst.Default.MAIN_LOGO_TEXT = "";
+                break;
+            default:
+                ThermalConst.Default.DEFAULT_LOGO_ID = R.mipmap.yb_logo;
+                ThermalConst.Default.MAIN_LOGO_TEXT = "YBFACE";
+                break;
+        }
+
         String broadTypeStr = CommonUtils.getBroadType2();
         Log.e(TAG, "jump: 板卡信息：" + broadTypeStr);
         switch (broadTypeStr) {

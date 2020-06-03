@@ -75,6 +75,8 @@ public class Constants {
 
     //修改设备类型
     public static final int DEVICE_TYPE = BuildConfig.APP_TYPE;
+    //打包版本
+    public static final int FLAVOR_TYPE = BuildConfig.FLAVOR_TYPE;
     //最大人脸抓取数
     public static final int MAX_DETECT_NUM = BuildConfig.MAX_DETECT_FACE_NUM;
     //最远人脸抓取距离
