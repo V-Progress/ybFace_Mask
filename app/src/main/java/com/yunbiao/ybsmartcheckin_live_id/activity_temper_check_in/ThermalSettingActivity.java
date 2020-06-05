@@ -142,6 +142,7 @@ public class ThermalSettingActivity extends BaseActivity {
     }
 
     private static final int REQEST_SELECT_IMAGES_CODE = 12345;
+
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -183,7 +184,7 @@ public class ThermalSettingActivity extends BaseActivity {
             initView(getView());
         }
 
-        private void initView(View view){
+        private void initView(View view) {
             //设置对比度======================================================================
             final EditText edtSimilar = view.findViewById(R.id.edt_similar_threshold);
             int similar = SpUtils.getIntOrDef(SpUtils.SIMILAR_THRESHOLD, 80);
@@ -212,12 +213,12 @@ public class ThermalSettingActivity extends BaseActivity {
 
             //口罩开关=========================================================================
             Switch swMaskMode = view.findViewById(R.id.sw_mask_mode);
-            boolean maskDetectEnabled = SpUtils.getBoolean(ThermalConst.Key.MASK_DETECT_ENABLED,ThermalConst.Default.MASK_DETECT_ENABLED);
+            boolean maskDetectEnabled = SpUtils.getBoolean(ThermalConst.Key.MASK_DETECT_ENABLED, ThermalConst.Default.MASK_DETECT_ENABLED);
             swMaskMode.setChecked(maskDetectEnabled);
             swMaskMode.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
                 @Override
                 public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                    SpUtils.saveBoolean(ThermalConst.Key.MASK_DETECT_ENABLED,isChecked);
+                    SpUtils.saveBoolean(ThermalConst.Key.MASK_DETECT_ENABLED, isChecked);
                 }
             });
 
@@ -296,7 +297,7 @@ public class ThermalSettingActivity extends BaseActivity {
             initView(getView());
         }
 
-        private void initView(View view){
+        private void initView(View view) {
             //屏保===========================================================================================
             boolean isEnabled = SpUtils.getBoolean(SpUtils.POSTER_ENABLED, Constants.DEFAULT_POSTER_ENABLED);
             Switch swPoster = view.findViewById(R.id.sw_poster_setting);
@@ -381,13 +382,13 @@ public class ThermalSettingActivity extends BaseActivity {
                     }
                 }
             });
-            boolean titleEnabled = SpUtils.getBoolean(ThermalConst.Key.TITLE_ENABLED,ThermalConst.Default.TITLE_ENABLED);
+            boolean titleEnabled = SpUtils.getBoolean(ThermalConst.Key.TITLE_ENABLED, ThermalConst.Default.TITLE_ENABLED);
             Switch swTitle = view.findViewById(R.id.sw_title_display);
             swTitle.setChecked(titleEnabled);
             swTitle.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
                 @Override
                 public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                    SpUtils.saveBoolean(ThermalConst.Key.TITLE_ENABLED,isChecked);
+                    SpUtils.saveBoolean(ThermalConst.Key.TITLE_ENABLED, isChecked);
                 }
             });
 
@@ -432,6 +433,7 @@ public class ThermalSettingActivity extends BaseActivity {
             view.findViewById(R.id.btn_go_speech).setOnClickListener(v -> startActivity(new Intent(getActivity(), SpeechContentActivity.class)));
 
         }
+
         class ImgLoader implements ImageLoader {
 
             @Override
@@ -467,33 +469,57 @@ public class ThermalSettingActivity extends BaseActivity {
         }
 
         private void initView(View view) {
-            Button btnThermalCorr = view.findViewById(R.id.btn_thermal_corr);
-            btnThermalCorr.setOnClickListener(v -> startActivity(new Intent(getActivity(), TemperatureCorrectActivity.class)));
-            //模式==================================================================================
             final TextView tvModelSetting = view.findViewById(R.id.tv_model_setting);
-            final String[] items = ThermalConst.models;
-            final int model = SpUtils.getIntOrDef(ThermalConst.Key.MODE, ThermalConst.Default.MODE);
-            tvModelSetting.setText(items[model]);
-            tvModelSetting.setOnClickListener(v -> {
-                final int currModel = SpUtils.getIntOrDef(ThermalConst.Key.MODE, ThermalConst.Default.MODE);
+            CheckBox cbFace = view.findViewById(R.id.cb_face);
+            CheckBox cbTemper = view.findViewById(R.id.cb_temper);
+
+            String[] temperModuleArray = getResources().getStringArray(R.array.temper_module);
+            int currTemperModule = SpUtils.getIntOrDef(ThermalConst.Key.TEMPER_MODULE, ThermalConst.Default.TEMPER_MODULE);
+            boolean faceEnabled = SpUtils.getBoolean(ThermalConst.Key.FACE_ENABLED, ThermalConst.Default.FACE_ENABLED);
+            boolean temperEnabled = SpUtils.getBoolean(ThermalConst.Key.TEMPER_ENABLED, ThermalConst.Default.TEMPER_ENABLED);
+
+            tvModelSetting.setText(temperModuleArray[currTemperModule]);
+            cbFace.setChecked(faceEnabled);
+            cbTemper.setChecked(temperEnabled);
+
+            tvModelSetting.setOnClickListener(view1 -> {
+                int currModule = SpUtils.getIntOrDef(ThermalConst.Key.TEMPER_MODULE, ThermalConst.Default.TEMPER_MODULE);
                 AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
                 builder.setTitle(getResources().getString(R.string.setting_select_model));
-                builder.setSingleChoiceItems(items, currModel, (dialog, whichModel) -> {
-                    Log.e(TAG, "initView: 选中模式=============== " + whichModel);
-                    Log.e(TAG, "onClick: 模式选择：" + whichModel);
+                builder.setSingleChoiceItems(temperModuleArray, currModule, (dialog, whichModel) -> {
                     //如果模式相同则直接隐藏
-                    if (whichModel == currModel) {
+                    if (whichModel == currModule) {
                         dialog.dismiss();
                         return;
                     }
-                    SpUtils.saveInt(ThermalConst.Key.MODE, whichModel);
-                    tvModelSetting.setText(items[whichModel]);
-
+                    SpUtils.saveInt(ThermalConst.Key.TEMPER_MODULE, whichModel);
+                    tvModelSetting.setText(temperModuleArray[whichModel]);
                     dialog.dismiss();
                 });
                 AlertDialog alertDialog = builder.create();
                 alertDialog.show();
             });
+            CompoundButton.OnCheckedChangeListener onCheckedChangeListener = (buttonView, isChecked) -> {
+                if (buttonView.getId() == R.id.cb_face) {
+                    boolean temperE = SpUtils.getBoolean(ThermalConst.Key.TEMPER_ENABLED, ThermalConst.Default.TEMPER_ENABLED);
+                    if (!isChecked && !temperE) {
+                        cbFace.setChecked(true);
+                        UIUtils.showShort(getActivity(), getString(R.string.model_check_tip));
+                        return;
+                    }
+                    SpUtils.saveBoolean(ThermalConst.Key.FACE_ENABLED, isChecked);
+                } else {
+                    boolean faceE = SpUtils.getBoolean(ThermalConst.Key.FACE_ENABLED, ThermalConst.Default.FACE_ENABLED);
+                    if (!isChecked && !faceE) {
+                        cbTemper.setChecked(true);
+                        UIUtils.showShort(getActivity(), getString(R.string.model_check_tip));
+                        return;
+                    }
+                    SpUtils.saveBoolean(ThermalConst.Key.TEMPER_ENABLED, isChecked);
+                }
+            };
+            cbFace.setOnCheckedChangeListener(onCheckedChangeListener);
+            cbTemper.setOnCheckedChangeListener(onCheckedChangeListener);
 
             //隐私模式=====================================================================================================
             boolean isPrivacyModeEnabled = SpUtils.getBoolean(Constants.Key.PRIVACY_MODE, Constants.Default.PRIVACY_MODE);
@@ -553,7 +579,7 @@ public class ThermalSettingActivity extends BaseActivity {
                 } else {
                     corrValue += 0.1f;
                 }
-                corrValue = ((ThermalSettingActivity)getActivity()).formatF(corrValue);
+                corrValue = ((ThermalSettingActivity) getActivity()).formatF(corrValue);
                 SpUtils.saveFloat(ThermalConst.Key.THERMAL_CORRECT, corrValue);
                 edtCorrect.setText(corrValue + "");
             };
@@ -569,7 +595,7 @@ public class ThermalSettingActivity extends BaseActivity {
             edtMinThreshold.setText(minValue + "");
             View.OnClickListener minClickListener = v -> {
                 String value = edtMinThreshold.getText().toString();
-                float v1 = ((ThermalSettingActivity)getActivity()).formatF(Float.parseFloat(value));
+                float v1 = ((ThermalSettingActivity) getActivity()).formatF(Float.parseFloat(value));
                 switch (v.getId()) {
                     case R.id.btn_temp_min_threshold_sub_setting:
                         v1 -= 0.1;
@@ -578,7 +604,7 @@ public class ThermalSettingActivity extends BaseActivity {
                         v1 += 0.1;
                         break;
                 }
-                v1 = ((ThermalSettingActivity)getActivity()).formatF(v1);
+                v1 = ((ThermalSettingActivity) getActivity()).formatF(v1);
                 edtMinThreshold.setText(v1 + "");
                 SpUtils.saveFloat(ThermalConst.Key.TEMP_MIN_THRESHOLD, v1);
             };
@@ -593,13 +619,13 @@ public class ThermalSettingActivity extends BaseActivity {
             edtWarnThreshold.setText(warningValue + "");
             View.OnClickListener warnClickListener = v -> {
                 String value = edtWarnThreshold.getText().toString();
-                float v1 = ((ThermalSettingActivity)getActivity()).formatF(Float.parseFloat(value));
+                float v1 = ((ThermalSettingActivity) getActivity()).formatF(Float.parseFloat(value));
                 if (v.getId() == R.id.btn_temp_warning_threshold_sub_setting) {
                     v1 -= 0.1;
                 } else {
                     v1 += 0.1;
                 }
-                v1 = ((ThermalSettingActivity)getActivity()).formatF(v1);
+                v1 = ((ThermalSettingActivity) getActivity()).formatF(v1);
                 edtWarnThreshold.setText(v1 + "");
                 SpUtils.saveFloat(ThermalConst.Key.TEMP_WARNING_THRESHOLD, v1);
             };
@@ -704,16 +730,18 @@ public class ThermalSettingActivity extends BaseActivity {
                 @Override
                 public void beforeTextChanged(CharSequence s, int start, int count, int after) {
                 }
+
                 @Override
                 public void onTextChanged(CharSequence s, int start, int before, int count) {
                 }
+
                 @Override
                 public void afterTextChanged(Editable s) {
                     String content = s.toString();
-                    if(TextUtils.isEmpty(content)){
+                    if (TextUtils.isEmpty(content)) {
                         SpUtils.remove(Constants.Key.CLEAR_POLICY_CUSTOM);
                     } else {
-                        SpUtils.saveInt(Constants.Key.CLEAR_POLICY_CUSTOM,Integer.parseInt(content));
+                        SpUtils.saveInt(Constants.Key.CLEAR_POLICY_CUSTOM, Integer.parseInt(content));
                     }
                 }
             });
@@ -737,40 +765,33 @@ public class ThermalSettingActivity extends BaseActivity {
                 switch (checkedId) {
                     case R.id.rb_clear_policy_7:
                         edtPolicy.setEnabled(false);
-                        SpUtils.saveInt(Constants.Key.CLEAR_POLICY,0);
+                        SpUtils.saveInt(Constants.Key.CLEAR_POLICY, 0);
                         break;
                     case R.id.rb_clear_policy_15:
                         edtPolicy.setEnabled(false);
-                        SpUtils.saveInt(Constants.Key.CLEAR_POLICY,1);
+                        SpUtils.saveInt(Constants.Key.CLEAR_POLICY, 1);
                         break;
                     case R.id.rb_clear_policy_30:
                         edtPolicy.setEnabled(false);
-                        SpUtils.saveInt(Constants.Key.CLEAR_POLICY,2);
+                        SpUtils.saveInt(Constants.Key.CLEAR_POLICY, 2);
                         break;
                     case R.id.rb_clear_policy_custom:
                         edtPolicy.setEnabled(true);
-                        SpUtils.saveInt(Constants.Key.CLEAR_POLICY,3);
+                        SpUtils.saveInt(Constants.Key.CLEAR_POLICY, 3);
                         break;
                 }
             });
 
             //重启=====================================================================================
-            view.findViewById(R.id.tv_reboot).setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    showAlert(getString(R.string.setting_device_will_reboot), new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialog, int which) {
-                            ProgressDialog progressDialog = UIUtils.coreInfoShow3sDialog(getActivity());
-                            progressDialog.setTitle(getString(R.string.setting_device_reboot));
-                            progressDialog.setMessage(getString(R.string.setting_3_scond_reboot));
-                            progressDialog.setCancelable(false);
-                            progressDialog.show();
-                            UIUtils.restart.start();
-                        }
-                    }, null, null);
-                }
-            });
+            view.findViewById(R.id.tv_reboot).setOnClickListener(
+                    v -> showAlert(getString(R.string.setting_device_will_reboot), (dialog, which) -> {
+                        ProgressDialog progressDialog = UIUtils.coreInfoShow3sDialog(getActivity());
+                        progressDialog.setTitle(getString(R.string.setting_device_reboot));
+                        progressDialog.setMessage(getString(R.string.setting_3_scond_reboot));
+                        progressDialog.setCancelable(false);
+                        progressDialog.show();
+                        UIUtils.restart.start();
+                    }, null, null));
 
             //管理密码================================================================================
             view.findViewById(R.id.btn_pwd).setOnClickListener(v -> setPwd());
@@ -785,10 +806,10 @@ public class ThermalSettingActivity extends BaseActivity {
             view.findViewById(R.id.tv_clear_all).setOnClickListener(view1 -> clearAllData());
         }
 
-        private void clearAllData(){
+        private void clearAllData() {
             List<Sign> signList = DaoManager.get().queryAll(Sign.class);
-            if(signList == null || signList.size() == 0){
-                UIUtils.showShort(getActivity(),(getString(R.string.clear_no_data) + "0"));
+            if (signList == null || signList.size() == 0) {
+                UIUtils.showShort(getActivity(), (getString(R.string.clear_no_data) + "0"));
                 return;
             }
 
@@ -798,23 +819,23 @@ public class ThermalSettingActivity extends BaseActivity {
                 Sign next = iterator.next();
                 String headPath = next.getHeadPath();
                 String hotImgPath = next.getHotImgPath();
-                if(!TextUtils.isEmpty(headPath)){
+                if (!TextUtils.isEmpty(headPath)) {
                     File headFile = new File(headPath);
-                    if(headFile.exists()){
+                    if (headFile.exists()) {
                         headFile.delete();
                     }
                 }
-                if(!TextUtils.isEmpty(hotImgPath)){
+                if (!TextUtils.isEmpty(hotImgPath)) {
                     File hotFile = new File(hotImgPath);
-                    if(hotFile.exists()){
+                    if (hotFile.exists()) {
                         hotFile.delete();
                     }
                 }
                 DaoManager.get().deleteSign(next);
-                total ++;
+                total++;
             }
 
-            UIUtils.showShort(getActivity(),(getString(R.string.clear_no_data) + total));
+            UIUtils.showShort(getActivity(), (getString(R.string.clear_no_data) + total));
         }
 
         private static class CpuUtils {

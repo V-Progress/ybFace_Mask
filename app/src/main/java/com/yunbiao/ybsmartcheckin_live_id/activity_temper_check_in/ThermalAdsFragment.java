@@ -88,7 +88,7 @@ public class ThermalAdsFragment extends Fragment implements AdsListener {
 
         //广告内容
         mixedPlayer = rootView.findViewById(R.id.mpl_ads);
-        mixedPlayer.setDefaultImgId(R.mipmap.splash);
+        mixedPlayer.setDefaultImgId(Constants.DEFAULT_SCREE_BG);
 
         //大布局
         headView = rootView.findViewById(R.id.layout_head);

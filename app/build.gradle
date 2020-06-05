@@ -307,4 +307,5 @@ dependencies {
     implementation files('libs/arcsoft_face.jar')
     implementation files('libs/poweronoff.jar')
     implementation 'com.lcw.library:imagepicker:2.1.2'
+    implementation files('libs/ysapi.jar')
 }

@@ -12,6 +12,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.google.gson.Gson;
+import com.yunbiao.ybsmartcheckin_live_id.activity_temper_check_in.TemperModuleType;
 import com.yunbiao.ybsmartcheckin_live_id.activity_temper_check_in.ThermalConst;
 import com.yunbiao.ybsmartcheckin_live_id.activity_temper_check_in.ThermalImage2Activity;
 import com.yunbiao.ybsmartcheckin_live_id.afinel.ResourceUpdate;
@@ -110,7 +111,8 @@ public class SplashActivity extends BaseActivity {
             SpUtils.init();
             DaoManager.get().initDb();
 
- /*           int intOrDef = SpUtils.getIntOrDef(SpUtils.SERVER_MODEL, -99);
+/*
+            int intOrDef = SpUtils.getIntOrDef(SpUtils.SERVER_MODEL, -99);
             if(intOrDef == -99) SpUtils.saveInt(SpUtils.SERVER_MODEL, Constants.serverModel.JU);
             String xmppIp = SpUtils.getStr(SpUtils.JU_IP_CACHE,"");
             if(TextUtils.isEmpty(xmppIp)) SpUtils.saveStr(SpUtils.JU_IP_CACHE,"18.156.95.72");
@@ -216,8 +218,12 @@ public class SplashActivity extends BaseActivity {
                 ThermalConst.Default.MAIN_LOGO_TEXT = "";
                 break;
             default:
-                ThermalConst.Default.DEFAULT_LOGO_ID = R.mipmap.yb_logo;
-                ThermalConst.Default.MAIN_LOGO_TEXT = "YBFACE";
+                /*ThermalConst.Default.DEFAULT_LOGO_ID = R.mipmap.yb_logo;
+                ThermalConst.Default.MAIN_LOGO_TEXT = "";
+                Constants.Default.PRIVACY_MODE = true;
+                ThermalConst.Default.SHOW_MAIN_LOGO = false;
+                Constants.DEFAULT_SCREE_BG = R.mipmap.it_screen_bg;
+                Constants.DEFAULT_POSTER_ENABLED = true;*/
                 break;
         }
 
@@ -227,18 +233,18 @@ public class SplashActivity extends BaseActivity {
             case "SMT":
                 Constants.DEFAULT_CAMERA_ANGLE = 270;
                 Constants.DEFAULT_H_MIRROR = false;
-                ThermalConst.Default.MODE = ThermalConst.ONLY_THERMAL_HM_16_4;
+                ThermalConst.Default.TEMPER_MODULE = TemperModuleType.HM_16_4;
                 break;
             case "LXR":
                 Constants.DEFAULT_CAMERA_ANGLE = 0;//横屏
                 Constants.DEFAULT_H_MIRROR = true;
-                ThermalConst.Default.MODE = ThermalConst.ONLY_THERMAL_HM_32_32;
+                ThermalConst.Default.TEMPER_MODULE = TemperModuleType.HM_32_32;
                 break;
             case "HARRIS":
             default:
                 Constants.DEFAULT_CAMERA_ANGLE = 90;
                 Constants.DEFAULT_H_MIRROR = false;
-                ThermalConst.Default.MODE = ThermalConst.ONLY_THERMAL_MLX_16_4;
+                ThermalConst.Default.TEMPER_MODULE = TemperModuleType.MLX_16_4;
                 break;
         }
 

@@ -91,6 +91,8 @@ public class ThermalSignFragment extends Fragment implements NetWorkChangReceive
     private NetWorkChangReceiver netWorkChangReceiver;
     private View llInfoSignList;
     private GifImageView gifImageView;
+    private boolean faceEnabled;
+    private boolean temperEnabled;
 
     @Nullable
     @Override
@@ -196,11 +198,11 @@ public class ThermalSignFragment extends Fragment implements NetWorkChangReceive
         }
         Log.e(TAG, "onResume: 重加载数据");
         float warningThreshold = SpUtils.getFloat(ThermalConst.Key.TEMP_WARNING_THRESHOLD, ThermalConst.Default.TEMP_WARNING_THRESHOLD);
-        int newModel = SpUtils.getIntOrDef(ThermalConst.Key.MODE, ThermalConst.Default.MODE);
+        faceEnabled = SpUtils.getBoolean(ThermalConst.Key.FACE_ENABLED,ThermalConst.Default.FACE_ENABLED);
+        temperEnabled = SpUtils.getBoolean(ThermalConst.Key.TEMPER_ENABLED,ThermalConst.Default.TEMPER_ENABLED);
         boolean fEnabled = SpUtils.getBoolean(ThermalConst.Key.THERMAL_F_ENABLED,ThermalConst.Default.THERMAL_F_ENABLED);
-        if (newModel != mCurrModel || mCurrWarningThreshold != warningThreshold || mFEnabled != fEnabled) {
+        if (mCurrWarningThreshold != warningThreshold || mFEnabled != fEnabled) {
             mCurrWarningThreshold = warningThreshold;
-            mCurrModel = newModel;
             mFEnabled = fEnabled;
             loadSignData();
         }
@@ -501,7 +503,7 @@ public class ThermalSignFragment extends Fragment implements NetWorkChangReceive
                 }
                 tvTemp.setText(temper);
 
-                if (mCurrModel == ThermalConst.ONLY_FACE || signBean.getTemperature() == 0.0f) {
+                if ((faceEnabled && !temperEnabled) || signBean.getTemperature() == 0.0f) {
                     tvTemp.setVisibility(View.INVISIBLE);
                 } else {
                     tvTemp.setVisibility(View.VISIBLE);

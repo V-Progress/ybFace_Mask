@@ -97,12 +97,12 @@ public class TemperatureCorrectActivity extends BaseGpioActivity {
 
     @Override
     protected void initData() {
-        int currMode = SpUtils.getIntOrDef(ThermalConst.Key.MODE, ThermalConst.Default.MODE);//当前模式
+        /*int currMode = SpUtils.getIntOrDef(ThermalConst.Key.MODE, ThermalConst.Default.MODE);//当前模式
         if (currMode == ThermalConst.ONLY_INFRARED || currMode == ThermalConst.FACE_INFRARED) {
             TemperatureModule.getIns().setInfraredTempCallBack(infraredTempCallBack);
         } else if (currMode == ThermalConst.ONLY_THERMAL_HM_32_32 || currMode == ThermalConst.FACE_THERMAL_HM_32_32) {
             TemperatureModule.getIns().startHotImageK3232(thermalMirror, lowTemp, hotImageK3232CallBack);
-        }
+        }*/
     }
 
     private HotImageK3232CallBack hotImageK3232CallBack = new HotImageK3232CallBack() {

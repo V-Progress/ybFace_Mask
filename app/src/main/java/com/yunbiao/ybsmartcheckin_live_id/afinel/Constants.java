@@ -6,6 +6,7 @@ import android.text.TextUtils;
 import android.util.Log;
 
 import com.yunbiao.ybsmartcheckin_live_id.BuildConfig;
+import com.yunbiao.ybsmartcheckin_live_id.R;
 import com.yunbiao.ybsmartcheckin_live_id.utils.SpUtils;
 
 public class Constants {
@@ -81,6 +82,8 @@ public class Constants {
     public static final int MAX_DETECT_NUM = BuildConfig.MAX_DETECT_FACE_NUM;
     //最远人脸抓取距离
     public static final int DETECT_FACE_SCALE_VAL = BuildConfig.DETECT_FACE_SCALE_VAL;
+    //默认屏保
+    public static int DEFAULT_SCREE_BG = R.mipmap.splash;
     //设备未绑定时的公司Id
     public static final int NOT_BIND_COMPANY_ID = 0;
     //双光头横向大小偏移量
@@ -128,7 +131,7 @@ public class Constants {
     //屏幕角度默认值
     public static int DEFAULT_CAMERA_ANGLE = 0;
     //大屏海报开启状态
-    public static final boolean DEFAULT_POSTER_ENABLED = false;
+    public static boolean DEFAULT_POSTER_ENABLED = false;
     //默认二维码
     public static final boolean DEFAULT_QRCODE_ENABLED = true;
     //默认读卡器
@@ -141,7 +144,7 @@ public class Constants {
     }
 
     public static class Default{
-        public static final boolean PRIVACY_MODE = false;
+        public static boolean PRIVACY_MODE = false;
         public static final int CLEAR_POLICY = 2;
         public static final int CLEAR_POLICY_CUSTOM = 30;
     }

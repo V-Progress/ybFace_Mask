@@ -242,17 +242,11 @@
 
     <!--系統設置-->
     <!--模式-->
-    <string name="face_only_model">人臉識別考勤</string>
-    <string name="infared_only_model">僅測溫模式（小）</string>
-    <string name="face_infared_model">人臉識別 + 測溫模式（小）</string>
-    <string name="thermal_only_model">僅測溫模式（HM-32*32）</string>
-    <string name="face_thermal_model">人臉識別 + 測溫模式（HM-32*32）</string>
-    <string name="thermal_16_4_model">僅測溫模式（HM-16*4）</string>
-    <string name="face_thermal_16_4_model">人臉識別 + 測溫模式（HM-16*4）</string>
-    <string name="only_thermal_mlx_16_4_model">僅測溫模式（MLX-16*4）</string>
-    <string name="face_thermal_mlx_16_4_model">人臉識別 + 測溫模式（MLX-16*4）</string>
-    <string name="smt_only_thermal">僅測溫模式（SMT）</string>
-    <string name="smt_face_thermal">人臉識別 + 測溫模式（SMT）</string>
+    <string name="only_label">僅</string>
+    <string name="face_label">考勤</string>
+    <string name="temper_label">測溫</string>
+    <string name="model_tip">單選考勤時不進行測溫</string><!--單選考勤時不進行測溫-->
+    <string name="model_check_tip">至少選擇壹種模式</string><!--至少選擇壹種模式-->
 
 
     <!--標簽-->
@@ -323,8 +317,6 @@
     <string name="setting_low_temp_model">低溫模式</string>
     <string name="setting_portrait_outline">人像輪廓</string>
     <string name="setting_default_welcome_tip">歡迎使用AI智能考勤系統</string>
-    <string name="setting_default_welcome_tip2">歡迎使用亨通考勤</string>
-    <string name="setting_default_welcome_tip3">歡迎使用思庫考勤</string>
     <string name="setting_correct_temperature">矯正溫度</string>
     <string name="setting_broadcast_f">播報華氏度</string>
 

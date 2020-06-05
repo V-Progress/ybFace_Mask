@@ -5,26 +5,10 @@ import com.yunbiao.ybsmartcheckin_live_id.R;
 
 public class ThermalConst {
 
-    public static final int ONLY_FACE = 0;//ONLY FACE
-    public static final int ONLY_INFRARED = 1;//ONLY SMALL
-    public static final int FACE_INFRARED = 2;//FACE + SMALL
-    public static final int ONLY_THERMAL_HM_32_32 = 3;//ONLY HM-32*32
-    public static final int FACE_THERMAL_HM_32_32 = 4;//FACE + HM-32*32
-    public static final int ONLY_THERMAL_HM_16_4 = 5;//ONLY HM-16*4
-    public static final int FACE_THERMAL_HM_16_4 = 6;//FACE HM-16*4
-    public static final int ONLY_THERMAL_MLX_16_4 = 7;//ONLY MLX-16*4
-    public static final int FACE_THERMAL_MLX_16_4 = 8;//FACE MLX-16*4
-    public static final int ONLY_THERMAL_SMT = 9;
-    public static final int FACE_THERMAL_SMT = 10;
-
-    public static String[] models;
-
-    static {
-        models = APP.getContext().getResources().getStringArray(R.array.models);
-    }
-
     interface Key {
-        String MODE = "thermalModelSetting";
+        String FACE_ENABLED = "thermalFaceEnabled"; //启用人脸识别
+        String TEMPER_ENABLED = "thermalTemperEnabled";//启用测温
+        String TEMPER_MODULE = "thermalTemperatureModule";//测温模块
         String THERMAL_MIRROR = "thermalMirror";
         String LOW_TEMP_MODE = "lowTempMode";
         String AMBIENT_CORRECT = "ambientCorrect";
@@ -74,15 +58,17 @@ public class ThermalConst {
     }
 
     public static class Default {
+        public static boolean FACE_ENABLED = false;
+        public static boolean TEMPER_ENABLED = true;
+        public static int TEMPER_MODULE = TemperModuleType.MLX_16_4;
         public static final boolean TITLE_ENABLED = true;
         public static int DEFAULT_LOGO_ID = R.mipmap.yb_logo;
 
         public static final float VOICE_SPEED = 1.8f;
-        public static final boolean SHOW_MAIN_LOGO = true;//LOGO
+        public static boolean SHOW_MAIN_LOGO = true;//LOGO
         public static final boolean SHOW_MAIN_INFO = false;//主页信息
         public static final boolean SHOW_MAIN_THERMAL = true;//热成像
         public static final boolean SHOW_DIALOG = false;
-        public static int MODE = ONLY_THERMAL_MLX_16_4;
         public static boolean THERMAL_MIRROR = true;
         public static boolean LOW_TEMP = true;
         public static float AMBIENT_CORRECT = 25.0f;

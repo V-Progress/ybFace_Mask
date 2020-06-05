@@ -13,14 +13,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:replace="label,allowBackup">
-        <activity android:name=".activity_temper_check_in.SpeechContentActivity"></activity>
-        <activity android:name=".activity_certificates.CertificatesAddUserActivity" />
-        <activity android:name=".activity_certificates.VertifyRecordActivity" />
         <activity android:name=".activity.ClearPolicyActivity" />
-        <activity android:name=".activity_certificates.CertificatesWhiteListActivity" />
-        <activity android:name=".activity_safety_check_double_light.SafetyDoubleLightSettingActivity" />
-        <activity android:name=".activity_safety_check_double_light.SafetyCheckDoubleLightActivity" />
-        <activity android:name=".activity_temper_multiple.AutoCorrectionActivity" />
         <activity
             android:name=".SplashActivity"
             android:enabled="true"
@@ -44,7 +37,6 @@
         <activity
             android:name=".activity.WelComeActivity"
             android:launchMode="singleTask" />
-        <activity android:name=".activity_certificates.CertificatesUserListActivity" />
         <activity
             android:name=".activity.EditEmployActivity"
             android:windowSoftInputMode="adjustPan" />
@@ -65,39 +57,6 @@
         <activity android:name=".activity_temper_check_in.ThermalSignActivity" />
         <activity android:name=".activity_temper_check_in.ThermalVisitorActivity" />
         <activity android:name=".activity_temper_check_in.TemperatureCorrectActivity" /> <!-- 视美泰竖屏闸机 -->
-        <activity
-            android:name=".activity_temper_check_in_smt.SMTMain2Activity"
-            android:launchMode="singleTask" />
-        <activity android:name=".activity_temper_check_in_smt.SMTSystemActivity" />
-        <activity android:name=".activity_temper_check_in_smt.SMTEmployListActivity" />
-        <activity android:name=".activity_temper_check_in_smt.SMTEditEmployActivity" />
-        <activity android:name=".activity_temper_check_in_smt.SMTRecordActivity" />
-        <activity android:name=".activity_temper_check_in_smt.SMTSettingActivity" />
-        <activity android:name=".activity_temper_check_in_smt.SMTVisitorActivity" /> <!-- 人证 -->
-        <activity
-            android:name=".activity_certificates.CertificatesActivity"
-            android:launchMode="singleTask">
-            <intent-filter>
-                <action android:name="android.hardware.usb.action.USB_DEVICE_ATTACHED" />
-            </intent-filter>
-
-            <meta-data
-                android:name="android.hardware.usb.action.USB_DEVICE_ATTACHED"
-                android:resource="@xml/device_filter" />
-        </activity>
-        <activity android:name=".activity_certificates.CertificatesSystemActivity" />
-        <activity android:name=".activity_certificates.CertificatesSettingActivity" />
-        <activity android:name=".activity_certificates.CertificatesCorrectActivity" /> <!-- 多人 -->
-        <activity android:name=".activity_temper_multiple.MultiThermalSettingActivity" />
-        <activity android:name=".activity_safety_check_double_light.SafetyCheckDoubleLightBlackBodyAreaActivity" />
-        <activity
-            android:name=".activity_temper_multiple.MultiThermalActivity"
-            android:launchMode="singleTask" /> <!-- 安检 -->
-        <activity android:name=".activity_safety_check.ThermalSafetyCheckSettingActivity" />
-        <activity
-            android:name=".activity_safety_check.ThermalSafetyCheckActivity"
-            android:launchMode="singleTask" />
-        <activity android:name=".activity_safety_check.BlackBodyAreaActivity" />
 
         <meta-data
             android:name="com.baidu.lbsapi.API_KEY"
