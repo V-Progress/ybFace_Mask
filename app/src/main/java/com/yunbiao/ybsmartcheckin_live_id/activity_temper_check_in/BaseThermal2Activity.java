@@ -905,7 +905,8 @@ public abstract class BaseThermal2Activity extends BaseGpioActivity implements F
                     isResultShown = false;
                     viewInterface.dismissResult();
                     KDXFSpeechManager.instance().stopWarningRing();
-                    resetLedDelay(0);//5秒后重置灯光为蓝色
+//                    resetLedDelay(0);//5秒后重置灯光为蓝色
+                    ledOff();
                     break;
                 case 4://重置提示
                     viewInterface.dismissTips();
