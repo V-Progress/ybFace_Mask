@@ -28,6 +28,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".activity_temper_check_in.FileSelectActivity"/>
         <activity
             android:name=".xmpp.NotificationDetailsActivity"
             android:label="Notification Details" />

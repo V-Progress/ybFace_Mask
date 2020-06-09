@@ -8,8 +8,8 @@
     <string name="app_name5">SoftWorkz AI</string>
     <string name="app_name6">Scan Temp</string>
     <string name="app_name4">Osmile AI</string>
-    <string name="used">使用済み:</string>
-    <string name="no_used">/利用できる:</string>
+    <string name="used">使用済:</string>
+    <string name="no_used">/利用可能:</string>
     <string name="back">戻る</string>
     <string name="not_support_speech">現在の言語システムではサポートされていない言語</string>
     <string name="miss_speech_data">音声データがありません:</string>
@@ -18,10 +18,10 @@
     <string name="temper_error_btn_restart">リブート</string>
     <string name="temper_error_btn_cancel">処理を保留する</string>
 
-    <!--口罩提示-->
-    <string name="no_mask_tip">Please wear a mask</string>
-    <string name="error_mask_tip">Please wear the mask correctly</string>
-    <string name="please_aim_face_frame">Please aim at the face box</string>
+    <!--口罩提示IT-->
+    <string name="no_mask_tip">Si prega di indossare la maschera</string>
+    <string name="error_mask_tip">Si prega di indossare la maschera correttamente</string>
+    <string name="please_aim_face_frame">Si prega di guardare nella telecamera</string>
 
     <string name="setting_tab_face">顔検出</string>
     <string name="setting_tab_page">画面</string>
@@ -35,7 +35,7 @@
     <string name="temper_tips_close">ヒントに近づく</string>
     <string name="setting_normal_speech_content">体温正常</string>
     <string name="setting_warning_speech_content">体温異常</string>
-    <string name="speech_setting_open_or_close">開くかどうか</string>
+    <string name="speech_setting_open_or_close">ON/OFF</string>
     <string name="speech_setting_show_temper">表示温度</string>
     <string name="speech_setting_temper_location">温度表示位置</string>
     <string name="speech_setting_location_start">初の</string>
@@ -46,11 +46,8 @@
     <string name="speech_setting_distance_exmaple">距離提示例：</string>
     <string name="speech_setting_normal_exmaple">体温正常例：</string>
     <string name="speech_setting_warning_exmaple">体温異常例：</string>
-    <string name="speech_setting_audition">试听</string>
-    <string name="mask_tip_title">Mマスクの提示</string>
-    <string name="mask_tip_example">マスク提示例：</string>
-    <string name="setting_mask_label">Mask Detect</string>
-    <string name="setting_camera_vertical_mirror">Frame vertical mirror</string>
+    <string name="speech_setting_audition">試し</string>
+    <string name="setting_camera_vertical_mirror">縦の枠の鏡像</string>
     <string name="setting_picture_rotation">With the camera</string>
     <string name="setting_local_priority">Local Priority</string>
     <string name="setting_pic_rotation">Direction of photos</string>
@@ -137,9 +134,9 @@
     <string name="System_Add">新規従業員</string>
     <string name="System_Record">勤務評定記録</string>
     <string name="System_Setting">システム設定</string>
-    <string name="System_Visitor">訪客</string>
+    <string name="System_Visitor">訪問客</string>
     <string name="System_skin_select">皮膚をとりかえる</string>
-    <string name="System_update">昇級</string>
+    <string name="System_update">アップグレード</string>
     <string name="System_copyright">著作権所有：北京雲標科技有限公司</string>
     <string name="System_Service_offline">オフライン</string>
     <string name="System_online">オンライン</string>
@@ -184,7 +181,7 @@
     <string name="act_editEmploy_kh">ナンバー:</string><!-- 员工编号 -->
     <string name="act_editEmploy_name">姓&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;名:</string>
     <string name="act_editEmploy_sex">性&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;别:</string>
-    <string name="act_editEmploy_bm">部&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;门:</string>
+    <string name="act_editEmploy_bm">部&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;署:</string>
     <string name="act_editEmploy_ygbh">従業員番号:</string>
     <string name="act_editEmploy_zw">職&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;位:</string>
     <string name="act_editEmploy_csrq">誕生日:</string>
@@ -217,14 +214,14 @@
     <!--离线数据-->
     <string name="sign_list_title">オフライン記録</string>
     <string name="sign_list_all_type">全部</string>
-    <string name="sign_list_sent">已发送</string>
+    <string name="sign_list_sent">送信済み</string>
     <string name="sign_list_unsent">未送信</string>
     <string name="sign_list_export">データをエクスポート</string>
     <string name="sign_list_upload">データをアップロード</string>
     <string name="sign_list_filed_index">序号</string>
     <string name="sign_list_filed_time">時間</string>
     <string name="sign_list_filed_name">姓名</string>
-    <string name="sign_list_filed_depart">部门</string>
+    <string name="sign_list_filed_depart">部署</string>
     <string name="sign_list_filed_job">职位</string>
     <string name="sign_list_filed_head">顔写真</string>
     <string name="sign_list_no_data">データがありません</string>
@@ -255,7 +252,7 @@
     <string name="visitor_list_title">訪問者リスト</string>
     <string name="visitor_list_filed_name">姓名</string>
     <string name="visitor_list_filed_time">訪問期間</string>
-    <string name="visitor_list_filed_company">单位</string>
+    <string name="visitor_list_filed_company">所属</string>
     <string name="visitor_list_filed_reason">事由</string>
 
     <!--系统设置-->
@@ -353,7 +350,7 @@
     <string name="setting_switch_function">機能の切り替えます</string><!--Function switch-->
     <string name="setting_switch_tip1">人証の温度測定に切り替えますか？</string><!--Are you sure to switch to certificate temperature measurement-->
     <string name="setting_switch_tip2">温度測定に切り替えますか？</string><!--Are you sure to switch to certificate temperature measurement-->
-    <string name="setting_switch_confirm">确定</string>
+    <string name="setting_switch_confirm">確定</string>
     <string name="setting_switch_cancel">取消</string>
 
     <!--设置开关机-->
@@ -413,7 +410,7 @@
     <!--通用的  -->
     <string name="base_tip">ヒント
 </string>
-    <string name="base_ensure">确定</string>
+    <string name="base_ensure">確定</string>
     <string name="base_cancel">取消</string>
     <string name="base_male">男
 </string>
@@ -734,7 +731,8 @@
     <string name="safety_correct_temper_tip">人の顔を温度測定枠に合わせてください。もうすぐ温度測定が始まります</string>
     <string name="safety_correct_temper_completion">温度測定終了</string><!--温度測定終了-->
     <string name="safety_save_completion">キャリブレーション完了</string><!--キャリブレーション完了-->
-    <string name="safety_save_cancel">キャリブレーションをキャンセル</string><!--セーブ-->
+    <string name="safety_save_cancel">キャリブレーションをキャンセル</string>
+
 
     <string name="setting_privacy_prompt">測温のみ行い,画像データは記録しない</string><!--セーブ-->
     <string name="setting_clear_policy_7">7日</string>
