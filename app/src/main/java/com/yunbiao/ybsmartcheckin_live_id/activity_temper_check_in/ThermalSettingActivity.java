@@ -672,6 +672,9 @@ public class ThermalSettingActivity extends BaseActivity {
         }
 
         private void initView(View view) {
+            if(Constants.FLAVOR_TYPE == FlavorType.PING_TECH){
+                view.findViewById(R.id.rb_yun).setVisibility(View.GONE);
+            }
             //CPU状态==================================================================================
             final TextView tvCpuTemper = view.findViewById(R.id.tv_cpu_temper);
             Executors.newSingleThreadScheduledExecutor().scheduleAtFixedRate(() -> {

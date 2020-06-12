@@ -111,19 +111,15 @@ public class SplashActivity extends BaseActivity {
             SpUtils.init();
             DaoManager.get().initDb();
 
-/*
-            int intOrDef = SpUtils.getIntOrDef(SpUtils.SERVER_MODEL, -99);
-            if(intOrDef == -99) SpUtils.saveInt(SpUtils.SERVER_MODEL, Constants.serverModel.JU);
-            String xmppIp = SpUtils.getStr(SpUtils.JU_IP_CACHE,"");
-            if(TextUtils.isEmpty(xmppIp)) SpUtils.saveStr(SpUtils.JU_IP_CACHE,"18.156.95.72");
-            String xmppPort = SpUtils.getStr(SpUtils.JU_XMPP_PORT_CACHE,"");
-            if(TextUtils.isEmpty(xmppPort)) SpUtils.saveStr(SpUtils.JU_XMPP_PORT_CACHE,"5222");
-            String resIp = SpUtils.getStr(SpUtils.JU_IP_CACHE,"");
-            if(TextUtils.isEmpty(resIp)) SpUtils.saveStr(SpUtils.JU_IP_CACHE,"18.156.95.72");
-            String resPort = SpUtils.getStr(SpUtils.JU_RESOURCE_PORT_CACHE,"");
-            if(TextUtils.isEmpty(resPort)) SpUtils.saveStr(SpUtils.JU_RESOURCE_PORT_CACHE,"80");
-            String projectName = SpUtils.getStr(SpUtils.JU_PROJECT_NAME_SUFFIX,"");
-*/
+            switch (Constants.FLAVOR_TYPE) {
+                case FlavorType.PING_TECH:
+                    setIp("34.70.221.66","5222","80","");
+                    break;
+                case FlavorType.ITALY:
+                    setIp("18.156.95.72","5222","80","");
+                    break;
+            }
+
             Constants.checkSetIp();
             Constants.initStorage();
             OutputLog.getInstance().initFile(Constants.LOCAL_ROOT_PATH);
@@ -133,6 +129,21 @@ public class SplashActivity extends BaseActivity {
             uploadException(nextRunnable);
         }
     };
+
+    private void setIp(String ip,String xPort,String rPort,String pName){
+        int intOrDef = SpUtils.getIntOrDef(SpUtils.SERVER_MODEL, -99);
+        if(intOrDef == -99) SpUtils.saveInt(SpUtils.SERVER_MODEL, Constants.serverModel.JU);
+        String xmppIp = SpUtils.getStr(SpUtils.JU_IP_CACHE,"");
+        if(TextUtils.isEmpty(xmppIp)) SpUtils.saveStr(SpUtils.JU_IP_CACHE,ip);
+        String xmppPort = SpUtils.getStr(SpUtils.JU_XMPP_PORT_CACHE,"");
+        if(TextUtils.isEmpty(xmppPort)) SpUtils.saveStr(SpUtils.JU_XMPP_PORT_CACHE,xPort);
+        String resIp = SpUtils.getStr(SpUtils.JU_IP_CACHE,"");
+        if(TextUtils.isEmpty(resIp)) SpUtils.saveStr(SpUtils.JU_IP_CACHE,ip);
+        String resPort = SpUtils.getStr(SpUtils.JU_RESOURCE_PORT_CACHE,"");
+        if(TextUtils.isEmpty(resPort)) SpUtils.saveStr(SpUtils.JU_RESOURCE_PORT_CACHE,rPort);
+        String projectName = SpUtils.getStr(SpUtils.JU_PROJECT_NAME_SUFFIX,"");
+        if(TextUtils.isEmpty(projectName)) SpUtils.saveStr(SpUtils.JU_PROJECT_NAME_SUFFIX,pName);
+    }
 
     class QrCode{
         String wifiMac;
@@ -217,13 +228,16 @@ public class SplashActivity extends BaseActivity {
                 ThermalConst.Default.DEFAULT_LOGO_ID = R.mipmap.pingtech_logo;
                 ThermalConst.Default.MAIN_LOGO_TEXT = "";
                 break;
-            default:
-                /*ThermalConst.Default.DEFAULT_LOGO_ID = R.mipmap.yb_logo;
+            case FlavorType.ITALY:
+                ThermalConst.Default.DEFAULT_LOGO_ID = R.mipmap.yb_logo;
                 ThermalConst.Default.MAIN_LOGO_TEXT = "";
-                Constants.Default.PRIVACY_MODE = true;
-                ThermalConst.Default.SHOW_MAIN_LOGO = false;
                 Constants.DEFAULT_SCREE_BG = R.mipmap.it_screen_bg;
-                Constants.DEFAULT_POSTER_ENABLED = true;*/
+                ThermalConst.Default.SHOW_MAIN_LOGO = false;
+                Constants.DEFAULT_POSTER_ENABLED = true;
+                Constants.Default.PRIVACY_MODE = true;
+                break;
+            default:
+                ThermalConst.Default.MAIN_LOGO_TEXT = "";
                 break;
         }
 
