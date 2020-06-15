@@ -8,8 +8,8 @@ android {
         applicationId "com.yunbiao.ybsmartcheckin_live_id"
         minSdkVersion 22
         targetSdkVersion 22
-        versionCode 46
-        versionName "1.4.8"
+        versionCode 47
+        versionName "1.4.9"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         flavorDimensions "default"
         multiDexEnabled true
@@ -93,23 +93,28 @@ android {
         /*==云标版本============================================================================================*/
         //云标10寸
         flavor(YB_10, "0",
-                "com.yunbiao.ybsmartcheckin_live_id.afinel.Constants.DeviceType.TEMPERATURE_CHECK_IN",
+                "com.yunbiao.ybsmartcheckin_live_id.afinel.Constants.DeviceType.TEMPERATURE_CHECK_IN_MASK",
                 "@string/yb_temper_check_in", "@mipmap/ic_launcher", "5cbe87a60cafb210460006b3", "YB_10",
                 getYBFace_APP_ID(), getYBFace_SDK_KEY(), "10", "7")
         /*==亨通版本============================================================================================*/
         //亨通10寸
-        flavor(HT_10, "1",
-                "com.yunbiao.ybsmartcheckin_live_id.afinel.Constants.DeviceType.HT_TEMPERATURE_CHECK_IN",
+        /*flavor(HT_10, "1",
+                "com.yunbiao.ybsmartcheckin_live_id.afinel.Constants.DeviceType.HT_TEMPERATURE_CHECK_IN_MASK",
                 "@string/ht_temper_check_in", "@mipmap/logo_icon2", "5cbe87a60cafb210460006b3", "HT_10",
-                getHTFace_APP_ID(), getHTFace_SDK_KEY(), "10", "7")
+                getHTFace_APP_ID(), getHTFace_SDK_KEY(), "10", "7")*/
         //==PINTTECK=================================================================================================
         flavor(PINGTECH_10, "7",
-                "com.yunbiao.ybsmartcheckin_live_id.afinel.Constants.DeviceType.TEMPERATURE_CHECK_IN",
+                "com.yunbiao.ybsmartcheckin_live_id.afinel.Constants.DeviceType.TEMPERATURE_CHECK_IN_MASK",
                 "@string/app_name7", "@mipmap/pingtech_logo", "5cbe87a60cafb210460006b3", "YB_10",
                 getYBFace_APP_ID(), getYBFace_SDK_KEY(), "10", "7")
         //==意大利====================================================================================================
         flavor(ITALY_10,"com.yunbiao.ybsmartcheckin_live_id.FlavorType.ITALY"
-                ,"com.yunbiao.ybsmartcheckin_live_id.afinel.Constants.DeviceType.TEMPERATURE_CHECK_IN"
+                ,"com.yunbiao.ybsmartcheckin_live_id.afinel.Constants.DeviceType.TEMPERATURE_CHECK_IN_MASK"
+                ,"@string/yb_temper_check_in" ,"@mipmap/ic_launcher", "5cbe87a60cafb210460006b3", "YB_10"
+                , getYBFace_APP_ID(), getYBFace_SDK_KEY(), "10", "7" )
+        //==BIOSHOCK==================================================================================================
+        flavor(BIO_10,"com.yunbiao.ybsmartcheckin_live_id.FlavorType.BIO"
+                ,"com.yunbiao.ybsmartcheckin_live_id.afinel.Constants.DeviceType.TEMPERATURE_CHECK_IN_MASK"
                 ,"@string/yb_temper_check_in" ,"@mipmap/ic_launcher", "5cbe87a60cafb210460006b3", "YB_10"
                 , getYBFace_APP_ID(), getYBFace_SDK_KEY(), "10", "7" )
     }
@@ -141,9 +146,15 @@ android {
 
 String buildApkName(String param) {
     //确定前缀名
-    String name = "YBFace_Mask"
+    String name = "YBFace"
     if(param.contains("PINGTECH")){
         name = "PINGTECH"
+    } else if(param.contains("ITALY")){
+        name = "IT"
+    } else if(param.contains("BIO")){
+        name = "BIO"
+    } else if(param.contains("ITALY")){
+        name = "IT"
     }
     name = name + "_MASK"
     return name

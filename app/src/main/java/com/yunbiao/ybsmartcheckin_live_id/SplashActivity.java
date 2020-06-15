@@ -224,9 +224,15 @@ public class SplashActivity extends BaseActivity {
                 ThermalConst.Default.DEFAULT_LOGO_ID = R.mipmap.scan_temp;
                 ThermalConst.Default.MAIN_LOGO_TEXT = "";
                 break;
+            case FlavorType.BIO:
+                ThermalConst.Default.SHOW_MAIN_LOGO = false;
+                ThermalConst.Default.MAIN_LOGO_TEXT = "";
+                ThermalConst.Default.SHOW_MAIN_INFO = false;
+                break;
             case FlavorType.PING_TECH:
                 ThermalConst.Default.DEFAULT_LOGO_ID = R.mipmap.pingtech_logo;
                 ThermalConst.Default.MAIN_LOGO_TEXT = "";
+                ThermalConst.Default.TITLE_ENABLED = false;
                 break;
             case FlavorType.ITALY:
                 ThermalConst.Default.DEFAULT_LOGO_ID = R.mipmap.yb_logo;
@@ -263,8 +269,8 @@ public class SplashActivity extends BaseActivity {
         }
 
         switch (Constants.DEVICE_TYPE) {
-            case Constants.DeviceType.TEMPERATURE_CHECK_IN:
-            case Constants.DeviceType.HT_TEMPERATURE_CHECK_IN:
+            case Constants.DeviceType.TEMPERATURE_CHECK_IN_MASK:
+//            case Constants.DeviceType.HT_TEMPERATURE_CHECK_IN_MASK:
                 startActivity(new Intent(SplashActivity.this, ThermalImage2Activity.class));
                 break;
         }

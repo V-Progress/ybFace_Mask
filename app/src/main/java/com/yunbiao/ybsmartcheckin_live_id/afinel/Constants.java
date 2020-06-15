@@ -112,8 +112,8 @@ public class Constants {
      */
     public interface DeviceType {
         int CHECK_IN = 1;//考勤机
-        int TEMPERATURE_CHECK_IN = 7;//测温考勤机
-        int HT_TEMPERATURE_CHECK_IN = 11;//亨通考勤
+        int TEMPERATURE_CHECK_IN_MASK = 19;//测温考勤机
+        int HT_TEMPERATURE_CHECK_IN_MASK = 21;//亨通考勤
     }
 
     //人证、考勤跳转标识

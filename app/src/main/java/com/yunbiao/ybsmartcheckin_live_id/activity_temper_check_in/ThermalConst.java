@@ -61,12 +61,12 @@ public class ThermalConst {
         public static boolean FACE_ENABLED = false;
         public static boolean TEMPER_ENABLED = true;
         public static int TEMPER_MODULE = TemperModuleType.MLX_16_4;
-        public static final boolean TITLE_ENABLED = true;
+        public static boolean TITLE_ENABLED = true;
         public static int DEFAULT_LOGO_ID = R.mipmap.yb_logo;
 
         public static final float VOICE_SPEED = 1.8f;
         public static boolean SHOW_MAIN_LOGO = true;//LOGO
-        public static final boolean SHOW_MAIN_INFO = false;//主页信息
+        public static boolean SHOW_MAIN_INFO = false;//主页信息
         public static final boolean SHOW_MAIN_THERMAL = true;//热成像
         public static final boolean SHOW_DIALOG = false;
         public static boolean THERMAL_MIRROR = true;

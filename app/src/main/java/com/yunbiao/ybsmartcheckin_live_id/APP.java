@@ -188,10 +188,10 @@ public class APP extends Application {
 //        UMConfigure.init(this, UMConfigure.DEVICE_TYPE_BOX, "");
         String channel = "selft";
         switch (Constants.DEVICE_TYPE) {
-            case Constants.DeviceType.HT_TEMPERATURE_CHECK_IN:
+            /*case Constants.DeviceType.HT_TEMPERATURE_CHECK_IN_MASK:
                 channel = "ht_10";
-                break;
-            case Constants.DeviceType.TEMPERATURE_CHECK_IN:
+                break;*/
+            case Constants.DeviceType.TEMPERATURE_CHECK_IN_MASK:
                 channel = "YB_10";
                 break;
         }

@@ -339,11 +339,11 @@ public class XmppManager {
                 String android_model = android.os.Build.MODEL.replaceAll("_", "");
                 newPassword = newUsername + "_" + android_model;
 
-                switch (com.yunbiao.ybsmartcheckin_live_id.afinel.Constants.DEVICE_TYPE) {
-                    case com.yunbiao.ybsmartcheckin_live_id.afinel.Constants.DeviceType.HT_TEMPERATURE_CHECK_IN:
+                /*switch (com.yunbiao.ybsmartcheckin_live_id.afinel.Constants.DEVICE_TYPE) {
+                    case com.yunbiao.ybsmartcheckin_live_id.afinel.Constants.DeviceType.HT_TEMPERATURE_CHECK_IN_MASK:
                         newPassword += "HT";
                         break;
-                }
+                }*/
 
                 Registration registration = new Registration();
 
