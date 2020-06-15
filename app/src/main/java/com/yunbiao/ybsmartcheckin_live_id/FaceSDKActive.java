@@ -45,8 +45,19 @@ public class FaceSDKActive {
         }
         if (activeType == 0) {
             offlineActive(activity, activeCallback);
-        } else {
+        } else if(activeType == 1){
             checkActiveState(activity, type, activeCallback);
+        } else {
+            inputActive(activity,"8581-112T-38BH-DLDU","HaViJoN9enHzZjfE9nb6G672dQxgRuJe8mVJS3nuNX7Q","212ZpN5Yu7H3NKNhsM8mYqzJn6bpwcHPiSvf8AmnMRLs",activeCallback);
+        }
+    }
+
+    public static void inputActive(Activity context,String code,String appId,String sdkKey,ActiveCallback callback){
+        /*	*/
+        int activeCode = FaceEngine.active(context,code,appId,sdkKey);
+        Log.e(TAG, "激活结果：: " + activeCode);
+        if (activeCode == ErrorInfo.MOK || activeCode == ErrorInfo.MERR_ASF_ALREADY_ACTIVATED) {
+            callback.getActiveCodeSuccess();
         }
     }
 

@@ -586,6 +586,8 @@ public abstract class BaseThermal2Activity extends BaseGpioActivity implements F
 
     }
 
+
+    private int maskNumber = 0;
     @Override
     public boolean onFaceDetection(boolean hasFace, FacePreviewInfo facePreviewInfo) {
         if (isActivityPaused) {
@@ -594,6 +596,7 @@ public abstract class BaseThermal2Activity extends BaseGpioActivity implements F
         mHasFace = hasFace;
         viewInterface.hasFace(hasFace);
         if (!hasFace) {
+            maskNumber = 0;
             if (isOnlyFace()) {
                 maskTipNumber = 0;
                 sendClearMaskTipMessage(0);
@@ -647,11 +650,19 @@ public abstract class BaseThermal2Activity extends BaseGpioActivity implements F
         }*/
         //更新口罩标签
         if (isMaskDetectEnabled) {
-            maskTag = facePreviewInfo.getMask() == 0 || facePreviewInfo.getMask() == -1
+            int tag = facePreviewInfo.getMask() == 0 || facePreviewInfo.getMask() == -1
                     ? 0
                     : facePreviewInfo.getFaceShelter() == 0 || facePreviewInfo.getFaceShelter() == -1
                     ? 1
                     : 2;
+            //判断三次，如果tag不为2并且mask小于3的时候多次进行判断
+            if(tag != 2 && maskNumber < 5){
+                maskNumber ++;
+                Log.e(TAG, "onFaceDetection: tag不为2，且maskNumber小于5，当前maskTag为：" + maskTag);
+                return false;
+            }
+            maskNumber = 0;
+            maskTag = tag;
             if (maskTag != 2) {
                 return false;
             }
