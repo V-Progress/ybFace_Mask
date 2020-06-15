@@ -672,7 +672,7 @@ public class ThermalSettingActivity extends BaseActivity {
         }
 
         private void initView(View view) {
-            if(Constants.FLAVOR_TYPE == FlavorType.PING_TECH){
+            if(Constants.FLAVOR_TYPE == FlavorType.PING_TECH || Constants.FLAVOR_TYPE == FlavorType.ITALY){
                 view.findViewById(R.id.rb_yun).setVisibility(View.GONE);
             }
             //CPU状态==================================================================================
