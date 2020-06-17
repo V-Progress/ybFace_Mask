@@ -10,11 +10,17 @@ import android.os.IBinder;
 import android.os.Message;
 import androidx.annotation.Nullable;
 import android.util.Log;
+import android.widget.Toast;
 
 import com.yunbiao.ybsmartcheckin_live_id.SplashActivity;
+import com.yunbiao.ybsmartcheckin_live_id.activity.WelComeActivity;
+import com.yunbiao.ybsmartcheckin_live_id.activity_temper_check_in.ThermalImage2Activity;
+import com.yunbiao.ybsmartcheckin_live_id.afinel.Constants;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import timber.log.Timber;
 
 public class MyProtectService extends Service {
     private static final String TAG = "MyProtectService";
@@ -22,8 +28,102 @@ public class MyProtectService extends Service {
     //看门狗service
     private String packageName = "com.yunbiao.ybsmartcheckin_live_id";
 
-    private final static int DELAY_TIME = 60 * 1000;//60s轮询一次
+    private final static int DELAY_TIME = 90 * 1000;//90s轮询一次
     private final static int CHECK_APP = 0x3211;
+
+    @Override
+    public int onStartCommand(Intent intent, int flags, int startId) {
+        Log.e(TAG, "onStartCommand: 开启守护进程");
+        mHandler.sendEmptyMessageDelayed(CHECK_APP,DELAY_TIME);
+        return super.onStartCommand(intent, flags, startId);
+    }
+
+    @Nullable
+    @Override
+    public IBinder onBind(Intent intent) {
+        return null;
+    }
+
+
+    private Handler mHandler = new Handler(new Handler.Callback() {
+        @Override
+        public boolean handleMessage(Message msg) {
+            if (msg.what == CHECK_APP) {
+                Timber.e("守护进程：轮询");
+                if (isRunBackground(getApplicationContext())) {
+                    Class currMainActivity = getCurrMainActivity();
+                    Timber.e("守护进程：检测到程序在后台运行，启用到前台：%s", currMainActivity.getName());
+                    backgroundToForeground(currMainActivity);
+                } else if (!isMyAppRunning(MyProtectService.this, packageName)) {
+                    Timber.e("守护进程：检测到程序未运行，启用APP");
+                    startTargetActivity(MyProtectService.this, SplashActivity.class);
+                }
+                mHandler.sendEmptyMessageDelayed(CHECK_APP, DELAY_TIME);
+            }
+            return false;
+        }
+    });
+
+    private Class getCurrMainActivity(){
+        Class clazz;
+        switch (Constants.DEVICE_TYPE) {
+            case Constants.DeviceType.CHECK_IN:
+                clazz = WelComeActivity.class;
+                break;
+            case Constants.DeviceType.TEMPERATURE_CHECK_IN_MASK:
+            case Constants.DeviceType.HT_TEMPERATURE_CHECK_IN_MASK:
+                clazz = ThermalImage2Activity.class;
+                break;
+            default:
+                clazz = ThermalImage2Activity.class;
+                break;
+        }
+        return clazz;
+    }
+
+    /***
+     * 后台——>前台
+     * @param clazz
+     */
+    private void backgroundToForeground(Class clazz){
+        Intent intent = new Intent("android.intent.action.MAIN");
+        intent.setComponent(new ComponentName(getApplicationContext().getPackageName(), clazz.getName()));
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        getApplicationContext().startActivity(intent);
+    }
+
+    private void openAPP(String appPackageName){
+        try{
+            //如果有，直接打开
+            Intent intent = this.getPackageManager().getLaunchIntentForPackage(appPackageName);
+            startActivity(intent);
+        }catch(Exception e){
+            Toast.makeText(this, "没有安装", Toast.LENGTH_LONG).show();
+        }
+    }
+
+    /**
+     * 判断程序是否在后台运行
+     *
+     * @return true 表示在后台运行
+     */
+    public static boolean isRunBackground(Context context) {
+        ActivityManager activityManager = (ActivityManager) context.getApplicationContext().getSystemService(Context.ACTIVITY_SERVICE);
+        String packageName = context.getApplicationContext().getPackageName();
+        //获取Android设备中所有正在运行的App
+        List<ActivityManager.RunningAppProcessInfo> appProcesses = activityManager.getRunningAppProcesses();
+        if (appProcesses == null)
+            return true;
+        for (ActivityManager.RunningAppProcessInfo appProcess : appProcesses) {
+            // The name of the process that this object is associated with.
+            if (appProcess.processName.equals(packageName)
+                    && appProcess.importance ==
+                    ActivityManager.RunningAppProcessInfo.IMPORTANCE_FOREGROUND) {
+                return false;
+            }
+        }
+        return true;
+    }
     /**
      * 判断服务是否开启
      *
@@ -44,35 +144,6 @@ public class MyProtectService extends Service {
         }
         return false;
     }
-
-    @Override
-    public int onStartCommand(Intent intent, int flags, int startId) {
-        Log.e(TAG, "onStartCommand: 开启守护进程");
-        mHandler.sendEmptyMessageDelayed(CHECK_APP,DELAY_TIME);
-        return super.onStartCommand(intent, flags, startId);
-    }
-
-    @Nullable
-    @Override
-    public IBinder onBind(Intent intent) {
-        return null;
-    }
-
-
-    private Handler mHandler = new Handler(new Handler.Callback() {
-        @Override
-        public boolean handleMessage(Message msg) {
-            if (msg.what == CHECK_APP) {
-                Log.e(TAG, "handleMessage: 轮询");
-                if (!isMyAppRunning(MyProtectService.this, packageName)) {
-                    startTargetActivity(MyProtectService.this, SplashActivity.class);
-                    Log.e(TAG, "进程被结束，准备拉起");
-                }
-                mHandler.sendEmptyMessageDelayed(CHECK_APP, DELAY_TIME);
-            }
-            return false;
-        }
-    });
 
     /**
      * 根据报名判断app是否运行
