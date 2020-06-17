@@ -519,12 +519,12 @@ public class ThermalEditEmployActivity extends BaseActivity implements View.OnCl
         final int sex = checkedRadioButtonId == R.id.rb_male ? 1 : 0;
 
         // TODO: 2020/3/18 离线功能
-        if(user.getCompanyId() != Constants.NOT_BIND_COMPANY_ID){
+        /*if(user.getCompanyId() != Constants.NOT_BIND_COMPANY_ID){
             if (departId == -1) {
                 UIUtils.showShort(this, APP.getContext().getResources().getString(R.string.act_editEmploy_tip_qtxbm));
                 return;
             }
-        }
+        }*/
 
         final String number = et_num.getText().toString();
         if (TextUtils.isEmpty(number)) {
@@ -544,7 +544,6 @@ public class ThermalEditEmployActivity extends BaseActivity implements View.OnCl
 
         // TODO: 2020/3/18 离线功能
         if(user.getCompanyId() == Constants.NOT_BIND_COMPANY_ID){
-            UIUtils.showNetLoading(this);
             user.setName(name);
             user.setSex(sex);
             user.setDepartId(mUpdateDepartId);
@@ -700,19 +699,24 @@ public class ThermalEditEmployActivity extends BaseActivity implements View.OnCl
     private Handler handler = new Handler() {
         @Override
         public void handleMessage(Message msg) {
-            if (mHasFace == -1) {
+            /*if (mHasFace == -1) {
                 UIUtils.showTitleTip(ThermalEditEmployActivity.this, APP.getContext().getResources().getString(R.string.act_editEmploy_no_face));
                 pbTakePhoto.setVisibility(View.GONE);
                 btn_TakePhoto.setVisibility(View.VISIBLE);
                 return;
-            } else if (mHasFace == -2) {
+            } else */if (mHasFace == -2) {
                 UIUtils.showTitleTip(ThermalEditEmployActivity.this, APP.getContext().getResources().getString(R.string.act_editEmploy_please_face_only_one));
                 pbTakePhoto.setVisibility(View.GONE);
                 btn_TakePhoto.setVisibility(View.VISIBLE);
                 return;
             }
 
-            Bitmap bitmap = faceView.takePicture();
+            Bitmap bitmap;
+            if(mHasFace == -1){
+                bitmap = faceView.getCurrCameraFrame();
+            } else {
+                bitmap = faceView.takePicture();
+            }
             if (bitmap != null) {
                 mCurrPhotoPath = saveBitmap(bitmap);
                 mUpdatePhotoPath = mCurrPhotoPath;

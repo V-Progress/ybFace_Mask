@@ -991,19 +991,19 @@ public class FaceView extends FrameLayout {
     public Bitmap getCurrCameraFrame() {
         if (mCurrBytes != null) {
             try {
-                byte[] clone = mCurrBytes.clone();
-                YuvImage image = new YuvImage(clone, ImageFormat.NV21, cameraHelper.getWidth(), cameraHelper.getHeight(), null);
-                ByteArrayOutputStream stream = new ByteArrayOutputStream();
-                image.compressToJpeg(new Rect(0, 0, cameraHelper.getWidth(), cameraHelper.getHeight()), 80, stream);
-                Bitmap bmp = BitmapFactory.decodeByteArray(stream.toByteArray(), 0, stream.size());
-
+                Bitmap bitmap = NV21ToBitmap.nv21ToBitmap2(mCurrBytes.clone(), cameraHelper.getWidth(), cameraHelper.getHeight());
                 int angle = SpUtils.getIntOrDef(SpUtils.CAMERA_ANGLE, Constants.DEFAULT_CAMERA_ANGLE);
-                if (bmp != null && angle != 0) {
-                    Bitmap bitmap1 = ImageUtils.rotateBitmap(bmp, angle);
-                    return bitmap1;
+                if (bitmap != null) {
+                    int pictureRotation = SpUtils.getIntOrDef(SpUtils.PICTURE_ROTATION, Constants.DEFAULT_PICTURE_ROTATION);
+                    Log.e(TAG, "getCurrCameraFrame: 照片方向：" + pictureRotation );
+                    if (pictureRotation != -1) {
+                        return ImageUtils.rotateBitmap(bitmap, pictureRotation);
+                    } else if (bitmap != null && angle != 0) {
+                        return ImageUtils.rotateBitmap(bitmap, angle);
+                    } else {
+                        return bitmap;
+                    }
                 }
-                stream.close();
-                return bmp;
             } catch (Exception e) {
                 e.printStackTrace();
             }
