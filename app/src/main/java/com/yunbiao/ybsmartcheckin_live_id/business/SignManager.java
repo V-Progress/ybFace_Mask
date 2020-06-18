@@ -56,6 +56,7 @@ public class SignManager {
     private DateFormat dateFormat = new SimpleDateFormat("yyyy年MM月dd日");
     private DateFormat vertifySdf = new SimpleDateFormat("yyyy-MM-dd");
     private SimpleDateFormat visitSdf = new SimpleDateFormat("yyyy-MM-dd HH:mm");
+    private SimpleDateFormat paramsDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
     private boolean isDebug = true;
     private boolean isBulu = false;
 
@@ -409,6 +410,7 @@ public class SignManager {
         params.put("comId", SpUtils.getCompany().getComid() + "");
         params.put("temper", sign.getTemperature() + "");
         params.put("signTime",sign.getTime() + "");
+        params.put("signTimeFormat", paramsDateFormat.format(sign.getTime()));
         if (sign.getType() != -9) {
             params.put("entryId", sign.getEmpId() + "");
         }
@@ -492,6 +494,7 @@ public class SignManager {
         map.put("comId", "" + signBean.getComid());
         map.put("visitorId", signBean.getEmpId() + "");
         map.put("signTime",signBean.getTime() + "");
+        map.put("signTimeFormat", paramsDateFormat.format(signBean.getTime()));
         d("上传访客记录");
         d("地址：" + ResourceUpdate.VISITOLOG);
         d("参数：" + map.toString());
@@ -533,6 +536,7 @@ public class SignManager {
         final Map<String, String> map = new HashMap<>();
         map.put("entryid", signBean.getEmpId() + "");
         map.put("signTime", signBean.getTime() + "");
+        map.put("signTimeFormat", paramsDateFormat.format(signBean.getTime()));
         map.put("deviceId", HeartBeatClient.getDeviceNo());
         map.put("temper", signBean.getTemperature() + "");
         d("上传考勤记录");
@@ -790,6 +794,7 @@ public class SignManager {
         params.put("comId", vertifyRecord.getComId());
         params.put("temper", vertifyRecord.getTemper());
         params.put("signTime",vertifyRecord.getTime() + "");
+        params.put("signTimeFormat", paramsDateFormat.format(vertifyRecord.getTime()));
 
         String uploadIdcard = ResourceUpdate.UPLOAD_IDCARD;
         Log.e(TAG, "上传身份信息");

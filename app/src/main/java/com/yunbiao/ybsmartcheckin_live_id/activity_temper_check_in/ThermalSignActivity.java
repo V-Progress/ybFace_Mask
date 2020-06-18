@@ -347,12 +347,20 @@ public class ThermalSignActivity extends BaseActivity implements View.OnClickLis
         if (!dirFile.exists()) {
             boolean mkdirs = dirFile.mkdirs();
             Log.e(TAG, "exportToUD: 创建外层目录：" + dirFile.getPath() + " --- " + mkdirs);
+            if(!mkdirs){
+                UIUtils.showShort(ThermalSignActivity.this, getResources().getString(R.string.sign_export_record_failed));
+                return;
+            }
         }
         //创建图片目录
         final File imgDir = new File(dirFile, "image");
         if (!imgDir.exists()) {
             boolean mkdirs = imgDir.mkdirs();
             Log.e(TAG, "exportToUD: 创建图片目录：" + imgDir.getPath() + " --- " + mkdirs);
+            if(!mkdirs){
+                UIUtils.showShort(ThermalSignActivity.this, getResources().getString(R.string.sign_export_record_failed));
+                return;
+            }
         }
         //创建xls文件
         final File excelFile = new File(dirFile, dateFormat.format(new Date()) + "_" + getResources().getString(R.string.sign_export_record) + ".xls");
@@ -401,17 +409,14 @@ public class ThermalSignActivity extends BaseActivity implements View.OnClickLis
                 ExcelUtils.initExcel(excelFile.getPath(),getResString(R.string.sign_list_table_name) , title);
                 final boolean result = ExcelUtils.writeObjListToExcel(tableData, excelFile.getPath());
                 Log.e(TAG, "run: excel，导出结果：" + result);
-                runOnUiThread(new Runnable() {
-                    @Override
-                    public void run() {
+                runOnUiThread(() -> {
 //                        view.setEnabled(true);
-                        UIUtils.dismissNetLoading();
-                        UIUtils.showShort(ThermalSignActivity.this, result
-                                ? (getResources().getString(R.string.sign_export_record_success) +
-                                "\n" +
-                                getResources().getString(R.string.sign_export_record_path) + dirFile.getPath())
-                                : getResources().getString(R.string.sign_export_record_failed));
-                    }
+                    UIUtils.dismissNetLoading();
+                    UIUtils.showShort(ThermalSignActivity.this, result
+                            ? (getResources().getString(R.string.sign_export_record_success) +
+                            "\n" +
+                            getResources().getString(R.string.sign_export_record_path) + dirFile.getPath())
+                            : getResources().getString(R.string.sign_export_record_failed));
                 });
             }
         });
