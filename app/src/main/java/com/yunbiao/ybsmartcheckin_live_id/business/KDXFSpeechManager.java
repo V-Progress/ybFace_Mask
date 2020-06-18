@@ -23,6 +23,7 @@ import android.widget.Toast;
 import com.yunbiao.ybsmartcheckin_live_id.APP;
 import com.yunbiao.ybsmartcheckin_live_id.FlavorType;
 import com.yunbiao.ybsmartcheckin_live_id.R;
+import com.yunbiao.ybsmartcheckin_live_id.activity_temper_check_in.ThermalConst;
 import com.yunbiao.ybsmartcheckin_live_id.afinel.Constants;
 import com.yunbiao.ybsmartcheckin_live_id.utils.HandleMessageUtils;
 import com.yunbiao.ybsmartcheckin_live_id.utils.SpUtils;
@@ -167,10 +168,15 @@ public class KDXFSpeechManager {
      * 播放欢迎语
      */
     public void welcome() {
+        boolean welcomeTipEnabled = SpUtils.getBoolean(ThermalConst.Key.WELCOME_TIP_ENABLED,ThermalConst.Default.WELCOME_TIP_ENABLED);
+        if(!welcomeTipEnabled){
+            return;
+        }
         String welcomeTips = SpUtils.getStr(SpUtils.WELCOM_TIPS, APP.getContext().getResources().getString(R.string.setting_default_welcome_tip));
         if (TextUtils.isEmpty(welcomeTips)) {
             return;
         }
+        mSpeed = SpUtils.getFloat(ThermalConst.Key.VOICE_SPEED, ThermalConst.Default.VOICE_SPEED);
         playNormal(welcomeTips);
     }
 

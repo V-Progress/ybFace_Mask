@@ -5,7 +5,7 @@ import com.yunbiao.ybsmartcheckin_live_id.R;
 
 public class ThermalConst {
 
-    interface Key {
+    public interface Key {
         String FACE_ENABLED = "thermalFaceEnabled"; //启用人脸识别
         String TEMPER_ENABLED = "thermalTemperEnabled";//启用测温
         String TEMPER_MODULE = "thermalTemperatureModule";//测温模块

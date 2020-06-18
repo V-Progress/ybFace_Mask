@@ -30,6 +30,7 @@ import com.yunbiao.ybsmartcheckin_live_id.business.SyncManager;
 import com.yunbiao.ybsmartcheckin_live_id.db2.DaoManager;
 import com.yunbiao.ybsmartcheckin_live_id.db2.Depart;
 import com.yunbiao.ybsmartcheckin_live_id.db2.User;
+import com.yunbiao.ybsmartcheckin_live_id.utils.NetworkUtils;
 import com.yunbiao.ybsmartcheckin_live_id.utils.SpUtils;
 import com.yunbiao.ybsmartcheckin_live_id.utils.UIUtils;
 import com.zhy.http.okhttp.OkHttpUtils;
@@ -126,6 +127,9 @@ public class ThermalEmployListActivity extends BaseActivity implements EmployAda
     }
 
     private void loadData(){
+        if(departList.size() > 0){
+            departList.clear();
+        }
         comId = SpUtils.getCompany().getComid();
         List<Depart> departs = DaoManager.get().queryDepartByCompId(comId);
         departList.add(new Depart(-999,0,getString(R.string.employ_list_all_depart),comId));
@@ -135,6 +139,9 @@ public class ThermalEmployListActivity extends BaseActivity implements EmployAda
         departAdapter.notifyDataSetChanged();
         allUserList = DaoManager.get().queryUserByCompId(comId);
 
+        if(allUserList == null || allUserList.size() <= 0){
+            UIUtils.showShort(this,getResString(R.string.please_add_a_user));
+        }
         loadEmployData(mCurrDepId,key);
     }
 
@@ -359,6 +366,10 @@ public class ThermalEmployListActivity extends BaseActivity implements EmployAda
             case R.id.btn_addDepart:
                 break;
             case R.id.btn_sync:
+                if (NetworkUtils.getNetType() < 1) {
+                    UIUtils.showShort(this, getResString(R.string.there_is_no_net));
+                    return;
+                }
                 SyncManager.instance().requestUser();
                 break;
             case R.id.iv_back:
