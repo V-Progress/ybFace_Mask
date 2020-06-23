@@ -52,10 +52,9 @@
     <string name="speech_setting_show_temper">Announce Temperature</string>
     <string name="speech_setting_temper_location">Announce Temp. in Broadcast</string>
     <string name="speech_setting_location_start">Before</string>
-    <string name="speech_setting_location_center">At # Sign</string>
+    <string name="speech_setting_location_center">Custom position</string>
     <string name="speech_setting_location_end">After</string>
-    <string name="speech_setting_alert">If you pick “at # Sign”, you must put in a “#” sign in the position you want in the Broadcast text.”
-For example, if you write “Your temp is # and normal” the broadcast will be “Your temp is 36.5°C and normal”.</string>
+    <string name="speech_setting_alert">Put the # symbol in the text where you want to display and pronounce temperature value. Please do not forget to choose Custom position in this case.</string>
     <string name="speech_setting_welcome_exmaple">Example of welcome：</string>
     <string name="speech_setting_distance_exmaple">Position Prompt example：</string>
     <string name="speech_setting_normal_exmaple">Example of normal temperature：</string>
@@ -217,6 +216,7 @@ For example, if you write “Your temp is # and normal” the broadcast will be 
     <string name="act_editEmploy_tip_gygbcz">The employee does not exist</string><!-- 该员工不存在 -->
     <string name="act_editEmploy_tip_bczgbm">The Department does not exist</string><!-- 不存在该部门 -->
     <string name="act_editEmploy_tip_gsmyzgbm">The company does not have this department</string><!-- 公司没有这个部门 -->
+    <string name="act_editEmploy_tip_user_id_exists">Employee ID [%1$s] already exists</string>
     <string name="act_editEmploy_tip_gsyzwyg">The company does not have this employee</string><!--公司没有这位员工  -->
     <string name="act_editEmploy_tip_cscw">Parameter error</string><!--参数错误  -->
     <string name="act_editEmploy_tip_qtxbm">Please select the department</string><!--请选择部门-->
@@ -249,8 +249,9 @@ For example, if you write “Your temp is # and normal” the broadcast will be 
     <string name="sign_list_upload_success">Upload Success</string><!-- 上传成功 -->
     <string name="sign_list_upload_failed">Upload failed, please check the network</string>
     <string name="sign_list_table_name">Records</string>
+    <string name="sign_list_not_bind_data_to_local">The device is not tied to the company and the data will be saved locally only</string>
 
-    ><!-- 上传失败，请检查网络 -->
+    <!-- 上传失败，请检查网络 -->
     <string name="sign_list_usb_disk">Please insert USB Storage/SD Card Storage</string><!--  请插入U盘-->
     <string name="sign_list_tip_usb_disk">No USB device detected, will export to local</string>
     <string name="sign_list_all_data_sent">All data uploaded</string><!-- 数据已全部上传 -->

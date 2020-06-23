@@ -211,6 +211,10 @@ public class ThermalEditEmployActivity extends BaseActivity implements View.OnCl
         rgSex.check(R.id.rb_male);
     }
 
+    private boolean isNumberExists(String number){
+        return DaoManager.get().queryNumberExists(SpUtils.getCompany().getComid(),number);
+    }
+
     private void submitAddUser() {
         if (TextUtils.isEmpty(mCurrPhotoPath)) {
             UIUtils.showShort(this, APP.getContext().getResources().getString(R.string.act_editEmploy_tip_qxpz));
@@ -243,6 +247,11 @@ public class ThermalEditEmployActivity extends BaseActivity implements View.OnCl
         String number = et_num.getText().toString();
         if (TextUtils.isEmpty(number)) {
             UIUtils.showShort(this, APP.getContext().getResources().getString(R.string.act_editEmploy_tip_qtxbh));
+            return;
+        }
+
+        if(isNumberExists(number)){
+            UIUtils.showShort(this, String.format(getString(R.string.act_editEmploy_tip_user_id_exists), number));
             return;
         }
 
@@ -299,7 +308,6 @@ public class ThermalEditEmployActivity extends BaseActivity implements View.OnCl
                 DaoManager.get().add(addUser);
                 UIUtils.showShort(ThermalEditEmployActivity.this, APP.getContext().getResources().getString(R.string.act_editEmploy_tip_add_success));
                 UIUtils.dismissNetLoading();
-
                 finish();
             } else {
                 UIUtils.showShort(ThermalEditEmployActivity.this, APP.getContext().getResources().getString(R.string.act_editEmploy_add_face_failed));
@@ -329,11 +337,17 @@ public class ThermalEditEmployActivity extends BaseActivity implements View.OnCl
         params.put("headName", file.getName());
 
         String addstaff = ResourceUpdate.ADDSTAFF;
+        d("添加员工：" + addstaff);
+        d("参数：" + params.toString());
+        d("文件：" + file.getPath());
         OkHttpUtils.post()
                 .url(addstaff)
                 .params(params)
                 .addFile("head", file.getName(), file)
                 .build()
+                .connTimeOut(30000)
+                .readTimeOut(30000)
+                .writeTimeOut(30000)
                 .execute(new StringCallback() {
                     @Override
                     public void onBefore(Request request, int id) {
@@ -349,7 +363,7 @@ public class ThermalEditEmployActivity extends BaseActivity implements View.OnCl
 
                     @Override
                     public void onResponse(String response, int id) {
-                        d(response);
+                        d("响应" + response);
                         AddStaffResponse addStaffResponse = new Gson().fromJson(response, AddStaffResponse.class);
                         if (addStaffResponse.getStatus() != 1) {
                             String errMsg;
@@ -367,7 +381,7 @@ public class ThermalEditEmployActivity extends BaseActivity implements View.OnCl
                                     errMsg = getString(R.string.act_editEmploy_tip_gsmyzgbm);
                                     break;
                                 case 8://不存在员工的公司部门信息
-                                    errMsg = getString(R.string.act_editEmploy_tip_gsmyzgbm);
+                                    errMsg = String.format(getString(R.string.act_editEmploy_tip_user_id_exists), addUser.getNumber());
                                     break;
                                 default://参数错误
                                     errMsg = getString(R.string.act_editEmploy_tip_cscw);
@@ -569,6 +583,7 @@ public class ThermalEditEmployActivity extends BaseActivity implements View.OnCl
                 UIUtils.showShort(this,APP.getContext().getString(R.string.act_editEmploy_update_info_success));
                 UIUtils.dismissNetLoading();
 
+                setResult(RESULT_OK);
                 finish();
             }
             return;
@@ -613,7 +628,15 @@ public class ThermalEditEmployActivity extends BaseActivity implements View.OnCl
             builder.addFile("head", file.getName(), file);
         }
 
-        builder.build().execute(new StringCallback() {
+        d("更新员工：" + ResourceUpdate.UPDATSTAFF);
+        d("参数：" + params.toString());
+        d("文件：" + isHeadUpdated);
+        builder
+                .build()
+                .connTimeOut(30000)
+                .readTimeOut(30000)
+                .writeTimeOut(30000)
+                .execute(new StringCallback() {
             @Override
             public void onBefore(Request request, int id) {
                 d("开始提交");
@@ -629,7 +652,7 @@ public class ThermalEditEmployActivity extends BaseActivity implements View.OnCl
 
             @Override
             public void onResponse(String response, int id) {
-                d(response);
+                d("响应：" + response);
                 AddStaffResponse addStaffResponse = new Gson().fromJson(response, AddStaffResponse.class);
                 if (addStaffResponse.getStatus() != 1) {
                     String errMsg;
@@ -644,8 +667,6 @@ public class ThermalEditEmployActivity extends BaseActivity implements View.OnCl
                             errMsg = getString(R.string.act_editEmploy_tip_bczgbm);
                             break;
                         case 7://不存在公司部门关系
-                            errMsg = getString(R.string.act_editEmploy_tip_gsmyzgbm);
-                            break;
                         case 8://不存在员工的公司部门信息
                             errMsg = getString(R.string.act_editEmploy_tip_gsmyzgbm);
                             break;
@@ -686,6 +707,7 @@ public class ThermalEditEmployActivity extends BaseActivity implements View.OnCl
                 faceView.postDelayed(new Runnable() {
                     @Override
                     public void run() {
+                        setResult(RESULT_OK);
                         UIUtils.dismissNetLoading();
                         finish();
                     }

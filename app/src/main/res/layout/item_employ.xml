@@ -32,6 +32,8 @@
             android:gravity="center" />
 
         <TextView
+            android:maxLines="1"
+            android:ellipsize="end"
             android:id="@+id/tv_employName"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -42,16 +44,20 @@
             android:gravity="center" />
 
         <TextView
+            android:maxLines="1"
+            android:ellipsize="end"
             android:id="@+id/tv_employDepart"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="3"
+            android:layout_weight="2.5"
             android:textColor="@color/white"
             android:textSize="20dp"
             android:text=""
             android:gravity="center" />
 
         <TextView
+            android:maxLines="1"
+            android:ellipsize="end"
             android:id="@+id/tv_employJob"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -64,7 +70,7 @@
         <RelativeLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="2.5">
+            android:layout_weight="3">
 
             <View
                 android:id="@+id/view_middle"

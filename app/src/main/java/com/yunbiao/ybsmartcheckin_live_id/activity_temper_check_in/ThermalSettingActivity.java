@@ -48,6 +48,7 @@ import com.yunbiao.ybsmartcheckin_live_id.activity.Event.DisplayOrientationEvent
 import com.yunbiao.ybsmartcheckin_live_id.activity.base.BaseActivity;
 import com.yunbiao.ybsmartcheckin_live_id.afinel.Constants;
 import com.yunbiao.ybsmartcheckin_live_id.afinel.ResourceUpdate;
+import com.yunbiao.ybsmartcheckin_live_id.business.SignManager;
 import com.yunbiao.ybsmartcheckin_live_id.db2.DaoManager;
 import com.yunbiao.ybsmartcheckin_live_id.db2.Sign;
 import com.yunbiao.ybsmartcheckin_live_id.system.HeartBeatClient;
@@ -385,12 +386,7 @@ public class ThermalSettingActivity extends BaseActivity {
             boolean titleEnabled = SpUtils.getBoolean(ThermalConst.Key.TITLE_ENABLED, ThermalConst.Default.TITLE_ENABLED);
             Switch swTitle = view.findViewById(R.id.sw_title_display);
             swTitle.setChecked(titleEnabled);
-            swTitle.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-                @Override
-                public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                    SpUtils.saveBoolean(ThermalConst.Key.TITLE_ENABLED, isChecked);
-                }
-            });
+            swTitle.setOnCheckedChangeListener((buttonView, isChecked) -> SpUtils.saveBoolean(ThermalConst.Key.TITLE_ENABLED, isChecked));
 
             //设置首页LOGO================================================================================
             Button btnRestore = view.findViewById(R.id.btn_restore_main_logo);
@@ -410,7 +406,7 @@ public class ThermalSettingActivity extends BaseActivity {
             btnSaveMainLogo.setOnClickListener(v -> {
                 ImagePicker.getInstance()
                         .setTitle(getResources().getString(R.string.select_img_title))//设置标题
-                        .showCamera(true)//设置是否显示拍照按钮
+//                        .showCamera(true)//设置是否显示拍照按钮
                         .showImage(true)//设置是否展示图片
                         .showVideo(false)//设置是否展示视频
 //                    .setMaxCount(1)//设置最大选择图片数目(默认为1，单选)
@@ -806,7 +802,19 @@ public class ThermalSettingActivity extends BaseActivity {
             initSetIp(view);
 
             //清除所有数据============================================================================
-            view.findViewById(R.id.tv_clear_all).setOnClickListener(view1 -> clearAllData());
+            view.findViewById(R.id.tv_clear_all).setOnClickListener(view1 -> showDialog());
+        }
+
+        private void showDialog(){
+            AlertDialog alertDialog = new AlertDialog.Builder(getActivity())
+                    .setTitle(getResources().getString(R.string.clear_all_data_dialog_title))
+                    .setMessage(getResources().getString(R.string.clear_all_data_dialog_message))
+                    .setPositiveButton(getResources().getString(R.string.setting_switch_confirm), (dialog, which) -> {
+                        clearAllData();
+                    }).setNegativeButton(getResources().getString(R.string.setting_switch_cancel), (dialog, which) -> {
+                        dialog.dismiss();
+                    }).create();
+            alertDialog.show();
         }
 
         private void clearAllData() {

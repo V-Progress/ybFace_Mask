@@ -278,20 +278,12 @@
                     </LinearLayout>
 
                     <LinearLayout
-                        android:gravity="center_vertical"
                         android:layout_marginTop="10dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
-                        <Switch
-                            style="@style/setting_text"
-                            android:checked="@{speechContent.normalShow}"
-                            android:onCheckedChanged="@{actionPresenter::onNormalTemperEnableChanged}"
-                            android:id="@+id/sw_show_normal"
-                            android:text="@string/speech_setting_show_temper"
-                            android:switchPadding="10dp"/>
-
                         <TextView
-                            android:layout_marginLeft="10dp"
                             android:text="@string/speech_setting_temper_location"
                             style="@style/setting_text"/>
                         <RadioGroup
@@ -315,6 +307,15 @@
                                 style="@style/setting_text"/>
                         </RadioGroup>
                     </LinearLayout>
+
+                    <Switch
+                        android:layout_marginTop="10dp"
+                        style="@style/setting_text"
+                        android:checked="@{speechContent.normalShow}"
+                        android:onCheckedChanged="@{actionPresenter::onNormalTemperEnableChanged}"
+                        android:id="@+id/sw_show_normal"
+                        android:text="@string/speech_setting_show_temper"
+                        android:switchPadding="10dp"/>
                 </LinearLayout>
 
                 <!--异常播报，是否显示温度，温度显示位置-->
@@ -362,16 +363,7 @@
                         android:orientation="horizontal"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
-                        <Switch
-                            style="@style/setting_text"
-                            android:checked="@{speechContent.warningShow}"
-                            android:onCheckedChanged="@{actionPresenter::onWarningTemperEnableChanged}"
-                            android:id="@+id/sw_show_temper_warning"
-                            android:text="@string/speech_setting_show_temper"
-                            android:switchPadding="10dp"/>
-
                         <TextView
-                            android:layout_marginLeft="10dp"
                             android:text="@string/speech_setting_temper_location"
                             style="@style/setting_text"/>
                         <RadioGroup
@@ -396,6 +388,15 @@
                                 style="@style/setting_text"/>
                         </RadioGroup>
                     </LinearLayout>
+
+                    <Switch
+                        android:layout_marginTop="10dp"
+                        style="@style/setting_text"
+                        android:checked="@{speechContent.warningShow}"
+                        android:onCheckedChanged="@{actionPresenter::onWarningTemperEnableChanged}"
+                        android:id="@+id/sw_show_temper_warning"
+                        android:text="@string/speech_setting_show_temper"
+                        android:switchPadding="10dp"/>
                 </LinearLayout>
                 <TextView
                     android:lineSpacingExtra="5dp"

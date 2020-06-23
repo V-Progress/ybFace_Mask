@@ -87,6 +87,8 @@ public class ThermalImage2Activity extends BaseThermal2Activity implements Therm
     private boolean showMainThermal;
     private View llMaskTip;
     private TextView tvMaskTip;
+    private View llMainLogoParent;
+    private boolean titleEnabled;
 
     @Override
     protected int getPortraitLayout() {
@@ -109,6 +111,7 @@ public class ThermalImage2Activity extends BaseThermal2Activity implements Therm
         faceView.setRetryTime(4);
         faceView.setRetryDelayTime(4000);
 
+        llMainLogoParent = findViewById(R.id.ll_main_logo_parent);
         tvMaskTip = findViewById(R.id.tv_mask_tip);
         llMaskTip = findViewById(R.id.ll_mask_tip);
         ivMainLogo = findViewById(R.id.iv_main_logo);//LOGO
@@ -126,9 +129,6 @@ public class ThermalImage2Activity extends BaseThermal2Activity implements Therm
         //加载签到列表Fragment
         signListFragment = new ThermalSignFragment();
         replaceFragment(R.id.ll_list_container, signListFragment);
-
-        ImageFileLoader.setDefaultLogoId(R.mipmap.yb_logo);
-        setImageByResId(ivMainLogo, R.mipmap.yb_logo);
     }
 
     @Override
@@ -142,9 +142,11 @@ public class ThermalImage2Activity extends BaseThermal2Activity implements Therm
             faceView.resume();
         }
         showMainThermal = SpUtils.getBoolean(ThermalConst.Key.SHOW_MAIN_THERMAL, ThermalConst.Default.SHOW_MAIN_THERMAL);
+        titleEnabled = SpUtils.getBoolean(ThermalConst.Key.TITLE_ENABLED,ThermalConst.Default.TITLE_ENABLED);
         showMainLogo = SpUtils.getBoolean(ThermalConst.Key.SHOW_MAIN_LOGO, ThermalConst.Default.SHOW_MAIN_LOGO);
         ivMainLogo.setVisibility(showMainLogo ? View.VISIBLE : View.GONE);
-        tvMainAbbName.setVisibility(showMainLogo ? View.VISIBLE : View.GONE);
+        tvMainAbbName.setVisibility(titleEnabled ? View.VISIBLE : View.GONE);
+        llMainLogoParent.setVisibility(!showMainLogo && !titleEnabled ? View.GONE : View.VISIBLE);
         mShowDialog = SpUtils.getBoolean(ThermalConst.Key.SHOW_DIALOG, ThermalConst.Default.SHOW_DIALOG);
         personFrameEnable = SpUtils.getBoolean(ThermalConst.Key.PERSON_FRAME, ThermalConst.Default.PERSON_FRAME);
         //设置活体开关
@@ -162,7 +164,6 @@ public class ThermalImage2Activity extends BaseThermal2Activity implements Therm
     }
 
     private void setLogo(ImageView logoView,TextView tvName) {
-        boolean titleEnabled = SpUtils.getBoolean(ThermalConst.Key.TITLE_ENABLED,ThermalConst.Default.TITLE_ENABLED);
         boolean localPriority = SpUtils.getBoolean(ThermalConst.Key.LOCAL_PRIORITY, ThermalConst.Default.LOCAL_PRIORITY);
         if (localPriority) {
             String logoPath = SpUtils.getStr(ThermalConst.Key.MAIN_LOGO_IMG, ThermalConst.Default.MAIN_LOGO_IMG);
@@ -188,15 +189,6 @@ public class ThermalImage2Activity extends BaseThermal2Activity implements Therm
                 });
             }
             tvName.setText(TextUtils.isEmpty(abbname) ? "" : abbname);
-        }
-        if(titleEnabled){
-            if(!tvName.isShown()){
-                tvName.setVisibility(View.VISIBLE);
-            }
-        } else {
-            if(tvName.isShown()){
-                tvName.setVisibility(View.GONE);
-            }
         }
     }
 

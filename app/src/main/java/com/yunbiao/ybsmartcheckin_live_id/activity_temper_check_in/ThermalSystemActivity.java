@@ -119,15 +119,7 @@ public class ThermalSystemActivity extends BaseActivity implements View.OnClickL
             }
             tvName.setText(TextUtils.isEmpty(abbname) ? "" : abbname);
         }
-        if(titleEnabled){
-            if(!tvName.isShown()){
-                tvName.setVisibility(View.VISIBLE);
-            }
-        } else {
-            if(tvName.isShown()){
-                tvName.setVisibility(View.GONE);
-            }
-        }
+
     }
 
     @Override
@@ -172,9 +164,10 @@ public class ThermalSystemActivity extends BaseActivity implements View.OnClickL
             tv_server_system.setText(getString(R.string.System_local_service));
         }
 
+        boolean titleEnabled = SpUtils.getBoolean(ThermalConst.Key.TITLE_ENABLED,ThermalConst.Default.TITLE_ENABLED);
         boolean showMainLogo = SpUtils.getBoolean(ThermalConst.Key.SHOW_MAIN_LOGO,ThermalConst.Default.SHOW_MAIN_LOGO);
         ivLogo.setVisibility(showMainLogo ? View.VISIBLE : View.GONE);
-        tvAbbName.setVisibility(showMainLogo ? View.VISIBLE : View.GONE);
+        tvAbbName.setVisibility(titleEnabled ? View.VISIBLE : View.GONE);
 
         if(showMainLogo){
             //onResume中加载该加载的东西

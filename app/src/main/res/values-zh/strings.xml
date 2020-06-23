@@ -202,6 +202,7 @@
     <string name="act_editEmploy_tip_gygbcz">该员工不存在</string>
     <string name="act_editEmploy_tip_bczgbm">不存在该部门</string>
     <string name="act_editEmploy_tip_gsmyzgbm">公司没有这个部门</string>
+    <string name="act_editEmploy_tip_user_id_exists">员工编号[%1$s]已存在</string>
     <string name="act_editEmploy_tip_gsyzwyg">公司没有这位员工</string>
     <string name="act_editEmploy_tip_cscw">参数错误</string>
     <string name="act_editEmploy_tip_qtxbm">请选择部门</string><!--请选择部门-->
@@ -252,6 +253,7 @@
     <string name="sign_export_record_path">目录：</string>
     <string name="sign_export_record_failed">导出失败</string>
     <string name="sign_list_table_name">记录</string>
+    <string name="sign_list_not_bind_data_to_local">设备未绑定时，数据仅保存在本地</string>
 
 
     <!--访客列表-->

@@ -169,38 +169,29 @@ public class ThermalSignActivity extends BaseActivity implements View.OnClickLis
 
             }
         });
-        spnDataMode.setSelection(modeArray.length - 1);
+        spnDataMode.setSelection(0);
     }
 
     private void loading() {
-        pb_load_list.post(new Runnable() {
-            @Override
-            public void run() {
-                pb_load_list.setVisibility(View.VISIBLE);
-                tv_load_tips.setVisibility(View.GONE);
-            }
+        pb_load_list.post(() -> {
+            pb_load_list.setVisibility(View.VISIBLE);
+            tv_load_tips.setVisibility(View.GONE);
         });
     }
 
     private void tips(final String tips) {
-        tv_load_tips.post(new Runnable() {
-            @Override
-            public void run() {
-                lv_sign_List.setVisibility(View.GONE);
-                pb_load_list.setVisibility(View.GONE);
-                tv_load_tips.setVisibility(View.VISIBLE);
-                tv_load_tips.setText(tips);
-            }
+        tv_load_tips.post(() -> {
+            lv_sign_List.setVisibility(View.GONE);
+            pb_load_list.setVisibility(View.GONE);
+            tv_load_tips.setVisibility(View.VISIBLE);
+            tv_load_tips.setText(tips);
         });
     }
 
     private void hide() {
-        tv_load_tips.post(new Runnable() {
-            @Override
-            public void run() {
-                pb_load_list.setVisibility(View.GONE);
-                tv_load_tips.setVisibility(View.GONE);
-            }
+        tv_load_tips.post(() -> {
+            pb_load_list.setVisibility(View.GONE);
+            tv_load_tips.setVisibility(View.GONE);
         });
     }
 
@@ -230,15 +221,6 @@ public class ThermalSignActivity extends BaseActivity implements View.OnClickLis
                     tips(getString(R.string.sign_list_no_data));
                     return;
                 }
-
-                //删除类型为-9的记录
-                /*Iterator<Sign> iterator = mSignList.iterator();
-                while (iterator.hasNext()) {
-                    Sign next = iterator.next();
-                    if (next.getType() == -9) {
-                        iterator.remove();
-                    }
-                }*/
 
                 for (Sign signBean : mSignList) {
                     if (DATA_MODE == MODE_UNSENDED && !signBean.isUpload()) {
@@ -271,18 +253,15 @@ public class ThermalSignActivity extends BaseActivity implements View.OnClickLis
                 UIUtils.showNetLoading(this);
                 if(SpUtils.getCompany().getComid() == Constants.NOT_BIND_COMPANY_ID){
                     UIUtils.dismissNetLoading();
-                    UIUtils.showShort(ThermalSignActivity.this, "The device is not tied to the company and the data will be saved locally only");
+                    UIUtils.showShort(ThermalSignActivity.this, getResString(R.string.sign_list_not_bind_data_to_local));
                     return;
                 }
-                SignManager.instance().uploadSignRecord(new Consumer<Boolean>() {
-                    @Override
-                    public void accept(Boolean aBoolean) throws Exception {
-                        if (aBoolean) {
-                            EventBus.getDefault().post(new UpdateSignDataEvent());
-                        }
-                        UIUtils.dismissNetLoading();
-                        UIUtils.showShort(ThermalSignActivity.this, (aBoolean ? getString(R.string.sign_list_upload_success) : getString(R.string.sign_list_upload_failed)));
+                SignManager.instance().uploadSignRecord(aBoolean -> {
+                    if (aBoolean) {
+                        EventBus.getDefault().post(new UpdateSignDataEvent());
                     }
+                    UIUtils.dismissNetLoading();
+                    UIUtils.showShort(ThermalSignActivity.this, (aBoolean ? getString(R.string.sign_list_upload_success) : getString(R.string.sign_list_upload_failed)));
                 });
                 break;
             case R.id.iv_back:

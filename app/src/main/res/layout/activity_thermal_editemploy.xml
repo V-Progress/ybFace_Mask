@@ -23,7 +23,6 @@
             android:textColor="@color/white"
             android:textSize="26dp" />
 
-
         <TextView
             android:gravity="center_vertical"
             android:layout_alignParentRight="true"
@@ -66,13 +65,14 @@
             android:layout_marginRight="15dp">
 
             <Button
+                android:paddingRight="10dp"
                 android:drawablePadding="10dp"
                 android:id="@+id/btn_TakePhoto"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:background="@drawable/shape_bg_btnsync"
                 android:drawableLeft="@mipmap/icon_camera"
-                android:paddingLeft="18dp"
+                android:paddingLeft="10dp"
                 android:text="@string/act_editEmploy_pz"
                 android:textColor="@color/white"
                 android:textSize="20dp" />

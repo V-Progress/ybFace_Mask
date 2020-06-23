@@ -236,8 +236,9 @@ public class SplashActivity extends BaseActivity {
                 break;
             case FlavorType.ITALY:
                 ThermalConst.Default.DEFAULT_LOGO_ID = R.mipmap.yb_logo;
-                ThermalConst.Default.MAIN_LOGO_TEXT = "";
                 Constants.DEFAULT_SCREE_BG = R.mipmap.it_screen_bg;
+                ThermalConst.Default.MAIN_LOGO_TEXT = "";
+                ThermalConst.Default.TITLE_ENABLED = false;
                 ThermalConst.Default.SHOW_MAIN_LOGO = false;
                 Constants.DEFAULT_POSTER_ENABLED = true;
                 Constants.Default.PRIVACY_MODE = true;

@@ -17,9 +17,9 @@
 
 
     <!--口罩提示-->
-    <string name="no_mask_tip">Please wear a mask</string>
-    <string name="error_mask_tip">Please wear the mask correctly</string>
-    <string name="please_aim_face_frame">Please aim at the face box</string>
+    <string name="no_mask_tip">Por favor, use una máscara</string>
+    <string name="error_mask_tip">Por favor, use la máscara correctamente</string>
+    <string name="please_aim_face_frame">Por favor apunte al marco de la cara</string>
 
     <string name="setting_tab_face">Las caras</string>
     <string name="setting_tab_page">La interfaz</string>

@@ -48,7 +48,7 @@ public class FaceSDKActive {
         } else if(activeType == 1){
             checkActiveState(activity, type, activeCallback);
         } else {
-            inputActive(activity,"8581-112T-37PE-7KDV","HaViJoN9enHzZjfE9nb6G672dQxgRuJe8mVJS3nuNX7Q","212ZpN5Yu7H3NKNhsM8mYqzJn6bpwcHPiSvf8AmnMRLs",activeCallback);
+            inputActive(activity,"8581-112T-389T-4K2D","HaViJoN9enHzZjfE9nb6G672dQxgRuJe8mVJS3nuNX7Q","212ZpN5Yu7H3NKNhsM8mYqzJn6bpwcHPiSvf8AmnMRLs",activeCallback);
         }
     }
 

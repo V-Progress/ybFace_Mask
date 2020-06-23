@@ -16,6 +16,8 @@ import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import androidx.annotation.Nullable;
+
 import com.yunbiao.faceview.FaceManager;
 import com.yunbiao.ybsmartcheckin_live_id.APP;
 import com.yunbiao.ybsmartcheckin_live_id.R;
@@ -123,7 +125,6 @@ public class ThermalEmployListActivity extends BaseActivity implements EmployAda
         userAdapter.setOnEmpEditListener(this);
         lv_employ_List.setAdapter(userAdapter);
 
-        loadData();
     }
 
     private void loadData(){
@@ -226,6 +227,7 @@ public class ThermalEmployListActivity extends BaseActivity implements EmployAda
     protected void onResume() {
         super.onResume();
         initDevice();
+        loadData();
     }
 
     @Subscribe(threadMode = ThreadMode.MAIN)
