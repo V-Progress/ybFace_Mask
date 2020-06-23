@@ -92,7 +92,6 @@ public class ThermalSystemActivity extends BaseActivity implements View.OnClickL
     }
 
     private void setLogo(ImageView logoView,TextView tvName) {
-        boolean titleEnabled = SpUtils.getBoolean(ThermalConst.Key.TITLE_ENABLED,ThermalConst.Default.TITLE_ENABLED);
         boolean localPriority = SpUtils.getBoolean(ThermalConst.Key.LOCAL_PRIORITY, ThermalConst.Default.LOCAL_PRIORITY);
         if (localPriority) {
             String logoPath = SpUtils.getStr(ThermalConst.Key.MAIN_LOGO_IMG, ThermalConst.Default.MAIN_LOGO_IMG);
@@ -119,7 +118,6 @@ public class ThermalSystemActivity extends BaseActivity implements View.OnClickL
             }
             tvName.setText(TextUtils.isEmpty(abbname) ? "" : abbname);
         }
-
     }
 
     @Override

@@ -113,6 +113,7 @@ public class SplashActivity extends BaseActivity {
 
             switch (Constants.FLAVOR_TYPE) {
                 case FlavorType.PING_TECH:
+                case FlavorType.PING_TECH_SHELTRON:
                     setIp("34.70.221.66","5222","80","");
                     break;
                 case FlavorType.ITALY:
@@ -231,6 +232,10 @@ public class SplashActivity extends BaseActivity {
                 break;
             case FlavorType.PING_TECH:
                 ThermalConst.Default.DEFAULT_LOGO_ID = R.mipmap.pingtech_logo;
+                ThermalConst.Default.MAIN_LOGO_TEXT = "";
+                ThermalConst.Default.TITLE_ENABLED = false;
+            case FlavorType.PING_TECH_SHELTRON:
+                ThermalConst.Default.DEFAULT_LOGO_ID = R.mipmap.sheltron_logo;
                 ThermalConst.Default.MAIN_LOGO_TEXT = "";
                 ThermalConst.Default.TITLE_ENABLED = false;
                 break;
