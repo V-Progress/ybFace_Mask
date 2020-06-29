@@ -17,6 +17,7 @@
     <string name="temper_error_tips">The temperature measurement data failed to be retrieved, please check the temperature measurement module</string>
     <string name="temper_error_btn_restart">Reboot</string>
     <string name="temper_error_btn_cancel">No processing</string>
+    <string name="xenon_welcome_tip">Welcome to Xenon Fever Defence</string>
 
     <string name="import_please_select_excel">Please select Excel file(*.xls,*.xlsx)</string>
     <string name="import_title">Import</string>
@@ -33,7 +34,6 @@
     <string name="import_add_exists">already exist:</string>
     <string name="import_add_skip">skip:</string>
 
-    <string name="xenon_welcome_tip">Welcome to Xenon Fever Defence</string>
 
     <string name="user_number_is_exists">The User Id already exists</string><!--该用户编号已存在-->
     <string name="there_is_no_net">"There is no server connection"</string>
@@ -42,6 +42,7 @@
     <string name="clear_all_data_dialog_title">Warning</string>
     <string name="clear_all_data_dialog_message">Are you sure you want to delete all data from the device?</string><!--您确定要删除设备中的所有数据吗?-->
 
+    <string name="setting_service_ip_address">Service Address</string>
     <!--文件选择-->
     <string name="local_directory">Internal Storage</string>
     <string name="usb_directory">USB Storage</string>
@@ -49,6 +50,7 @@
     <string name="confirm_directore_tips">Are you sure to use this directory？</string>
     <string name="select_directory_title">Select the directory</string>
     <string name="click_select_this_directory">Click to select this directory</string>
+    <string name="delete_record_msg">Are you sure you want to delete the record?</string>
 
     <!--口罩提示-->
     <string name="no_mask_tip">Please wear a mask</string>
@@ -343,7 +345,7 @@
     <string name="setting_please_input_again">Please enter the password again</string><!-- 请再次输入密码 -->
     <string name="setting_cloud_service">Cloud</string><!--云端  -->
     <string name="setting_local_service">LAN</string><!-- 局域网 -->
-    <string name="setting_ip_address">IP Address</string><!-- IP地址 -->
+    <string name="setting_ip_address">Communication Address</string><!-- IP地址 -->
     <string name="setting_xmpp_port">Communication port</string><!-- 通信端口 -->
     <string name="setting_resource_port">Service port</string><!-- 服务端口 -->
     <string name="setting_project_name">Project name</string><!--项目名  -->

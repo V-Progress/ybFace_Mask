@@ -172,7 +172,7 @@ public class KDXFSpeechManager {
         if(!welcomeTipEnabled){
             return;
         }
-        String welcomeTips = SpUtils.getStr(SpUtils.WELCOM_TIPS, APP.getContext().getResources().getString(R.string.setting_default_welcome_tip));
+        String welcomeTips = SpUtils.getStr(ThermalConst.Key.WELCOME_TIP_CONTENT, ThermalConst.Default.WELCOME_TIP_CONTENT);
         if (TextUtils.isEmpty(welcomeTips)) {
             return;
         }

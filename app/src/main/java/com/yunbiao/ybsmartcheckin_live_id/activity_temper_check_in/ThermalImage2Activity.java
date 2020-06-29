@@ -141,8 +141,8 @@ public class ThermalImage2Activity extends BaseThermal2Activity implements Therm
         if (faceView != null) {
             faceView.resume();
         }
-        showMainThermal = SpUtils.getBoolean(ThermalConst.Key.SHOW_MAIN_THERMAL, ThermalConst.Default.SHOW_MAIN_THERMAL);
         titleEnabled = SpUtils.getBoolean(ThermalConst.Key.TITLE_ENABLED,ThermalConst.Default.TITLE_ENABLED);
+        showMainThermal = SpUtils.getBoolean(ThermalConst.Key.SHOW_MAIN_THERMAL, ThermalConst.Default.SHOW_MAIN_THERMAL);
         showMainLogo = SpUtils.getBoolean(ThermalConst.Key.SHOW_MAIN_LOGO, ThermalConst.Default.SHOW_MAIN_LOGO);
         ivMainLogo.setVisibility(showMainLogo ? View.VISIBLE : View.GONE);
         tvMainAbbName.setVisibility(titleEnabled ? View.VISIBLE : View.GONE);
@@ -150,7 +150,7 @@ public class ThermalImage2Activity extends BaseThermal2Activity implements Therm
         mShowDialog = SpUtils.getBoolean(ThermalConst.Key.SHOW_DIALOG, ThermalConst.Default.SHOW_DIALOG);
         personFrameEnable = SpUtils.getBoolean(ThermalConst.Key.PERSON_FRAME, ThermalConst.Default.PERSON_FRAME);
         //设置活体开关
-        boolean livenessEnabled = SpUtils.getBoolean(SpUtils.LIVENESS_ENABLED, false);
+        boolean livenessEnabled = SpUtils.getBoolean(Constants.Key.LIVENESS_ENABLED, Constants.Default.LIVENESS_ENABLED);
         if (faceView != null) {
             faceView.setLiveness(livenessEnabled);
         }
@@ -422,7 +422,7 @@ public class ThermalImage2Activity extends BaseThermal2Activity implements Therm
      *
      **************************************************************************************************/
     private void initAds() {
-        boolean isPosterEnabled = SpUtils.getBoolean(SpUtils.POSTER_ENABLED, Constants.DEFAULT_POSTER_ENABLED);//大屏海报开关
+        boolean isPosterEnabled = SpUtils.getBoolean(Constants.Key.POSTER_ENABLED, Constants.Default.POSTER_ENABLED);//大屏海报开关
         if (isPosterEnabled) {
             if (adsFragment != null && adsFragment.isAdded()) {
                 return;
@@ -528,14 +528,10 @@ public class ThermalImage2Activity extends BaseThermal2Activity implements Therm
     }
 
     public void goSetting() {
+        boolean passwordEnabled = SpUtils.getBoolean(Constants.Key.PASSWORD_ENABLED,Constants.Default.PASSWORD_ENABLED);
         String pwd = SpUtils.getStr(SpUtils.MENU_PWD);
-        if (!TextUtils.isEmpty(pwd)) {
-            inputPwd(new Runnable() {
-                @Override
-                public void run() {
-                    startActivity(new Intent(ThermalImage2Activity.this, ThermalSystemActivity.class));
-                }
-            });
+        if (passwordEnabled && !TextUtils.isEmpty(pwd)) {
+            inputPwd(() -> startActivity(new Intent(ThermalImage2Activity.this, ThermalSystemActivity.class)));
             return;
         }
         startActivity(new Intent(ThermalImage2Activity.this, ThermalSystemActivity.class));

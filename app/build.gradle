@@ -140,7 +140,7 @@ android {
     }
     //greenDao配置信息
     greendao {
-        schemaVersion 35//<--数据库的版本，用于升级时候进行更改
+        schemaVersion 45//<--数据库的版本，用于升级时候进行更改
         daoPackage 'com.yunbiao.ybsmartcheckin_live_id.db2'
     }
     dataBinding {

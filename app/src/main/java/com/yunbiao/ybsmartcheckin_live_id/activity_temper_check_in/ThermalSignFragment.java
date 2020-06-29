@@ -189,7 +189,7 @@ public class ThermalSignFragment extends Fragment implements NetWorkChangReceive
     public void onResume() {
         super.onResume();
 
-        boolean qrCodeEnabled = SpUtils.getBoolean(SpUtils.QRCODE_ENABLED, Constants.DEFAULT_QRCODE_ENABLED);
+        boolean qrCodeEnabled = SpUtils.getBoolean(Constants.Key.QRCODE_ENABLED, Constants.Default.QRCODE_ENABLED);
         gifImageView.setVisibility(qrCodeEnabled ? View.VISIBLE : View.GONE);
 
         boolean isPrivacy = SpUtils.getBoolean(Constants.Key.PRIVACY_MODE,Constants.Default.PRIVACY_MODE);

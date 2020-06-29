@@ -126,14 +126,14 @@ public class ThermalSettingActivity extends BaseActivity {
 
 
     public void jumpTag(View view) {
-        final boolean jumpTag = SpUtils.getBoolean(Constants.JUMP_TAG, Constants.DEFAULT_JUMP_TAG);
+        final boolean jumpTag = SpUtils.getBoolean(Constants.Key.JUMP_TAG, Constants.Default.JUMP_TAG);
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle(APP.getContext().getResources().getString(R.string.setting_switch_function));
         builder.setMessage(APP.getContext().getResources().getString(R.string.setting_switch_tip1));
         builder.setNegativeButton(APP.getContext().getResources().getString(R.string.setting_switch_cancel), (dialog, which) -> dialog.dismiss());
         builder.setPositiveButton(APP.getContext().getResources().getString(R.string.setting_switch_confirm), (dialog, which) -> {
             dialog.dismiss();
-            SpUtils.saveBoolean(Constants.JUMP_TAG, !jumpTag);
+            SpUtils.saveBoolean(Constants.Key.JUMP_TAG, !jumpTag);
 
             APP.exit2();
         });
@@ -184,7 +184,7 @@ public class ThermalSettingActivity extends BaseActivity {
         private void initView(View view) {
             //设置对比度======================================================================
             final EditText edtSimilar = view.findViewById(R.id.edt_similar_threshold);
-            int similar = SpUtils.getIntOrDef(SpUtils.SIMILAR_THRESHOLD, 80);
+            int similar = SpUtils.getIntOrDef(Constants.Key.SIMILAR_THRESHOLD, Constants.Default.SIMILAR_THRESHOLD);
             edtSimilar.setText(similar + "");
             view.findViewById(R.id.btn_set_similar_threshold).setOnClickListener(v -> {
                 String similar1 = edtSimilar.getText().toString();
@@ -193,7 +193,7 @@ public class ThermalSettingActivity extends BaseActivity {
                     return;
                 }
                 int sml = Integer.parseInt(similar1);
-                SpUtils.saveInt(SpUtils.SIMILAR_THRESHOLD, sml);
+                SpUtils.saveInt(Constants.Key.SIMILAR_THRESHOLD, sml);
                 Activity activity = APP.getMainActivity();
                 if (activity != null) {
                     if (activity instanceof ThermalImage2Activity) {
@@ -204,9 +204,9 @@ public class ThermalSettingActivity extends BaseActivity {
 
             //设置活体=========================================================================
             Switch swLiveness = view.findViewById(R.id.sw_liveness_setting);
-            boolean liveness = SpUtils.getBoolean(SpUtils.LIVENESS_ENABLED, false);
+            boolean liveness = SpUtils.getBoolean(Constants.Key.LIVENESS_ENABLED, Constants.Default.LIVENESS_ENABLED);
             swLiveness.setChecked(liveness);
-            swLiveness.setOnCheckedChangeListener((buttonView, isChecked) -> SpUtils.saveBoolean(SpUtils.LIVENESS_ENABLED, isChecked));
+            swLiveness.setOnCheckedChangeListener((buttonView, isChecked) -> SpUtils.saveBoolean(Constants.Key.LIVENESS_ENABLED, isChecked));
 
             //口罩开关=========================================================================
             Switch swMaskMode = view.findViewById(R.id.sw_mask_mode);
@@ -222,14 +222,14 @@ public class ThermalSettingActivity extends BaseActivity {
             //人脸框=========================================================================
             //人脸框横向镜像
             CheckBox cbMirror = view.findViewById(R.id.cb_mirror);
-            final boolean mirror = SpUtils.isMirror();
+            final boolean mirror = SpUtils.getBoolean(Constants.Key.IS_H_MIRROR,Constants.Default.IS_H_MIRROR);
             cbMirror.setChecked(mirror);
-            cbMirror.setOnCheckedChangeListener((buttonView, isChecked) -> SpUtils.setMirror(isChecked));
+            cbMirror.setOnCheckedChangeListener((buttonView, isChecked) -> SpUtils.saveBoolean(Constants.Key.IS_H_MIRROR,isChecked));
             //人脸框纵向镜像
             CheckBox cbVerticalMirror = view.findViewById(R.id.cb_vertical_mirror);
-            boolean isVMirror = SpUtils.getBoolean(SpUtils.IS_V_MIRROR, Constants.DEFAULT_V_MIRROR);
+            boolean isVMirror = SpUtils.getBoolean(Constants.Key.IS_V_MIRROR, Constants.Default.IS_V_MIRROR);
             cbVerticalMirror.setChecked(isVMirror);
-            cbVerticalMirror.setOnCheckedChangeListener((buttonView, isChecked) -> SpUtils.saveBoolean(SpUtils.IS_V_MIRROR, isChecked));
+            cbVerticalMirror.setOnCheckedChangeListener((buttonView, isChecked) -> SpUtils.saveBoolean(Constants.Key.IS_V_MIRROR, isChecked));
 
             //人脸弹窗=========================================================================
             Switch switchFaceDialog = view.findViewById(R.id.sw_face_dialog);
@@ -240,10 +240,10 @@ public class ThermalSettingActivity extends BaseActivity {
             //摄像头设置=========================================================================
             //摄像头角度
             Button btnAngle = view.findViewById(R.id.btn_setAngle);
-            int angle = SpUtils.getIntOrDef(SpUtils.CAMERA_ANGLE, Constants.DEFAULT_CAMERA_ANGLE);
+            int angle = SpUtils.getIntOrDef(Constants.Key.CAMERA_ANGLE, Constants.Default.CAMERA_ANGLE);
             btnAngle.setText(getString(R.string.setting_cam_angle) + ":" + angle);
             btnAngle.setOnClickListener(v -> {
-                int anInt = SpUtils.getIntOrDef(SpUtils.CAMERA_ANGLE, Constants.DEFAULT_CAMERA_ANGLE);
+                int anInt = SpUtils.getIntOrDef(Constants.Key.CAMERA_ANGLE, Constants.Default.CAMERA_ANGLE);
                 if (anInt == 0) {
                     anInt = 90;
                 } else if (anInt == 90) {
@@ -254,15 +254,15 @@ public class ThermalSettingActivity extends BaseActivity {
                     anInt = 0;
                 }
                 btnAngle.setText(getString(R.string.setting_cam_angle) + ":" + anInt);
-                SpUtils.saveInt(SpUtils.CAMERA_ANGLE, anInt);
+                SpUtils.saveInt(Constants.Key.CAMERA_ANGLE, anInt);
                 EventBus.getDefault().post(new DisplayOrientationEvent());
             });
 
             Button btnPicRotation = view.findViewById(R.id.btn_picture_rotation);
-            int picRotation = SpUtils.getIntOrDef(SpUtils.PICTURE_ROTATION, Constants.DEFAULT_PICTURE_ROTATION);
+            int picRotation = SpUtils.getIntOrDef(Constants.Key.PICTURE_ROTATION, Constants.Default.PICTURE_ROTATION);
             btnPicRotation.setText(picRotation == -1 ? (getResources().getString(R.string.setting_picture_rotation)) : (getString(R.string.setting_cam_angle) + ":" + picRotation));
             btnPicRotation.setOnClickListener(v -> {
-                int picRotation1 = SpUtils.getIntOrDef(SpUtils.PICTURE_ROTATION, Constants.DEFAULT_PICTURE_ROTATION);
+                int picRotation1 = SpUtils.getIntOrDef(Constants.Key.PICTURE_ROTATION, Constants.Default.PICTURE_ROTATION);
                 if (picRotation1 == -1) {
                     picRotation1 = 0;
                 } else if (picRotation1 == 0) {
@@ -275,7 +275,7 @@ public class ThermalSettingActivity extends BaseActivity {
                     picRotation1 = -1;
                 }
                 btnPicRotation.setText(picRotation1 == -1 ? (getResources().getString(R.string.setting_picture_rotation)) : (getString(R.string.setting_cam_angle) + ":" + picRotation1));
-                SpUtils.saveInt(SpUtils.PICTURE_ROTATION, picRotation1);
+                SpUtils.saveInt(Constants.Key.PICTURE_ROTATION, picRotation1);
             });
         }
     }
@@ -296,13 +296,13 @@ public class ThermalSettingActivity extends BaseActivity {
 
         private void initView(View view) {
             //屏保===========================================================================================
-            boolean isEnabled = SpUtils.getBoolean(SpUtils.POSTER_ENABLED, Constants.DEFAULT_POSTER_ENABLED);
+            boolean isEnabled = SpUtils.getBoolean(Constants.Key.POSTER_ENABLED, Constants.Default.POSTER_ENABLED);
             Switch swPoster = view.findViewById(R.id.sw_poster_setting);
             swPoster.setChecked(isEnabled);
             swPoster.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
                 @Override
                 public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                    SpUtils.saveBoolean(SpUtils.POSTER_ENABLED, isChecked);
+                    SpUtils.saveBoolean(Constants.Key.POSTER_ENABLED, isChecked);
                 }
             });
 
@@ -346,13 +346,13 @@ public class ThermalSettingActivity extends BaseActivity {
             });
 
             //二维码设置=============================================================================================
-            boolean qrCodeEnabled = SpUtils.getBoolean(SpUtils.QRCODE_ENABLED, Constants.DEFAULT_QRCODE_ENABLED);
+            boolean qrCodeEnabled = SpUtils.getBoolean(Constants.Key.QRCODE_ENABLED, Constants.Default.QRCODE_ENABLED);
             Switch swQrCode = view.findViewById(R.id.sw_qrcode_setting);
             swQrCode.setChecked(qrCodeEnabled);
             swQrCode.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
                 @Override
                 public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                    SpUtils.saveBoolean(SpUtils.QRCODE_ENABLED, isChecked);
+                    SpUtils.saveBoolean(Constants.Key.QRCODE_ENABLED, isChecked);
                 }
             });
 
@@ -663,14 +663,14 @@ public class ThermalSettingActivity extends BaseActivity {
             tvNetState.setText(net);
 
             //IC读卡器===============================================================================
-            boolean readCardEnabled = SpUtils.getBoolean(SpUtils.READ_CARD_ENABLED, Constants.DEFAULT_READ_CARD_ENABLED);
+            boolean readCardEnabled = SpUtils.getBoolean(Constants.Key.READ_CARD_ENABLED, Constants.Default.READ_CARD_ENABLED);
             Switch swReadCard = view.findViewById(R.id.sw_readcard_setting);
             swReadCard.setChecked(readCardEnabled);
-            swReadCard.setOnCheckedChangeListener((buttonView, isChecked) -> SpUtils.saveBoolean(SpUtils.READ_CARD_ENABLED, isChecked));
+            swReadCard.setOnCheckedChangeListener((buttonView, isChecked) -> SpUtils.saveBoolean(Constants.Key.READ_CARD_ENABLED, isChecked));
 
             //开门时间===================================================================================
             final EditText edtDelay = view.findViewById(R.id.edt_delay);
-            int cacheDelay = SpUtils.getIntOrDef(SpUtils.GPIO_DELAY, 5);
+            int cacheDelay = SpUtils.getIntOrDef(Constants.Key.GPIO_DELAY, Constants.Default.GPIO_DELAY);
             edtDelay.setText(cacheDelay + "");
             edtDelay.addTextChangedListener(new TextWatcher() {
                 @Override
@@ -688,7 +688,7 @@ public class ThermalSettingActivity extends BaseActivity {
                         return;
                     }
                     int delay = Integer.parseInt(s1);
-                    SpUtils.saveInt(SpUtils.GPIO_DELAY, delay);
+                    SpUtils.saveInt(Constants.Key.GPIO_DELAY, delay);
                     UIUtils.showShort(getActivity(), getString(R.string.setting_edit_password_success));
                 }
             });
@@ -895,14 +895,16 @@ public class ThermalSettingActivity extends BaseActivity {
             }
         }
 
-        private EditText edtIp;
+        private EditText edtCommunicationIp;
         private EditText edtResPort;
         private EditText edtXmppPort;
         private EditText edtProName;
+        private EditText edtServiceIp;
 
         //初始化IP设置
         private void initSetIp(View view) {
-            edtIp = view.findViewById(R.id.edt_ip);
+            edtServiceIp = view.findViewById(R.id.edt_service_ip);
+            edtCommunicationIp = view.findViewById(R.id.edt_communication_ip);
             edtResPort = view.findViewById(R.id.edt_res_port);
             edtXmppPort = view.findViewById(R.id.edt_xmpp_port);
             edtProName = view.findViewById(R.id.edt_pro_name);
@@ -910,7 +912,7 @@ public class ThermalSettingActivity extends BaseActivity {
             final RadioButton rbYun = view.findViewById(R.id.rb_yun);
             final RadioButton rbJu = view.findViewById(R.id.rb_ju);
             Button btnSave = view.findViewById(R.id.btn_save_address);
-            if (SpUtils.getIntOrDef(SpUtils.SERVER_MODEL, Constants.serverModel.YUN) == Constants.serverModel.YUN) {
+            if (SpUtils.getIntOrDef(Constants.Key.SERVER_MODEL, Constants.Default.SERVER_MODEL) == Constants.serverModel.YUN) {
                 rbYun.setChecked(true);
                 setServerInfo(Constants.serverModel.YUN);
             } else {
@@ -927,80 +929,90 @@ public class ThermalSettingActivity extends BaseActivity {
             });
 
             btnSave.setOnClickListener(v -> {
-                String mIp = edtIp.getText().toString();
+                String mServiceIp = edtServiceIp.getText().toString();
+                String mCommunicationIp = edtCommunicationIp.getText().toString();
                 String mResPort = edtResPort.getText().toString();
                 String mXmppPort = edtXmppPort.getText().toString();
                 String mProName = edtProName.getText().toString();
-                if (TextUtils.isEmpty(mIp)) {
-                    UIUtils.showTitleTip(getActivity(), APP.getContext().getResources().getString(R.string.setting_please_set_ip));
+                if(TextUtils.isEmpty(mServiceIp)){
+                    edtServiceIp.setError(APP.getContext().getResources().getString(R.string.setting_please_set_ip));
                     return;
                 }
-
-
+                if (TextUtils.isEmpty(mCommunicationIp)) {
+                    edtCommunicationIp.setError(APP.getContext().getResources().getString(R.string.setting_please_set_ip));
+                    return;
+                }
                 if (TextUtils.isEmpty(mResPort)) {
-                    UIUtils.showTitleTip(getActivity(), APP.getContext().getResources().getString(R.string.setting_please_set_res));
+                    edtResPort.setError(APP.getContext().getResources().getString(R.string.setting_please_set_res));
                     return;
                 }
                 int intResPort = Integer.parseInt(mResPort);
                 if (intResPort > 65535) {
-                    UIUtils.showTitleTip(getActivity(), APP.getContext().getResources().getString(R.string.setting_res_port_error));
+                    edtResPort.setError(APP.getContext().getResources().getString(R.string.setting_res_port_error));
                     return;
                 }
-
                 if (TextUtils.isEmpty(mXmppPort)) {
-                    UIUtils.showTitleTip(getActivity(), APP.getContext().getResources().getString(R.string.setting_please_set_xmpp));
+                    edtXmppPort.setError(APP.getContext().getResources().getString(R.string.setting_please_set_xmpp));
                     return;
                 }
                 int intXmppPort = Integer.parseInt(mXmppPort);
                 if (intXmppPort > 65535) {
-                    UIUtils.showTitleTip(getActivity(), APP.getContext().getResources().getString(R.string.setting_xmpp_port_error));
+                    edtXmppPort.setError(APP.getContext().getResources().getString(R.string.setting_xmpp_port_error));
                     return;
                 }
 
-                if (TextUtils.isEmpty(mProName)) {
-                }
+//                ConfigLoader.save();
 
                 if (rbYun.isChecked()) {
-                    SpUtils.saveInt(SpUtils.SERVER_MODEL, Constants.serverModel.YUN);
+                    SpUtils.saveInt(Constants.Key.SERVER_MODEL, Constants.serverModel.YUN);
                 } else if (rbJu.isChecked()) {
-                    SpUtils.saveInt(SpUtils.SERVER_MODEL, Constants.serverModel.JU);
-                    SpUtils.saveStr(SpUtils.JU_IP_CACHE, mIp);
-                    SpUtils.saveStr(SpUtils.JU_RESOURCE_PORT_CACHE, mResPort);
-                    SpUtils.saveStr(SpUtils.JU_XMPP_PORT_CACHE, mXmppPort);
-                    SpUtils.saveStr(SpUtils.JU_PROJECT_NAME_SUFFIX, mProName);
+                    SpUtils.saveInt(Constants.Key.SERVER_MODEL, Constants.serverModel.JU);
+                    SpUtils.saveStr(Constants.Key.JU_SERVICE_IP_CACHE,mServiceIp);
+                    SpUtils.saveStr(Constants.Key.JU_RESOURCE_PORT_CACHE, mResPort);
+                    SpUtils.saveStr(Constants.Key.JU_XMPP_IP_CACHE, mCommunicationIp);
+                    SpUtils.saveStr(Constants.Key.JU_XMPP_PORT_CACHE, mXmppPort);
+                    SpUtils.saveStr(Constants.Key.JU_PROJECT_NAME_SUFFIX, mProName);
                 }
                 UIUtils.showTitleTip(getActivity(), APP.getContext().getResources().getString(R.string.setting_save_succ_please_restart));
             });
         }
 
         private void setServerInfo(int model) {
-            String ip = Constants.NetConfig.PRO_URL;
-            String resPort = Constants.NetConfig.PRO_RES_PORT;
-            String xmppPort = Constants.NetConfig.PRO_XMPP_PORT;
-            String proName = Constants.NetConfig.PRO_SUFFIX;
+            String sIp = Constants.NetConfig.SERVICE_HOST;
+            String sPort = Constants.NetConfig.SERVICE_PORT;
+            String sPName = Constants.NetConfig.SERVICE_NAME;
+
+            String cIp = Constants.NetConfig.COMMUNICATION_HOST;
+            String cPort = Constants.NetConfig.COMMUNICATION_PORT;
+
             if (model == Constants.serverModel.YUN) {
-                edtIp.setText(ip);
-                edtResPort.setText(resPort);
-                edtXmppPort.setText(xmppPort);
-                edtProName.setText(proName);
-                edtIp.setEnabled(false);
+                edtServiceIp.setText(sIp);
+                edtResPort.setText(sPort);
+                edtProName.setText(sPName);
+                edtCommunicationIp.setText(cIp);
+                edtXmppPort.setText(cPort);
+
+                edtCommunicationIp.setEnabled(false);
                 edtResPort.setEnabled(false);
                 edtXmppPort.setEnabled(false);
                 edtProName.setEnabled(false);
             } else {
-                ip = SpUtils.getStr(SpUtils.JU_IP_CACHE);
-                resPort = SpUtils.getStr(SpUtils.JU_RESOURCE_PORT_CACHE);
-                xmppPort = SpUtils.getStr(SpUtils.JU_XMPP_PORT_CACHE);
-                proName = SpUtils.getStr(SpUtils.JU_PROJECT_NAME_SUFFIX);
-                edtIp.setEnabled(true);
+                sIp = SpUtils.getStr(Constants.Key.JU_SERVICE_IP_CACHE);
+                sPort = SpUtils.getStr(Constants.Key.JU_RESOURCE_PORT_CACHE);
+                sPName = SpUtils.getStr(Constants.Key.JU_PROJECT_NAME_SUFFIX);
+                cIp = SpUtils.getStr(Constants.Key.JU_XMPP_IP_CACHE);
+                cPort = SpUtils.getStr(Constants.Key.JU_XMPP_PORT_CACHE);
+
+                edtCommunicationIp.setEnabled(true);
                 edtResPort.setEnabled(true);
                 edtXmppPort.setEnabled(true);
                 edtProName.setEnabled(true);
 
-                edtIp.setText(ip);
-                edtResPort.setText(resPort);
-                edtXmppPort.setText(xmppPort);
-                edtProName.setText(proName);
+                edtServiceIp.setText(sIp);
+                edtResPort.setText(sPort);
+                edtProName.setText(sPName);
+                edtCommunicationIp.setText(cIp);
+                edtXmppPort.setText(cPort);
             }
         }
 
@@ -1109,18 +1121,16 @@ public class ThermalSettingActivity extends BaseActivity {
             dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
             dialog.setContentView(R.layout.layout_set_pwd);
 
+            Switch swPasswordEnabled = dialog.findViewById(R.id.sw_enabled_password);
             final EditText edtPwd = (EditText) dialog.findViewById(R.id.edt_set_pwd);
             final EditText edtPwd2 = (EditText) dialog.findViewById(R.id.edt_set_pwd_again);
             final Button btnCancel = (Button) dialog.findViewById(R.id.btn_pwd_cancel);
             final Button btnConfirm = (Button) dialog.findViewById(R.id.btn_pwd_confirm);
 
-            btnCancel.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    dialog.dismiss();
-                }
-            });
-
+            boolean passwordEnabled = SpUtils.getBoolean(Constants.Key.PASSWORD_ENABLED,Constants.Default.PASSWORD_ENABLED);
+            swPasswordEnabled.setChecked(passwordEnabled);
+            swPasswordEnabled.setOnCheckedChangeListener((buttonView, isChecked) -> SpUtils.saveBoolean(Constants.Key.PASSWORD_ENABLED,isChecked));
+            btnCancel.setOnClickListener(v -> dialog.dismiss());
             btnConfirm.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {

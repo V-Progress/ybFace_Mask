@@ -50,6 +50,7 @@
         android:padding="10dp">
 
         <LinearLayout
+            android:id="@+id/ll_head_layout"
             android:orientation="vertical"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">

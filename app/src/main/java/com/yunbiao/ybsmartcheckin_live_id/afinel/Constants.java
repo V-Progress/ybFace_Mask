@@ -15,12 +15,11 @@ public class Constants {
     private static String PRE = "http://";
     private static String COLON = ":";
     //地址
-    public static String XMPP_HOST = NetConfig.PRO_URL;
-    public static String XMPP_PORT = NetConfig.PRO_XMPP_PORT;
-    public static String RESOURCE_HOST = NetConfig.PRO_URL;
-    public static String RESOURCE_PORT = NetConfig.PRO_RES_PORT;
-    public static String RESOURCE_SUFFIX = NetConfig.PRO_SUFFIX;
-    //生成主地址
+    public static String XMPP_HOST = NetConfig.COMMUNICATION_HOST;
+    public static String XMPP_PORT = NetConfig.COMMUNICATION_PORT;
+    public static String RESOURCE_HOST = NetConfig.SERVICE_HOST;
+    public static String RESOURCE_PORT = NetConfig.SERVICE_PORT;
+    public static String RESOURCE_SUFFIX = NetConfig.SERVICE_NAME;
     public static String RESOURCE_URL = PRE + RESOURCE_HOST + COLON + RESOURCE_PORT + RESOURCE_SUFFIX;
 
     //资源路径
@@ -28,7 +27,6 @@ public class Constants {
     public static String APK_PATH = LOCAL_ROOT_PATH + "apk/";
     public static String DATABASE_PATH = LOCAL_ROOT_PATH + "database/";//数据库路径
     public static String CACHE_PATH = LOCAL_ROOT_PATH + "cache/";//缓存路径
-
     public static String TEMP_PATH = CACHE_PATH + "temp/";//临时路径（未初始化公司时创建）
     public static String DATA_PATH = TEMP_PATH + "data/";//公司数据
     public static String INFO_PATH = TEMP_PATH + "info/";//公司简介
@@ -48,18 +46,21 @@ public class Constants {
         Constants.RECORD_PATH = Constants.CACHE_PATH + comid + "/rcd/";
         Constants.MEETING_PATH = Constants.CACHE_PATH + comid + "/meet/";
         Constants.INFO_PATH = Constants.CACHE_PATH + comid + "/info/";
-
-
     }
 
     private static final String TAG = "Constants";
     public static void checkSetIp() {
-        if (SpUtils.getIntOrDef(SpUtils.SERVER_MODEL, serverModel.YUN) == serverModel.JU) {
-            Constants.XMPP_HOST = SpUtils.getStr(SpUtils.JU_IP_CACHE);
-            Constants.XMPP_PORT = SpUtils.getStr(SpUtils.JU_XMPP_PORT_CACHE);
-            Constants.RESOURCE_HOST = SpUtils.getStr(SpUtils.JU_IP_CACHE);
-            Constants.RESOURCE_PORT = SpUtils.getStr(SpUtils.JU_RESOURCE_PORT_CACHE);
-            String projectName = SpUtils.getStr(SpUtils.JU_PROJECT_NAME_SUFFIX);
+        if (SpUtils.getIntOrDef(Constants.Key.SERVER_MODEL, Constants.Default.SERVER_MODEL) == serverModel.JU) {
+            String serviceIp = SpUtils.getStr(Key.JU_SERVICE_IP_CACHE);
+            String xmppIp = SpUtils.getStr(Key.JU_XMPP_IP_CACHE);
+
+            Constants.RESOURCE_HOST = TextUtils.isEmpty(serviceIp) ? xmppIp : serviceIp;
+            Constants.RESOURCE_PORT = SpUtils.getStr(Constants.Key.JU_RESOURCE_PORT_CACHE);
+            String projectName = SpUtils.getStr(Constants.Key.JU_PROJECT_NAME_SUFFIX);
+
+            Constants.XMPP_HOST = xmppIp;
+            Constants.XMPP_PORT = SpUtils.getStr(Constants.Key.JU_XMPP_PORT_CACHE);
+
             Constants.RESOURCE_URL = PRE + Constants.RESOURCE_HOST + COLON + Constants.RESOURCE_PORT + "/" + (TextUtils.isEmpty(projectName)||TextUtils.equals("/",projectName) ? "" : (projectName + "/"));
             ResourceUpdate.refreshAddress();
         }
@@ -97,6 +98,12 @@ public class Constants {
         String PRO_RES_PORT = "8080";//数据端口
         String PRO_XMPP_PORT = "5222";//XMPP端口
         String PRO_SUFFIX = "/";//项目名（端口为80，项目名不用写）
+
+        String SERVICE_HOST = "47.105.80.245";
+        String SERVICE_PORT = "8080";
+        String SERVICE_NAME = "/";
+        String COMMUNICATION_HOST = "47.105.80.245";
+        String COMMUNICATION_PORT = "5222";
     }
 
     /***
@@ -116,36 +123,67 @@ public class Constants {
         int HT_TEMPERATURE_CHECK_IN_MASK = 21;//亨通考勤
     }
 
-    //人证、考勤跳转标识
-    public static final String JUMP_TAG = "jumpTag";
-    //人证、考勤跳转默认值
-    public static final boolean DEFAULT_JUMP_TAG = false;
-    //默认人脸镜像
-    public static boolean DEFAULT_H_MIRROR = true;
-    //默认人脸竖镜像
-    public static boolean DEFAULT_V_MIRROR = false;
-    //截图方向
-    public static int DEFAULT_PICTURE_ROTATION = -1;
     //默认摄像头ID
     public static int CAMERA_ID = Camera.CameraInfo.CAMERA_FACING_BACK;
-    //屏幕角度默认值
-    public static int DEFAULT_CAMERA_ANGLE = 0;
-    //大屏海报开启状态
-    public static boolean DEFAULT_POSTER_ENABLED = false;
-    //默认二维码
-    public static final boolean DEFAULT_QRCODE_ENABLED = true;
-    //默认读卡器
-    public static final boolean DEFAULT_READ_CARD_ENABLED = false;
 
     public interface Key{
-        String PRIVACY_MODE = "privacyMode";
-        String CLEAR_POLICY = "clearPolicy";
-        String CLEAR_POLICY_CUSTOM = "clearPolicyCustom";
+        String PRIVACY_MODE = "privacyMode";//隐私模式
+        String CLEAR_POLICY = "clearPolicy";//清理策略
+        String CLEAR_POLICY_CUSTOM = "clearPolicyCustom";//自定义清理策略
+        String SIMILAR_THRESHOLD = "similarThreshold";//相似度阈值
+
+        String FACE_DIALOG = "faceDialog";//人脸弹窗
+        String LIVENESS_ENABLED = "livenessEnabled";//活体开关
+        String POSTER_ENABLED = "posterEnabled";//大屏海报是否可用
+        String READ_CARD_ENABLED = "readCardEnabled";//读卡模块
+        String QRCODE_ENABLED = "qrCodeEnabled";//二维码开关
+
+        String DOOR_STATE = "doorState";//门禁常开模式
+        String GPIO_DELAY = "doorDelay";//继电器延时
+        String IS_H_MIRROR = "isMirror";//是否镜像
+        String IS_V_MIRROR = "isVerticalMirror";//纵向镜像
+        String PICTURE_ROTATION = "pictureRotation";//照片方向
+        String CAMERA_ANGLE = "cameraAngle";//摄像头角度
+        String CAMERA_SIZE = "cameraSize";
+
+        String SERVER_MODEL = "serverModel";//服务模式
+        String JU_XMPP_IP_CACHE = "juIpCache";//通信地址
+        String JU_SERVICE_IP_CACHE = "juServiceIpCache";//服务地址
+        String JU_RESOURCE_PORT_CACHE = "juResourcePortCache";//端口
+        String JU_XMPP_PORT_CACHE = "juXmppPortCache";//XMPP端口
+        String JU_PROJECT_NAME_SUFFIX = "juRrojectNameSuffix";//后缀
+
+        String JUMP_TAG = "jumpTag";//跳转标签
+
+        String MAIN_SIGN_LIST = "mainSignList";
+
+        String PASSWORD_ENABLED = "passwordEnabled";
     }
 
     public static class Default{
         public static boolean PRIVACY_MODE = false;
-        public static final int CLEAR_POLICY = 2;
+        public static final int CLEAR_POLICY = 3;
         public static final int CLEAR_POLICY_CUSTOM = 30;
+        public static final int SIMILAR_THRESHOLD = 80;
+        public static boolean QRCODE_ENABLED = true;
+        public static final boolean READ_CARD_ENABLED = false;
+        public static boolean POSTER_ENABLED = false;
+        public static final boolean LIVENESS_ENABLED = false;
+        public static final boolean FACE_DIALOG = false;
+        public static boolean IS_H_MIRROR = true;
+        public static final boolean IS_V_MIRROR = false;
+        //屏幕角度默认值
+        public static int CAMERA_ANGLE = 0;
+        //截图方向
+        public static int PICTURE_ROTATION = -1;
+        public static int GPIO_DELAY = 5;
+
+        public static int SERVER_MODEL = serverModel.YUN;
+
+        public static final boolean JUMP_TAG = false;
+
+        public static boolean MAIN_SIGN_LIST = true;
+
+        public static boolean PASSWORD_ENABLED = true;
     }
 }

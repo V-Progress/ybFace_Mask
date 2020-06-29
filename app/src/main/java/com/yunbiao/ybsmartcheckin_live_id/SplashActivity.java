@@ -114,10 +114,10 @@ public class SplashActivity extends BaseActivity {
             switch (Constants.FLAVOR_TYPE) {
                 case FlavorType.PING_TECH:
                 case FlavorType.PING_TECH_SHELTRON:
-                    setIp("34.70.221.66","5222","80","");
+                    setIp("34.70.221.66","34.70.221.66","5222","80","");
                     break;
                 case FlavorType.ITALY:
-                    setIp("18.156.95.72","5222","80","");
+                    setIp("18.156.95.72","18.156.95.72","5222","80","");
                     break;
             }
 
@@ -131,19 +131,29 @@ public class SplashActivity extends BaseActivity {
         }
     };
 
-    private void setIp(String ip,String xPort,String rPort,String pName){
-        int intOrDef = SpUtils.getIntOrDef(SpUtils.SERVER_MODEL, -99);
-        if(intOrDef == -99) SpUtils.saveInt(SpUtils.SERVER_MODEL, Constants.serverModel.JU);
-        String xmppIp = SpUtils.getStr(SpUtils.JU_IP_CACHE,"");
-        if(TextUtils.isEmpty(xmppIp)) SpUtils.saveStr(SpUtils.JU_IP_CACHE,ip);
-        String xmppPort = SpUtils.getStr(SpUtils.JU_XMPP_PORT_CACHE,"");
-        if(TextUtils.isEmpty(xmppPort)) SpUtils.saveStr(SpUtils.JU_XMPP_PORT_CACHE,xPort);
-        String resIp = SpUtils.getStr(SpUtils.JU_IP_CACHE,"");
-        if(TextUtils.isEmpty(resIp)) SpUtils.saveStr(SpUtils.JU_IP_CACHE,ip);
-        String resPort = SpUtils.getStr(SpUtils.JU_RESOURCE_PORT_CACHE,"");
-        if(TextUtils.isEmpty(resPort)) SpUtils.saveStr(SpUtils.JU_RESOURCE_PORT_CACHE,rPort);
-        String projectName = SpUtils.getStr(SpUtils.JU_PROJECT_NAME_SUFFIX,"");
-        if(TextUtils.isEmpty(projectName)) SpUtils.saveStr(SpUtils.JU_PROJECT_NAME_SUFFIX,pName);
+    private void setIp(String sIp, String cIp, String xPort, String rPort, String pName) {
+        int intOrDef = SpUtils.getIntOrDef(Constants.Key.SERVER_MODEL, -99);
+        if (intOrDef == -99)
+            SpUtils.saveInt(Constants.Key.SERVER_MODEL, Constants.serverModel.JU);
+
+        String serIp = SpUtils.getStr(Constants.Key.JU_SERVICE_IP_CACHE, "");
+        Log.e(TAG, "setIp: 设置的服务地址：" + serIp);
+        if (TextUtils.isEmpty(serIp))
+            SpUtils.saveStr(Constants.Key.JU_SERVICE_IP_CACHE, sIp);
+        String resPort = SpUtils.getStr(Constants.Key.JU_RESOURCE_PORT_CACHE, "");
+        if (TextUtils.isEmpty(resPort))
+            SpUtils.saveStr(Constants.Key.JU_RESOURCE_PORT_CACHE, rPort);
+        String projectName = SpUtils.getStr(Constants.Key.JU_PROJECT_NAME_SUFFIX, "");
+        if (TextUtils.isEmpty(projectName))
+            SpUtils.saveStr(Constants.Key.JU_PROJECT_NAME_SUFFIX, pName);
+
+        String xmppIp = SpUtils.getStr(Constants.Key.JU_XMPP_IP_CACHE, "");
+        if (TextUtils.isEmpty(xmppIp))
+            SpUtils.saveStr(Constants.Key.JU_XMPP_IP_CACHE, cIp);
+        String xmppPort = SpUtils.getStr(Constants.Key.JU_XMPP_PORT_CACHE, "");
+        if (TextUtils.isEmpty(xmppPort))
+            SpUtils.saveStr(Constants.Key.JU_XMPP_PORT_CACHE, xPort);
+
     }
 
     class QrCode{
@@ -245,7 +255,7 @@ public class SplashActivity extends BaseActivity {
                 ThermalConst.Default.MAIN_LOGO_TEXT = "";
                 ThermalConst.Default.TITLE_ENABLED = false;
                 ThermalConst.Default.SHOW_MAIN_LOGO = false;
-                Constants.DEFAULT_POSTER_ENABLED = true;
+                Constants.Default.POSTER_ENABLED = true;
                 Constants.Default.PRIVACY_MODE = true;
                 break;
             default:
@@ -257,19 +267,19 @@ public class SplashActivity extends BaseActivity {
         Log.e(TAG, "jump: 板卡信息：" + broadTypeStr);
         switch (broadTypeStr) {
             case "SMT":
-                Constants.DEFAULT_CAMERA_ANGLE = 270;
-                Constants.DEFAULT_H_MIRROR = false;
+                Constants.Default.CAMERA_ANGLE = 270;
+                Constants.Default.IS_H_MIRROR = false;
                 ThermalConst.Default.TEMPER_MODULE = TemperModuleType.HM_16_4;
                 break;
             case "LXR":
-                Constants.DEFAULT_CAMERA_ANGLE = 0;//横屏
-                Constants.DEFAULT_H_MIRROR = true;
+                Constants.Default.CAMERA_ANGLE = 0;//横屏
+                Constants.Default.IS_H_MIRROR = true;
                 ThermalConst.Default.TEMPER_MODULE = TemperModuleType.HM_32_32;
                 break;
             case "HARRIS":
             default:
-                Constants.DEFAULT_CAMERA_ANGLE = 90;
-                Constants.DEFAULT_H_MIRROR = false;
+                Constants.Default.CAMERA_ANGLE = 90;
+                Constants.Default.IS_H_MIRROR = false;
                 ThermalConst.Default.TEMPER_MODULE = TemperModuleType.MLX_16_4;
                 break;
         }

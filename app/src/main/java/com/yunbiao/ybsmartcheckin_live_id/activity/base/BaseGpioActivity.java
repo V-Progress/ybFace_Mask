@@ -36,7 +36,7 @@ public abstract class BaseGpioActivity extends LedControlActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        CLOSE_DELAY = SpUtils.getIntOrDef(SpUtils.GPIO_DELAY, 5);
+        CLOSE_DELAY = SpUtils.getIntOrDef(Constants.Key.GPIO_DELAY, Constants.Default.GPIO_DELAY);
         close();
         offLight();
     }

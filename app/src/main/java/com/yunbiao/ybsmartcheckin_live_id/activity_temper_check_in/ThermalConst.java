@@ -101,6 +101,8 @@ public class ThermalConst {
         public static final int WARNING_TEMPER_LOCATION = 2;
         public static final boolean WARNING_BROAD_ENABLED = true;
         public static boolean LOCAL_PRIORITY = true;
+
+        public static String WELCOME_TIP_CONTENT = APP.getContext().getResources().getString(R.string.setting_default_welcome_tip);
     }
 
 }
