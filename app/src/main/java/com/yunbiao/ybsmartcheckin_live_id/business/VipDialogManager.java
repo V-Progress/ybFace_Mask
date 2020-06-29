@@ -18,6 +18,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.yunbiao.ybsmartcheckin_live_id.APP;
 import com.yunbiao.ybsmartcheckin_live_id.R;
 import com.yunbiao.ybsmartcheckin_live_id.db2.DaoManager;
 import com.yunbiao.ybsmartcheckin_live_id.db2.Sign;
@@ -91,26 +92,41 @@ public class VipDialogManager {
                 ImageView ivHead = vipDialog.findViewById(R.id.civ_userPhoto);
                 TextView tvName = vipDialog.findViewById(R.id.tv_nameAndJob);
                 TextView tvSign = vipDialog.findViewById(R.id.tv_sign);
-
+                int isShowJob = SpUtils.getInt(SpUtils.DISPLAYPOSITION);
+                String name = sign.getName();
                 Glide.with(activity).load(sign.getHeadPath()).asBitmap().into(ivHead);
-                tvName.setText(sign.getName());
                 int type = sign.getType();
-                if (type == -2) {
-                    tvSign.setTextColor(Color.RED);
+
+                //访客
+                if (type == -2 || type == -1) {
+                    tvName.setText(sign.getName());
                     tvSign.setText("\n" + sign.getAutograph());
-                } else if (type == -1) {
-                    tvSign.setTextColor(Color.GREEN);
-                    long visEntryId = sign.getVisEntryId();
-                    String signText = "\n" + sign.getAutograph();
-                    User user = DaoManager.get().queryUserById(visEntryId);
-                    if (user != null) {
-                        signText += "\n访问：" + user.getName();
+
+                    if(type == -2){
+                        tvSign.setTextColor(Color.RED);
+                    } else {
+                        tvSign.setTextColor(Color.GREEN);
+                        String signStr = isShowJob == 0
+                                ? TextUtils.isEmpty(sign.getPosition()) ? "" : sign.getPosition()
+                                : TextUtils.isEmpty(sign.getAutograph()) ? "" : sign.getAutograph();
+                        long visEntryId = sign.getVisEntryId();
+                        String content = "\n" + signStr;
+                        User user = DaoManager.get().queryUserById(visEntryId);
+                        if (user != null) {
+                            content += "\n" + user.getName();
+                        }
+                        tvSign.setText(content);
                     }
-                    tvSign.setText(signText);
-                } else {
+                } else if(type == -9){//陌生人
+                    tvName.setText(APP.getContext().getResources().getString(R.string.System_Visitor));
+                    tvSign.setText("");
+                } else {//签到
+                    tvName.setText(name);
                     tvSign.setTextColor(Color.WHITE);
-                    int isShowJob = SpUtils.getInt(SpUtils.DISPLAYPOSITION);
-                    tvSign.setText((isShowJob == 0 ? sign.getPosition() : "") + " \n  \n " + sign.getAutograph());
+                    String signStr = isShowJob == 0
+                            ? TextUtils.isEmpty(sign.getPosition()) ? "" : sign.getPosition()
+                            : TextUtils.isEmpty(sign.getAutograph()) ? "" : sign.getAutograph();
+                    tvSign.setText(signStr);
                 }
 
                 if (!activity.isFinishing()) {

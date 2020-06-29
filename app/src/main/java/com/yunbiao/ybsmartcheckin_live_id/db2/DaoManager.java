@@ -224,6 +224,22 @@ public class DaoManager {
         return daoSession.getUserDao().queryBuilder().where(UserDao.Properties.Id.eq(id)).unique();
     }
 
+    public Depart queryDepartByComIdAndName(int comId,String name){
+        if(daoSession == null){
+            return null;
+        }
+        List<Depart> list = daoSession.getDepartDao().queryBuilder().where(DepartDao.Properties.CompId.eq(comId), DepartDao.Properties.DepName.eq(name)).list();
+        return list == null || list.size() <= 0 ? null : list.get(0);
+    }
+
+    public boolean checkDepartExists(int compId, String departName){
+        if(daoSession == null){
+            return false;
+        }
+        List<Depart> list = daoSession.getDepartDao().queryBuilder().where(DepartDao.Properties.CompId.eq(compId), DepartDao.Properties.DepName.eq(departName)).list();
+        return  list != null && list.size() > 0;
+    }
+
     /***
      * 查询某公司下某部门的所有员工
      * @param compId

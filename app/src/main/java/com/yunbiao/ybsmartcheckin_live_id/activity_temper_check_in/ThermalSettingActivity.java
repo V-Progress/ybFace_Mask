@@ -39,8 +39,6 @@ import androidx.fragment.app.Fragment;
 
 import com.alibaba.fastjson.JSONObject;
 import com.bumptech.glide.Glide;
-import com.lcw.library.imagepicker.ImagePicker;
-import com.lcw.library.imagepicker.utils.ImageLoader;
 import com.yunbiao.ybsmartcheckin_live_id.APP;
 import com.yunbiao.ybsmartcheckin_live_id.FlavorType;
 import com.yunbiao.ybsmartcheckin_live_id.R;
@@ -48,7 +46,7 @@ import com.yunbiao.ybsmartcheckin_live_id.activity.Event.DisplayOrientationEvent
 import com.yunbiao.ybsmartcheckin_live_id.activity.base.BaseActivity;
 import com.yunbiao.ybsmartcheckin_live_id.afinel.Constants;
 import com.yunbiao.ybsmartcheckin_live_id.afinel.ResourceUpdate;
-import com.yunbiao.ybsmartcheckin_live_id.business.SignManager;
+import com.yunbiao.ybsmartcheckin_live_id.db2.Company;
 import com.yunbiao.ybsmartcheckin_live_id.db2.DaoManager;
 import com.yunbiao.ybsmartcheckin_live_id.db2.Sign;
 import com.yunbiao.ybsmartcheckin_live_id.system.HeartBeatClient;
@@ -80,6 +78,7 @@ import java.util.concurrent.TimeUnit;
 
 import okhttp3.Call;
 import okhttp3.Request;
+import timber.log.Timber;
 
 public class ThermalSettingActivity extends BaseActivity {
     private static final String TAG = "SettingActivity";
@@ -147,12 +146,9 @@ public class ThermalSettingActivity extends BaseActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == REQEST_SELECT_IMAGES_CODE && resultCode == RESULT_OK) {
-            List<String> imagePaths = data.getStringArrayListExtra(ImagePicker.EXTRA_SELECT_IMAGES);
-            if (1 > imagePaths.size()) {
-                return;
-            }
-            String imgPath = imagePaths.get(0);
+        if(requestCode == FileSelectActivity.SELECT_REQUEST_CODE && resultCode == RESULT_OK){
+            String imgPath = data.getStringExtra(FileSelectActivity.RESULT_PATH_KEY);
+            Log.e(TAG, "onActivityResult: 选中的目录：" + imgPath);
             ImageView ivMainLogo = findViewById(R.id.iv_main_logo);
             if (TextUtils.isEmpty(imgPath)) {
                 UIUtils.showShort(this, getResString(R.string.select_img_failed));
@@ -404,15 +400,7 @@ public class ThermalSettingActivity extends BaseActivity {
                 }
             }
             btnSaveMainLogo.setOnClickListener(v -> {
-                ImagePicker.getInstance()
-                        .setTitle(getResources().getString(R.string.select_img_title))//设置标题
-//                        .showCamera(true)//设置是否显示拍照按钮
-                        .showImage(true)//设置是否展示图片
-                        .showVideo(false)//设置是否展示视频
-//                    .setMaxCount(1)//设置最大选择图片数目(默认为1，单选)
-//                    .setImagePaths(mImageList)//保存上一次选择图片的状态，如果不需要可以忽略
-                        .setImageLoader(new ImgLoader())//设置自定义图片加载器
-                        .start(getActivity(), REQEST_SELECT_IMAGES_CODE);//REQEST_SELECT_IMAGES_CODE为Intent调用的
+                FileSelectActivity.selectFile(getActivity(),FileSelectActivity.FILE_TYPE_IMG,false,FileSelectActivity.SELECT_REQUEST_CODE);
             });
             btnRestore.setOnClickListener(v -> {
                 SpUtils.remove(ThermalConst.Key.MAIN_LOGO_IMG);
@@ -428,25 +416,6 @@ public class ThermalSettingActivity extends BaseActivity {
             //跳转语音设置
             view.findViewById(R.id.btn_go_speech).setOnClickListener(v -> startActivity(new Intent(getActivity(), SpeechContentActivity.class)));
 
-        }
-
-        class ImgLoader implements ImageLoader {
-
-            @Override
-            public void loadImage(ImageView imageView, String imagePath) {
-                Glide.with(APP.getContext()).load(imagePath).asBitmap().override(50, 50).into(imageView);
-            }
-
-            @Override
-            public void loadPreImage(ImageView imageView, String imagePath) {
-                Glide.with(APP.getContext()).load(imagePath).asBitmap().override(50, 50).into(imageView);
-            }
-
-            @Override
-            public void clearMemoryCache() {
-                //清理缓存
-                Glide.get(APP.getContext()).clearMemory();
-            }
         }
     }
 
@@ -1174,50 +1143,62 @@ public class ThermalSettingActivity extends BaseActivity {
                         return;
                     }
 
-                    btnCancel.setEnabled(false);
-                    btnConfirm.setEnabled(false);
-                    Map<String, String> params = new HashMap<>();
-                    params.put("deviceNo", HeartBeatClient.getDeviceNo());
-                    params.put("password", pwd2);
-                    OkHttpUtils.post().url(ResourceUpdate.UPDATE_PWD).params(params).build().execute(new StringCallback() {
-                        @Override
-                        public void onBefore(Request request, int id) {
-                            super.onBefore(request, id);
-                            UIUtils.showNetLoading(getActivity());
-                        }
+                    Company company = SpUtils.getCompany();
+                    int comid = company.getComid();
+                    if(comid == Constants.NOT_BIND_COMPANY_ID){
+                        UIUtils.showTitleTip(getActivity(), getString(R.string.setting_edit_password_success));
+                        SpUtils.saveStr(SpUtils.MENU_PWD, pwd2);
+                        dialog.dismiss();
+                    } else {
+                        btnCancel.setEnabled(false);
+                        btnConfirm.setEnabled(false);
+                        Map<String, String> params = new HashMap<>();
+                        params.put("deviceNo", HeartBeatClient.getDeviceNo());
+                        params.put("password", pwd2);
+                        Timber.d("修改密码：" + ResourceUpdate.UPDATE_PWD);
+                        Timber.d("参数:" + params.toString());
+                        OkHttpUtils.post().url(ResourceUpdate.UPDATE_PWD).params(params).build().execute(new StringCallback() {
+                            @Override
+                            public void onBefore(Request request, int id) {
+                                super.onBefore(request, id);
+                                UIUtils.showNetLoading(getActivity());
+                            }
 
-                        @Override
-                        public void onError(Call call, final Exception e, int id) {
-                            getActivity().runOnUiThread(new Runnable() {
-                                @Override
-                                public void run() {
-                                    UIUtils.showTitleTip(getActivity(), getString(R.string.setting_edit_password_failed) + ":" + e != null ? e.getMessage() : "NULL");
-                                }
-                            });
-                        }
+                            @Override
+                            public void onError(Call call, final Exception e, int id) {
+                                Timber.d("错误：" + e);
+                                getActivity().runOnUiThread(new Runnable() {
+                                    @Override
+                                    public void run() {
+                                        UIUtils.showTitleTip(getActivity(), getString(R.string.setting_edit_password_failed) + ":" + (e != null ? e.getMessage() : "NULL"));
+                                    }
+                                });
+                            }
 
-                        @Override
-                        public void onResponse(String response, int id) {
-                            JSONObject jsonObject = JSONObject.parseObject(response);
-                            final Integer status = jsonObject.getInteger("status");
-                            getActivity().runOnUiThread(() -> {
-                                if (status == 1) {
-                                    UIUtils.showTitleTip(getActivity(), getString(R.string.setting_edit_password_success));
-                                    SpUtils.saveStr(SpUtils.MENU_PWD, pwd2);
-                                    dialog.dismiss();
-                                } else {
-                                    UIUtils.showTitleTip(getActivity(), getString(R.string.setting_edit_password_failed));
-                                }
-                            });
-                        }
+                            @Override
+                            public void onResponse(String response, int id) {
+                                Timber.d("响应：" + response);
+                                JSONObject jsonObject = JSONObject.parseObject(response);
+                                final Integer status = jsonObject.getInteger("status");
+                                getActivity().runOnUiThread(() -> {
+                                    if (status == 1) {
+                                        UIUtils.showTitleTip(getActivity(), getString(R.string.setting_edit_password_success));
+                                        SpUtils.saveStr(SpUtils.MENU_PWD, pwd2);
+                                        dialog.dismiss();
+                                    } else {
+                                        UIUtils.showTitleTip(getActivity(), getString(R.string.setting_edit_password_failed));
+                                    }
+                                });
+                            }
 
-                        @Override
-                        public void onAfter(int id) {
-                            UIUtils.dismissNetLoading();
-                            btnConfirm.setEnabled(true);
-                            btnCancel.setEnabled(true);
-                        }
-                    });
+                            @Override
+                            public void onAfter(int id) {
+                                UIUtils.dismissNetLoading();
+                                btnConfirm.setEnabled(true);
+                                btnCancel.setEnabled(true);
+                            }
+                        });
+                    }
                 }
             });
 

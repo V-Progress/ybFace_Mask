@@ -18,6 +18,21 @@
     <string name="temper_error_btn_restart">Reboot</string>
     <string name="temper_error_btn_cancel">No processing</string>
 
+    <string name="import_please_select_excel">Please select Excel file(*.xls,*.xlsx)</string>
+    <string name="import_title">Import</string>
+    <string name="import_select_file">Select the file</string>
+    <string name="import_select_all">All</string>
+    <string name="import_select_reverse">Reverse</string>
+    <string name="import_start">Start</string>
+    <string name="import_submit_success">submitted successfully</string>
+    <string name="import_submit_failed">submit failure</string>
+    <string name="import_import_complete">Import complete</string>
+    <string name="import_sync_failed">Synchronization failure</string>
+    <string name="import_add_success">successfully added:</string>
+    <string name="import_add_failed">add failed:</string>
+    <string name="import_add_exists">already exist:</string>
+    <string name="import_add_skip">skip:</string>
+
     <string name="xenon_welcome_tip">Welcome to Xenon Fever Defence</string>
 
     <string name="user_number_is_exists">The User Id already exists</string><!--该用户编号已存在-->

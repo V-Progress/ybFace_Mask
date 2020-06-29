@@ -256,6 +256,23 @@
     <string name="sign_list_not_bind_data_to_local">设备未绑定时，数据仅保存在本地</string>
 
 
+    <string name="import_please_select_excel">请选择文件(*.xls,*.xlsx)</string>
+    <string name="import_title">导入</string>
+    <string name="import_select_file">选择文件</string>
+    <string name="import_select_all">全选</string>
+    <string name="import_select_reverse">反选</string>
+    <string name="import_start">开始导入</string>
+    <string name="import_submit_success">提交成功</string>
+    <string name="import_submit_failed">提交失败</string>
+    <string name="import_import_complete">导入完成：</string>
+    <string name="import_sync_failed">同步失败</string>
+    <string name="import_add_success">添加成功:</string>
+    <string name="import_add_failed">添加失败:</string>
+    <string name="import_add_exists">已存在:</string>
+    <string name="import_add_skip">跳过:</string>
+
+
+
     <!--访客列表-->
     <string name="visitor_list_title">访客列表</string>
     <string name="visitor_list_filed_name">姓名</string>

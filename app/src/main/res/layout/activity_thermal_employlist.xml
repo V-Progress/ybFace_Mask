@@ -66,7 +66,6 @@
                 android:background="@mipmap/icon_depart_spinner"/>
 
             <Button
-                android:visibility="gone"
                 android:drawablePadding="5dp"
                 android:layout_marginLeft="6dp"
                 android:paddingLeft="10dp"
@@ -109,6 +108,20 @@
                 android:textColor="#64DCFE"/>
 
             <Button
+                android:layout_marginLeft="6dp"
+                android:paddingRight="10dp"
+                android:layout_alignParentRight="true"
+                android:paddingLeft="10dp"
+                android:drawablePadding="10dp"
+                android:layout_weight="1"
+                android:id="@+id/btn_import"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/shape_employ_button"
+                android:drawableLeft="@mipmap/import_icon"
+                android:text="@string/import_title"
+                android:textColor="@color/white"/>
+            <Button
                 android:paddingLeft="10dp"
                 android:layout_marginLeft="6dp"
                 android:drawablePadding="10dp"
@@ -120,6 +133,7 @@
                 android:drawableLeft="@mipmap/icon_sync"
                 android:text="@string/employ_list_depart_sync"
                 android:textColor="@color/white" />
+
         </LinearLayout>
 
 

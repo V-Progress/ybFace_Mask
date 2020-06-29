@@ -98,12 +98,9 @@ public class ThermalAdsFragment extends Fragment implements AdsListener {
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-        adsView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                closeAds();
-                onTime = MAX_TIME;
-            }
+        adsView.setOnClickListener(v -> {
+            closeAds();
+            onTime = MAX_TIME;
         });
         //先关闭广告
         closeAds();

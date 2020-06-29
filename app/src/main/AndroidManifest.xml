@@ -28,6 +28,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".activity_temper_check_in.FileSelectActivity"/>
+        <activity android:name=".activity_temper_check_in.ThermalDepartListActivity"/>
         <activity
             android:name=".xmpp.NotificationDetailsActivity"
             android:label="Notification Details" />
@@ -51,6 +52,7 @@
         <activity
             android:name=".activity_temper_check_in.ThermalImage2Activity"
             android:launchMode="singleTask" />
+        <activity android:name=".activity_temper_check_in.BatchImportActivity" />
         <activity android:name=".activity_temper_check_in.ThermalSettingActivity" />
         <activity android:name=".activity_temper_check_in.ThermalSystemActivity" />
         <activity android:name=".activity_temper_check_in.ThermalEmployListActivity" />

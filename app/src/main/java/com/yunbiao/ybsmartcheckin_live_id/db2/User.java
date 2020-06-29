@@ -5,12 +5,13 @@ import androidx.annotation.NonNull;
 import org.greenrobot.greendao.annotation.Entity;
 import org.greenrobot.greendao.annotation.Generated;
 import org.greenrobot.greendao.annotation.Id;
+import org.greenrobot.greendao.annotation.Index;
 import org.greenrobot.greendao.annotation.Unique;
 import org.jetbrains.annotations.NonNls;
 
 import java.util.Objects;
 
-@Entity
+@Entity(indexes = {@Index(value = "faceId DESC,companyId DESC",unique = true)})
 public class User {
 
     @Id
