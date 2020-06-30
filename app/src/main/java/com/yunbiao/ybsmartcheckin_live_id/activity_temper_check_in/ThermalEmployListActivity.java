@@ -20,6 +20,7 @@ import androidx.annotation.Nullable;
 
 import com.yunbiao.faceview.FaceManager;
 import com.yunbiao.ybsmartcheckin_live_id.APP;
+import com.yunbiao.ybsmartcheckin_live_id.FlavorType;
 import com.yunbiao.ybsmartcheckin_live_id.R;
 import com.yunbiao.ybsmartcheckin_live_id.activity.Event.UpdateUserDBEvent;
 import com.yunbiao.ybsmartcheckin_live_id.activity.base.BaseActivity;
@@ -110,6 +111,11 @@ public class ThermalEmployListActivity extends BaseActivity implements EmployAda
         btn_addDepart.setOnClickListener(this);
         btn_sync.setOnClickListener(this);
         btnImport.setOnClickListener(this);
+
+        if(Constants.FLAVOR_TYPE == FlavorType.ITALY){
+            btn_addDepart.setVisibility(View.GONE);
+            btnImport.setVisibility(View.GONE);
+        }
     }
 
     @Override

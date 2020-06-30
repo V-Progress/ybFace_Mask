@@ -29,6 +29,7 @@ import com.yunbiao.faceview.FaceManager;
 import com.yunbiao.faceview.FacePreviewInfo;
 import com.yunbiao.faceview.FaceView;
 import com.yunbiao.ybsmartcheckin_live_id.APP;
+import com.yunbiao.ybsmartcheckin_live_id.FlavorType;
 import com.yunbiao.ybsmartcheckin_live_id.R;
 import com.yunbiao.ybsmartcheckin_live_id.activity.base.BaseActivity;
 import com.yunbiao.ybsmartcheckin_live_id.adapter.ThermalSpinnerDepartAdapter;
@@ -135,6 +136,10 @@ public class ThermalEditEmployActivity extends BaseActivity implements View.OnCl
         faceView.setCallback(faceCallback);
 
         btnAddDepart.setOnClickListener(view -> addDepartDialog());
+
+        if(Constants.FLAVOR_TYPE == FlavorType.ITALY){
+            btnAddDepart.setVisibility(View.GONE);
+        }
     }
 
     private void addDepartDialog() {
