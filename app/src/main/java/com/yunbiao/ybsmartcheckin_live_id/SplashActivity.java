@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
+import android.net.Uri;
 import android.os.Build;
 import android.text.TextUtils;
 import android.util.Log;
@@ -30,7 +31,9 @@ import com.yunbiao.ybsmartcheckin_live_id.utils.ZXingUtils;
 import com.zhy.http.okhttp.OkHttpUtils;
 import com.zhy.http.okhttp.callback.StringCallback;
 
+import java.io.File;
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -76,14 +79,42 @@ public class SplashActivity extends BaseActivity {
         tvLocalMac = findViewById(R.id.tv_local_mac);
         llCodeArea = findViewById(R.id.ll_code_area);
         tvJump = findViewById(R.id.tv_jump);
+
         GifImageView gifImageView = findViewById(R.id.giv);
-        try {
-            GifDrawable gifDrawable = new GifDrawable(getResources(),R.mipmap.splash);
-            gifImageView.setImageDrawable(gifDrawable);
-            gifDrawable.setLoopCount(0);
-            gifDrawable.setSpeed(3.0f);
-        } catch (IOException e) {
-            e.printStackTrace();
+        setOpenGif(gifImageView);
+
+    }
+
+    private void setOpenGif(GifImageView gifImageView) {
+        File splashDir = new File(Constants.SPLASH_DIR_PATH);
+        Log.e(TAG, "闪屏动画：" + splashDir.getPath());
+        if (!splashDir.exists() || !splashDir.isDirectory()) {
+            splashDir.mkdirs();
+        }
+
+        GifDrawable gifDrawable;
+
+        File[] files = splashDir.listFiles(pathname -> pathname.isFile());
+        if (files != null && files.length > 0) {
+            Arrays.sort(files, (o1, o2) -> o1.isDirectory() && o2.isFile() ? -1 : o1.isFile() && o2.isDirectory() ? 1 : o1.getName().compareTo(o2.getName()));
+            File file = files[0];
+            try {
+                gifDrawable = new GifDrawable(file);
+                gifImageView.setImageDrawable(gifDrawable);
+                gifDrawable.setLoopCount(0);
+                gifDrawable.setSpeed(3.0f);
+            } catch (IOException e) {
+                gifImageView.setImageURI(Uri.fromFile(file));
+            }
+        } else {
+            try {
+                gifDrawable = new GifDrawable(getResources(), R.mipmap.splash);
+                gifImageView.setImageDrawable(gifDrawable);
+                gifDrawable.setLoopCount(0);
+                gifDrawable.setSpeed(3.0f);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
     }
 
