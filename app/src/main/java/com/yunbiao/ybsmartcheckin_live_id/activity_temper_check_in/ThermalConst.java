@@ -55,9 +55,11 @@ public class ThermalConst {
         String MASK_TIP = "thermalMaskTip";
         String MASK_TIP_ENABLED = "thermalMaskTipEnabled";
         String TITLE_ENABLED = "thermalTitleEnabled";
+        String TIP_DELAY = "thermalTipDelay";
     }
 
     public static class Default {
+        public static final long TIP_DELAY = 500;
         public static boolean FACE_ENABLED = false;
         public static boolean TEMPER_ENABLED = true;
         public static int TEMPER_MODULE = TemperModuleType.MLX_16_4;

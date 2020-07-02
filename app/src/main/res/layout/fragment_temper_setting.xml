@@ -376,6 +376,18 @@
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:background="@mipmap/icon_jia" />
+
+            <TextView
+                android:paddingRight="10dp"
+                android:layout_marginLeft="10dp"
+                android:textSize="14dp"
+                android:layout_gravity="center_vertical"
+                android:gravity="center_vertical"
+                android:textColor="#ff0"
+                android:text="@string/broadcast_delay_prompt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
         </LinearLayout>
     </LinearLayout>
 

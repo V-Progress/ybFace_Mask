@@ -51,6 +51,8 @@ public abstract class BaseThermal2Activity extends BaseGpioActivity implements F
     private boolean mFEnabled;//华氏度开关
     private boolean mPrivacyMode;//隐私模式
     private boolean mAutoTemper;//自动模式
+    private long mTipTime = 0;//播报时间
+    private int maskNumber = 0;//口罩检测确认次数
 
     private Random random = new Random();
     private TypedArray noFaceArray;
@@ -366,10 +368,17 @@ public abstract class BaseThermal2Activity extends BaseGpioActivity implements F
             if (mCacheTemperList.size() > 0) mCacheTemperList.clear();
             sendTipsMessage(speechBean.getDistanceContent());
             if (TextUtils.equals("sl", KDXFSpeechManager.instance().getCurrentLanguage())) {
-                if (speechBean.isDistanceEnabled() && distanceTipNumber < 5)
-                    KDXFSpeechManager.instance().playApprochSound(() -> distanceTipNumber++);
-            } else if (speechBean.isDistanceEnabled() && distanceTipNumber < 5)
-                KDXFSpeechManager.instance().playNormalAdd(speechBean.getDistanceContent(), () -> distanceTipNumber++);
+                if (speechBean.isDistanceEnabled() && distanceTipNumber < 5 && isTipTimeOk())
+                    KDXFSpeechManager.instance().playApprochSound(() -> {
+                        mTipTime = System.currentTimeMillis();
+                        distanceTipNumber++;
+                    });
+            } else if (speechBean.isDistanceEnabled() && distanceTipNumber < 5 && isTipTimeOk()){
+                KDXFSpeechManager.instance().playNormalAdd(speechBean.getDistanceContent(), () -> {
+                    mTipTime = System.currentTimeMillis();
+                    distanceTipNumber++;
+                });
+            }
             return;
         }
 
@@ -392,8 +401,11 @@ public abstract class BaseThermal2Activity extends BaseGpioActivity implements F
                 return;
             } else if (maskTag == 0 || maskTag == 1) {
                 sendMaskTipMessage(speechBean.getMaskTip());
-                if (speechBean.isMaskTipEnabled() && maskTipNumber < 5) {
-                    KDXFSpeechManager.instance().playNormalAdd(speechBean.getMaskTip(), () -> maskTipNumber++);
+                if (speechBean.isMaskTipEnabled() && maskTipNumber < 5 && isTipTimeOk()) {
+                    KDXFSpeechManager.instance().playNormalAdd(speechBean.getMaskTip(), () -> {
+                        mTipTime = System.currentTimeMillis();
+                        maskTipNumber++;
+                    });
                 }
                 return;// TODO: 2020/5/22
             } else {
@@ -462,6 +474,10 @@ public abstract class BaseThermal2Activity extends BaseGpioActivity implements F
         }
     }
 
+    private boolean isTipTimeOk(){
+        return mTipTime == 0 || System.currentTimeMillis() - mTipTime > speechBean.getTipDelay();
+    }
+
     private Smt3232TempCallBack smt3232TempCallBack = new Smt3232TempCallBack() {
         @Override
         public void newestSmt3232Temp(float measureF, float afterF) {
@@ -494,8 +510,11 @@ public abstract class BaseThermal2Activity extends BaseGpioActivity implements F
                 if (mCacheTime != 0) mCacheTime = 0;
                 if (mCacheTemperList.size() > 0) mCacheTemperList.clear();
                 sendTipsMessage(speechBean.getDistanceContent());
-                if (speechBean.isDistanceEnabled() && distanceTipNumber < 5)
-                    KDXFSpeechManager.instance().playNormalAdd(speechBean.getDistanceContent(), () -> distanceTipNumber++);
+                if (speechBean.isDistanceEnabled() && distanceTipNumber < 5 && isTipTimeOk())
+                    KDXFSpeechManager.instance().playNormalAdd(speechBean.getDistanceContent(), () -> {
+                        mTipTime = System.currentTimeMillis();
+                        distanceTipNumber++;
+                    });
                 return;
             }
 
@@ -505,8 +524,11 @@ public abstract class BaseThermal2Activity extends BaseGpioActivity implements F
                     return;
                 } else if (maskTag == 0 || maskTag == 1) {
                     sendMaskTipMessage(speechBean.getMaskTip());
-                    if (speechBean.isMaskTipEnabled() && maskTipNumber < 5) {
-                        KDXFSpeechManager.instance().playNormalAdd(speechBean.getMaskTip(), () -> maskTipNumber++);
+                    if (speechBean.isMaskTipEnabled() && maskTipNumber < 5 && isTipTimeOk()) {
+                        KDXFSpeechManager.instance().playNormalAdd(speechBean.getMaskTip(), () -> {
+                            mTipTime = System.currentTimeMillis();
+                            maskTipNumber++;
+                        });
                     }
                     return;
                 } else {
@@ -586,8 +608,6 @@ public abstract class BaseThermal2Activity extends BaseGpioActivity implements F
 
     }
 
-
-    private int maskNumber = 0;
     @Override
     public boolean onFaceDetection(boolean hasFace, FacePreviewInfo facePreviewInfo) {
         if (isActivityPaused) {
@@ -596,6 +616,7 @@ public abstract class BaseThermal2Activity extends BaseGpioActivity implements F
         mHasFace = hasFace;
         viewInterface.hasFace(hasFace);
         if (!hasFace) {
+            mTipTime = 0;
             maskNumber = 0;
             if (isOnlyFace()) {
                 maskTipNumber = 0;
@@ -608,18 +629,26 @@ public abstract class BaseThermal2Activity extends BaseGpioActivity implements F
         if (isOnlyFace()) {
             //更新口罩标签
             if (isMaskDetectEnabled) {
-                maskTag = facePreviewInfo.getMask() == 0 || facePreviewInfo.getMask() == -1
+                int tag = facePreviewInfo.getMask() == 0 || facePreviewInfo.getMask() == -1
                         ? 0
                         : facePreviewInfo.getFaceShelter() == 0 || facePreviewInfo.getFaceShelter() == -1
                         ? 1
                         : 2;
+                if(tag != 2 && maskNumber < 7){
+                    maskNumber ++;
+                    return false;
+                }
                 if (maskTag != 2) {
-                    String resString = getResString(R.string.no_mask_tip);
-                    sendMaskTipMessage(resString);
-                    if (maskTipNumber < 5) {
-                        KDXFSpeechManager.instance().playNormalAdd(resString, () -> maskTipNumber++);
+                    sendMaskTipMessage(speechBean.getMaskTip());
+                    if (speechBean.isMaskTipEnabled() && maskTipNumber < 5 && isTipTimeOk()) {
+                        KDXFSpeechManager.instance().playNormalAdd(speechBean.getMaskTip(), () -> {
+                            mTipTime = System.currentTimeMillis();
+                            maskTipNumber++;
+                        });
                     }
                     return false;
+                } else {
+                    sendClearMaskTipMessage(0);
                 }
             }
             //通过后清除口罩提示框
@@ -656,9 +685,8 @@ public abstract class BaseThermal2Activity extends BaseGpioActivity implements F
                     ? 1
                     : 2;
             //判断三次，如果tag不为2并且mask小于3的时候多次进行判断
-            if(tag != 2 && maskNumber < 5){
+            if(tag != 2 && maskNumber < 7){
                 maskNumber ++;
-                Log.e(TAG, "onFaceDetection: tag不为2，且maskNumber小于5，当前maskTag为：" + maskTag);
                 return false;
             }
             maskNumber = 0;
@@ -723,7 +751,8 @@ public abstract class BaseThermal2Activity extends BaseGpioActivity implements F
                 }
             });
 
-            if (sign.getType() == -2 || sign.getType() == -9) {
+            //-2:访客超时，-9:陌生人，高温
+            if (sign.getType() == -2 || sign.getType() == -9 || resultTemper >= mTempWarningThreshold) {
                 return;
             }
             openDoor();
@@ -1052,6 +1081,8 @@ public abstract class BaseThermal2Activity extends BaseGpioActivity implements F
     class SpeechBean {
         private float speechSpeed;
 
+        private long tipDelay;
+
         private String maskTip;
         private boolean maskTipEnabled;
 
@@ -1082,6 +1113,7 @@ public abstract class BaseThermal2Activity extends BaseGpioActivity implements F
             maskTip = SpUtils.getStr(ThermalConst.Key.MASK_TIP, getResString(R.string.no_mask_tip));
             maskTipEnabled = SpUtils.getBoolean(ThermalConst.Key.MASK_TIP_ENABLED, ThermalConst.Default.MASK_TIP_ENABLED);
             speechSpeed = SpUtils.getFloat(ThermalConst.Key.VOICE_SPEED, ThermalConst.Default.VOICE_SPEED);
+            tipDelay = SpUtils.getLong(ThermalConst.Key.TIP_DELAY,ThermalConst.Default.TIP_DELAY);
             welcomeContent = SpUtils.getStr(ThermalConst.Key.WELCOME_TIP_CONTENT, getResources().getString(R.string.setting_default_welcome_tip));
             welcomeEnabled = SpUtils.getBoolean(ThermalConst.Key.WELCOME_TIP_ENABLED, ThermalConst.Default.WELCOME_TIP_ENABLED);
             distanceContent = SpUtils.getStr(ThermalConst.Key.DISTANCE_TIP_CONTENT, getResources().getString(R.string.main_tips_please_close));
@@ -1098,6 +1130,10 @@ public abstract class BaseThermal2Activity extends BaseGpioActivity implements F
             fahrenheit = SpUtils.getStr(ThermalConst.Key.FAHRENHEIT, getResources().getString(R.string.temper_tips_fahrenheit));
             normalEnabled = SpUtils.getBoolean(ThermalConst.Key.NORMAL_BROADCAST_ENABLED, ThermalConst.Default.NORMAL_BROADCAST_ENABLED);
             warningEnabled = SpUtils.getBoolean(ThermalConst.Key.WARNING_BROAD_ENABLED, ThermalConst.Default.WARNING_BROAD_ENABLED);
+        }
+
+        public long getTipDelay() {
+            return tipDelay;
         }
 
         public String getMaskTip() {

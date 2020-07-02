@@ -12,10 +12,14 @@ import com.yunbiao.ybsmartcheckin_live_id.BR;
 import com.yunbiao.ybsmartcheckin_live_id.R;
 import com.yunbiao.ybsmartcheckin_live_id.utils.SpUtils;
 
+import timber.log.Timber;
+
 public class SpeechContent extends BaseObservable {
     private String exampleNormalTemper = "36.5℃";
     private String exampleWarningTemper = "37.5℃";
     private float speechSpeed;
+
+    private long tipDelay;
 
     private String welcomeText;
     private boolean welcomeTextEnabled;
@@ -51,11 +55,13 @@ public class SpeechContent extends BaseObservable {
     public void init(Context context) {
         speechSpeed = SpUtils.getFloat(ThermalConst.Key.VOICE_SPEED, ThermalConst.Default.VOICE_SPEED);
 
+        tipDelay = SpUtils.getLong(ThermalConst.Key.TIP_DELAY,ThermalConst.Default.TIP_DELAY);
+
         welcomeText = SpUtils.getStr(ThermalConst.Key.WELCOME_TIP_CONTENT, context.getResources().getString(R.string.setting_default_welcome_tip));
         welcomeTextEnabled = SpUtils.getBoolean(ThermalConst.Key.WELCOME_TIP_ENABLED, ThermalConst.Default.WELCOME_TIP_ENABLED);
 
         maskContent = SpUtils.getStr(ThermalConst.Key.MASK_TIP, context.getResources().getString(R.string.no_mask_tip));
-        maskEnabled = SpUtils.getBoolean(ThermalConst.Key.MASK_DETECT_ENABLED, ThermalConst.Default.MASK_DETECT_ENABLED);
+        maskEnabled = SpUtils.getBoolean(ThermalConst.Key.MASK_TIP_ENABLED, ThermalConst.Default.MASK_TIP_ENABLED);
 
         distanceTip = SpUtils.getStr(ThermalConst.Key.DISTANCE_TIP_CONTENT, context.getResources().getString(R.string.main_tips_please_close));
         distanceTipEnabled = SpUtils.getBoolean(ThermalConst.Key.DISTANCE_TIP_ENABLED, ThermalConst.Default.DISTANCE_TIP_ENABLED);
@@ -78,6 +84,7 @@ public class SpeechContent extends BaseObservable {
 
         lastStatus = new LastStatus(
                 speechSpeed,
+                tipDelay,
                 maskContent,maskEnabled,
                 welcomeText,welcomeTextEnabled,
                 distanceTip,distanceTipEnabled,
@@ -97,7 +104,6 @@ public class SpeechContent extends BaseObservable {
     }
 
     public void save() {
-
         //口罩提示
         if (!TextUtils.equals(lastStatus.maskTip, maskContent)) {
             if (TextUtils.isEmpty(maskContent)) {
@@ -113,6 +119,9 @@ public class SpeechContent extends BaseObservable {
 //        速度
         if(speechSpeed != lastStatus.speechSpeed){
             SpUtils.saveFloat(ThermalConst.Key.VOICE_SPEED, speechSpeed);
+        }
+        if(tipDelay != lastStatus.tipDelay){
+            SpUtils.saveLong(ThermalConst.Key.TIP_DELAY,tipDelay);
         }
         //欢迎语
         if(!TextUtils.equals(lastStatus.welcomeText,welcomeText)){
@@ -281,6 +290,16 @@ public class SpeechContent extends BaseObservable {
     public void setSpeechSpeed(float speechSpeed) {
         this.speechSpeed = speechSpeed;
         notifyPropertyChanged(BR.speechSpeed);
+    }
+
+    @Bindable
+    public long getTipDelay() {
+        return tipDelay;
+    }
+
+    public void setTipDelay(long tipDelay) {
+        this.tipDelay = tipDelay;
+        notifyPropertyChanged(BR.tipDelay);
     }
 
     @Bindable
@@ -518,11 +537,12 @@ public class SpeechContent extends BaseObservable {
 
     class LastStatus{
         float speechSpeed;
+        long tipDelay;
         String maskTip,welcomeText,distanceTip,frameTip,normalContent,warningContent,centigrade,fahrenheit;
         boolean maskEnabled,welcomeTextEnabled,distanceTipEnbaled,frameTipEnabled,normalShow,normalEnabled,warningShow,warningEnabled;
         int warningTemperLocation,normalTemperLocation;
 
-        public LastStatus(float speechSpeed,
+        public LastStatus(float speechSpeed,long tipDelay,
                           String maskTip, boolean maskEnabled,
                           String welcomeText, boolean welcomeTextEnabled,
                           String distanceTip, boolean distanceTipEnbaled,
@@ -531,6 +551,7 @@ public class SpeechContent extends BaseObservable {
                           String warningContent, boolean warningShow, boolean warningEnabled, int warningTemperLocation,
                           String centigrade, String fahrenheit) {
             this.speechSpeed = speechSpeed;
+            this.tipDelay = tipDelay;
             this.maskTip = maskTip;
             this.maskEnabled = maskEnabled;
             this.welcomeText = welcomeText;

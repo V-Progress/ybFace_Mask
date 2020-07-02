@@ -44,7 +44,7 @@
     <string name="setting_tab_page">界面</string>
     <string name="setting_tab_temper">测温</string>
     <string name="setting_tab_device">设备</string>
-    <string name="setting_mask_label">口罩检测</string>
+    <string name="setting_mask_label">口罩检测</string>n
 
     <!--语音设置-->
     <string name="speech_setting_title">语音播报设置</string>

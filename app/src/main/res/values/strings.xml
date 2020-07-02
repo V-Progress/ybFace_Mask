@@ -65,6 +65,8 @@
     <string name="setting_tab_page">Display</string>
     <string name="setting_tab_temper">Temperature</string>
     <string name="setting_tab_device">Device</string>
+    <string name="broadcast_delay_prompt">Only valid in "temperature only" mode</string>
+    <string name="tip_delay_title">Voice prompt interval</string>
 
     <!--语音设置-->
     <string name="speech_setting_title">Voice and Announcement Setup</string>
