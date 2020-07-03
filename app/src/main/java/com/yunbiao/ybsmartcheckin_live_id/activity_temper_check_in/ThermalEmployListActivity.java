@@ -264,7 +264,7 @@ public class ThermalEmployListActivity extends BaseActivity implements EmployAda
     public void itemDeleteClick(View v, final int postion) {
         final User user = userList.get(postion);
 
-        showDialog(getString(R.string.employ_list_confirm_delete), new DialogInterface.OnClickListener() {
+        showDialog(getString(R.string.delete_user_dialog_title), getString(R.string.employ_list_confirm_delete), new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 // TODO: 2020/3/18 离线功能
@@ -341,7 +341,7 @@ public class ThermalEmployListActivity extends BaseActivity implements EmployAda
 
     @Override
     public void itemEditClick(View v, final int postion) {
-        showDialog(getString(R.string.employ_list_confirm_edit), new DialogInterface.OnClickListener() {
+        showDialog(getString(R.string.edit_user_dialog_title),getString(R.string.employ_list_confirm_edit), new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 Intent intent = new Intent(ThermalEmployListActivity.this, ThermalEditEmployActivity.class);
@@ -352,9 +352,9 @@ public class ThermalEmployListActivity extends BaseActivity implements EmployAda
         });
     }
 
-    private void showDialog(String msg, DialogInterface.OnClickListener confirm) {
+    private void showDialog(String title,String msg, DialogInterface.OnClickListener confirm) {
         final AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle(getString(R.string.base_tip) + "!");
+        builder.setTitle(title);
         builder.setMessage(msg);
         builder.setPositiveButton(getString(R.string.base_ensure), confirm);
         builder.setNegativeButton(getString(R.string.base_cancel), new DialogInterface.OnClickListener() {

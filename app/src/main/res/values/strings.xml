@@ -56,6 +56,13 @@
     <string name="create_success">Directory created successfully</string>
     <string name="create_failed">Failed to create directory</string>
 
+    <string name="tip_delete_depart_success">Department is deleted successfully</string>
+    <string name="delete_user_dialog_title">Confirm delete</string>
+    <string name="edit_user_dialog_title">Confirm modify</string>
+    <string name="delete_user_dialog_message">Are you sure you want to delete this user?</string>
+    <string name="restart_dialog_title">Confirm restart</string>
+    <string name="open_door_delay_saved_tips">Changes are saved</string>
+
     <!--口罩提示-->
     <string name="no_mask_tip">Please wear a mask</string>
     <string name="error_mask_tip">Please wear the mask correctly</string>
@@ -69,7 +76,7 @@
     <string name="tip_delay_title">Voice prompt interval</string>
 
     <!--语音设置-->
-    <string name="speech_setting_title">Voice and Announcement Setup</string>
+    <string name="speech_setting_title">Voice Settings</string>
     <string name="setting_welcome_speech">Welcome message</string><!--Welcome speech-->
     <string name="temper_tips_close">Position Prompt</string>
     <string name="speech_setting_open_or_close">On</string>
@@ -98,7 +105,7 @@
 
     <!--logo设置-->
     <string name="setting_privacy_mode">Privacy Mode</string>
-    <string name="setting_periodic_purge_policy">Periodic purge policy</string>
+    <string name="setting_periodic_purge_policy">Automatically delete data after</string>
     <string name="setting_clear_policy_tip">Automatically clear data %1$s days ago</string>
     <string name="setting_show_main_logo">Display LOGO</string>
     <string name="setting_show_main_thermal">Display Thermal Imaging</string>
@@ -174,8 +181,8 @@
     <string name="System_Company">Company:</string><!--所属公司:-->
     <string name="System_Service">Service:</string><!--服务网络:-->
     <string name="System_ValiDate">Expiry:</string><!--有效期:-->
-    <string name="System_Manage">Manage Personnel Info</string><!--人员管理-->
-    <string name="System_Add">Add Personnel</string><!--新增员工-->
+    <string name="System_Manage">Users</string><!--人员管理-->
+    <string name="System_Add">Add User</string><!--新增员工-->
     <string name="System_Record">Records</string><!--考勤记录-->
     <string name="System_Setting">Settings</string><!--系统设置-->
     <string name="System_Visitor">Visitors</string><!--访客-->
@@ -194,7 +201,7 @@
     <string name="employ_list_depart_sync">Sync</string><!-- 同步 -->
     <string name="employ_List_add_user">Add</string><!-- 新增 -->
     <string name="employ_List_query_button">Search</string><!-- 搜索 -->
-    <string name="employ_list_download_failed">Failed to dowload image</string><!-- 下载头像失败 -->
+    <string name="employ_list_download_failed">Failed to download image</string><!-- 下载头像失败 -->
     <string name="employ_list_add_face_failed">Image is not valid</string><!--  添加人脸库失败-->
     <string name="employ_list_update_head_failed">Failed to update image</string><!-- 更新头像失败 -->
     <string name="employ_list_field_index">No</string><!-- 序号 -->
@@ -208,9 +215,9 @@
     <string name="employ_list_all_depart">All</string><!-- 全部部门 -->
     <string name="employ_list_please_input_user_name">username</string><!-- 请输入员工姓名 -->
     <string name="employ_list_confirm_edit">Are you sure to modify？</string><!-- 确定修改吗？ -->
-    <string name="employ_list_confirm_delete">Are you sure to delete？</string><!-- 确定删除吗？ -->
+    <string name="employ_list_confirm_delete">Are you sure you want to delete this user?？</string><!-- 确定删除吗？ -->
     <string name="employ_list_delete_failed">delete failed</string><!-- 删除失败 -->
-    <string name="employ_list_delete_success">delete success</string><!-- 删除成功 -->
+    <string name="employ_list_delete_success">User is deleted successfully</string><!-- 删除成功 -->
     <string name="employ_list_depart">Department</string><!-- 部门 -->
     <string name="employ_list_add_depart">Add Department</string><!-- 新增部门 -->
     <string name="employ_list_please_input_name">Please enter a name</string><!--请输入姓名-->
@@ -244,13 +251,13 @@
     <string name="act_editEmploy_tip_gsyzwyg">The company does not have this employee</string><!--公司没有这位员工  -->
     <string name="act_editEmploy_tip_cscw">Parameter error</string><!--参数错误  -->
     <string name="act_editEmploy_tip_qtxbm">Please select the department</string><!--请选择部门-->
-    <string name="act_editEmploy_tip_add_success">Add Complete</string><!--添加成功-->
+    <string name="act_editEmploy_tip_add_success">User is added successfully</string><!--添加成功-->
     <string name="act_editEmploy_add_face_failed">Failed to add face data</string><!--添加人脸数据失败-->
     <string name="act_editEmploy_submit_failed">Submit Failure</string><!--提交失败-->
     <string name="act_editEmploy_please_set_depart">Please set up a department</string><!--请设置部门-->
     <string name="act_editEmploy_update_complete">Profile photo updated successfully</string><!--更新成功-->
     <string name="act_editEmploy_update_failed">Update profile failed</string>
-    <string name="act_editEmploy_update_info_success">Update information successfully</string>
+    <string name="act_editEmploy_update_info_success">User is updated successfully</string>
     <string name="act_editEmploy_no_face">No face detected</string><!--未检测到人脸-->
     <string name="act_editEmploy_please_face_only_one">Please keep only one face on the screen</string><!--请保持屏幕中只有一张人脸-->
     <string name="act_editEmploy_photo_failed_try_again">Photo failed, please try again</string><!--拍照失败，请重试-->
@@ -405,8 +412,8 @@
     <!--开关机设置-->
     <string name="setting_tip_warning_number_reseted">Count cleared</string>
     <string name="setting_reset_warning_number">Count cleared</string>
-    <string name="setting_power_on_off">Timer Program</string>
-    <string name="act_power_title">Timer Program</string>
+    <string name="setting_power_on_off">Schedule settings</string>
+    <string name="act_power_title">Schedule settings</string>
     <string name="act_power_power_on_strategy">Boot strategy</string>
     <string name="act_power_power_off_strategy">Shutdown strategy</string>
     <string name="act_power_power_on_strategy2">Boot strategy</string>

@@ -698,7 +698,7 @@ public class ThermalSettingActivity extends BaseActivity {
                     }
                     int delay = Integer.parseInt(s1);
                     SpUtils.saveInt(Constants.Key.GPIO_DELAY, delay);
-                    UIUtils.showShort(getActivity(), getString(R.string.setting_edit_password_success));
+                    UIUtils.showShort(getActivity(), getString(R.string.open_door_delay_saved_tips));
                 }
             });
 
@@ -765,7 +765,7 @@ public class ThermalSettingActivity extends BaseActivity {
 
             //重启=====================================================================================
             view.findViewById(R.id.tv_reboot).setOnClickListener(
-                    v -> showAlert(getString(R.string.setting_device_will_reboot), (dialog, which) -> {
+                    v -> showAlert(getString(R.string.restart_dialog_title), getString(R.string.setting_device_will_reboot), (dialog, which) -> {
                         ProgressDialog progressDialog = UIUtils.coreInfoShow3sDialog(getActivity());
                         progressDialog.setTitle(getString(R.string.setting_device_reboot));
                         progressDialog.setMessage(getString(R.string.setting_3_scond_reboot));
@@ -789,7 +789,7 @@ public class ThermalSettingActivity extends BaseActivity {
 
         private void showDialog(){
             AlertDialog alertDialog = new AlertDialog.Builder(getActivity())
-                    .setTitle(getResources().getString(R.string.clear_all_data_dialog_title))
+                    .setTitle(getResources().getString(R.string.delete_user_dialog_title))
                     .setMessage(getResources().getString(R.string.clear_all_data_dialog_message))
                     .setPositiveButton(getResources().getString(R.string.setting_switch_confirm), (dialog, which) -> {
                         clearAllData();
@@ -1109,9 +1109,9 @@ public class ThermalSettingActivity extends BaseActivity {
             return false;
         }
 
-        private void showAlert(String msg, Dialog.OnClickListener onClickListener, Dialog.OnClickListener onCancel, DialogInterface.OnDismissListener onDissmissListener) {
+        private void showAlert(String title,String msg, Dialog.OnClickListener onClickListener, Dialog.OnClickListener onCancel, DialogInterface.OnDismissListener onDissmissListener) {
             AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-            builder.setTitle(getString(R.string.base_tip));
+            builder.setTitle(title);
             builder.setMessage(msg);
             builder.setPositiveButton(getString(R.string.base_ensure), onClickListener);
             builder.setNegativeButton(getString(R.string.base_cancel), onCancel);

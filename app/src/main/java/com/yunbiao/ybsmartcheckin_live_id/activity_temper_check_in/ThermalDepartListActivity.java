@@ -108,6 +108,7 @@ public class ThermalDepartListActivity extends BaseActivity {
         builder.setPositiveButton(getString(R.string.base_ensure), (dialog, which) -> {
             if (SpUtils.getCompany().getComid() == Constants.NOT_BIND_COMPANY_ID) {
                 DaoManager.get().delete(depart);
+                UIUtils.showShort(ThermalDepartListActivity.this, getResString(R.string.tip_delete_depart_success));
                 initData();
             } else {
                 long depId = depart.getDepId();
@@ -140,7 +141,7 @@ public class ThermalDepartListActivity extends BaseActivity {
                             public void onResponse(String response, int id) {
                                 Timber.d("结果：%s", response);
                                 if (response.contains("1")) {
-                                    UIUtils.showShort(ThermalDepartListActivity.this, getResString(R.string.employ_list_delete_success));
+                                    UIUtils.showShort(ThermalDepartListActivity.this, getResString(R.string.tip_delete_depart_success));
                                     DaoManager.get().delete(depart);
                                     initData();
                                 } else {
