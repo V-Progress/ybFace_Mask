@@ -80,6 +80,7 @@ public abstract class BaseThermal2Activity extends BaseGpioActivity implements F
     private boolean mFaceEnabled;
     private boolean mTemperEnabled;
     private int temperModule;
+    private boolean mVerifyMask;
 
     @Override
     protected void initData() {
@@ -101,7 +102,8 @@ public abstract class BaseThermal2Activity extends BaseGpioActivity implements F
         //口罩
         isMaskDetectEnabled = SpUtils.getBoolean(ThermalConst.Key.MASK_DETECT_ENABLED, ThermalConst.Default.MASK_DETECT_ENABLED);
         setMaskDetectEnable(isMaskDetectEnabled);
-
+        //口罩验证
+        mVerifyMask = SpUtils.getBoolean(ThermalConst.Key.VERIFY_MASK,ThermalConst.Default.VERIFY_MASK);
         //隐私模式
         mPrivacyMode = SpUtils.getBoolean(Constants.Key.PRIVACY_MODE, Constants.Default.PRIVACY_MODE);
         //播报延时
@@ -318,6 +320,11 @@ public abstract class BaseThermal2Activity extends BaseGpioActivity implements F
     private int maskTag = -1;
     private int maskTipNumber = -1;
 
+    /*private Test test6 = new Test(false);
+    private Test test7 = new Test(false);
+    private Test test8 = new Test(false);
+    private Test test9 = new Test(false);*/
+
     //温度处理的主要逻辑
     private void handleTemperature(Bitmap imageBmp, float originT, float afterT) {
         if (isActivityPaused) {
@@ -334,6 +341,7 @@ public abstract class BaseThermal2Activity extends BaseGpioActivity implements F
         mLastHotImage = imageBmp;
         sendUpdateHotInfoMessage(imageBmp, afterT);
 
+//        test6.initValue();
         if (!mHasFace) {
             if (distanceTipNumber != 0) {
                 distanceTipNumber = 0;
@@ -358,11 +366,13 @@ public abstract class BaseThermal2Activity extends BaseGpioActivity implements F
             sendClearAllUIMessage();
             return;
         }
+//        test6.setResult("等待人脸标签");
 
         if (autoCheckList.size() > 0) {
             autoCheckList.clear();
         }
 
+//        test7.initValue();
         if (isFaceToFar && !isResultShown) {
             if (mCacheTime != 0) mCacheTime = 0;
             if (mCacheTemperList.size() > 0) mCacheTemperList.clear();
@@ -381,43 +391,38 @@ public abstract class BaseThermal2Activity extends BaseGpioActivity implements F
             }
             return;
         }
-
-        /*if (mCurrMode == ThermalConst.ONLY_INFRARED || mCurrMode == ThermalConst.FACE_INFRARED) {
-            if (speechBean.isFrameEnabled() && !isFaceInsideRange && !isResultShown) {
-                mCacheTime = 0;
-                if (mCacheTemperList.size() > 0) {
-                    mCacheTemperList.clear();
-                }
-                sendTipsMessage(speechBean.getFrameContent());
-                return;
-            }
-        }*/
+//        test7.setResult("等待人脸位置");
         //全部通过后清除提示框
         sendResetTipsMessage(0);
 
         //判断口罩标签
+//        test8.initValue();
         if (isMaskDetectEnabled && !isResultShown) {
             if (maskTag == -1) {
                 return;
             } else if (maskTag == 0 || maskTag == 1) {
                 sendMaskTipMessage(speechBean.getMaskTip());
-                if (speechBean.isMaskTipEnabled() && maskTipNumber < 5 && isTipTimeOk()) {
+                if (mVerifyMask && speechBean.isMaskTipEnabled() && maskTipNumber < 5 && isTipTimeOk()) {
                     KDXFSpeechManager.instance().playNormalAdd(speechBean.getMaskTip(), () -> {
                         mTipTime = System.currentTimeMillis();
                         maskTipNumber++;
                     });
                 }
-                return;// TODO: 2020/5/22
+                if(mVerifyMask){
+                    return;
+                }
             } else {
                 //通过后清除口罩提示框
                 sendClearMaskTipMessage(0);
             }
         }
+//        test8.setResult("等待口罩检测");
 
         if (originT - mCacheBeforeTemper < mCacheDiffValue) {
             return;
         }
 
+//        test9.initValue();
         if (afterT < mTempMinThreshold) {
             mCacheTime = 0;
             if (mCacheTemperList.size() > 0) {
@@ -425,6 +430,7 @@ public abstract class BaseThermal2Activity extends BaseGpioActivity implements F
             }
             return;
         }
+//        test9.setResult("等待温度");
 
         if (isOnlyTemper()) {
             long currentTimeMillis = System.currentTimeMillis();
@@ -530,7 +536,9 @@ public abstract class BaseThermal2Activity extends BaseGpioActivity implements F
                             maskTipNumber++;
                         });
                     }
-                    return;
+                    if(mVerifyMask){
+                        return;
+                    }
                 } else {
                     //通过后清除口罩提示框
                     sendClearMaskTipMessage(0);
@@ -616,6 +624,19 @@ public abstract class BaseThermal2Activity extends BaseGpioActivity implements F
         mHasFace = hasFace;
         viewInterface.hasFace(hasFace);
         if (!hasFace) {
+            /*test1.reset();
+            test2.reset();
+            test3.reset();
+            test4.reset();
+            test10.reset();
+
+            test6.reset();
+            test7.reset();
+            test8.reset();
+            test9.reset();
+
+            totalList.clear();
+            totalList2.clear();*/
             mTipTime = 0;
             maskNumber = 0;
             if (isOnlyFace()) {
@@ -640,19 +661,19 @@ public abstract class BaseThermal2Activity extends BaseGpioActivity implements F
                 }
                 if (maskTag != 2) {
                     sendMaskTipMessage(speechBean.getMaskTip());
-                    if (speechBean.isMaskTipEnabled() && maskTipNumber < 5 && isTipTimeOk()) {
+                    if (mVerifyMask && speechBean.isMaskTipEnabled() && maskTipNumber < 5 && isTipTimeOk()) {
                         KDXFSpeechManager.instance().playNormalAdd(speechBean.getMaskTip(), () -> {
                             mTipTime = System.currentTimeMillis();
                             maskTipNumber++;
                         });
                     }
-                    return false;
+                    if (maskTag != 2 && mVerifyMask) {
+                        return false;
+                    }
                 } else {
                     sendClearMaskTipMessage(0);
                 }
             }
-            //通过后清除口罩提示框
-            sendClearMaskTipMessage(0);
             return true;
         }
 
@@ -661,6 +682,7 @@ public abstract class BaseThermal2Activity extends BaseGpioActivity implements F
             return false;
         }
 
+//        test1.initValue();
         //距离
         Rect rect = facePreviewInfo.getFaceInfo().getRect();
         int distance = mDistanceView.getMeasuredWidth();
@@ -669,6 +691,7 @@ public abstract class BaseThermal2Activity extends BaseGpioActivity implements F
         if (isFaceToFar) {
             return false;
         }
+//        test1.setResult("检测人脸位置");
         /*//如果是红外模式则判断人脸区域
         if (mCurrMode == ThermalConst.ONLY_INFRARED || mCurrMode == ThermalConst.FACE_INFRARED) {
             Rect realRect = viewInterface.getRealRect(rect);
@@ -677,6 +700,7 @@ public abstract class BaseThermal2Activity extends BaseGpioActivity implements F
                 return false;
             }
         }*/
+//        test2.initValue();
         //更新口罩标签
         if (isMaskDetectEnabled) {
             int tag = facePreviewInfo.getMask() == 0 || facePreviewInfo.getMask() == -1
@@ -691,23 +715,94 @@ public abstract class BaseThermal2Activity extends BaseGpioActivity implements F
             }
             maskNumber = 0;
             maskTag = tag;
-            if (maskTag != 2) {
+            if (maskTag != 2 && mVerifyMask) {
                 return false;
             }
         }
+//        test2.setResult("检测口罩");
         //判断是否仅测温模式
         if (isOnlyTemper()) {
             return false;
         }
+
+//        test3.initValue();
         //判断集合中的温度数据
         if (mCacheTemperList.size() < mCacheTemperSize) {
             return false;
         }
+//        test3.setResult("等待测温");
+//        test4.initValue();
         return true;
     }
 
+    /*private List<Long> totalList = new ArrayList<>();
+    private List<Long> totalList2 = new ArrayList<>();
+    class Test{
+        private long value = 0;
+        private boolean tag = false ;
+        private boolean isTag = true;
+
+        public Test(){
+            this.isTag = true;
+        }
+
+        public Test(boolean isTag) {
+            this.isTag = isTag;
+        }
+
+        public void initValue(){
+            if(value == 0 ){
+                value = System.currentTimeMillis();
+            }
+        }
+        public void setResult(String strTag){
+            if(!tag){
+                if(value != 0){
+                    value = System.currentTimeMillis() - value;
+
+                    if(isTag){
+                        Timber.d(strTag + "，单流程耗时：" + value);
+                        if(totalList.size() < 5){
+                            totalList.add(value);
+                        }
+                    } else {
+                        if(totalList2.size() < 5){
+                            totalList2.add(value);
+                        }
+                    }
+                }
+                tag = true;
+            }
+        }
+        public void reset(){
+            value = 0;
+            tag = false;
+        }
+    }
+    Test test1 = new Test();
+    Test test2 = new Test();
+    Test test3 = new Test();
+    Test test4 = new Test();
+    Test test10 = new Test();*/
+
     @Override
     public void onFaceVerify(CompareResult faceAuth) {
+        /*test4.setResult("人脸识别");
+
+        long total = 0;
+        for (Long aLong : totalList) {
+            total += aLong;
+        }
+        Timber.d("人脸检测总耗时：" + total);
+
+        long total2 = 0;
+        for (Long aLong : totalList2) {
+            total2 += aLong;
+        }
+        Timber.d("测温条件总耗时：" + total2);
+
+        test10.initValue();*/
+
         if (isOnlyFace()) {
             if (faceAuth == null || faceAuth.getSimilar() == -1) {
                 return;
@@ -877,7 +972,7 @@ public abstract class BaseThermal2Activity extends BaseGpioActivity implements F
                     int bgId = getBgId(temperature);
                     String resultText = getResultText(mFEnabled, temperature);
                     viewInterface.showResult(resultText, bgId);
-
+//                    test10.setResult("提示流程");
 
                     if (TextUtils.equals("sl", KDXFSpeechManager.instance().getCurrentLanguage())) {
                         if (temperature >= mTempWarningThreshold) {

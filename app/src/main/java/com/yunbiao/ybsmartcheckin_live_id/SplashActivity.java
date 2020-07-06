@@ -1,16 +1,20 @@
 package com.yunbiao.ybsmartcheckin_live_id;
 
+import android.app.AlertDialog;
 import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Build;
+import android.os.CountDownTimer;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.gson.Gson;
 import com.yunbiao.ybsmartcheckin_live_id.activity_temper_check_in.TemperModuleType;
@@ -24,6 +28,7 @@ import com.yunbiao.ybsmartcheckin_live_id.system.HeartBeatClient;
 import com.yunbiao.ybsmartcheckin_live_id.activity.base.BaseActivity;
 import com.yunbiao.ybsmartcheckin_live_id.afinel.Constants;
 import com.yunbiao.ybsmartcheckin_live_id.utils.CommonUtils;
+import com.yunbiao.ybsmartcheckin_live_id.utils.SdCardUtils;
 import com.yunbiao.ybsmartcheckin_live_id.utils.SpUtils;
 import com.yunbiao.ybsmartcheckin_live_id.utils.ThreadUitls;
 import com.yunbiao.ybsmartcheckin_live_id.utils.UIUtils;
@@ -79,10 +84,31 @@ public class SplashActivity extends BaseActivity {
         tvLocalMac = findViewById(R.id.tv_local_mac);
         llCodeArea = findViewById(R.id.ll_code_area);
         tvJump = findViewById(R.id.tv_jump);
+    }
 
+    @Override
+    protected void initData() {
+        SdCardUtils.Capacity capacity = SdCardUtils.getUsedCapacity();
+        double remainingSpace = capacity.getAll_mb() - capacity.getUsed_mb();
+        String availSpace = String.format(getResString(R.string.alvailable_space),capacity.formatD(remainingSpace),"mb");
+        if(remainingSpace <= 30){
+            Toast.makeText(this, getResString(R.string.clean_storage_must), Toast.LENGTH_SHORT).show();
+            finish();
+        } else if (remainingSpace <= 160) {
+            showAlert(getResString(R.string.clean_storage_must) + "\n"+ availSpace,false,null, APP::exit,0);
+        } else if (capacity.getAll_mb() - capacity.getUsed_mb() < (capacity.getAll_mb() / 10)) {
+            showAlert(getResString(R.string.clean_storage_please) + "\n"+ availSpace,true, APP::exit, this::checkPermission,45000);
+        } else {
+            checkPermission();
+        }
+    }
+
+    private void checkPermission(){
         GifImageView gifImageView = findViewById(R.id.giv);
         setOpenGif(gifImageView);
 
+        ybPermission = new YBPermission(permissionListener);
+        ybPermission.checkPermission(this, PERMISSONS);
     }
 
     private void setOpenGif(GifImageView gifImageView) {
@@ -118,10 +144,45 @@ public class SplashActivity extends BaseActivity {
         }
     }
 
-    @Override
-    protected void initData() {
-        ybPermission = new YBPermission(permissionListener);
-        ybPermission.checkPermission(this, PERMISSONS);
+    private void showAlert(String msg, boolean showPositive, Runnable negativeRunnable, Runnable positiveRunnable,long delayTime) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this)
+                .setTitle(getResString(R.string.alert_title_warning))
+                .setMessage(msg)
+                .setCancelable(false)
+                .setPositiveButton(getResString(R.string.base_ensure), (dialog, which) -> {
+                    dialog.dismiss();
+                    if (positiveRunnable != null) {
+                        positiveRunnable.run();
+                    }
+                });
+        if (showPositive) {
+            builder.setNegativeButton(getResString(R.string.base_cancel), (dialog, which) -> {
+                dialog.dismiss();
+                if (negativeRunnable != null) {
+                    negativeRunnable.run();
+                }
+            });
+        }
+        AlertDialog alertDialog = builder.create();
+        alertDialog.show();
+
+        if(delayTime > 0){
+            Button btnPositive = alertDialog.getButton(AlertDialog.BUTTON_POSITIVE);
+            CharSequence text = btnPositive.getText();
+            CountDownTimer countDownTimer = new CountDownTimer(delayTime,1000) {
+                @Override
+                public void onTick(long millisUntilFinished) {
+                    int second = millisUntilFinished < 1000 ? 0 : (int) (millisUntilFinished / 1000);
+                    btnPositive.setText(text + "(" + second + ")");
+                }
+
+                @Override
+                public void onFinish() {
+                    btnPositive.performClick();
+                }
+            };
+            countDownTimer.start();
+        }
     }
 
     private YBPermission.PermissionListener permissionListener = new YBPermission.PermissionListener() {

@@ -60,17 +60,38 @@
                 android:paddingLeft="10dp"
                 android:paddingRight="10dp"
                 android:textColor="@color/white" />
-
+        </LinearLayout>
+        <LinearLayout
+            android:layout_marginTop="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
             <Switch
                 android:switchPadding="10dp"
                 android:text="@string/setting_mask_label"
                 android:id="@+id/sw_mask_mode"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:paddingLeft="10dp"
                 android:paddingRight="10dp"
                 android:textColor="@color/white" />
+
+            <Switch
+                android:switchPadding="10dp"
+                android:text="@string/mask_verify_title"
+                android:id="@+id/sw_verify_mask"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:paddingRight="10dp"
+                android:textColor="@color/white" />
+
+            <TextView
+                android:id="@+id/tv_verify_mask_tip"
+                android:textColor="#ff0"
+                android:text="@string/mask_verify_tip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
         </LinearLayout>
 
         <LinearLayout

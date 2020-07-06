@@ -223,11 +223,17 @@ public class ThermalSettingActivity extends BaseActivity {
             Switch swMaskMode = view.findViewById(R.id.sw_mask_mode);
             boolean maskDetectEnabled = SpUtils.getBoolean(ThermalConst.Key.MASK_DETECT_ENABLED, ThermalConst.Default.MASK_DETECT_ENABLED);
             swMaskMode.setChecked(maskDetectEnabled);
-            swMaskMode.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-                @Override
-                public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                    SpUtils.saveBoolean(ThermalConst.Key.MASK_DETECT_ENABLED, isChecked);
-                }
+            swMaskMode.setOnCheckedChangeListener((buttonView, isChecked) -> SpUtils.saveBoolean(ThermalConst.Key.MASK_DETECT_ENABLED, isChecked));
+
+            //口罩验证开关====================================================================
+            TextView tvVerifyMaskTip = view.findViewById(R.id.tv_verify_mask_tip);
+            Switch swVerifyMask = view.findViewById(R.id.sw_verify_mask);
+            boolean verifyMask = SpUtils.getBoolean(ThermalConst.Key.VERIFY_MASK, ThermalConst.Default.VERIFY_MASK);
+            swVerifyMask.setChecked(verifyMask);
+            tvVerifyMaskTip.setVisibility(verifyMask ? View.GONE : View.VISIBLE);
+            swVerifyMask.setOnCheckedChangeListener((buttonView,isChecked) -> {
+                SpUtils.saveBoolean(ThermalConst.Key.VERIFY_MASK,isChecked);
+                tvVerifyMaskTip.setVisibility(isChecked ? View.GONE : View.VISIBLE);
             });
 
             //人脸框=========================================================================
