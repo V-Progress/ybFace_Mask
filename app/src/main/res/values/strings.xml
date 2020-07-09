@@ -19,6 +19,7 @@
     <string name="temper_error_btn_cancel">No processing</string>
     <string name="xenon_welcome_tip">Welcome to Xenon Fever Defence</string>
 
+    <string name="space_insufficient_save_and_delete">There is not enough storage and the earliest record is deleted every time a record is written</string>
 
     <string name="clean_storage_must">Insufficient storage space, the program will not run properly, Please clean up the storage space.</string>
     <string name="clean_storage_please">The storage space is about to run out, which may cause the program to fail to run normally, Are you sure you want to enter?</string>

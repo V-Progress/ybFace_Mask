@@ -64,13 +64,8 @@ public class AutoUpload {
     //开始上传记录
     public void uploadSignRecord(final Consumer<Boolean> callback) {
         final List<Sign> signs = DaoManager.get().querySignByUpload(false);
-        if (signs == null) {
-            Log.e(TAG, "uploadSignRecord: 暂无数据：" + signs.size());
-            return;
-        }
-        Log.e(TAG, "run: ------ 未上传记录：" + signs.size());
 
-        if (signs.size() <= 0) {
+        if (signs == null || signs.size() <= 0) {
             try {
                 callback.accept(true);
             } catch (Exception e) {
@@ -78,6 +73,7 @@ public class AutoUpload {
             }
             return;
         }
+        Log.e(TAG, "run: ------ 未上传记录：" + signs.size());
 
         List<Sign> entrySignList = new ArrayList<>();
         List<Sign> visitorSignList = new ArrayList<>();
@@ -126,11 +122,6 @@ public class AutoUpload {
                     public void onError(Call call, Exception e, int id) {
                         d("批量上传考勤记录：上送失败--->" + (e != null ? e.getMessage() : "NULL"));
                         e.printStackTrace();
-                        try {
-                            callback.accept(false);
-                        } catch (Exception e1) {
-                            e1.printStackTrace();
-                        }
                     }
 
                     @Override
@@ -154,6 +145,18 @@ public class AutoUpload {
                         }
 
                         uploadTemperArray(signList, callback);
+                    }
+
+                    @Override
+                    public void onAfter(int id) {
+                        super.onAfter(id);
+                        if (callback != null) {
+                            try {
+                                callback.accept(true);
+                            } catch (Exception e) {
+                                e.printStackTrace();
+                            }
+                        }
                     }
                 });
     }
@@ -305,6 +308,18 @@ public class AutoUpload {
                             DaoManager.get().addOrUpdate(sign);
                         }
                         uploadTemperArray(signList, callback);
+                    }
+
+                    @Override
+                    public void onAfter(int id) {
+                        super.onAfter(id);
+                        if (callback != null) {
+                            try {
+                                callback.accept(true);
+                            } catch (Exception e) {
+                                e.printStackTrace();
+                            }
+                        }
                     }
                 });
     }

@@ -20,6 +20,7 @@ import com.yunbiao.ybsmartcheckin_live_id.db2.Sign;
 import com.yunbiao.ybsmartcheckin_live_id.db2.User;
 import com.yunbiao.ybsmartcheckin_live_id.db2.Visitor;
 import com.yunbiao.ybsmartcheckin_live_id.system.HeartBeatClient;
+import com.yunbiao.ybsmartcheckin_live_id.utils.SdCardUtils;
 import com.yunbiao.ybsmartcheckin_live_id.utils.SpUtils;
 import com.zhy.http.okhttp.OkHttpUtils;
 import com.zhy.http.okhttp.builder.PostFormBuilder;
@@ -37,6 +38,7 @@ import java.text.SimpleDateFormat;
 import java.util.Collections;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
@@ -394,6 +396,7 @@ public class SignManager {
         sign.setUpload(false);
         if(!isPrivacy){
             DaoManager.get().addOrUpdate(sign);
+            checkStorageSpace();
         } else {
             return;
         }
@@ -546,6 +549,7 @@ public class SignManager {
         OutputLog.getInstance().addLog(signBean.getTemperature() + " ----- " + signBean.getName() + " ----- " + map.toString());
 
         DaoManager.get().addOrUpdate(signBean);
+        checkStorageSpace();
         final long time = signBean.getTime();
 
         // TODO: 2020/3/18 离线功能
@@ -889,6 +893,31 @@ public class SignManager {
     private void d(@NonNull String msg) {
         if (isDebug) {
             Log.d(TAG, msg);
+        }
+    }
+
+    public void checkStorageSpace(){
+        SdCardUtils.Capacity capacity = SdCardUtils.getUsedCapacity();
+        double remainingSpace = capacity.getAll_mb() - capacity.getUsed_mb();
+        if(remainingSpace < 500){
+            List<Sign> signList = DaoManager.get().querySignByComidForEarly(SpUtils.getCompany().getComid(), 1);
+            if(signList != null){
+                Iterator<Sign> iterator = signList.iterator();
+                while (iterator.hasNext()) {
+                    Sign next = iterator.next();
+                    String headPath = next.getHeadPath();
+                    File file = new File(headPath);
+                    if(file.exists()){
+                        file.delete();
+                    }
+                    String hotImgPath = next.getHotImgPath();
+                    file = new File(hotImgPath);
+                    if(file.exists()){
+                        file.delete();
+                    }
+                    DaoManager.get().deleteSign(next);
+                }
+            }
         }
     }
 }

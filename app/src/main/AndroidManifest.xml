@@ -50,6 +50,8 @@
         <activity android:name=".activity_temper_check_in.SpeechContentActivity"/>
         <activity android:name=".activity.PowerOnOffActivity" /> <!-- 测温考勤机 -->
         <activity
+            android:excludeFromRecents="true"
+            android:configChanges="fontScale|keyboard|keyboardHidden|locale|orientation|screenLayout|uiMode|screenSize|navigation"
             android:name=".activity_temper_check_in.ThermalImage2Activity"
             android:launchMode="singleTask" />
         <activity android:name=".activity_temper_check_in.BatchImportActivity" />

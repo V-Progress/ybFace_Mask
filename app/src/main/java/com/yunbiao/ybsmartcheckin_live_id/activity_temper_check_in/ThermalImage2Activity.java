@@ -26,14 +26,12 @@ import com.bumptech.glide.request.target.SimpleTarget;
 import com.yunbiao.faceview.FaceManager;
 import com.yunbiao.faceview.FaceView;
 import com.yunbiao.ybsmartcheckin_live_id.APP;
-import com.yunbiao.ybsmartcheckin_live_id.FlavorType;
 import com.yunbiao.ybsmartcheckin_live_id.R;
 import com.yunbiao.ybsmartcheckin_live_id.ReadCardUtils;
 import com.yunbiao.ybsmartcheckin_live_id.activity.Event.DisplayOrientationEvent;
 import com.yunbiao.ybsmartcheckin_live_id.activity.Event.ResetLogoEvent;
 import com.yunbiao.ybsmartcheckin_live_id.activity.Event.UpdateInfoEvent;
 import com.yunbiao.ybsmartcheckin_live_id.activity.Event.UpdateMediaEvent;
-import com.yunbiao.ybsmartcheckin_live_id.activity.fragment.AdsFragment;
 import com.yunbiao.ybsmartcheckin_live_id.afinel.Constants;
 import com.yunbiao.ybsmartcheckin_live_id.business.KDXFSpeechManager;
 import com.yunbiao.ybsmartcheckin_live_id.business.LocateManager;
@@ -43,8 +41,9 @@ import com.yunbiao.ybsmartcheckin_live_id.business.VipDialogManager;
 import com.yunbiao.ybsmartcheckin_live_id.db2.Company;
 import com.yunbiao.ybsmartcheckin_live_id.db2.Sign;
 import com.yunbiao.ybsmartcheckin_live_id.utils.RestartAPPTool;
+import com.yunbiao.ybsmartcheckin_live_id.utils.SdCardUtils;
 import com.yunbiao.ybsmartcheckin_live_id.utils.SpUtils;
-import com.yunbiao.ybsmartcheckin_live_id.views.ImageFileLoader;
+import com.yunbiao.ybsmartcheckin_live_id.utils.UIUtils;
 import com.yunbiao.ybsmartcheckin_live_id.xmpp.ServiceManager;
 
 import org.greenrobot.eventbus.EventBus;
@@ -108,7 +107,7 @@ public class ThermalImage2Activity extends BaseThermal2Activity implements Therm
         faceView.setCallback(this);
         faceView.enableMultiRetry(true);
         faceView.enableMultiCallback(true);
-        faceView.setRetryTime(4);
+        faceView.setRetryTime(1);
         faceView.setRetryDelayTime(4000);
 
         llMainLogoParent = findViewById(R.id.ll_main_logo_parent);
@@ -129,6 +128,12 @@ public class ThermalImage2Activity extends BaseThermal2Activity implements Therm
         //加载签到列表Fragment
         signListFragment = new ThermalSignFragment();
         replaceFragment(R.id.ll_list_container, signListFragment);
+
+        SdCardUtils.Capacity capacity = SdCardUtils.getUsedCapacity();
+        double remainingSpace = capacity.getAll_mb() - capacity.getUsed_mb();
+        if(remainingSpace < 500){
+            UIUtils.showShort(this,getResString(R.string.space_insufficient_save_and_delete));
+        }
     }
 
     @Override
@@ -149,11 +154,6 @@ public class ThermalImage2Activity extends BaseThermal2Activity implements Therm
         llMainLogoParent.setVisibility(!showMainLogo && !titleEnabled ? View.GONE : View.VISIBLE);
         mShowDialog = SpUtils.getBoolean(ThermalConst.Key.SHOW_DIALOG, ThermalConst.Default.SHOW_DIALOG);
         personFrameEnable = SpUtils.getBoolean(ThermalConst.Key.PERSON_FRAME, ThermalConst.Default.PERSON_FRAME);
-        //设置活体开关
-        boolean livenessEnabled = SpUtils.getBoolean(Constants.Key.LIVENESS_ENABLED, Constants.Default.LIVENESS_ENABLED);
-        if (faceView != null) {
-            faceView.setLiveness(livenessEnabled);
-        }
         llThermalArea.setVisibility(showMainThermal ? View.VISIBLE :View.GONE);
 
         initAds();
@@ -198,10 +198,12 @@ public class ThermalImage2Activity extends BaseThermal2Activity implements Therm
     }
 
     @Override
-    public void onModeChanged(boolean temperEnabled,boolean faceEnabled ,int temperModule) {
+    public void onModeChanged(boolean temperEnabled, boolean faceEnabled, int temperModule, boolean livenessEnabled) {
         //设置人脸间隔
         SignManager.instance().setVerifyDelay(faceEnabled && !temperEnabled ? 10000 : 0);
-
+        if (faceView != null) {
+            faceView.setLiveness(livenessEnabled);
+        }
         //显示模式
         if (signListFragment != null) {
             String[] modules = getResources().getStringArray(R.array.temper_module);
@@ -287,7 +289,7 @@ public class ThermalImage2Activity extends BaseThermal2Activity implements Therm
         } else {
             //没人时第一次进入只重试两次
             if (faceView != null) {
-                faceView.setRetryTime(2);
+                faceView.setRetryTime(1);
             }
         }
     }

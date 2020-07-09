@@ -5,6 +5,7 @@ import android.util.Log;
 import com.yunbiao.ybsmartcheckin_live_id.APP;
 
 import org.greenrobot.greendao.database.Database;
+import org.greenrobot.greendao.query.QueryBuilder;
 
 import java.util.List;
 
@@ -147,6 +148,18 @@ public class DaoManager {
             return null;
         }
         return daoSession.getSignDao().queryBuilder().where(SignDao.Properties.Comid.eq(comId)).list();
+    }
+
+    public List<Sign> querySignByComidForEarly(int comId,int num){
+        if(daoSession == null){
+            return null;
+        }
+        QueryBuilder<Sign> signQueryBuilder = daoSession.getSignDao().queryBuilder().where(SignDao.Properties.Comid.eq(comId)).orderAsc(SignDao.Properties.Time);
+        if(num > 0){
+            return signQueryBuilder.offset(0).limit(num).list();
+        } else {
+            return signQueryBuilder.list();
+        }
     }
 
     public List<Sign> querySignByComIdAndUpload(int comId, boolean isUpload) {

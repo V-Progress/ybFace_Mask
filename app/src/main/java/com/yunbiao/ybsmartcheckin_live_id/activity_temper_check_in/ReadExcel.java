@@ -288,7 +288,7 @@ public class ReadExcel {
         }
     }
 
-    private static class ImportTask extends AsyncTask<List<BatchImportActivity.UserCheckBean>, Void, ImportResult> {
+    private static class ImportTask extends AsyncTask<List<BatchImportActivity.UserCheckBean>, Integer, ImportResult> {
         private int compId;
         private List<BatchImportActivity.UserCheckBean> ucList;
         private ImportCallback callback;
@@ -305,31 +305,61 @@ public class ReadExcel {
         }
 
         @Override
+        protected void onProgressUpdate(Integer... values) {
+            super.onProgressUpdate(values);
+            callback.onProgress(values[0],values[1]);
+        }
+
+        private long currentId = 0;
+        private long currentFaceId = 0;
+
+        @Override
         protected ImportResult doInBackground(List<BatchImportActivity.UserCheckBean>... lists) {
             ImportResult importResult = new ImportResult();
 
-            for (BatchImportActivity.UserCheckBean checkBean : ucList) {
+            List<User> users = DaoManager.get().queryUserByCompId(compId);
+            if (users != null && users.size() > 0) {
+                for (int i = 0; i < users.size(); i++) {
+                    User user = users.get(i);
+                    //先取出最大的Id
+                    if (user.getId() > currentId) {
+                        currentId = user.getId();
+                    }
+                    //再取出最大的FaceId
+                    int i1 = Integer.parseInt(user.getFaceId());
+                    if (i1 > currentFaceId) {
+                        currentFaceId = i1;
+                    }
+                }
+            }
+            Timber.d("当前Id：" + currentId + " ---当前FaceId：" + currentFaceId);
+            int size = ucList.size();
+            for (int i = 0; i < size; i++) {
+                publishProgress(i,size);
+
+                BatchImportActivity.UserCheckBean checkBean = ucList.get(i);
                 if (!checkBean.isChecked()) {
                     importResult.skipNum++;
                     continue;
                 }
                 ReadExcel.Entry entry = checkBean.getEntry();
                 Depart depart = checkDepart(compId, entry.getDepName());
-                IdBean userId = createUserId(compId);
                 if (isUserExists(compId, entry.getNumber())) {
                     importResult.alreadyExists++;
                     continue;
                 }
 
                 User user = new User();
-                user.setId(userId.getId());
-                user.setFaceId(String.valueOf(userId.getFaceId()));
+                user.setId(++currentId);
+                user.setFaceId(String.valueOf(++currentFaceId));
                 user.setDepartId(depart.getDepId());
                 user.setName(entry.getName());
                 user.setDepartName(entry.getDepName());
                 user.setPosition(entry.getPosition());
                 user.setNumber(entry.getNumber());
                 user.setHeadPath(entry.getPic());
+
+                Timber.d("生成的Id：" + user.getId() + " --- " + user.getFaceId());
 
                 boolean addResult = FaceManager.getInstance().addUser(user.getFaceId(), user.getHeadPath());
                 if (addResult) {
@@ -338,6 +368,7 @@ public class ReadExcel {
                 } else {
                     importResult.failedNum++;
                 }
+
             }
             return importResult;
         }
@@ -717,6 +748,8 @@ public class ReadExcel {
     }
 
     public interface ImportCallback {
+        void onProgress(int progress,int max);
+
         void onStartImport();
 
         void onImportComplete(ImportResult importResult);

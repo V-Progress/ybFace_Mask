@@ -320,10 +320,15 @@ public class ThermalSignActivity extends BaseActivity implements View.OnClickLis
 
     private void export(File file){
         final File excelFile = new File(file, dateFormat.format(new Date()) + "_" + getResources().getString(R.string.sign_export_record) + ".xls");
-        ExcelUtils.initExcelForPoi(excelFile.getPath(), getResString(R.string.sign_list_table_name), title, new ExcelUtils.Export.ExportCallback() {
+        ExcelUtils.initExcelForPoi(excelFile.getPath(), getResString(R.string.sign_list_table_name), title, new ExcelUtils.ExportCallback() {
+            @Override
+            public void onProgress(int progress, int max) {
+                UIUtils.setProgress(progress,max);
+            }
+
             @Override
             public void onStart() {
-                UIUtils.showNetLoading(ThermalSignActivity.this);
+                UIUtils.showNetLoading(ThermalSignActivity.this,true);
             }
 
             @Override

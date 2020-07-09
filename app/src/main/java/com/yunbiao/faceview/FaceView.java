@@ -410,20 +410,33 @@ public class FaceView extends FrameLayout {
             }
             clearLeftFace(facePreviewInfoList);
 
-            boolean canNext = true;
             //判断单人回调和多人回调
             if (isSignleDetect) {
                 if (callback != null) {
-                    if (isMaskDetectEnable) {
-                        FacePreviewInfo facePreviewInfo = null;
-                        if (facePreviewInfoList != null && facePreviewInfoList.size() > 0) {
-                            facePreviewInfo = facePreviewInfoList.get(0);
-                            int sheltered = isSheltered(facePreviewInfo.getTrackId(), facePreviewInfo.getFaceShelter());
-                            facePreviewInfo.setFaceShelter(sheltered);
+                    FacePreviewInfo facePreviewInfo = null;
+
+                    if(hasFace){
+                        facePreviewInfo = facePreviewInfoList.get(0);
+                    }
+
+                    //活体检测
+                    if(livenessDetect && facePreviewInfo != null){
+                        Integer liveness = livenessMap.get(facePreviewInfo.getTrackId());
+                        if(liveness == null || liveness != LivenessInfo.ALIVE && liveness != LivenessInfo.NOT_ALIVE && liveness != RequestLivenessStatus.ANALYZING){
+                            livenessMap.put(facePreviewInfo.getTrackId(), RequestLivenessStatus.ANALYZING);
+                            faceHelper.requestFaceLiveness(nv21, facePreviewInfo.getFaceInfo(), previewSize.width, previewSize.height, FaceEngine.CP_PAF_NV21, facePreviewInfo.getTrackId(), LivenessType.RGB);
                         }
-                        canNext = callback.onFaceDetection(hasFace, facePreviewInfo);
-                    } else {
-                        canNext = callback.onFaceDetection(hasFace, hasFace ? facePreviewInfoList.get(0) : null);
+                        facePreviewInfo.setLiveness(liveness == null ? LivenessInfo.UNKNOWN : liveness);
+                    }
+
+                    //口罩检测
+                    if (isMaskDetectEnable && facePreviewInfo != null) {
+                        int sheltered = isSheltered(facePreviewInfo.getTrackId(), facePreviewInfo.getFaceShelter());
+                        facePreviewInfo.setFaceShelter(sheltered);
+                    }
+
+                    if (!callback.onFaceDetection(hasFace, facePreviewInfo)) {
+                        return;
                     }
                 }
             } else {
@@ -431,15 +444,11 @@ public class FaceView extends FrameLayout {
                     callback.onFaceDetection(hasFace, facePreviewInfoList);
                 }
             }
-            if (!canNext) {
-                return;
-            }
 
             if (facePreviewInfoList != null && facePreviewInfoList.size() > 0 && previewSize != null) {
                 for (int i = 0; i < facePreviewInfoList.size(); i++) {
                     FacePreviewInfo facePreviewInfo = facePreviewInfoList.get(i);
-                    int trackId = facePreviewInfo.getTrackId();
-                    Integer status = requestFeatureStatusMap.get(trackId);
+                    Integer status = requestFeatureStatusMap.get(facePreviewInfo.getTrackId());
                     if (status != null && status == RequestFeatureStatus.SUCCEED) {
                         continue;
                     }
@@ -1104,42 +1113,6 @@ public class FaceView extends FrameLayout {
             }
         }
         return getCurrCameraFrame();
-        /*if (mCurrBytes != null) {
-            try {
-                YuvImage image = new YuvImage(mCurrBytes, ImageFormat.NV21, cameraHelper.getWidth(), cameraHelper.getHeight(), null);
-                ByteArrayOutputStream stream = new ByteArrayOutputStream();
-                image.compressToJpeg(new Rect(0, 0, cameraHelper.getWidth(), cameraHelper.getHeight()), 80, stream);
-                Bitmap bmp = BitmapFactory.decodeByteArray(stream.toByteArray(), 0, stream.size());
-                if (infoList != null && infoList.size() > 0) {
-                    FacePreviewInfo facePreviewInfo = infoList.get(0);
-                    FaceInfo faceInfo = facePreviewInfo.getFaceInfo();
-
-                    if (faceInfo != null) {
-                        Rect bestRect = FaceManager.getBestRect(cameraHelper.getWidth(), cameraHelper.getHeight(), faceInfo.getRect());
-                        int width = bestRect.right - bestRect.left;
-                        int height = bestRect.bottom - bestRect.top;
-                        if (width <= 0 || height <= 0) {
-                            return null;
-                        }
-
-                        Bitmap bitmap = Bitmap.createBitmap(bmp, bestRect.left, bestRect.top, width, height);
-                        int angle = SpUtils.getIntOrDef(SpUtils.CAMERA_ANGLE, Constants.DEFAULT_CAMERA_ANGLE);
-                        if (bmp != null && angle != 0) {
-                            Bitmap bitmap1 = ImageUtils.rotateBitmap(bmp, angle);
-                            return bitmap1;
-                        }
-                        return bitmap;
-                    }
-                } else {
-                    return null;
-                }
-                stream.close();
-                return bmp;
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
-        return null;*/
     }
 
     private boolean isMaskDetectEnable = false;
@@ -1149,13 +1122,13 @@ public class FaceView extends FrameLayout {
     }
 
     public interface FaceCallback {
-        public abstract void onReady();
+        void onReady();
 
-        public abstract void onFaceDetection(Boolean hasFace, List<FacePreviewInfo> facePreviewInfoList);
+        void onFaceDetection(Boolean hasFace, List<FacePreviewInfo> facePreviewInfoList);
 
-        public abstract boolean onFaceDetection(boolean hasFace, FacePreviewInfo facePreviewInfo);
+        boolean onFaceDetection(boolean hasFace, FacePreviewInfo facePreviewInfo);
 
-        public abstract void onFaceVerify(CompareResult faceAuth);
+        void onFaceVerify(CompareResult faceAuth);
     }
 
     /**

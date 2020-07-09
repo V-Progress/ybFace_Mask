@@ -98,8 +98,13 @@ public class BatchImportActivity extends Activity {
             if (company.getComid() == Constants.NOT_BIND_COMPANY_ID) {
                 ReadExcel.importDataToLocal(company.getComid(), userCheckList, new ReadExcel.ImportCallback() {
                     @Override
+                    public void onProgress(int progress, int max) {
+                        UIUtils.setProgress(progress,max);
+                    }
+
+                    @Override
                     public void onStartImport() {
-                        UIUtils.showNetLoading(BatchImportActivity.this);
+                        UIUtils.showNetLoading(BatchImportActivity.this,true);
                     }
 
                     @Override
@@ -107,9 +112,12 @@ public class BatchImportActivity extends Activity {
                         UIUtils.showLong(BatchImportActivity.this,
                                 getString(R.string.import_add_success) + importResult.successNum
                                         + "\n"
+                                        + "\n"
                                         + getString(R.string.import_add_failed) + importResult.failedNum
                                         + "\n"
+                                        + "\n"
                                         + getString(R.string.import_add_exists) + importResult.alreadyExists
+                                        + "\n"
                                         + "\n"
                                         + getString(R.string.import_add_skip) + importResult.skipNum);
                         UIUtils.dismissNetLoading();
@@ -140,9 +148,12 @@ public class BatchImportActivity extends Activity {
                             UIUtils.showLong(BatchImportActivity.this,
                                     getString(R.string.import_import_complete)
                                             + "\n"
+                                            + "\n"
                                             + getString(R.string.import_add_success) + importResult.successNum
                                             + "\n"
+                                            + "\n"
                                             + getString(R.string.import_add_failed) + importResult.failedNum
+                                            + "\n"
                                             + "\n"
                                             + getString(R.string.import_add_exists) + importResult.alreadyExists);
                         });

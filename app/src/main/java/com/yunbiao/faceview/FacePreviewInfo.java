@@ -10,6 +10,15 @@ public class FacePreviewInfo {
     private float oringinTemper;
     private int mask;
     private int faceShelter;
+    private int liveness;
+
+    public int getLiveness() {
+        return liveness;
+    }
+
+    public void setLiveness(int liveness) {
+        this.liveness = liveness;
+    }
 
     public int getMask() {
         return mask;
