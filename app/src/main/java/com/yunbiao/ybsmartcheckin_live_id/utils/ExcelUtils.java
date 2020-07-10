@@ -203,7 +203,7 @@ public class ExcelUtils {
             }
 
             String suffix = nameOffset <= 0 ? "" : "_" + nameOffset;
-            File excelFile = new File(dir,fileName + suffix + ".xlsx");
+            File excelFile = new File(dir,fileName + suffix + ".xls");
 
             Timber.d("创建Excel文件：" + excelFile.getPath());
 
