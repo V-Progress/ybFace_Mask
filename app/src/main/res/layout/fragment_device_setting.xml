@@ -9,7 +9,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:orientation="vertical"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -65,7 +65,7 @@
                     android:id="@+id/sw_readcard_setting"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="30dp"
+                    android:layout_marginStart="30dp"
                     android:paddingLeft="10dp"
                     android:paddingRight="10dp"
                     android:textColor="@color/white" />
@@ -88,12 +88,12 @@
 
                 <TextView
                     style="@style/setting_text"
-                    android:layout_marginLeft="10dp"
+                    android:layout_marginStart="10dp"
                     android:text="@string/setting_s" />
 
                 <TextView
                     style="@style/setting_text"
-                    android:layout_marginLeft="10dp"
+                    android:layout_marginStart="10dp"
                     android:text="@string/auto_close_door_setting"
                     android:textColor="@android:color/holo_red_light" />
             </LinearLayout>
@@ -127,7 +127,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"/>
                     <RadioButton
-                        android:layout_marginLeft="20dp"
+                        android:layout_marginStart="20dp"
                         android:button="@drawable/temper_radio_button"
                         android:textColor="@color/white"
                         android:id="@+id/rb_clear_policy_15"
@@ -135,7 +135,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"/>
                     <RadioButton
-                        android:layout_marginLeft="20dp"
+                        android:layout_marginStart="20dp"
                         android:button="@drawable/temper_radio_button"
                         android:textColor="@color/white"
                         android:id="@+id/rb_clear_policy_30"
@@ -143,7 +143,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"/>
                     <RadioButton
-                        android:layout_marginLeft="20dp"
+                        android:layout_marginStart="20dp"
                         android:button="@drawable/temper_radio_button"
                         android:textColor="@color/white"
                         android:id="@+id/rb_clear_policy_custom"
@@ -153,7 +153,7 @@
                 </RadioGroup>
 
                 <LinearLayout
-                    android:layout_marginLeft="10dp"
+                    android:layout_marginStart="10dp"
                     android:background="@drawable/shape_system_name"
                     android:padding="5dp"
                     android:layout_width="wrap_content"
@@ -238,7 +238,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:layout_marginRight="30dp"
+                android:layout_marginEnd="30dp"
                 android:orientation="vertical">
 
                 <RadioButton

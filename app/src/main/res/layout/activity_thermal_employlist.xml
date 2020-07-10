@@ -19,7 +19,7 @@
             android:layout_height="wrap_content"
             android:textSize="20dp"
             android:textColor="@color/theme_green"
-            android:layout_marginLeft="10dp"/>
+            android:layout_marginStart="10dp"/>
 
         <TextView
             android:id="@+id/tv_ads_addname"
@@ -32,15 +32,15 @@
 
         <TextView
             android:gravity="center_vertical"
-            android:layout_alignParentRight="true"
-            android:layout_marginRight="30dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="30dp"
             android:textSize="26dp"
             android:textColor="#1296DB"
             android:id="@+id/iv_back"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/back"
-            android:drawableLeft="@mipmap/back"/>
+            android:drawableStart="@mipmap/back"/>
     </RelativeLayout>
 
     <LinearLayout
@@ -58,7 +58,7 @@
             android:layout_height="50dp">
 
             <Spinner
-                android:paddingLeft="10dp"
+                android:paddingStart="10dp"
                 android:layout_weight="1"
                 android:id="@+id/sp_depart"
                 android:layout_width="0dp"
@@ -67,8 +67,8 @@
 
             <Button
                 android:drawablePadding="5dp"
-                android:layout_marginLeft="6dp"
-                android:paddingLeft="10dp"
+                android:layout_marginStart="6dp"
+                android:paddingStart="10dp"
                 android:layout_weight="1.5"
                 android:id="@+id/btn_addDepart"
                 android:layout_width="0dp"
@@ -76,14 +76,14 @@
                 android:background="@drawable/shape_employ_button"
                 android:text="@string/employ_list_depart"
                 android:textColor="#64DCFE"
-                android:drawableLeft="@mipmap/icon_add" />
+                android:drawableStart="@mipmap/icon_add" />
 
             <EditText
-                android:layout_marginLeft="6dp"
+                android:layout_marginStart="6dp"
                 android:drawablePadding="5dp"
                 android:paddingRight="10dp"
                 android:paddingLeft="10dp"
-                android:drawableLeft="@mipmap/query_icon"
+                android:drawableStart="@mipmap/query_icon"
                 android:gravity="center"
                 android:background="@mipmap/bg_edit"
                 android:textColorHint="@color/gray_low"
@@ -95,22 +95,21 @@
                 android:layout_height="match_parent" />
 
             <Button
-                android:paddingLeft="10dp"
-                android:layout_marginLeft="6dp"
+                android:paddingStart="10dp"
+                android:layout_marginStart="6dp"
                 android:drawablePadding="10dp"
                 android:layout_weight="1"
                 android:id="@+id/btn_addEmploy"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:background="@drawable/shape_employ_button"
-                android:drawableLeft="@mipmap/icon_add"
+                android:drawableStart="@mipmap/icon_add"
                 android:text="@string/employ_List_add_user"
                 android:textColor="#64DCFE"/>
 
             <Button
-                android:layout_marginLeft="6dp"
+                android:layout_marginStart="6dp"
                 android:paddingRight="10dp"
-                android:layout_alignParentRight="true"
                 android:paddingLeft="10dp"
                 android:drawablePadding="10dp"
                 android:layout_weight="1"
@@ -118,19 +117,19 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:background="@drawable/shape_employ_button"
-                android:drawableLeft="@mipmap/import_icon"
+                android:drawableStart="@mipmap/import_icon"
                 android:text="@string/import_title"
                 android:textColor="@color/white"/>
             <Button
-                android:paddingLeft="10dp"
-                android:layout_marginLeft="6dp"
+                android:paddingStart="10dp"
+                android:layout_marginStart="6dp"
                 android:drawablePadding="10dp"
                 android:layout_weight="1"
                 android:id="@+id/btn_sync"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:background="@drawable/shape_employ_button"
-                android:drawableLeft="@mipmap/icon_sync"
+                android:drawableStart="@mipmap/icon_sync"
                 android:text="@string/employ_list_depart_sync"
                 android:textColor="@color/white" />
 
@@ -154,7 +153,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
             <View
-                android:layout_marginLeft="10dp"
+                android:layout_marginStart="10dp"
                 android:background="#FA0808"
                 android:layout_width="14dp"
                 android:layout_height="14dp"/>
@@ -165,7 +164,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
             <View
-                android:layout_marginLeft="10dp"
+                android:layout_marginStart="10dp"
                 android:background="#A2A2A2"
                 android:layout_width="14dp"
                 android:layout_height="14dp"/>
@@ -184,7 +183,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/shape_employ_list"
-            android:layout_below="@+id/ll_tuli_area"
             android:layout_marginTop="6dp"
             android:orientation="horizontal"
             android:gravity="center_vertical">
@@ -247,7 +245,6 @@
         </LinearLayout>
 
         <FrameLayout
-            android:layout_below="@+id/layout_title"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
             <ListView

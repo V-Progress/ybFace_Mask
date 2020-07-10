@@ -43,11 +43,11 @@
                 android:id="@+id/ib_back"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
                 android:layout_centerVertical="true"
                 android:background="#00000000"
-                android:paddingLeft="20dp"
-                android:paddingRight="30dp"
+                android:paddingStart="20dp"
+                android:paddingEnd="30dp"
                 android:src="@mipmap/back" />
         </RelativeLayout>
 
@@ -57,7 +57,7 @@
             <LinearLayout
                 android:orientation="vertical"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="wrap_content">
 
 
                 <LinearLayout
@@ -70,7 +70,7 @@
 
                     <Button
                         android:onClick="@{actionPresenter::onSpeedButtonClick}"
-                        android:layout_marginLeft="20dp"
+                        android:layout_marginStart="20dp"
                         android:id="@+id/btn_speed_sub_setting"
                         android:layout_width="30dp"
                         android:layout_height="30dp"
@@ -78,7 +78,7 @@
 
                     <LinearLayout
                         style="@style/style_setting_input_save_button"
-                        android:layout_marginLeft="0dp"
+                        android:layout_marginStart="0dp"
                         android:orientation="horizontal"
                         android:paddingLeft="10dp"
                         android:paddingTop="10dp"
@@ -115,12 +115,12 @@
                         android:id="@+id/btn_tip_delay_sub_setting"
                         android:layout_width="30dp"
                         android:layout_height="30dp"
-                        android:layout_marginLeft="20dp"
+                        android:layout_marginStart="20dp"
                         android:background="@mipmap/icon_jian" />
 
                     <LinearLayout
                         style="@style/style_setting_input_save_button"
-                        android:layout_marginLeft="0dp"
+                        android:layout_marginStart="0dp"
                         android:orientation="horizontal"
                         android:paddingLeft="10dp"
                         android:paddingTop="10dp"
@@ -167,8 +167,8 @@
                             android:maxLines="3"
                             android:paddingTop="5dp"
                             android:paddingBottom="5dp"
-                            android:paddingLeft="10dp"
-                            android:paddingRight="20dp"
+                            android:paddingStart="10dp"
+                            android:paddingEnd="20dp"
                             android:textColorHint="@color/gray_low"
                             android:textColor="@color/white"
                             android:background="@drawable/shape_system_name"
@@ -183,7 +183,7 @@
                             style="@style/setting_text"
                             android:checked="@{speechContent.welcomeTextEnabled}"
                             android:onCheckedChanged="@{actionPresenter::onWelcomeEnableChanged}"
-                            android:layout_marginLeft="10dp"
+                            android:layout_marginStart="10dp"
                             android:id="@+id/sw_welcome_enable"
                             android:text="@string/speech_setting_open_or_close"
                             android:switchPadding="10dp"/>
@@ -211,8 +211,8 @@
                             android:maxLines="3"
                             android:paddingTop="5dp"
                             android:paddingBottom="5dp"
-                            android:paddingLeft="10dp"
-                            android:paddingRight="20dp"
+                            android:paddingStart="10dp"
+                            android:paddingEnd="20dp"
                             android:textColorHint="@color/gray_low"
                             android:textColor="@color/white"
                             android:background="@drawable/shape_system_name"
@@ -227,7 +227,7 @@
                             style="@style/setting_text"
                             android:checked="@{speechContent.maskEnabled}"
                             android:onCheckedChanged="@{actionPresenter::onMaskEnabledChanged}"
-                            android:layout_marginLeft="10dp"
+                            android:layout_marginStart="10dp"
                             android:id="@+id/sw_mask_enabled"
                             android:text="@string/speech_setting_open_or_close"
                             android:switchPadding="10dp"/>
@@ -251,7 +251,7 @@
                             android:enabled="@{speechContent.distanceTipEnabled}"
                             android:paddingTop="5dp"
                             android:paddingBottom="5dp"
-                            android:paddingLeft="10dp"
+                            android:paddingStart="10dp"
                             android:gravity="center_vertical"
                             android:textColor="@color/white"
                             android:background="@drawable/shape_system_name"
@@ -265,7 +265,7 @@
                             style="@style/setting_text"
                             android:checked="@{speechContent.distanceTipEnabled}"
                             android:onCheckedChanged="@{actionPresenter::onDistanceEnableChanged}"
-                            android:layout_marginLeft="10dp"
+                            android:layout_marginStart="10dp"
                             android:id="@+id/sw_distance_enable"
                             android:text="@string/speech_setting_open_or_close"
                             android:switchPadding="10dp"/>
@@ -285,12 +285,12 @@
                         android:text="对准人脸框"
                         style="@style/setting_text"/>
                     <EditText
-                        android:layout_marginLeft="10dp"
+                        android:layout_marginStart="10dp"
                         android:paddingTop="5dp"
                         android:paddingBottom="5dp"
-                        android:paddingRight="20dp"
+                        android:paddingEnd="20dp"
                         android:gravity="center_vertical"
-                        android:paddingLeft="10dp"
+                        android:paddingStart="10dp"
                         android:textColor="@color/white"
                         android:background="@drawable/shape_system_name"
                         android:text="@{speechContent.frameTip}"
@@ -303,7 +303,7 @@
                         style="@style/setting_text"
                         android:checked="@{speechContent.frameTipEnabled}"
                         android:onCheckedChanged="@{actionPresenter::onFrameEnableChanged}"
-                        android:layout_marginLeft="10dp"
+                        android:layout_marginStart="10dp"
                         android:id="@+id/sw_frame_enable"
                         android:text="是否开启"
                         android:switchPadding="10dp"/>
@@ -331,9 +331,9 @@
                                 android:enabled="@{speechContent.normalEnabled}"
                                 android:paddingTop="5dp"
                                 android:paddingBottom="5dp"
-                                android:paddingRight="20dp"
+                                android:paddingEnd="20dp"
                                 android:gravity="center_vertical"
-                                android:paddingLeft="10dp"
+                                android:paddingStart="10dp"
                                 android:textColor="@color/white"
                                 android:background="@drawable/shape_system_name"
                                 android:text="@{speechContent.normalContent}"
@@ -345,7 +345,7 @@
                                 style="@style/setting_text"
                                 android:checked="@{speechContent.normalEnabled}"
                                 android:onCheckedChanged="@{actionPresenter::onNormalEnableChanged}"
-                                android:layout_marginLeft="10dp"
+                                android:layout_marginStart="10dp"
                                 android:text="@string/speech_setting_open_or_close"
                                 android:switchPadding="10dp"/>
                         </LinearLayout>
@@ -368,7 +368,7 @@
                             <RadioGroup
                                 android:onCheckedChanged="@{actionPresenter::onNormalLocationCheckedChanged}"
                                 android:checkedButton="@{speechContent.normalTemperLocation == 0 ? @id/rb_start_normal : speechContent.normalTemperLocation == 1 ? @id/rb_center_normal : @id/rb_end_normal}"
-                                android:layout_marginLeft="10dp"
+                                android:layout_marginStart="10dp"
                                 android:orientation="horizontal"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content">
@@ -424,7 +424,7 @@
                                 android:paddingTop="5dp"
                                 android:paddingBottom="5dp"
                                 android:gravity="center_vertical"
-                                android:paddingLeft="10dp"
+                                android:paddingStart="10dp"
                                 android:textColor="@color/white"
                                 android:background="@drawable/shape_system_name"
                                 android:text="@{speechContent.warningContent}"
@@ -436,7 +436,7 @@
                                 style="@style/setting_text"
                                 android:checked="@{speechContent.warningEnabled}"
                                 android:onCheckedChanged="@{actionPresenter::onWarningEnableChanged}"
-                                android:layout_marginLeft="10dp"
+                                android:layout_marginStart="10dp"
                                 android:text="@string/speech_setting_open_or_close"
                                 android:switchPadding="10dp"/>
                         </LinearLayout>
@@ -461,7 +461,7 @@
                                 android:onCheckedChanged="@{actionPresenter::onWarningLocationCheckedChanged}"
                                 android:checkedButton="@{speechContent.warningTemperLocation == 0 ? @id/rb_start_warning : speechContent.warningTemperLocation == 1 ? @id/rb_center_warning : @id/rb_end_warning}"
                                 android:id="@+id/rg_location_warning"
-                                android:layout_marginLeft="10dp"
+                                android:layout_marginStart="10dp"
                                 android:orientation="horizontal"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content">
@@ -508,12 +508,12 @@
                         android:text="@string/temper_tips_centigrade"
                         style="@style/setting_text"/>
                     <EditText
-                        android:layout_marginLeft="10dp"
+                        android:layout_marginStart="10dp"
                         android:paddingTop="5dp"
                         android:paddingBottom="5dp"
-                        android:paddingRight="20dp"
+                        android:paddingEnd="20dp"
                         android:gravity="center_vertical"
-                        android:paddingLeft="10dp"
+                        android:paddingStart="10dp"
                         android:textColor="@color/white"
                         android:background="@drawable/shape_system_name"
                         android:text="@{speechContent.centigrade}"
@@ -522,16 +522,16 @@
                         android:layout_height="wrap_content"/>
 
                     <TextView
-                        android:layout_marginLeft="30dp"
+                        android:layout_marginStart="30dp"
                         android:text="@string/temper_tips_fahrenheit"
                         style="@style/setting_text"/>
                     <EditText
-                        android:layout_marginLeft="10dp"
+                        android:layout_marginStart="10dp"
                         android:paddingTop="5dp"
                         android:paddingBottom="5dp"
-                        android:paddingRight="20dp"
+                        android:paddingEnd="20dp"
                         android:gravity="center_vertical"
-                        android:paddingLeft="10dp"
+                        android:paddingStart="10dp"
                         android:textColor="@color/white"
                         android:background="@drawable/shape_system_name"
                         android:text="@{speechContent.fahrenheit}"
@@ -555,9 +555,9 @@
                             style="@style/setting_text"/>
                         <Button
                             android:layout_centerVertical="true"
-                            android:layout_alignParentRight="true"
+                            android:layout_alignParentEnd="true"
                             android:onClick="@{actionPresenter::onWelcomePlay}"
-                            android:layout_marginLeft="10dp"
+                            android:layout_marginStart="10dp"
                             style="@style/style_setting_input_save_button"
                             android:text="@string/speech_setting_audition" />
                     </RelativeLayout>
@@ -582,9 +582,9 @@
                             style="@style/setting_text"/>
                         <Button
                             android:layout_centerVertical="true"
-                            android:layout_alignParentRight="true"
+                            android:layout_alignParentEnd="true"
                             android:onClick="@{actionPresenter::onClosePlay}"
-                            android:layout_marginLeft="10dp"
+                            android:layout_marginStart="10dp"
                             style="@style/style_setting_input_save_button"
                             android:text="@string/speech_setting_audition" />
                     </RelativeLayout>
@@ -610,9 +610,9 @@
                             style="@style/setting_text"/>
                         <Button
                             android:layout_centerVertical="true"
-                            android:layout_alignParentRight="true"
+                            android:layout_alignParentEnd="true"
                             android:onClick="@{actionPresenter::onMaskPlay}"
-                            android:layout_marginLeft="10dp"
+                            android:layout_marginStart="10dp"
                             style="@style/style_setting_input_save_button"
                             android:text="@string/speech_setting_audition" />
                     </RelativeLayout>
@@ -642,7 +642,7 @@
                             style="@style/setting_text"/>
                         <Button
                             android:onClick="@{actionPresenter::onFramePlay}"
-                            android:layout_marginLeft="10dp"
+                            android:layout_marginStart="10dp"
                             style="@style/style_setting_input_save_button"
                             android:text="@string/speech_setting_audition" />
                     </LinearLayout>
@@ -659,9 +659,9 @@
                             style="@style/setting_text"/>
                         <Button
                             android:layout_centerVertical="true"
-                            android:layout_alignParentRight="true"
+                            android:layout_alignParentEnd="true"
                             android:onClick="@{actionPresenter::onNormalPlay}"
-                            android:layout_marginLeft="10dp"
+                            android:layout_marginStart="10dp"
                             style="@style/style_setting_input_save_button"
                             android:text="@string/speech_setting_audition" />
                     </RelativeLayout>
@@ -686,9 +686,9 @@
                             style="@style/setting_text"/>
                         <Button
                             android:layout_centerVertical="true"
-                            android:layout_alignParentRight="true"
+                            android:layout_alignParentEnd="true"
                             android:onClick="@{actionPresenter::onWarningPlay}"
-                            android:layout_marginLeft="10dp"
+                            android:layout_marginStart="10dp"
                             style="@style/style_setting_input_save_button"
                             android:text="@string/speech_setting_audition" />
                     </RelativeLayout>
