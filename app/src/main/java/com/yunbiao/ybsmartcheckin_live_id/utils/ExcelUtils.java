@@ -205,8 +205,7 @@ public class ExcelUtils {
             String suffix = nameOffset <= 0 ? "" : "_" + nameOffset;
             File excelFile = new File(dir,fileName + suffix + ".xls");
 
-            Timber.d("创建Excel文件：" + excelFile.getPath());
-
+            //创建工作簿
             WritableWorkbook workbook = null;
             WritableSheet sheet = null;
             try {
@@ -225,8 +224,8 @@ public class ExcelUtils {
                 } catch (WriteException e) {
                     e.printStackTrace();
                 }
-                Label labelC = new Label(i, 0, colName[i]);
                 try {
+                    Label labelC = new Label(i, 0, colName[i]);
                     sheet.addCell(labelC);
                 } catch (WriteException e) {
                     e.printStackTrace();
@@ -241,7 +240,7 @@ public class ExcelUtils {
                 publishProgress(rowNum,maxSize);
 
                 try {
-                    sheet.setRowView(row,500);
+                    sheet.setRowView(rowNum,500);
                 } catch (RowsExceededException e) {
                     e.printStackTrace();
                 }
@@ -250,13 +249,18 @@ public class ExcelUtils {
                     sheet.setColumnView(column,10);
                     String content = strings.get(column);
                     try {
-                        if(column < strings.size() - 2){
-                            Label labelC = new Label(column, row, content);
-                            sheet.addCell(labelC);
+                        if(!TextUtils.isEmpty(content)){
+                            if(column < strings.size() - 2){
+                                Label labelC = new Label(column, rowNum, content);
+                                sheet.addCell(labelC);
+                            } else {
+                                File file = new File(content);
+                                WritableImage image = new WritableImage(column,rowNum,1,1,readBitmap(file.getPath()));
+                                sheet.addImage(image);
+                            }
                         } else {
-                            File file = new File(content);
-                            WritableImage image = new WritableImage(column,row,1,1,readBitmap(file.getPath()));
-                            sheet.addImage(image);
+                            Label labelC = new Label(column, rowNum, "");
+                            sheet.addCell(labelC);
                         }
                     } catch (WriteException e) {
                         e.printStackTrace();
@@ -278,15 +282,17 @@ public class ExcelUtils {
 
         public Map<String,List<List<String>>> splitListForDate(List<List<String>> list){
             Map<String,List<List<String>>> map = new HashMap<>();
-            for (int i = 0; i < list.size(); i++) {
-                List<String> strings = list.get(i);
-                String s = strings.get(4);
-                if(map.containsKey(s)){
-                    map.get(s).add(strings);
-                } else {
-                    List<List<String>> dataList = new ArrayList<>();
-                    dataList.add(strings);
-                    map.put(s,dataList);
+            if(list != null && list.size() > 0){
+                for (int i = 0; i < list.size(); i++) {
+                    List<String> strings = list.get(i);
+                    String s = strings.get(4);
+                    if(map.containsKey(s)){
+                        map.get(s).add(strings);
+                    } else {
+                        List<List<String>> dataList = new ArrayList<>();
+                        dataList.add(strings);
+                        map.put(s,dataList);
+                    }
                 }
             }
             return map;
@@ -294,16 +300,17 @@ public class ExcelUtils {
 
         public <T> Map<Integer, List<T>> spiltList(List<T> list, int num) {
             Map<Integer, List<T>> map = new HashMap<>(num);
-            int length = list.size() / num;
-
-            for (int i = 0; i < num; i++) {
-                List<T> subList;
-                if (i != num - 1) {
-                    subList = list.subList(i * length, i * length + length);
-                } else {
-                    subList = list.subList(i * length, list.size());
+            if(list != null && list.size() > 0){
+                int length = list.size() / num;
+                for (int i = 0; i < num; i++) {
+                    List<T> subList;
+                    if (i != num - 1) {
+                        subList = list.subList(i * length, i * length + length);
+                    } else {
+                        subList = list.subList(i * length, list.size());
+                    }
+                    map.put(i, subList);
                 }
-                map.put(i, subList);
             }
             return map;
         }
